@@ -1013,6 +1013,11 @@
       background: #000;
     }
 
+    .modal-player-container.is-patreon {
+      aspect-ratio: auto;
+      min-height: 270px;
+    }
+
     .modal-player-container iframe {
       width: 100%;
       height: 100%;
@@ -1988,18 +1993,19 @@
       const directBtn = document.getElementById('modalYtLink');
 
       if (ep.source === 'patreon') {
+        playerEl.classList.add('is-patreon');
         const isFree = ep.patreonStatus === 'public';
         const pUrl = ep.patreonUrl || 'https://www.patreon.com/c/SCENEKPOP/posts';
         playerEl.innerHTML = `
-          <div style="position:relative; width:100%; height:100%; background:#0a0b10; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:24px; box-sizing:border-box;">
+          <div style="position:relative; width:100%; min-height:270px; background:#0a0b10; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:48px 22px 24px 22px; box-sizing:border-box;">
             <img src="${ep.thumb}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.25; filter:blur(5px);" />
             <div style="position:relative; z-index:2; max-width:560px;">
-              <span style="display:inline-block; background:${isFree ? '#16a34a' : '#ff424d'}; color:white; font-size:11.5px; font-weight:700; padding:4px 12px; border-radius:999px; margin-bottom:12px;">
+              <span style="display:inline-block; background:${isFree ? '#16a34a' : '#ff424d'}; color:white; font-size:11.5px; font-weight:700; padding:4px 12px; border-radius:999px; margin-bottom:10px;">
                 <i class="fa-brands fa-patreon"></i> ${isFree ? 'PATREON FREE — เปิดดูได้ฟรี' : 'PATREON EXCLUSIVE — เฉพาะสมาชิก'}
               </span>
-              <h3 style="color:white; font-size:17px; margin-bottom:8px; line-height:1.5;">${escapeHtml(ep.title)}</h3>
-              <p style="color:#cbd5e1; font-size:13px; margin-bottom:18px;">โพสต์เมื่อ ${escapeHtml(ep.date || 'Patreon')} • รับชมวิดีโอตัวเต็มได้บน Patreon ของ @SCENEKPOP</p>
-              <a href="${pUrl}" ${EXT_LINK_ATTRS} style="display:inline-flex; align-items:center; gap:9px; background:#ff424d; color:white; padding:12px 24px; border-radius:8px; font-size:15px; font-weight:700; text-decoration:none; box-shadow:0 6px 20px rgba(255,66,77,0.45);">
+              <h3 style="color:white; font-size:15.5px; margin-bottom:8px; line-height:1.45;">${escapeHtml(ep.title)}</h3>
+              <p style="color:#cbd5e1; font-size:12.5px; margin-bottom:16px;">โพสต์เมื่อ ${escapeHtml(ep.date || 'Patreon')} • รับชมวิดีโอตัวเต็มได้บน Patreon ของ @SCENEKPOP</p>
+              <a href="${pUrl}" ${EXT_LINK_ATTRS} style="display:inline-flex; align-items:center; gap:9px; background:#ff424d; color:white; padding:11px 22px; border-radius:8px; font-size:14px; font-weight:700; text-decoration:none; box-shadow:0 6px 20px rgba(255,66,77,0.45);">
                 <i class="fa-brands fa-patreon"></i> เปิดดูบน Patreon
               </a>
             </div>
@@ -2011,6 +2017,7 @@
         directBtn.style.borderColor = '#ff424d';
         directBtn.innerHTML = '<i class="fa-brands fa-patreon"></i> เปิดดูบน Patreon';
       } else {
+        playerEl.classList.remove('is-patreon');
         playerEl.innerHTML = `
           <iframe
             src="https://www.youtube.com/embed/${ep.ytId}?autoplay=1&enablejsapi=1&rel=0"
