@@ -145,7 +145,7 @@
       "thaiName": "เลอ เซราฟิม",
       "accent": "#60a5fa",
       "tagline": "Sakura • Chaewon • Yunjin • Kazuha • Eunchae",
-      "keywords": ["lesserafim", "le sserafim", "ซากุระ", "คาซึฮะ", "kazuha", "eunchae"],
+      "keywords": ["lesserafim", "le sserafim", "ซากุระ", "คาซึฮะ", "kazuha", "eunchae", "hyemileeyechaepa"],
       "playlist_ids": []
     },
     {
@@ -228,7 +228,7 @@
       "thaiName": "ไอเดิล",
       "accent": "#e879f9",
       "tagline": "Miyeon • JeonDoSa & Variety",
-      "keywords": ["i-dle", "miyeon", "มิยอน"],
+      "keywords": ["i-dle", "miyeon", "มิยอน", "hyemileeyechaepa"],
       "playlist_ids": []
     },
     {
@@ -242,14 +242,50 @@
       "playlist_ids": []
     },
     {
+      "id": "veiled_cup",
+      "name": "Veiled Cup",
+      "thaiName": "รายการแข่งขันร้องเพลง Veiled Cup",
+      "accent": "#f59e0b",
+      "tagline": "รวมคลิปรายการประกวดร้องเพลง Veiled Cup ซับไทยทุกตอน",
+      "keywords": ["veiled cup", "veilecup"],
+      "playlist_ids": []
+    },
+    {
+      "id": "hyemileeyechaepa",
+      "name": "HyeMiLeeYeChaePa",
+      "thaiName": "ฮเยมิรีเยแชพา (Chaewon • Miyeon • Hyeri • Yena)",
+      "accent": "#f472b6",
+      "tagline": "วาไรตี้บ้านพักสุดฮา EP.01-12 ซับไทยบน Patreon",
+      "keywords": ["hyemileeyechaepa"],
+      "playlist_ids": []
+    },
+    {
+      "id": "smtm12_milli",
+      "name": "SMTM12 & MILLI",
+      "thaiName": "Show Me The Money 12 / มิลลิ",
+      "accent": "#fb7185",
+      "tagline": "มิลลิ (MILLI) & Show Me The Money 12 ซับไทยบน Patreon",
+      "keywords": ["smtm12", "milli", "มิลลิ"],
+      "playlist_ids": []
+    },
+    {
+      "id": "akmu",
+      "name": "AKMU",
+      "thaiName": "อัคมู",
+      "accent": "#34d399",
+      "tagline": "You Quiz on the Block & Kangho Bookstore ซับไทย",
+      "keywords": ["akmu"],
+      "playlist_ids": []
+    },
+    {
       "id": "other_kpop",
       "name": "วงอื่นๆ & รายการพิเศษ",
-      "thaiName": "Veiled Cup / FIFTY FIFTY / AtHeart / izna / Variety",
+      "thaiName": "FIFTY FIFTY / AtHeart / OURBIRTHDAY / Variety",
       "accent": "#94a3b8",
-      "tagline": "Veiled Cup, OURBIRTHDAY, AtHeart, FIFTY FIFTY, izna และวาไรตี้อื่นๆ",
+      "tagline": "OURBIRTHDAY, AtHeart, FIFTY FIFTY, S.E.S, Han So-hee และวาไรตี้อื่นๆ",
       "keywords": [
-        "veiled cup", "veilecup", "izna", "fifty fifty", "atheart", "ourbirthday",
-        "nothing much prepared", "han so-hee", "eugene", "s.e.s", "hyorisoo", "defconn", "kangnami"
+        "izna", "fifty fifty", "atheart", "ourbirthday",
+        "nothing much prepared", "han so-hee", "eugene", "s.e.s", "hyorisoo"
       ],
       "playlist_ids": []
     }
@@ -266,6 +302,10 @@
     "UkOu7L8WbXI": ["rescene"],
     "7xg9gwH9zTE": ["rescene"],
     "Tn5rsRFJyeI": ["qwer"],
-    "Q8XfIR4mP3k": ["qwer"]
+    "Q8XfIR4mP3k": ["qwer"],
+    "Ro2xZ1Pvqns": ["hearts2hearts"],
+    "1ost-zTrW7k": ["qwer"],
+    "n_I3V6cKUB4": ["qwer"],
+    "dUey2o_F84U": ["kiss_of_life"]
   }
 }

@@ -1302,19 +1302,33 @@
       </section>
 
       <section class="section-block" id="sec-patreon">
-        <div class="patreon-banner">
+        <div class="patreon-banner" style="margin-bottom: 18px;">
           <div class="patreon-banner-info">
             <div class="patreon-icon-box">
               <i class="fa-brands fa-patreon"></i>
             </div>
             <div>
               <h3>SCENEKPOP on Patreon — Video Content Sub Thai Translated</h3>
-              <p>รับชมคอนเทนต์ซับไทยแบบเต็ม/คลิปพิเศษที่ลงไม่ได้บน YouTube พร้อมร่วมสนับสนุนการทำซับไทยของช่อง @SCENEKPOP ได้ที่ Patreon</p>
+              <p>รวมคลิปรายการเต็ม & ซับไทยพิเศษบน Patreon (มีทั้งคลิปเปิดดูฟรี และคลิปเฉพาะสมาชิก) แยกดูตามวงด้านบนหรือเลือกดูทั้งหมดด้านล่างนี้ได้เลย</p>
             </div>
           </div>
           <a href="https://www.patreon.com/c/SCENEKPOP" target="_blank" rel="noopener noreferrer" class="btn" style="background: #ff424d; color: white; text-decoration: none; white-space: nowrap;">
-            <i class="fa-brands fa-patreon"></i> เปิดดูบน Patreon
+            <i class="fa-brands fa-patreon"></i> เปิดหน้า Patreon
           </a>
+        </div>
+        <div class="toolbar-row" style="margin-bottom: 14px;">
+          <div class="type-tabs" id="patreonFilterTabs">
+            <button class="type-tab active" onclick="filterHomePatreon('all', this)">ทั้งหมด</button>
+            <button class="type-tab" onclick="filterHomePatreon('public', this)">🎁 ดูฟรี (Public)</button>
+            <button class="type-tab" onclick="filterHomePatreon('locked', this)">🔒 สมาชิก (Member Only)</button>
+          </div>
+          <span class="section-sub" id="patreonHomeCount"></span>
+        </div>
+        <div class="video-grid" id="patreonHomeGrid"></div>
+        <div class="load-more-wrap" id="patreonLoadMoreWrap" style="display:none;">
+          <button class="btn btn-neon" onclick="loadMorePatreon()">
+            <i class="fa-solid fa-angles-down"></i> ดูคลิป Patreon เพิ่มเติม
+          </button>
         </div>
       </section>
 
@@ -1422,12 +1436,15 @@
       variety: '🎬 วาไรตี้ & รายการ',
       live: '📱 Weverse / IG Live',
       radio: '🎙️ วิทยุ (Radio)',
-      stage: '🎤 สเตจ & รางวัล'
+      stage: '🎤 สเตจ & รางวัล',
+      patreon: '🎁 Patreon'
     };
 
     let activeGroupId = 'all';
     let activeContentType = 'all';
     let latestLimit = 24;
+    let patreonFilter = 'all';
+    let patreonLimit = 12;
     let currentQueue = [];
     let currentQueueIndex = 0;
 
@@ -1454,17 +1471,18 @@
     }
 
     function initApp() {
-      // Hero background video
-      if (DB.videos.length > 0) {
-        const heroVid = DB.videos[0].ytId;
+      // Hero background video (pick first YouTube video)
+      const firstYt = DB.videos.find(v => v.source !== 'patreon');
+      if (firstYt) {
+        const heroVid = firstYt.ytId;
         document.getElementById('heroVideoIframe').src =
           `https://www.youtube.com/embed/${heroVid}?autoplay=1&mute=1&controls=0&loop=1&playlist=${heroVid}&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&enablejsapi=1`;
       }
 
-      document.getElementById('statVideos').textContent = `${DB.channel.totalVideos || DB.videos.length} คลิป`;
+      document.getElementById('statVideos').textContent = `${DB.channel.totalVideos || DB.videos.length} คลิป (YT + Patreon)`;
       document.getElementById('statGroups').textContent = `${DB.groups.length} วง / หมวด`;
       document.getElementById('statPlaylists').textContent = `${DB.playlists.length} เพลย์ลิสต์`;
-      document.getElementById('latestSummary').textContent = `ทั้งหมด ${DB.videos.length} คลิปจาก @SCENEKPOP`;
+      document.getElementById('latestSummary').textContent = `คลิป YouTube ล่าสุดจาก @SCENEKPOP`;
       if (DB.channel.updatedAt) {
         document.getElementById('footerUpdated').textContent = `อัปเดตข้อมูลล่าสุด: ${DB.channel.updatedAt}`;
       }
@@ -1472,6 +1490,7 @@
       renderGroupBar();
       renderHomeGroups();
       renderHomePlaylists();
+      renderHomePatreon();
       renderLatestVideos();
 
       // Check URL hash (#group=qwer)
@@ -1539,17 +1558,29 @@
         const g = GROUP_MAP[gid];
         return g ? `<span class="tag-chip" style="border-color:${g.accent}55; color:${g.accent}; background:${g.accent}18;">${escapeHtml(g.name)}</span>` : '';
       }).join('');
-      const isThai = v.subBadge.includes('ซับไทย') || v.subBadge.includes('TH');
+      const isPatreon = v.source === 'patreon';
+      const isPatreonFree = isPatreon && v.patreonStatus === 'public';
+      const isThai = !isPatreon && (v.subBadge.includes('ซับไทย') || v.subBadge.includes('TH'));
       const typeLabel = TYPE_LABELS[v.contentType] || '🎬 วาไรตี้';
+      const badgeStyle = isPatreon
+        ? (isPatreonFree
+            ? 'border-color:rgba(74,222,128,0.7); color:#4ade80; background:rgba(5,5,8,0.86);'
+            : 'border-color:rgba(255,66,77,0.8); color:#ff6b74; background:rgba(5,5,8,0.88);')
+        : '';
+      const badgeText = isPatreon
+        ? (isPatreonFree ? '🎁 Patreon ดูฟรี' : '🔒 Member Only')
+        : v.subBadge;
 
       return `
         <div class="media-card" onclick="${queueSourceExpr}(${indexInQueue})">
           <div class="media-thumb-box">
             <img src="${v.thumb}" loading="lazy" alt="${escapeHtml(v.title)}" referrerpolicy="no-referrer">
             <div class="thumb-play-hover">
-              <div class="thumb-play-circle"><i class="fa-solid fa-play"></i></div>
+              <div class="thumb-play-circle" ${isPatreon ? 'style="background:#ff424d;"' : ''}>
+                <i class="fa-solid ${isPatreon ? 'fa-arrow-up-right-from-square' : 'fa-play'}"></i>
+              </div>
             </div>
-            <span class="thumb-sub-badge ${isThai ? 'th' : ''}">${escapeHtml(v.subBadge)}</span>
+            <span class="thumb-sub-badge ${isThai ? 'th' : ''}" style="${badgeStyle}">${escapeHtml(badgeText)}</span>
             ${v.duration ? `<span class="thumb-duration">${escapeHtml(v.duration)}</span>` : ''}
           </div>
           <div class="media-body">
@@ -1565,14 +1596,46 @@
       `;
     }
 
+    let patreonSlice = [];
+    function filterHomePatreon(mode, btn) {
+      patreonFilter = mode;
+      patreonLimit = 12;
+      document.querySelectorAll('#patreonFilterTabs .type-tab').forEach(el => el.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderHomePatreon();
+    }
+
+    function renderHomePatreon() {
+      let list = DB.videos.filter(v => v.source === 'patreon');
+      if (patreonFilter === 'public') list = list.filter(v => v.patreonStatus === 'public');
+      else if (patreonFilter === 'locked') list = list.filter(v => v.patreonStatus !== 'public');
+      document.getElementById('patreonHomeCount').textContent = `แสดง ${Math.min(patreonLimit, list.length)} / ${list.length} คลิป`;
+      patreonSlice = list.slice(0, patreonLimit);
+      document.getElementById('patreonHomeGrid').innerHTML = patreonSlice
+        .map((v, idx) => createVideoCardHTML(v, 'playFromPatreonHome', idx))
+        .join('');
+      const wrap = document.getElementById('patreonLoadMoreWrap');
+      wrap.style.display = patreonLimit >= list.length ? 'none' : 'block';
+    }
+
+    function loadMorePatreon() {
+      patreonLimit += 24;
+      renderHomePatreon();
+    }
+
+    function playFromPatreonHome(idx) {
+      openQueueModal(patreonSlice, idx, '🎁 คลิปซับไทยบน Patreon (@SCENEKPOP)');
+    }
+
     let latestSlice = [];
     function renderLatestVideos() {
-      latestSlice = DB.videos.slice(0, latestLimit);
+      const ytOnly = DB.videos.filter(v => v.source !== 'patreon');
+      latestSlice = ytOnly.slice(0, latestLimit);
       document.getElementById('latestGrid').innerHTML = latestSlice
         .map((v, idx) => createVideoCardHTML(v, 'playFromLatest', idx))
         .join('');
       const wrap = document.getElementById('latestLoadMoreWrap');
-      wrap.style.display = latestLimit >= DB.videos.length ? 'none' : 'block';
+      wrap.style.display = latestLimit >= ytOnly.length ? 'none' : 'block';
     }
 
     function loadMoreLatest() {
@@ -1656,7 +1719,7 @@
 
     function renderGroupTypeTabs(groupId) {
       const vids = getGroupVideos(groupId);
-      const counts = { all: vids.length, variety: 0, live: 0, radio: 0, stage: 0 };
+      const counts = { all: vids.length, variety: 0, live: 0, radio: 0, stage: 0, patreon: 0 };
       vids.forEach(v => {
         if (counts[v.contentType] !== undefined) counts[v.contentType]++;
       });
@@ -1850,17 +1913,47 @@
     function playQueueItem(idx) {
       const ep = currentQueue[idx];
       if (!ep) return;
-      document.getElementById('modalPlayer').innerHTML = `
-        <iframe
-          src="https://www.youtube.com/embed/${ep.ytId}?autoplay=1&enablejsapi=1&rel=0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          referrerpolicy="strict-origin-when-cross-origin"
-        ></iframe>`;
+      const playerEl = document.getElementById('modalPlayer');
+      const directBtn = document.getElementById('modalYtLink');
+
+      if (ep.source === 'patreon') {
+        const isFree = ep.patreonStatus === 'public';
+        const pUrl = ep.patreonUrl || 'https://www.patreon.com/c/SCENEKPOP/posts';
+        playerEl.innerHTML = `
+          <div style="position:relative; width:100%; height:100%; background:#0a0b10; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:24px; box-sizing:border-box;">
+            <img src="${ep.thumb}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.25; filter:blur(5px);" />
+            <div style="position:relative; z-index:2; max-width:560px;">
+              <span style="display:inline-block; background:${isFree ? '#16a34a' : '#ff424d'}; color:white; font-size:11.5px; font-weight:700; padding:4px 12px; border-radius:999px; margin-bottom:12px;">
+                <i class="fa-brands fa-patreon"></i> ${isFree ? 'PATREON FREE — เปิดดูได้ฟรี' : 'PATREON EXCLUSIVE — เฉพาะสมาชิก'}
+              </span>
+              <h3 style="color:white; font-size:17px; margin-bottom:8px; line-height:1.5;">${escapeHtml(ep.title)}</h3>
+              <p style="color:#cbd5e1; font-size:13px; margin-bottom:18px;">โพสต์เมื่อ ${escapeHtml(ep.date || 'Patreon')} • รับชมวิดีโอตัวเต็มได้บน Patreon ของ @SCENEKPOP</p>
+              <a href="${pUrl}" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:9px; background:#ff424d; color:white; padding:12px 24px; border-radius:8px; font-size:15px; font-weight:700; text-decoration:none; box-shadow:0 6px 20px rgba(255,66,77,0.45);">
+                <i class="fa-brands fa-patreon"></i> เปิดดูบน Patreon
+              </a>
+            </div>
+          </div>`;
+        directBtn.href = pUrl;
+        directBtn.style.background = '#ff424d';
+        directBtn.style.borderColor = '#ff424d';
+        directBtn.innerHTML = '<i class="fa-brands fa-patreon"></i> เปิดดูบน Patreon';
+      } else {
+        playerEl.innerHTML = `
+          <iframe
+            src="https://www.youtube.com/embed/${ep.ytId}?autoplay=1&enablejsapi=1&rel=0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>`;
+        directBtn.href = `https://www.youtube.com/watch?v=${ep.ytId}`;
+        directBtn.style.background = '#ff0000';
+        directBtn.style.borderColor = '#ff0000';
+        directBtn.innerHTML = '<i class="fa-brands fa-youtube"></i> ดูบน YouTube';
+      }
+
       document.getElementById('modalTitle').textContent = ep.title;
       document.getElementById('modalBadge').textContent = ep.subBadge;
       document.getElementById('modalCounter').textContent = `คลิปที่ ${idx + 1} / ${currentQueue.length}`;
-      document.getElementById('modalYtLink').href = `https://www.youtube.com/watch?v=${ep.ytId}`;
       document.getElementById('btnPrevEp').disabled = idx === 0;
       document.getElementById('btnNextEp').disabled = idx >= currentQueue.length - 1;
     }

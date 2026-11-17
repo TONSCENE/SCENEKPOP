@@ -2,3 +2,5 @@
 __pycache__/
 *.pyc
 .desc_cache.json
+.vision_cache.json
+.env

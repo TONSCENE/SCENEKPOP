@@ -6,10 +6,12 @@ const sceneDatabase = {
     "name": "SCENEKPOP+",
     "subtitle": "คลังรวมคลิปซับไทย & วาไรตี้ K-Pop แยกตามวง โดยช่อง @SCENEKPOP",
     "avatar": "https://yt3.googleusercontent.com/2HMl_qrn6AQ2q6Q6-2Lt43BLk1VxGiVAYjMUjldgkhmIrsg2qLzuf5zwhnOKuCx0bHegq4oBjA=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
-    "totalVideos": 359,
-    "totalGroups": 22,
+    "totalVideos": 406,
+    "totalYoutube": 359,
+    "totalPatreon": 47,
+    "totalGroups": 26,
     "totalPlaylists": 15,
-    "updatedAt": "2026-11-17 13:54"
+    "updatedAt": "2026-11-17 14:35"
   },
   "groups": [
     {
@@ -18,7 +20,7 @@ const sceneDatabase = {
       "thaiName": "คิวดับเบิลยูอีอาร์",
       "accent": "#ec4899",
       "tagline": "Chodan • Magenta • Hina • Siyeon — เกิร์ลแบนด์ 4 สาวสุดปั่น",
-      "count": 115,
+      "count": 117,
       "thumb": "https://img.youtube.com/vi/9bzCT2WQzJk/hqdefault.jpg",
       "playlistIds": [
         "PLLg0CmUn7KVM",
@@ -32,7 +34,7 @@ const sceneDatabase = {
       "thaiName": "ฮาร์ตส์ทูฮาร์ตส์ (H2H)",
       "accent": "#a855f7",
       "tagline": "Jiwoo • Carmen • Yuha • Stella • Juun • A-na • Ian • Yeon",
-      "count": 75,
+      "count": 81,
       "thumb": "https://img.youtube.com/vi/oWc_rbCGcPY/hqdefault.jpg",
       "playlistIds": [
         "PLHrapbf9Q3g4"
@@ -57,7 +59,7 @@ const sceneDatabase = {
       "thaiName": "ทริปเปิลเอส",
       "accent": "#f43f5e",
       "tagline": "Badge War SS1 / SS2 / SS4 & วาไรตี้ครบเครื่อง 24 เมมเบอร์",
-      "count": 19,
+      "count": 20,
       "thumb": "https://img.youtube.com/vi/U6s0c9vOYd0/hqdefault.jpg",
       "playlistIds": [
         "PLS0OvbNWc_s4",
@@ -80,12 +82,44 @@ const sceneDatabase = {
       ]
     },
     {
+      "id": "illit",
+      "name": "ILLIT",
+      "thaiName": "ไอลิท",
+      "accent": "#f472b6",
+      "tagline": "Yunah • Minju • Moka • Wonhee • Iroha — UPCONO & วาไรตี้",
+      "count": 19,
+      "thumb": "https://img.youtube.com/vi/wGCAAIXPljU/hqdefault.jpg",
+      "playlistIds": [
+        "PLB6llFcx8HqI"
+      ]
+    },
+    {
+      "id": "veiled_cup",
+      "name": "Veiled Cup",
+      "thaiName": "รายการแข่งขันร้องเพลง Veiled Cup",
+      "accent": "#f59e0b",
+      "tagline": "รวมคลิปรายการประกวดร้องเพลง Veiled Cup ซับไทยทุกตอน",
+      "count": 18,
+      "thumb": "https://img.youtube.com/vi/NfXFS10TQLI/hqdefault.jpg",
+      "playlistIds": []
+    },
+    {
+      "id": "le_sserafim",
+      "name": "LE SSERAFIM",
+      "thaiName": "เลอ เซราฟิม",
+      "accent": "#60a5fa",
+      "tagline": "Sakura • Chaewon • Yunjin • Kazuha • Eunchae",
+      "count": 16,
+      "thumb": "https://img.youtube.com/vi/J0O7g8SW7fs/hqdefault.jpg",
+      "playlistIds": []
+    },
+    {
       "id": "babymonster",
       "name": "BABYMONSTER",
       "thaiName": "เบบี้มอนสเตอร์ (Baemon)",
       "accent": "#ef4444",
       "tagline": "Ruka • Pharita • Asa • Ahyeon • Rami • Rora • Chiquita",
-      "count": 14,
+      "count": 15,
       "thumb": "https://img.youtube.com/vi/NYMY_r85N4E/hqdefault.jpg",
       "playlistIds": []
     },
@@ -95,23 +129,41 @@ const sceneDatabase = {
       "thaiName": "ทูอิด",
       "accent": "#fb923c",
       "tagline": "เกิร์ลกรุ๊ปน้องใหม่ — Weverse Live, Radio & Studio Choom",
-      "count": 14,
+      "count": 15,
       "thumb": "https://img.youtube.com/vi/DRWBHc2fldY/hqdefault.jpg",
       "playlistIds": [
         "PLY7qXB0aEPdE"
       ]
     },
     {
-      "id": "illit",
-      "name": "ILLIT",
-      "thaiName": "ไอลิท",
+      "id": "idle",
+      "name": "i-dle",
+      "thaiName": "ไอเดิล",
+      "accent": "#e879f9",
+      "tagline": "Miyeon • JeonDoSa & Variety",
+      "count": 15,
+      "thumb": "https://img.youtube.com/vi/lQzoaGxySEM/hqdefault.jpg",
+      "playlistIds": []
+    },
+    {
+      "id": "smtm12_milli",
+      "name": "SMTM12 & MILLI",
+      "thaiName": "Show Me The Money 12 / มิลลิ",
+      "accent": "#fb7185",
+      "tagline": "มิลลิ (MILLI) & Show Me The Money 12 ซับไทยบน Patreon",
+      "count": 15,
+      "thumb": "https://img.youtube.com/vi/e-6-cE4dKOM/hqdefault.jpg",
+      "playlistIds": []
+    },
+    {
+      "id": "hyemileeyechaepa",
+      "name": "HyeMiLeeYeChaePa",
+      "thaiName": "ฮเยมิรีเยแชพา (Chaewon • Miyeon • Hyeri • Yena)",
       "accent": "#f472b6",
-      "tagline": "Yunah • Minju • Moka • Wonhee • Iroha — UPCONO & วาไรตี้",
-      "count": 11,
-      "thumb": "https://img.youtube.com/vi/wGCAAIXPljU/hqdefault.jpg",
-      "playlistIds": [
-        "PLB6llFcx8HqI"
-      ]
+      "tagline": "วาไรตี้บ้านพักสุดฮา EP.01-12 ซับไทยบน Patreon",
+      "count": 12,
+      "thumb": "images/patreon/p_33.jpg",
+      "playlistIds": []
     },
     {
       "id": "nmixx",
@@ -121,6 +173,16 @@ const sceneDatabase = {
       "tagline": "Lily • Haewon • Sullyoon • Bae • Jiwoo • Kyujin",
       "count": 5,
       "thumb": "https://img.youtube.com/vi/rOB-qGh-4JA/hqdefault.jpg",
+      "playlistIds": []
+    },
+    {
+      "id": "kiss_of_life",
+      "name": "KISS OF LIFE",
+      "thaiName": "คิสออฟไลฟ์",
+      "accent": "#c084fc",
+      "tagline": "Julie • Natty • Belle • Haneul — Dingo Attack & Idol Radio",
+      "count": 5,
+      "thumb": "https://img.youtube.com/vi/lX61DJx4b3s/hqdefault.jpg",
       "playlistIds": []
     },
     {
@@ -146,26 +208,6 @@ const sceneDatabase = {
       ]
     },
     {
-      "id": "le_sserafim",
-      "name": "LE SSERAFIM",
-      "thaiName": "เลอ เซราฟิม",
-      "accent": "#60a5fa",
-      "tagline": "Sakura • Chaewon • Yunjin • Kazuha • Eunchae",
-      "count": 4,
-      "thumb": "https://img.youtube.com/vi/J0O7g8SW7fs/hqdefault.jpg",
-      "playlistIds": []
-    },
-    {
-      "id": "kiss_of_life",
-      "name": "KISS OF LIFE",
-      "thaiName": "คิสออฟไลฟ์",
-      "accent": "#c084fc",
-      "tagline": "Julie • Natty • Belle • Haneul — Dingo Attack & Idol Radio",
-      "count": 3,
-      "thumb": "https://img.youtube.com/vi/lX61DJx4b3s/hqdefault.jpg",
-      "playlistIds": []
-    },
-    {
       "id": "billlie",
       "name": "Billlie",
       "thaiName": "บิลลี",
@@ -173,16 +215,6 @@ const sceneDatabase = {
       "tagline": "Tsuki & Workdol / Variety Specials",
       "count": 3,
       "thumb": "https://img.youtube.com/vi/4FleWMmbvL0/hqdefault.jpg",
-      "playlistIds": []
-    },
-    {
-      "id": "idle",
-      "name": "i-dle",
-      "thaiName": "ไอเดิล",
-      "accent": "#e879f9",
-      "tagline": "Miyeon • JeonDoSa & Variety",
-      "count": 3,
-      "thumb": "https://img.youtube.com/vi/lQzoaGxySEM/hqdefault.jpg",
       "playlistIds": []
     },
     {
@@ -236,6 +268,16 @@ const sceneDatabase = {
       "playlistIds": []
     },
     {
+      "id": "akmu",
+      "name": "AKMU",
+      "thaiName": "อัคมู",
+      "accent": "#34d399",
+      "tagline": "You Quiz on the Block & Kangho Bookstore ซับไทย",
+      "count": 2,
+      "thumb": "images/patreon/p_18.jpg",
+      "playlistIds": []
+    },
+    {
       "id": "aespa",
       "name": "aespa",
       "thaiName": "เอสป้า",
@@ -248,10 +290,10 @@ const sceneDatabase = {
     {
       "id": "other_kpop",
       "name": "วงอื่นๆ & รายการพิเศษ",
-      "thaiName": "Veiled Cup / FIFTY FIFTY / AtHeart / izna / Variety",
+      "thaiName": "FIFTY FIFTY / AtHeart / OURBIRTHDAY / Variety",
       "accent": "#94a3b8",
-      "tagline": "Veiled Cup, OURBIRTHDAY, AtHeart, FIFTY FIFTY, izna และวาไรตี้อื่นๆ",
-      "count": 23,
+      "tagline": "OURBIRTHDAY, AtHeart, FIFTY FIFTY, S.E.S, Han So-hee และวาไรตี้อื่นๆ",
+      "count": 5,
       "thumb": "https://img.youtube.com/vi/m5WF31rCCgM/hqdefault.jpg",
       "playlistIds": []
     }
@@ -504,7 +546,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 2,
@@ -520,7 +563,8 @@ const sceneDatabase = {
         "PLY7qXB0aEPdE"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 3,
@@ -534,7 +578,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 4,
@@ -550,7 +595,8 @@ const sceneDatabase = {
         "PLB6llFcx8HqI"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 5,
@@ -564,7 +610,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 6,
@@ -580,7 +627,8 @@ const sceneDatabase = {
         "PLB6llFcx8HqI"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 7,
@@ -594,7 +642,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 8,
@@ -610,7 +659,8 @@ const sceneDatabase = {
         "PLLg0CmUn7KVM"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 9,
@@ -624,7 +674,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 10,
@@ -638,7 +689,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 11,
@@ -652,7 +704,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 12,
@@ -668,7 +721,8 @@ const sceneDatabase = {
         "PLB6llFcx8HqI"
       ],
       "contentType": "stage",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 13,
@@ -682,7 +736,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 14,
@@ -696,7 +751,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 15,
@@ -712,7 +768,8 @@ const sceneDatabase = {
         "PLHCirUutU7Oo"
       ],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 16,
@@ -726,7 +783,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 17,
@@ -742,7 +800,8 @@ const sceneDatabase = {
         "PLLg0CmUn7KVM"
       ],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 18,
@@ -758,7 +817,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 19,
@@ -772,7 +832,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 20,
@@ -786,7 +847,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 21,
@@ -800,7 +862,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 22,
@@ -817,7 +880,8 @@ const sceneDatabase = {
         "PLHoETizL_iaeH1V3_BkJemczZzae-1Lgd"
       ],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 23,
@@ -833,7 +897,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 24,
@@ -847,7 +912,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 25,
@@ -861,7 +927,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 26,
@@ -875,7 +942,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 27,
@@ -889,7 +957,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 28,
@@ -903,7 +972,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 29,
@@ -917,7 +987,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 30,
@@ -933,7 +1004,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 31,
@@ -948,7 +1020,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 32,
@@ -964,7 +1037,8 @@ const sceneDatabase = {
         "PLfAukGsRQjqE"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 33,
@@ -978,7 +1052,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 34,
@@ -992,7 +1067,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 35,
@@ -1008,7 +1084,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 36,
@@ -1025,7 +1102,8 @@ const sceneDatabase = {
         "PLfAukGsRQjqE"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 37,
@@ -1039,7 +1117,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 38,
@@ -1053,7 +1132,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 39,
@@ -1063,13 +1143,15 @@ const sceneDatabase = {
       "durationSec": 1697,
       "thumb": "https://img.youtube.com/vi/e-6-cE4dKOM/hqdefault.jpg",
       "groups": [
-        "qwer"
+        "qwer",
+        "smtm12_milli"
       ],
       "playlists": [
         "PLHoETizL_iaeH1V3_BkJemczZzae-1Lgd"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 40,
@@ -1085,7 +1167,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 41,
@@ -1099,7 +1182,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 42,
@@ -1115,7 +1199,8 @@ const sceneDatabase = {
         "PLHrapbf9Q3g4"
       ],
       "contentType": "radio",
-      "subBadge": "TH / EN SUB"
+      "subBadge": "TH / EN SUB",
+      "source": "youtube"
     },
     {
       "num": 43,
@@ -1131,7 +1216,8 @@ const sceneDatabase = {
         "PLB6llFcx8HqI"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 44,
@@ -1145,7 +1231,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 45,
@@ -1161,7 +1248,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 46,
@@ -1178,7 +1266,8 @@ const sceneDatabase = {
         "PLS0OvbNWc_s4"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 47,
@@ -1194,7 +1283,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 48,
@@ -1208,7 +1298,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 49,
@@ -1223,7 +1314,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 50,
@@ -1237,7 +1329,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 51,
@@ -1253,7 +1346,8 @@ const sceneDatabase = {
         "PLY7qXB0aEPdE"
       ],
       "contentType": "radio",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 52,
@@ -1269,7 +1363,8 @@ const sceneDatabase = {
         "PLB6llFcx8HqI"
       ],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 53,
@@ -1285,7 +1380,8 @@ const sceneDatabase = {
         "PLB6llFcx8HqI"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 54,
@@ -1299,7 +1395,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "TH / EN SUB"
+      "subBadge": "TH / EN SUB",
+      "source": "youtube"
     },
     {
       "num": 55,
@@ -1315,7 +1412,8 @@ const sceneDatabase = {
         "PLY7qXB0aEPdE"
       ],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 56,
@@ -1331,7 +1429,8 @@ const sceneDatabase = {
         "PLY7qXB0aEPdE"
       ],
       "contentType": "radio",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 57,
@@ -1345,7 +1444,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 58,
@@ -1359,7 +1459,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 59,
@@ -1373,7 +1474,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 60,
@@ -1387,12 +1489,13 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 61,
       "ytId": "S78oB6WI23c",
-      "title": "260919 2026 THE FACT MUSIC AWARDS in Busan KiiiKiii Artist of the Year Bonsang English Subtitles",
+      "title": "260919 2026 THE FACT MUSIC AWARDS in Busan KiiiKiii ศิลปินแห่งปี บอนซัง ซับไทย",
       "duration": "1:51",
       "durationSec": 111,
       "thumb": "https://img.youtube.com/vi/S78oB6WI23c/hqdefault.jpg",
@@ -1401,7 +1504,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ENG SUB"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 62,
@@ -1415,7 +1519,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 63,
@@ -1432,7 +1537,8 @@ const sceneDatabase = {
         "PLS0OvbNWc_s4"
       ],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 64,
@@ -1448,7 +1554,8 @@ const sceneDatabase = {
         "PLY7qXB0aEPdE"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 65,
@@ -1462,7 +1569,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "TH / EN SUB"
+      "subBadge": "TH / EN SUB",
+      "source": "youtube"
     },
     {
       "num": 66,
@@ -1478,7 +1586,8 @@ const sceneDatabase = {
         "PLHCirUutU7Oo"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 67,
@@ -1494,7 +1603,8 @@ const sceneDatabase = {
         "PLY7qXB0aEPdE"
       ],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 68,
@@ -1508,7 +1618,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 69,
@@ -1524,7 +1635,8 @@ const sceneDatabase = {
         "PLTvQc1qFV3yU"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 70,
@@ -1540,7 +1652,8 @@ const sceneDatabase = {
         "PLY7qXB0aEPdE"
       ],
       "contentType": "stage",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 71,
@@ -1556,7 +1669,8 @@ const sceneDatabase = {
         "PLHCirUutU7Oo"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 72,
@@ -1570,7 +1684,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 73,
@@ -1586,7 +1701,8 @@ const sceneDatabase = {
         "PLHCirUutU7Oo"
       ],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 74,
@@ -1602,22 +1718,23 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 75,
       "ytId": "WkoJFd3BAEQ",
-      "title": "(G)I-DLE Miyeon's First Health Checkup in Her 30s: Did I... Just Say Something Crazy? | Jeon Do-s...",
+      "title": "มิยอน I-DLE กับการตรวจสุขภาพครั้งแรกในวัย 30, นี่ฉัน.. พูดเพ้อเจ้ออะไรออกไปไหมเนี้ย? | จอนโดซา EP.00",
       "duration": "15:47",
       "durationSec": 947,
       "thumb": "https://img.youtube.com/vi/WkoJFd3BAEQ/hqdefault.jpg",
       "groups": [
-        "hearts2hearts",
         "idle"
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 76,
@@ -1633,7 +1750,8 @@ const sceneDatabase = {
         "PLB6llFcx8HqI"
       ],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 77,
@@ -1649,7 +1767,8 @@ const sceneDatabase = {
         "PLHCirUutU7Oo"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 78,
@@ -1663,7 +1782,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 79,
@@ -1677,7 +1797,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 80,
@@ -1693,7 +1814,8 @@ const sceneDatabase = {
         "PLHCirUutU7Oo"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 81,
@@ -1709,7 +1831,8 @@ const sceneDatabase = {
         "PLfAukGsRQjqE"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 82,
@@ -1719,13 +1842,15 @@ const sceneDatabase = {
       "durationSec": 1980,
       "thumb": "https://img.youtube.com/vi/Ggj-reUE7HA/hqdefault.jpg",
       "groups": [
-        "rescene"
+        "rescene",
+        "smtm12_milli"
       ],
       "playlists": [
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 83,
@@ -1741,7 +1866,8 @@ const sceneDatabase = {
         "PLY7qXB0aEPdE"
       ],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 84,
@@ -1757,7 +1883,8 @@ const sceneDatabase = {
         "PLTvQc1qFV3yU"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 85,
@@ -1772,7 +1899,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 86,
@@ -1787,7 +1915,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 87,
@@ -1803,7 +1932,8 @@ const sceneDatabase = {
         "PLfAukGsRQjqE"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 88,
@@ -1819,7 +1949,8 @@ const sceneDatabase = {
         "PLB6llFcx8HqI"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 89,
@@ -1833,7 +1964,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 90,
@@ -1849,7 +1981,8 @@ const sceneDatabase = {
         "PLY7qXB0aEPdE"
       ],
       "contentType": "radio",
-      "subBadge": "TH / EN SUB"
+      "subBadge": "TH / EN SUB",
+      "source": "youtube"
     },
     {
       "num": 91,
@@ -1865,12 +1998,13 @@ const sceneDatabase = {
         "PLY7qXB0aEPdE"
       ],
       "contentType": "radio",
-      "subBadge": "TH / EN SUB"
+      "subBadge": "TH / EN SUB",
+      "source": "youtube"
     },
     {
       "num": 92,
       "ytId": "m5WF31rCCgM",
-      "title": "[FULL] Rookie Girl Group from JYP OURBIRTHDAY 🎂 ｜ 2 O'Clock Escape Cultwo Show ｜ 08/30/26 [TH][EN]",
+      "title": "[FULL] รุกกี้เกิร์ลกรุ๊ปจาก JYP OURBIRTHDAY 🎂 ｜ 2 O'Clock Escape Cultwo Show ｜ 260830 [TH][EN]",
       "duration": "26:15",
       "durationSec": 1575,
       "thumb": "https://img.youtube.com/vi/m5WF31rCCgM/hqdefault.jpg",
@@ -1879,7 +2013,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "TH / EN SUB"
+      "subBadge": "TH / EN SUB",
+      "source": "youtube"
     },
     {
       "num": 93,
@@ -1895,7 +2030,8 @@ const sceneDatabase = {
         "PLHCirUutU7Oo"
       ],
       "contentType": "radio",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 94,
@@ -1911,7 +2047,8 @@ const sceneDatabase = {
         "PLY7qXB0aEPdE"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 95,
@@ -1925,7 +2062,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 96,
@@ -1941,7 +2079,8 @@ const sceneDatabase = {
         "PLB6llFcx8HqI"
       ],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 97,
@@ -1957,7 +2096,8 @@ const sceneDatabase = {
         "PLY7qXB0aEPdE"
       ],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 98,
@@ -1973,7 +2113,8 @@ const sceneDatabase = {
         "PLTvQc1qFV3yU"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 99,
@@ -1989,7 +2130,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 100,
@@ -2003,7 +2145,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 101,
@@ -2017,7 +2160,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 102,
@@ -2033,7 +2177,8 @@ const sceneDatabase = {
         "PLY7qXB0aEPdE"
       ],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 103,
@@ -2049,7 +2194,8 @@ const sceneDatabase = {
         "PLY7qXB0aEPdE"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 104,
@@ -2063,7 +2209,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 105,
@@ -2077,7 +2224,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 106,
@@ -2093,7 +2241,8 @@ const sceneDatabase = {
         "PLTvQc1qFV3yU"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 107,
@@ -2109,7 +2258,8 @@ const sceneDatabase = {
         "PLHoETizL_iaeH1V3_BkJemczZzae-1Lgd"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 108,
@@ -2125,7 +2275,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 109,
@@ -2139,7 +2290,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 110,
@@ -2155,7 +2307,8 @@ const sceneDatabase = {
         "PLHoETizL_iaeH1V3_BkJemczZzae-1Lgd"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 111,
@@ -2171,7 +2324,8 @@ const sceneDatabase = {
         "PLHoETizL_iaeH1V3_BkJemczZzae-1Lgd"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 112,
@@ -2187,7 +2341,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 113,
@@ -2201,7 +2356,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 114,
@@ -2217,7 +2373,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 115,
@@ -2233,7 +2390,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 116,
@@ -2248,7 +2406,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 117,
@@ -2264,7 +2423,8 @@ const sceneDatabase = {
         "PLHrapbf9Q3g4"
       ],
       "contentType": "radio",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 118,
@@ -2278,7 +2438,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 119,
@@ -2294,7 +2455,8 @@ const sceneDatabase = {
         "PLOGsxVhUUspA"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 120,
@@ -2310,7 +2472,8 @@ const sceneDatabase = {
         "PLOGsxVhUUspA"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 121,
@@ -2324,7 +2487,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 122,
@@ -2338,7 +2502,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 123,
@@ -2352,7 +2517,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 124,
@@ -2367,7 +2533,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 125,
@@ -2381,7 +2548,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 126,
@@ -2395,7 +2563,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 127,
@@ -2409,7 +2578,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 128,
@@ -2423,7 +2593,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 129,
@@ -2439,7 +2610,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 130,
@@ -2455,7 +2627,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 131,
@@ -2471,7 +2644,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 132,
@@ -2485,7 +2659,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 133,
@@ -2501,7 +2676,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 134,
@@ -2517,7 +2693,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 135,
@@ -2533,7 +2710,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 136,
@@ -2549,7 +2727,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 137,
@@ -2563,7 +2742,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "TH / EN SUB"
+      "subBadge": "TH / EN SUB",
+      "source": "youtube"
     },
     {
       "num": 138,
@@ -2577,7 +2757,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 139,
@@ -2593,7 +2774,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 140,
@@ -2609,7 +2791,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 141,
@@ -2625,7 +2808,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 142,
@@ -2641,7 +2825,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 143,
@@ -2657,7 +2842,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 144,
@@ -2673,7 +2859,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 145,
@@ -2689,7 +2876,8 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 146,
@@ -2703,7 +2891,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 147,
@@ -2717,7 +2906,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 148,
@@ -2727,11 +2917,12 @@ const sceneDatabase = {
       "durationSec": 1504,
       "thumb": "https://img.youtube.com/vi/Ro2xZ1Pvqns/hqdefault.jpg",
       "groups": [
-        "other_kpop"
+        "hearts2hearts"
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 149,
@@ -2745,7 +2936,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 150,
@@ -2759,7 +2951,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 151,
@@ -2773,7 +2966,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 152,
@@ -2787,7 +2981,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 153,
@@ -2801,7 +2996,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 154,
@@ -2815,7 +3011,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 155,
@@ -2829,7 +3026,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 156,
@@ -2843,7 +3041,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 157,
@@ -2859,7 +3058,8 @@ const sceneDatabase = {
         "PLHoETizL_iaeH1V3_BkJemczZzae-1Lgd"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 158,
@@ -2873,7 +3073,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 159,
@@ -2887,7 +3088,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 160,
@@ -2901,7 +3103,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 161,
@@ -2915,7 +3118,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 162,
@@ -2929,7 +3133,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "TH / EN SUB"
+      "subBadge": "TH / EN SUB",
+      "source": "youtube"
     },
     {
       "num": 163,
@@ -2939,13 +3144,15 @@ const sceneDatabase = {
       "durationSec": 1794,
       "thumb": "https://img.youtube.com/vi/cFrUSw_DruU/hqdefault.jpg",
       "groups": [
-        "qwer"
+        "qwer",
+        "smtm12_milli"
       ],
       "playlists": [
         "PLHoETizL_iaeH1V3_BkJemczZzae-1Lgd"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 164,
@@ -2959,7 +3166,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 165,
@@ -2973,7 +3181,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 166,
@@ -2987,7 +3196,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "TH / EN SUB"
+      "subBadge": "TH / EN SUB",
+      "source": "youtube"
     },
     {
       "num": 167,
@@ -2997,11 +3207,12 @@ const sceneDatabase = {
       "durationSec": 2002,
       "thumb": "https://img.youtube.com/vi/n_I3V6cKUB4/hqdefault.jpg",
       "groups": [
-        "other_kpop"
+        "qwer"
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 168,
@@ -3017,7 +3228,8 @@ const sceneDatabase = {
         "PLHrapbf9Q3g4"
       ],
       "contentType": "radio",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 169,
@@ -3031,7 +3243,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 170,
@@ -3047,7 +3260,8 @@ const sceneDatabase = {
         "PLHoETizL_iaeH1V3_BkJemczZzae-1Lgd"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 171,
@@ -3061,12 +3275,13 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 172,
       "ytId": "Z3F5PQfE9yA",
-      "title": "Weverse Live มาเจนต้า โชดัน QWER แกะกล่องสุ่ม 28.05.26 ซับไทย",
+      "title": "Weverse Live Magenta Chodan QWER Unboxing 28.05.26 (Thai Subtitles)",
       "duration": "31:14",
       "durationSec": 1874,
       "thumb": "https://img.youtube.com/vi/Z3F5PQfE9yA/hqdefault.jpg",
@@ -3075,7 +3290,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 173,
@@ -3090,7 +3306,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 174,
@@ -3104,7 +3321,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 175,
@@ -3118,7 +3336,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 176,
@@ -3132,7 +3351,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 177,
@@ -3146,7 +3366,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 178,
@@ -3160,7 +3381,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 179,
@@ -3175,7 +3397,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 180,
@@ -3189,7 +3412,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 181,
@@ -3199,11 +3423,12 @@ const sceneDatabase = {
       "durationSec": 1924,
       "thumb": "https://img.youtube.com/vi/1ost-zTrW7k/hqdefault.jpg",
       "groups": [
-        "other_kpop"
+        "qwer"
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 182,
@@ -3217,7 +3442,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 183,
@@ -3231,7 +3457,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 184,
@@ -3245,7 +3472,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 185,
@@ -3259,7 +3487,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 186,
@@ -3273,7 +3502,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 187,
@@ -3287,7 +3517,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 188,
@@ -3301,7 +3532,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 189,
@@ -3315,12 +3547,13 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 190,
       "ytId": "S5UpMqo4afg",
-      "title": "260427 Weverse Live QWER Ceremony for us🩵🎉ซับไทย",
+      "title": "260427 Weverse Live QWER Ceremony for us 🩵🎉 (Thai Subtitles)",
       "duration": "5:55",
       "durationSec": 355,
       "thumb": "https://img.youtube.com/vi/S5UpMqo4afg/hqdefault.jpg",
@@ -3329,7 +3562,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 191,
@@ -3343,7 +3577,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "TH / EN SUB"
+      "subBadge": "TH / EN SUB",
+      "source": "youtube"
     },
     {
       "num": 192,
@@ -3357,7 +3592,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 193,
@@ -3371,7 +3607,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 194,
@@ -3385,7 +3622,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 195,
@@ -3399,7 +3637,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 196,
@@ -3413,7 +3652,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 197,
@@ -3427,7 +3667,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 198,
@@ -3441,7 +3682,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 199,
@@ -3455,7 +3697,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 200,
@@ -3469,7 +3712,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 201,
@@ -3479,11 +3723,12 @@ const sceneDatabase = {
       "durationSec": 614,
       "thumb": "https://img.youtube.com/vi/dUey2o_F84U/hqdefault.jpg",
       "groups": [
-        "other_kpop"
+        "kiss_of_life"
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 202,
@@ -3497,7 +3742,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 203,
@@ -3511,7 +3757,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 204,
@@ -3525,7 +3772,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 205,
@@ -3539,7 +3787,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 206,
@@ -3553,7 +3802,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 207,
@@ -3567,7 +3817,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 208,
@@ -3581,7 +3832,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 209,
@@ -3595,7 +3847,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 210,
@@ -3609,7 +3862,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 211,
@@ -3623,7 +3877,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "TH / EN SUB"
+      "subBadge": "TH / EN SUB",
+      "source": "youtube"
     },
     {
       "num": 212,
@@ -3637,7 +3892,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 213,
@@ -3651,7 +3907,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 214,
@@ -3665,7 +3922,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 215,
@@ -3679,7 +3937,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 216,
@@ -3693,7 +3952,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 217,
@@ -3707,7 +3967,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 218,
@@ -3723,7 +3984,8 @@ const sceneDatabase = {
         "PLHoETizL_iac8oLJM6A3YpBN-7V110Mu6"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 219,
@@ -3739,7 +4001,8 @@ const sceneDatabase = {
         "PLHoETizL_iac8oLJM6A3YpBN-7V110Mu6"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 220,
@@ -3749,11 +4012,12 @@ const sceneDatabase = {
       "durationSec": 1670,
       "thumb": "https://img.youtube.com/vi/NfXFS10TQLI/hqdefault.jpg",
       "groups": [
-        "other_kpop"
+        "veiled_cup"
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 221,
@@ -3763,11 +4027,12 @@ const sceneDatabase = {
       "durationSec": 785,
       "thumb": "https://img.youtube.com/vi/At1ba91VUU8/hqdefault.jpg",
       "groups": [
-        "other_kpop"
+        "veiled_cup"
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 222,
@@ -3777,11 +4042,12 @@ const sceneDatabase = {
       "durationSec": 834,
       "thumb": "https://img.youtube.com/vi/zY8kQmCVCzo/hqdefault.jpg",
       "groups": [
-        "other_kpop"
+        "veiled_cup"
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 223,
@@ -3791,11 +4057,12 @@ const sceneDatabase = {
       "durationSec": 699,
       "thumb": "https://img.youtube.com/vi/uD7IBSW2PkU/hqdefault.jpg",
       "groups": [
-        "other_kpop"
+        "veiled_cup"
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 224,
@@ -3809,7 +4076,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 225,
@@ -3823,7 +4091,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 226,
@@ -3833,11 +4102,12 @@ const sceneDatabase = {
       "durationSec": 1106,
       "thumb": "https://img.youtube.com/vi/BmyF5Ftf_Zk/hqdefault.jpg",
       "groups": [
-        "other_kpop"
+        "veiled_cup"
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 227,
@@ -3847,11 +4117,12 @@ const sceneDatabase = {
       "durationSec": 2177,
       "thumb": "https://img.youtube.com/vi/ikdcy4cJhxg/hqdefault.jpg",
       "groups": [
-        "other_kpop"
+        "veiled_cup"
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 228,
@@ -3861,11 +4132,12 @@ const sceneDatabase = {
       "durationSec": 467,
       "thumb": "https://img.youtube.com/vi/ELs8GJy1njA/hqdefault.jpg",
       "groups": [
-        "other_kpop"
+        "veiled_cup"
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 229,
@@ -3875,11 +4147,12 @@ const sceneDatabase = {
       "durationSec": 1280,
       "thumb": "https://img.youtube.com/vi/SX2fDJmfKJk/hqdefault.jpg",
       "groups": [
-        "other_kpop"
+        "veiled_cup"
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 230,
@@ -3889,11 +4162,12 @@ const sceneDatabase = {
       "durationSec": 1670,
       "thumb": "https://img.youtube.com/vi/pZsF48xdUzU/hqdefault.jpg",
       "groups": [
-        "other_kpop"
+        "veiled_cup"
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 231,
@@ -3903,11 +4177,12 @@ const sceneDatabase = {
       "durationSec": 300,
       "thumb": "https://img.youtube.com/vi/XZaKvZf9LPc/hqdefault.jpg",
       "groups": [
-        "other_kpop"
+        "veiled_cup"
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 232,
@@ -3917,11 +4192,12 @@ const sceneDatabase = {
       "durationSec": 579,
       "thumb": "https://img.youtube.com/vi/mltGKva4fpU/hqdefault.jpg",
       "groups": [
-        "other_kpop"
+        "veiled_cup"
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 233,
@@ -3931,11 +4207,12 @@ const sceneDatabase = {
       "durationSec": 104,
       "thumb": "https://img.youtube.com/vi/mY1sD56jxaY/hqdefault.jpg",
       "groups": [
-        "other_kpop"
+        "veiled_cup"
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 234,
@@ -3945,11 +4222,12 @@ const sceneDatabase = {
       "durationSec": 450,
       "thumb": "https://img.youtube.com/vi/w3rtChGP1Xo/hqdefault.jpg",
       "groups": [
-        "other_kpop"
+        "veiled_cup"
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 235,
@@ -3959,11 +4237,12 @@ const sceneDatabase = {
       "durationSec": 528,
       "thumb": "https://img.youtube.com/vi/fwSdVY1TI8c/hqdefault.jpg",
       "groups": [
-        "other_kpop"
+        "veiled_cup"
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 236,
@@ -3977,7 +4256,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 237,
@@ -3991,7 +4271,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 238,
@@ -4005,7 +4286,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 239,
@@ -4019,7 +4301,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 240,
@@ -4033,7 +4316,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 241,
@@ -4047,7 +4331,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 242,
@@ -4061,7 +4346,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 243,
@@ -4075,7 +4361,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 244,
@@ -4089,7 +4376,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 245,
@@ -4103,7 +4391,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 246,
@@ -4117,7 +4406,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 247,
@@ -4131,7 +4421,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 248,
@@ -4145,7 +4436,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 249,
@@ -4159,7 +4451,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 250,
@@ -4173,7 +4466,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 251,
@@ -4187,7 +4481,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 252,
@@ -4201,7 +4496,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 253,
@@ -4215,7 +4511,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 254,
@@ -4229,7 +4526,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 255,
@@ -4243,7 +4541,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 256,
@@ -4257,7 +4556,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 257,
@@ -4271,7 +4571,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 258,
@@ -4285,7 +4586,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 259,
@@ -4299,7 +4601,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 260,
@@ -4313,7 +4616,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 261,
@@ -4327,7 +4631,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 262,
@@ -4341,7 +4646,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 263,
@@ -4355,7 +4661,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 264,
@@ -4369,7 +4676,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 265,
@@ -4383,7 +4691,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 266,
@@ -4397,7 +4706,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 267,
@@ -4411,7 +4721,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 268,
@@ -4425,7 +4736,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 269,
@@ -4439,7 +4751,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 270,
@@ -4453,7 +4766,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 271,
@@ -4467,7 +4781,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 272,
@@ -4481,7 +4796,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 273,
@@ -4495,7 +4811,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 274,
@@ -4509,7 +4826,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 275,
@@ -4523,7 +4841,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 276,
@@ -4537,12 +4856,13 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 277,
       "ytId": "gUYTontRB0s",
-      "title": "Tsuki Billlie showcases her stunning beauty in WaterBomb! ｜ Worldol Special",
+      "title": "สึกิ Billlie โชว์ความสวยสะท้าน WaterBomb! ｜ Worldol Special",
       "duration": "15:01",
       "durationSec": 901,
       "thumb": "https://img.youtube.com/vi/gUYTontRB0s/hqdefault.jpg",
@@ -4550,8 +4870,9 @@ const sceneDatabase = {
         "billlie"
       ],
       "playlists": [],
-      "contentType": "stage",
-      "subBadge": "SUBBED"
+      "contentType": "variety",
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 278,
@@ -4565,7 +4886,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 279,
@@ -4579,7 +4901,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 280,
@@ -4593,7 +4916,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 281,
@@ -4607,7 +4931,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 282,
@@ -4621,7 +4946,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 283,
@@ -4635,7 +4961,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 284,
@@ -4649,7 +4976,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ENG SUB"
+      "subBadge": "ENG SUB",
+      "source": "youtube"
     },
     {
       "num": 285,
@@ -4663,7 +4991,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 286,
@@ -4677,7 +5006,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 287,
@@ -4691,7 +5021,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 288,
@@ -4705,7 +5036,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 289,
@@ -4720,7 +5052,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 290,
@@ -4734,7 +5067,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 291,
@@ -4748,7 +5082,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 292,
@@ -4762,7 +5097,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 293,
@@ -4776,7 +5112,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 294,
@@ -4790,7 +5127,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 295,
@@ -4804,7 +5142,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 296,
@@ -4818,7 +5157,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 297,
@@ -4832,7 +5172,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 298,
@@ -4846,7 +5187,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 299,
@@ -4860,7 +5202,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 300,
@@ -4874,7 +5217,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 301,
@@ -4890,7 +5234,8 @@ const sceneDatabase = {
         "PLHoETizL_iaec-ViG9QF-0p5gnDdKtHxC"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 302,
@@ -4906,7 +5251,8 @@ const sceneDatabase = {
         "PLHoETizL_iaec-ViG9QF-0p5gnDdKtHxC"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 303,
@@ -4922,7 +5268,8 @@ const sceneDatabase = {
         "PLHoETizL_iaec-ViG9QF-0p5gnDdKtHxC"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 304,
@@ -4938,7 +5285,8 @@ const sceneDatabase = {
         "PLHoETizL_iaec-ViG9QF-0p5gnDdKtHxC"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 305,
@@ -4952,7 +5300,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 306,
@@ -4968,7 +5317,8 @@ const sceneDatabase = {
         "PLHoETizL_iafjPRmGIoH4mgKIOBbYSK7U"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 307,
@@ -4984,7 +5334,8 @@ const sceneDatabase = {
         "PLHoETizL_iafjPRmGIoH4mgKIOBbYSK7U"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 308,
@@ -4998,7 +5349,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 309,
@@ -5012,7 +5364,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 310,
@@ -5028,7 +5381,8 @@ const sceneDatabase = {
         "PLHoETizL_iafjPRmGIoH4mgKIOBbYSK7U"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 311,
@@ -5044,7 +5398,8 @@ const sceneDatabase = {
         "PLHoETizL_iafjPRmGIoH4mgKIOBbYSK7U"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 312,
@@ -5058,7 +5413,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 313,
@@ -5072,7 +5428,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 314,
@@ -5086,7 +5443,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 315,
@@ -5100,7 +5458,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 316,
@@ -5114,7 +5473,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 317,
@@ -5128,7 +5488,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 318,
@@ -5142,7 +5503,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 319,
@@ -5156,7 +5518,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 320,
@@ -5170,7 +5533,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 321,
@@ -5184,7 +5548,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 322,
@@ -5198,7 +5563,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 323,
@@ -5212,7 +5578,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 324,
@@ -5226,7 +5593,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 325,
@@ -5240,7 +5608,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 326,
@@ -5254,7 +5623,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 327,
@@ -5268,7 +5638,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 328,
@@ -5282,7 +5653,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 329,
@@ -5296,7 +5668,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 330,
@@ -5310,7 +5683,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 331,
@@ -5324,7 +5698,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 332,
@@ -5338,7 +5713,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 333,
@@ -5353,7 +5729,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 334,
@@ -5367,7 +5744,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 335,
@@ -5381,7 +5759,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 336,
@@ -5396,7 +5775,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 337,
@@ -5410,7 +5790,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 338,
@@ -5424,7 +5805,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 339,
@@ -5438,7 +5820,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 340,
@@ -5452,12 +5835,13 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 341,
       "ytId": "n9MOgn-LIXs",
-      "title": "🚨 Get ready! The shop where goddesses appeared✨ Workdol Cosmetics Store NMIXX Haewon, LE SSERAFIM",
+      "title": "🚨 เตรียมตัวให้ดี! ร้านที่เหล่าเทพธิดาปรากฏตัว✨  Workdol  ร้านเครื่องสำอาง  NMIXX แฮวอน, LE SSERAFIM",
       "duration": "19:41",
       "durationSec": 1181,
       "thumb": "https://img.youtube.com/vi/n9MOgn-LIXs/hqdefault.jpg",
@@ -5467,7 +5851,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 342,
@@ -5481,7 +5866,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 343,
@@ -5495,7 +5881,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 344,
@@ -5509,7 +5896,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 345,
@@ -5523,7 +5911,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 346,
@@ -5537,7 +5926,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 347,
@@ -5551,7 +5941,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 348,
@@ -5565,7 +5956,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 349,
@@ -5579,7 +5971,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 350,
@@ -5593,7 +5986,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 351,
@@ -5607,7 +6001,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 352,
@@ -5621,7 +6016,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 353,
@@ -5635,7 +6031,8 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "TH / EN SUB"
+      "subBadge": "TH / EN SUB",
+      "source": "youtube"
     },
     {
       "num": 354,
@@ -5651,7 +6048,8 @@ const sceneDatabase = {
         "PLB6llFcx8HqI"
       ],
       "contentType": "variety",
-      "subBadge": "SUBBED"
+      "subBadge": "SUBBED",
+      "source": "youtube"
     },
     {
       "num": 355,
@@ -5667,7 +6065,8 @@ const sceneDatabase = {
         "PLHoETizL_iaeA6AMba5ot1L1O9hMZeJXQ"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 356,
@@ -5683,7 +6082,8 @@ const sceneDatabase = {
         "PLHoETizL_iaeA6AMba5ot1L1O9hMZeJXQ"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 357,
@@ -5699,7 +6099,8 @@ const sceneDatabase = {
         "PLHoETizL_iaeA6AMba5ot1L1O9hMZeJXQ"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 358,
@@ -5715,7 +6116,8 @@ const sceneDatabase = {
         "PLHoETizL_iaeA6AMba5ot1L1O9hMZeJXQ"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
     },
     {
       "num": 359,
@@ -5731,7 +6133,879 @@ const sceneDatabase = {
         "PLHoETizL_iaeA6AMba5ot1L1O9hMZeJXQ"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย"
+      "subBadge": "ซับไทย",
+      "source": "youtube"
+    },
+    {
+      "num": 360,
+      "ytId": "patreon_1",
+      "title": "“นิโนะ นาโนะนิ” แต่ได้ฮายาโตะ อิโซมุระมารับหน้าที่พิธีกร! ILLIT จะมาท้าพิสูจน์กระแสรีวิวจากปากต่อปาก!",
+      "duration": "October 24",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_01.jpg",
+      "groups": [
+        "illit"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon ดูฟรี",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/SCENEKPOP/posts/niona-naaonani-173275397",
+      "patreonStatus": "public",
+      "date": "October 24"
+    },
+    {
+      "num": 361,
+      "ytId": "patreon_2",
+      "title": "【Hearts2Hearts มาแล้ว!】ศึกดวลวัดสมรรถภาพร่างกาย Kawaii Lab. vs Hearts2Hearts!",
+      "duration": "September 29",
+      "durationSec": 0,
+      "thumb": "https://img.youtube.com/vi/oWc_rbCGcPY/hqdefault.jpg",
+      "groups": [
+        "hearts2hearts"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/SCENEKPOP/posts/hearts2hearts-vs-170875119",
+      "patreonStatus": "locked",
+      "date": "September 29"
+    },
+    {
+      "num": 362,
+      "ytId": "patreon_3",
+      "title": "Idol Bingo x ILLIT [Part2 ] [ซับไทย]",
+      "duration": "September 27",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_03.jpg",
+      "groups": [
+        "illit"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon ดูฟรี",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/SCENEKPOP/posts/idol-bingo-x-170708094",
+      "patreonStatus": "public",
+      "date": "September 27"
+    },
+    {
+      "num": 363,
+      "ytId": "patreon_4",
+      "title": "Idol Bingo x ILLIT [Part 1] [ซับไทย]",
+      "duration": "September 26",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_04.jpg",
+      "groups": [
+        "illit"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon ดูฟรี",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/SCENEKPOP/posts/idol-bingo-x-1-170637540",
+      "patreonStatus": "public",
+      "date": "September 26"
+    },
+    {
+      "num": 364,
+      "ytId": "patreon_5",
+      "title": "【Hearts2Hearts มาแล้ว!】ศึกประชันการจัดการสีหน้า Kawaii Lab. vs Hearts2Hearts!",
+      "duration": "September 23",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_05.jpg",
+      "groups": [
+        "hearts2hearts"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/SCENEKPOP/posts/hearts2hearts-vs-170341292",
+      "patreonStatus": "locked",
+      "date": "September 23"
+    },
+    {
+      "num": 365,
+      "ytId": "patreon_6",
+      "title": "[260919] TV Asahi - MZINE Hearts2Hearts P.3 ซับไทย",
+      "duration": "September 21",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_06.jpg",
+      "groups": [
+        "hearts2hearts"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/posts/170121124",
+      "patreonStatus": "locked",
+      "date": "September 21"
+    },
+    {
+      "num": 366,
+      "ytId": "patreon_7",
+      "title": "[260912] TV Asahi - MZINE Hearts2Hearts P.2 ซับไทย",
+      "duration": "September 14",
+      "durationSec": 0,
+      "thumb": "https://img.youtube.com/vi/oWc_rbCGcPY/hqdefault.jpg",
+      "groups": [
+        "hearts2hearts"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/c/SCENEKPOP/posts",
+      "patreonStatus": "locked",
+      "date": "September 14"
+    },
+    {
+      "num": 367,
+      "ytId": "patreon_8",
+      "title": "วอนฮี ILLIT & โคโตเนะ & แชวอน tripleS ซับไทย",
+      "duration": "September 13",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_08.jpg",
+      "groups": [
+        "triples",
+        "illit"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon ดูฟรี",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/SCENEKPOP/posts/w-nhii-illit-n-169390413",
+      "patreonStatus": "public",
+      "date": "September 13"
+    },
+    {
+      "num": 368,
+      "ytId": "patreon_9",
+      "title": "TUIDE | รู้หรือไม่รู้ [ซับไทย]",
+      "duration": "September 12",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_09.jpg",
+      "groups": [
+        "tuide"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon ดูฟรี",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/SCENEKPOP/posts/tuide-ruuhruue-169307484",
+      "patreonStatus": "public",
+      "date": "September 12"
+    },
+    {
+      "num": 369,
+      "ytId": "patreon_10",
+      "title": "[260905] TV Asahi - MZINE Hearts2Hearts ซับไทย",
+      "duration": "September 6",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_10.jpg",
+      "groups": [
+        "hearts2hearts"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/c/SCENEKPOP/posts",
+      "patreonStatus": "locked",
+      "date": "September 6"
+    },
+    {
+      "num": 370,
+      "ytId": "patreon_11",
+      "title": "Hello Twenty Wonhee S01E08 ซับไทย",
+      "duration": "July 27",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_11.jpg",
+      "groups": [
+        "illit"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/posts/164935441",
+      "patreonStatus": "locked",
+      "date": "July 27"
+    },
+    {
+      "num": 371,
+      "ytId": "patreon_12",
+      "title": "Hello Twenty Wonhee S01E06 ซับไทย",
+      "duration": "July 17",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_12.jpg",
+      "groups": [
+        "illit"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/posts/164055015",
+      "patreonStatus": "locked",
+      "date": "July 17"
+    },
+    {
+      "num": 372,
+      "ytId": "patreon_13",
+      "title": "Hello Twenty Wonhee S01E04 ซับไทย",
+      "duration": "July 4",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_13.jpg",
+      "groups": [
+        "illit"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/SCENEKPOP/posts/hello-twenty-162859362",
+      "patreonStatus": "locked",
+      "date": "July 4"
+    },
+    {
+      "num": 373,
+      "ytId": "patreon_14",
+      "title": "28.06.26 KBS2 Gag Concert Hearts2Hearts Cut ซับไทย",
+      "duration": "July 1",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_14.jpg",
+      "groups": [
+        "hearts2hearts"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon ดูฟรี",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/SCENEKPOP/posts/28-06-26-kbs2-162580400",
+      "patreonStatus": "public",
+      "date": "July 1"
+    },
+    {
+      "num": 374,
+      "ytId": "patreon_15",
+      "title": "Hello Twenty Wonhee S01E02 ซับไทย",
+      "duration": "June 15",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_15.jpg",
+      "groups": [
+        "illit"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/posts/161122741",
+      "patreonStatus": "locked",
+      "date": "June 15"
+    },
+    {
+      "num": 375,
+      "ytId": "patreon_16",
+      "title": "เมื่อเชฟระดับตำนานอียอนบก ลองชิมข้าวผัดปูฝีมือเด็ก 11 ขวบ [Man vs Child Korea] [โรร่า BABYMONSTER]",
+      "duration": "June 5",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_16.jpg",
+      "groups": [
+        "babymonster"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon ดูฟรี",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/SCENEKPOP/posts/emuue-iiy-nbk-l-160203457",
+      "patreonStatus": "public",
+      "date": "June 5"
+    },
+    {
+      "num": 376,
+      "ytId": "patreon_17",
+      "title": "260410 KBS2 THE SEASON [KISS OF LIFE] ซับไทย",
+      "duration": "April 11",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_17.jpg",
+      "groups": [
+        "kiss_of_life"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/c/SCENEKPOP/posts",
+      "patreonStatus": "locked",
+      "date": "April 11"
+    },
+    {
+      "num": 377,
+      "ytId": "patreon_18",
+      "title": "[Kangho Neighborhood Bookstore] EP 5 AKMU ซับไทย",
+      "duration": "April 10",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_18.jpg",
+      "groups": [
+        "akmu"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/posts/155229503",
+      "patreonStatus": "locked",
+      "date": "April 10"
+    },
+    {
+      "num": 378,
+      "ytId": "patreon_19",
+      "title": "SMTM12 / รอบไฟนอล มิลลิ CUT ซับไทย",
+      "duration": "April 3",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_19.jpg",
+      "groups": [
+        "smtm12_milli"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/c/SCENEKPOP/posts",
+      "patreonStatus": "locked",
+      "date": "April 3"
+    },
+    {
+      "num": 379,
+      "ytId": "patreon_20",
+      "title": "[SMTM12⧸ รอบไฟนอล] ♬ MSG (Feat. Omega Sapien) - MILLI",
+      "duration": "April 3",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_20.jpg",
+      "groups": [
+        "smtm12_milli"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/c/SCENEKPOP/posts",
+      "patreonStatus": "locked",
+      "date": "April 3"
+    },
+    {
+      "num": 380,
+      "ytId": "patreon_21",
+      "title": "[SMTM12  รอบไฟนอล] 'กินแบบเอาผักกาดหอมออกจริงๆ เหรอ🍔' ถามอะไรก็ได้กับ TOP 5",
+      "duration": "April 3",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_21.jpg",
+      "groups": [
+        "smtm12_milli"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/c/SCENEKPOP/posts",
+      "patreonStatus": "locked",
+      "date": "April 3"
+    },
+    {
+      "num": 381,
+      "ytId": "patreon_22",
+      "title": "You Quiz on the Block (EP 337) AKMU ซับไทย",
+      "duration": "April 2",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_22.jpg",
+      "groups": [
+        "akmu"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/posts/154576117",
+      "patreonStatus": "locked",
+      "date": "April 2"
+    },
+    {
+      "num": 382,
+      "ytId": "patreon_23",
+      "title": "SMTM12 TEAM LOCO X GRAY SAKK ซับไทย",
+      "duration": "March 30",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_23.jpg",
+      "groups": [
+        "smtm12_milli"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/c/SCENEKPOP/posts",
+      "patreonStatus": "locked",
+      "date": "March 30"
+    },
+    {
+      "num": 383,
+      "ytId": "patreon_24",
+      "title": "SMTM12 รายการพิเศษ Final TOP 5 Special ซับไทย",
+      "duration": "March 29",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_24.jpg",
+      "groups": [
+        "smtm12_milli"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/c/SCENEKPOP/posts",
+      "patreonStatus": "locked",
+      "date": "March 29"
+    },
+    {
+      "num": 384,
+      "ytId": "patreon_25",
+      "title": "SMTM12 EP11 ประกาศ TOP 5 รอบ Final ซับไทย",
+      "duration": "March 27",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_25.jpg",
+      "groups": [
+        "smtm12_milli"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/c/SCENEKPOP/posts",
+      "patreonStatus": "locked",
+      "date": "March 27"
+    },
+    {
+      "num": 385,
+      "ytId": "patreon_26",
+      "title": "SMTM12 EP11 SEMI FINAL MASON HOME ซับไทย",
+      "duration": "March 27",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_26.jpg",
+      "groups": [
+        "smtm12_milli"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/c/SCENEKPOP/posts",
+      "patreonStatus": "locked",
+      "date": "March 27"
+    },
+    {
+      "num": 386,
+      "ytId": "patreon_27",
+      "title": "SMTM12 EP11 SEMI FINAL OSUN ซับไทย",
+      "duration": "March 27",
+      "durationSec": 0,
+      "thumb": "https://img.youtube.com/vi/e-6-cE4dKOM/hqdefault.jpg",
+      "groups": [
+        "smtm12_milli"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/c/SCENEKPOP/posts",
+      "patreonStatus": "locked",
+      "date": "March 27"
+    },
+    {
+      "num": 387,
+      "ytId": "patreon_28",
+      "title": "SMTM12 EP11 SEMI FINAL มิลลิ ซับไทย",
+      "duration": "March 27",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_28.jpg",
+      "groups": [
+        "smtm12_milli"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/c/SCENEKPOP/posts",
+      "patreonStatus": "locked",
+      "date": "March 27"
+    },
+    {
+      "num": 388,
+      "ytId": "patreon_29",
+      "title": "SMTM12 EP10 ควอนโอซอน & Mason Home Vs Now I'm Young & Royal 44 ซับไทย",
+      "duration": "March 22",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_29.jpg",
+      "groups": [
+        "smtm12_milli"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/c/SCENEKPOP/posts",
+      "patreonStatus": "locked",
+      "date": "March 22"
+    },
+    {
+      "num": 389,
+      "ytId": "patreon_30",
+      "title": "SMTM12 EP10 MILLI Vs Fleeky Bang ซับไทย",
+      "duration": "March 20",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_30.jpg",
+      "groups": [
+        "smtm12_milli"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/c/SCENEKPOP/posts",
+      "patreonStatus": "locked",
+      "date": "March 20"
+    },
+    {
+      "num": 390,
+      "ytId": "patreon_31",
+      "title": "SMTM12 EP9 TEAM Gray x Loco Vs TEAM Lil Moshpit x Jay Park Full ซับไทย",
+      "duration": "March 13",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_31.jpg",
+      "groups": [
+        "smtm12_milli"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/c/SCENEKPOP/posts",
+      "patreonStatus": "locked",
+      "date": "March 13"
+    },
+    {
+      "num": 391,
+      "ytId": "patreon_32",
+      "title": "Veiled Cup EP4 ซับไทย",
+      "duration": "February 2",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_32.jpg",
+      "groups": [
+        "veiled_cup"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon ดูฟรี",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/SCENEKPOP/posts/veiled-cup-ep4-149712884",
+      "patreonStatus": "public",
+      "date": "February 2"
+    },
+    {
+      "num": 392,
+      "ytId": "patreon_33",
+      "title": "HyeMiLeeYeChaePa.S01E012 ซับไทย",
+      "duration": "January 29",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_33.jpg",
+      "groups": [
+        "le_sserafim",
+        "idle",
+        "hyemileeyechaepa"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/posts/149389270",
+      "patreonStatus": "locked",
+      "date": "January 29"
+    },
+    {
+      "num": 393,
+      "ytId": "patreon_34",
+      "title": "HyeMiLeeYeChaePa.S01E011 ซับไทย",
+      "duration": "January 29",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_34.jpg",
+      "groups": [
+        "le_sserafim",
+        "idle",
+        "hyemileeyechaepa"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/posts/149388313",
+      "patreonStatus": "locked",
+      "date": "January 29"
+    },
+    {
+      "num": 394,
+      "ytId": "patreon_35",
+      "title": "HyeMiLeeYeChaePa.S01E010 ซับไทย",
+      "duration": "January 29",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_35.jpg",
+      "groups": [
+        "le_sserafim",
+        "idle",
+        "hyemileeyechaepa"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/posts/149387971",
+      "patreonStatus": "locked",
+      "date": "January 29"
+    },
+    {
+      "num": 395,
+      "ytId": "patreon_36",
+      "title": "HyeMiLeeYeChaePa.S01E09 ซับไทย",
+      "duration": "January 29",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_36.jpg",
+      "groups": [
+        "le_sserafim",
+        "idle",
+        "hyemileeyechaepa"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/posts/149387624",
+      "patreonStatus": "locked",
+      "date": "January 29"
+    },
+    {
+      "num": 396,
+      "ytId": "patreon_37",
+      "title": "HyeMiLeeYeChaePa.S01E08 ซับไทย",
+      "duration": "January 29",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_37.jpg",
+      "groups": [
+        "le_sserafim",
+        "idle",
+        "hyemileeyechaepa"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/posts/149386936",
+      "patreonStatus": "locked",
+      "date": "January 29"
+    },
+    {
+      "num": 397,
+      "ytId": "patreon_38",
+      "title": "HyeMiLeeYeChaePa.S01E07 ซับไทย",
+      "duration": "January 29",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_38.jpg",
+      "groups": [
+        "le_sserafim",
+        "idle",
+        "hyemileeyechaepa"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/posts/149386644",
+      "patreonStatus": "locked",
+      "date": "January 29"
+    },
+    {
+      "num": 398,
+      "ytId": "patreon_39",
+      "title": "HyeMiLeeYeChaePa.S01E06 ซับไทย",
+      "duration": "January 29",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_39.jpg",
+      "groups": [
+        "le_sserafim",
+        "idle",
+        "hyemileeyechaepa"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/posts/149386343",
+      "patreonStatus": "locked",
+      "date": "January 29"
+    },
+    {
+      "num": 399,
+      "ytId": "patreon_40",
+      "title": "HyeMiLeeYeChaePa.S01E05 ซับไทย",
+      "duration": "January 29",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_40.jpg",
+      "groups": [
+        "le_sserafim",
+        "idle",
+        "hyemileeyechaepa"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/posts/149386008",
+      "patreonStatus": "locked",
+      "date": "January 29"
+    },
+    {
+      "num": 400,
+      "ytId": "patreon_41",
+      "title": "HyeMiLeeYeChaePa.S01E04 ซับไทย",
+      "duration": "January 29",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_41.jpg",
+      "groups": [
+        "le_sserafim",
+        "idle",
+        "hyemileeyechaepa"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/posts/149385534",
+      "patreonStatus": "locked",
+      "date": "January 29"
+    },
+    {
+      "num": 401,
+      "ytId": "patreon_42",
+      "title": "HyeMiLeeYeChaePa.S01E03 ซับไทย",
+      "duration": "January 29",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_42.jpg",
+      "groups": [
+        "le_sserafim",
+        "idle",
+        "hyemileeyechaepa"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/posts/149385021",
+      "patreonStatus": "locked",
+      "date": "January 29"
+    },
+    {
+      "num": 402,
+      "ytId": "patreon_43",
+      "title": "HyeMiLeeYeChaePa.S01E02 ซับไทย",
+      "duration": "January 29",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_43.jpg",
+      "groups": [
+        "le_sserafim",
+        "idle",
+        "hyemileeyechaepa"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/posts/149384617",
+      "patreonStatus": "locked",
+      "date": "January 29"
+    },
+    {
+      "num": 403,
+      "ytId": "patreon_44",
+      "title": "HyeMiLeeYeChaePa.S01E01 ซับไทย",
+      "duration": "January 29",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_44.jpg",
+      "groups": [
+        "le_sserafim",
+        "idle",
+        "hyemileeyechaepa"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon สมาชิก",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/posts/149384256",
+      "patreonStatus": "locked",
+      "date": "January 29"
+    },
+    {
+      "num": 404,
+      "ytId": "patreon_45",
+      "title": "Veiled Cup EP3 FULL ซับไทย",
+      "duration": "January 26",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_45.jpg",
+      "groups": [
+        "veiled_cup"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon ดูฟรี",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/SCENEKPOP/posts/veiled-cup-ep3-149128810",
+      "patreonStatus": "public",
+      "date": "January 26"
+    },
+    {
+      "num": 405,
+      "ytId": "patreon_46",
+      "title": "Veiled Cup EP2 FULL ซับไทย",
+      "duration": "January 19",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_46.jpg",
+      "groups": [
+        "veiled_cup"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon ดูฟรี",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/SCENEKPOP/posts/veiled-cup-ep2-148575574",
+      "patreonStatus": "public",
+      "date": "January 19"
+    },
+    {
+      "num": 406,
+      "ytId": "patreon_47",
+      "title": "Veiled Cup EP1 FULL ซับไทย",
+      "duration": "January 19",
+      "durationSec": 0,
+      "thumb": "images/patreon/p_47.jpg",
+      "groups": [
+        "veiled_cup"
+      ],
+      "playlists": [],
+      "contentType": "patreon",
+      "subBadge": "Patreon ดูฟรี",
+      "source": "patreon",
+      "patreonUrl": "https://www.patreon.com/SCENEKPOP/posts/veiled-cup-ep1-148567600",
+      "patreonStatus": "public",
+      "date": "January 19"
     }
   ]
 };

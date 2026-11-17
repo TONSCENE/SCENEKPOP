@@ -4,18 +4,84 @@ Sync all videos and playlists from https://www.youtube.com/@SCENEKPOP
 and generate db.js for SCENEKPOP+ (grouped by K-Pop group, playlist, and content type).
 """
 import argparse
+import base64
 import concurrent.futures
 import json
 import os
 import re
 import subprocess
 import sys
+import urllib.error
+import urllib.request
 from datetime import datetime
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(SCRIPT_DIR, "group_config.json")
+PATREON_PATH = os.path.join(SCRIPT_DIR, "patreon_posts.json")
 DESC_CACHE_PATH = os.path.join(SCRIPT_DIR, ".desc_cache.json")
+VISION_CACHE_PATH = os.path.join(SCRIPT_DIR, ".vision_cache.json")
 OUTPUT_DB_PATH = os.path.join(SCRIPT_DIR, "db.js")
+
+
+def load_gemini_api_key() -> str:
+    """Load GEMINI_API_KEY from environment or parent/local .env file."""
+    if os.environ.get("GEMINI_API_KEY"):
+        return os.environ["GEMINI_API_KEY"].strip()
+    for env_path in [os.path.join(SCRIPT_DIR, ".env"), os.path.join(os.path.dirname(SCRIPT_DIR), ".env")]:
+        if os.path.exists(env_path):
+            with open(env_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line.startswith("GEMINI_API_KEY="):
+                        return line.split("=", 1)[1].strip().strip('"').strip("'")
+    return ""
+
+
+def classify_thumbnail_with_gemini(vid: str, title: str, thumb_url: str, groups_cfg: list, api_key: str) -> list:
+    """Use Gemini Vision on the video thumbnail + title to identify K-Pop group(s)."""
+    if not api_key:
+        return []
+    try:
+        with urllib.request.urlopen(thumb_url, timeout=15) as resp:
+            img_b64 = base64.b64encode(resp.read()).decode("ascii")
+    except Exception:
+        return []
+
+    valid_ids = [g["id"] for g in groups_cfg]
+    group_list_str = "\n".join(f"- {g['id']}: {g['name']} ({g.get('thaiName', '')})" for g in groups_cfg)
+    prompt = (
+        "You are classifying K-Pop YouTube videos by inspecting the video thumbnail image and title.\n"
+        f"Video title: {title}\n\n"
+        "Look at any text, logos, or people in the thumbnail image and match them to one or more group IDs from this list:\n"
+        f"{group_list_str}\n\n"
+        "Respond ONLY with a JSON array of matching group IDs (for example [\"qwer\"] or [\"hearts2hearts\"]). "
+        "If it does not clearly belong to any specific group in the list, respond with [\"other_kpop\"]."
+    )
+
+    payload = {
+        "contents": [{
+            "parts": [
+                {"text": prompt},
+                {"inline_data": {"mime_type": "image/jpeg", "data": img_b64}},
+            ]
+        }],
+        "generationConfig": {"temperature": 0.1, "responseMimeType": "application/json"},
+    }
+    data = json.dumps(payload).encode("utf-8")
+
+    for model in ("gemini-2.5-flash", "gemini-2.0-flash"):
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
+        req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
+        try:
+            with urllib.request.urlopen(req, timeout=25) as resp:
+                body = json.loads(resp.read().decode("utf-8"))
+                txt = body["candidates"][0]["content"]["parts"][0]["text"]
+                parsed = json.loads(txt)
+                if isinstance(parsed, list):
+                    return [gid for gid in parsed if gid in valid_ids]
+        except Exception:
+            continue
+    return []
 
 
 def run_yt_dlp_json(url: str) -> dict:
@@ -128,6 +194,7 @@ def main():
     parser.add_argument("--playlists-json", help="Optional path to pre-fetched playlists JSON")
     parser.add_argument("--pl-map-json", help="Optional path to pre-fetched playlist->videos map JSON")
     parser.add_argument("--skip-detail-lookup", action="store_true", help="Skip fetching descriptions for unmatched videos")
+    parser.add_argument("--no-vision", action="store_true", help="Disable Gemini Vision thumbnail classification for unmatched videos")
     args = parser.parse_args()
 
     with open(CONFIG_PATH, "r", encoding="utf-8") as f:
@@ -265,16 +332,90 @@ def main():
         with open(DESC_CACHE_PATH, "w", encoding="utf-8") as f:
             json.dump(desc_cache, f, ensure_ascii=False, indent=2)
 
+    # Optionally resolve remaining unmatched videos via Gemini Vision thumbnail inspection
+    still_unmatched = [i for i, v in enumerate(videos_out) if not v["groups"]]
+    if still_unmatched and not args.no_vision:
+        vision_cache = {}
+        if os.path.exists(VISION_CACHE_PATH):
+            with open(VISION_CACHE_PATH, "r", encoding="utf-8") as f:
+                vision_cache = json.load(f)
+        api_key = load_gemini_api_key()
+        if api_key:
+            print(f"Checking thumbnails with Gemini Vision for {len(still_unmatched)} unmatched videos...")
+            for idx in still_unmatched:
+                v = videos_out[idx]
+                vid = v["ytId"]
+                if vid in vision_cache:
+                    matched = vision_cache[vid]
+                else:
+                    matched = classify_thumbnail_with_gemini(vid, v["title"], v["thumb"], groups_cfg, api_key)
+                    if matched:
+                        vision_cache[vid] = matched
+                if matched:
+                    v["groups"] = matched
+                    print(f"  [Vision] {vid} -> {matched} ({v['title'][:50]})")
+            with open(VISION_CACHE_PATH, "w", encoding="utf-8") as f:
+                json.dump(vision_cache, f, ensure_ascii=False, indent=2)
+
     # Final fallback to "other_kpop"
     for v in videos_out:
+        v["source"] = "youtube"
         if not v["groups"]:
-            # Also check if it matched other_kpop keywords specifically, either way place in other_kpop
             v["groups"] = ["other_kpop"]
+
+    # Track initial group thumbnails from YouTube videos before adding Patreon items
+    group_thumbs = {}
+    for v in videos_out:
+        for gid in v["groups"]:
+            if gid not in group_thumbs:
+                group_thumbs[gid] = v["thumb"]
+
+    # 3.5 Merge Patreon posts if patreon_posts.json exists
+    patreon_count = 0
+    if os.path.exists(PATREON_PATH):
+        with open(PATREON_PATH, "r", encoding="utf-8") as f:
+            patreon_posts = json.load(f)
+        for p in patreon_posts:
+            title = p.get("title") or ""
+            pid_key = f"patreon_{p.get('index', patreon_count + 1)}"
+            matched_groups = match_text_to_groups(title, set(), groups_cfg)
+            if not matched_groups:
+                matched_groups = ["other_kpop"]
+            is_public = (p.get("status") == "public")
+            thumb = p.get("localThumb") or ""
+            if not thumb:
+                # Fallback to group's YouTube thumbnail or first Patreon thumbnail
+                for gid in matched_groups:
+                    if gid in group_thumbs:
+                        thumb = group_thumbs[gid]
+                        break
+            if not thumb:
+                thumb = "images/patreon/p_01.jpg"
+            for gid in matched_groups:
+                if gid not in group_thumbs and thumb:
+                    group_thumbs[gid] = thumb
+
+            videos_out.append({
+                "num": len(videos_out) + 1,
+                "ytId": pid_key,
+                "title": title,
+                "duration": p.get("date") or "Patreon",
+                "durationSec": 0,
+                "thumb": thumb,
+                "groups": matched_groups,
+                "playlists": [],
+                "contentType": "patreon",
+                "subBadge": "Patreon ดูฟรี" if is_public else "Patreon สมาชิก",
+                "source": "patreon",
+                "patreonUrl": p.get("url") or "https://www.patreon.com/c/SCENEKPOP/posts",
+                "patreonStatus": "public" if is_public else "locked",
+                "date": p.get("date") or "",
+            })
+            patreon_count += 1
 
     # 4. Build group summaries sorted by count (keep other_kpop at the end)
     vid_by_id = {v["ytId"]: v for v in videos_out}
     group_counts = {g["id"]: 0 for g in groups_cfg}
-    group_thumbs = {}
     for v in videos_out:
         for gid in v["groups"]:
             group_counts[gid] = group_counts.get(gid, 0) + 1
@@ -339,6 +480,8 @@ def main():
             "subtitle": cfg["channel"]["subtitle"],
             "avatar": avatar_url,
             "totalVideos": len(videos_out),
+            "totalYoutube": len(videos_out) - patreon_count,
+            "totalPatreon": patreon_count,
             "totalGroups": len(groups_out),
             "totalPlaylists": len(playlists_out),
             "updatedAt": datetime.now().strftime("%Y-%m-%d %H:%M"),
