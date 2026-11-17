@@ -529,11 +529,12 @@ def main():
     sumb_vids = [v["ytId"] for v in custom_items if "sumbakkokjil" in v["title"].lower()]
     if sumb_vids:
         sumb_vids.sort()
+        sumb_poster = "images/custom/sumbakkokjil_2_cover.webp"
         playlists_out.insert(0, {
             "id": "custom_sumbakkokjil_2",
             "title": "SUMBAKKOKJIL 2 — Hearts2Hearts (Full VOD ซับไทย)",
             "count": len(sumb_vids),
-            "thumb": vid_by_id[sumb_vids[0]]["thumb"],
+            "thumb": sumb_poster if os.path.exists(os.path.join(SCRIPT_DIR, sumb_poster)) else vid_by_id[sumb_vids[0]]["thumb"],
             "groupId": "hearts2hearts",
             "groupIds": ["hearts2hearts"],
             "videoIds": sumb_vids,

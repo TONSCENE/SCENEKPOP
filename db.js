@@ -11,7 +11,7 @@ const sceneDatabase = {
     "totalPatreon": 47,
     "totalGroups": 26,
     "totalPlaylists": 23,
-    "updatedAt": "2026-11-17 16:16"
+    "updatedAt": "2026-11-17 16:20"
   },
   "groups": [
     {
@@ -303,7 +303,7 @@ const sceneDatabase = {
       "id": "custom_sumbakkokjil_2",
       "title": "SUMBAKKOKJIL 2 — Hearts2Hearts (Full VOD ซับไทย)",
       "count": 2,
-      "thumb": "images/custom/h2h_sumbakkokjil_ep4-1.webp",
+      "thumb": "images/custom/sumbakkokjil_2_cover.webp",
       "groupId": "hearts2hearts",
       "groupIds": [
         "hearts2hearts"
@@ -1756,7 +1756,7 @@ const sceneDatabase = {
     {
       "num": 64,
       "ytId": "8yexD4KLN8Y",
-      "title": "260919 2026 THE FACT MUSIC AWARDS in Busan ILLIT Artist of the Year Bonsang ENG SUB",
+      "title": "260919 2026 THE FACT MUSIC AWARDS in Busan ILLIT ศิลปินแห่งปี บอนซัง ซับไทย",
       "duration": "1:31",
       "durationSec": 91,
       "thumb": "https://img.youtube.com/vi/8yexD4KLN8Y/hqdefault.jpg",
@@ -1765,7 +1765,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ENG SUB",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
@@ -2811,7 +2811,7 @@ const sceneDatabase = {
     {
       "num": 129,
       "ytId": "OHZsGOOJsoE",
-      "title": "What if Jiwoo and Yuha Hearts2Hearts were directing the acting? | Silent Game Club EP02",
+      "title": "ถ้าจะให้จีอูและยูฮา Hearts2Hearts คอยสั่งคอยกำกับการแสดงล่ะก็? | ชมรมเกมเงียบ EP02",
       "duration": "29:50",
       "durationSec": 1790,
       "thumb": "https://img.youtube.com/vi/OHZsGOOJsoE/hqdefault.jpg",
@@ -2820,7 +2820,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
@@ -3537,7 +3537,7 @@ const sceneDatabase = {
     {
       "num": 175,
       "ytId": "4aSkFHX0epM",
-      "title": "Weverse Live Siyeon QWER 05.26.28 ENG SUB",
+      "title": "Weverse Live ชียอน QWER 28.05.26 ซับไทย",
       "duration": "23:00",
       "durationSec": 1380,
       "thumb": "https://img.youtube.com/vi/4aSkFHX0epM/hqdefault.jpg",
@@ -3546,7 +3546,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ENG SUB",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
@@ -3627,7 +3627,7 @@ const sceneDatabase = {
     {
       "num": 181,
       "ytId": "SXTI0cwLF08",
-      "title": "Weverse Live Siyeon QWER Birthday (Thai Subtitles) 16.05.26",
+      "title": "Weverse Live ชียอน QWER วันเกิด ซับไทย 16.05.26",
       "duration": "30:34",
       "durationSec": 1834,
       "thumb": "https://img.youtube.com/vi/SXTI0cwLF08/hqdefault.jpg",
@@ -3672,7 +3672,7 @@ const sceneDatabase = {
     {
       "num": 184,
       "ytId": "J2pSZSH6xkI",
-      "title": "Guessing what kids these days are thinking with NMIXX | ODG",
+      "title": "ทายความคิดเด็กสมัยนี้กับ NMIXX｜ODG",
       "duration": "17:40",
       "durationSec": 1060,
       "thumb": "https://img.youtube.com/vi/J2pSZSH6xkI/hqdefault.jpg",
@@ -3681,7 +3681,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
@@ -3762,7 +3762,7 @@ const sceneDatabase = {
     {
       "num": 190,
       "ytId": "nAhwPwrSLiE",
-      "title": "[TH] QWER's amazing comeback! I'm completely captivated and can't find my way out! | Coin-operate...",
+      "title": "[TH] QWER คัมแบ็กสุดปัง โดนตกจนหาทางออกไม่เจอ! | ห้องคาราโอเกะหยอดเหรียญแบบไม่ต้องใช้เหรียญ EP.2",
       "duration": "10:43",
       "durationSec": 643,
       "thumb": "https://img.youtube.com/vi/nAhwPwrSLiE/hqdefault.jpg",
@@ -3792,7 +3792,7 @@ const sceneDatabase = {
     {
       "num": 192,
       "ytId": "S5UpMqo4afg",
-      "title": "260427 Weverse Live QWER Ceremony for us 🩵🎉 (Thai Subtitles)",
+      "title": "260427 Weverse Live QWER Ceremony for us🩵🎉ซับไทย",
       "duration": "5:55",
       "durationSec": 355,
       "thumb": "https://img.youtube.com/vi/S5UpMqo4afg/hqdefault.jpg",
@@ -3972,7 +3972,7 @@ const sceneDatabase = {
     {
       "num": 204,
       "ytId": "XycqgACRGfk",
-      "title": "21.02.26 ABEMA QWER แปลไทย",
+      "title": "21.02.26 ABEMA QWER (Thai Translation)",
       "duration": "34:16",
       "durationSec": 2056,
       "thumb": "https://img.youtube.com/vi/XycqgACRGfk/hqdefault.jpg",
@@ -3981,7 +3981,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย",
+      "subBadge": "SUBBED",
       "source": "youtube"
     },
     {
@@ -4501,7 +4501,7 @@ const sceneDatabase = {
     {
       "num": 239,
       "ytId": "Zr7tNmdDQXc",
-      "title": "Weverse Hearts2Hearts Christmas Day 12/25/25 ENG SUB",
+      "title": "Weverse Hearts2Hearts Christmas Day 25.12.25 ซับไทย",
       "duration": "27:25",
       "durationSec": 1645,
       "thumb": "https://img.youtube.com/vi/Zr7tNmdDQXc/hqdefault.jpg",
@@ -4510,7 +4510,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ENG SUB",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
@@ -6080,7 +6080,7 @@ const sceneDatabase = {
     {
       "num": 343,
       "ytId": "n9MOgn-LIXs",
-      "title": "🚨 เตรียมตัวให้ดี! ร้านที่เหล่าเทพธิดาปรากฏตัว✨  Workdol  ร้านเครื่องสำอาง  NMIXX แฮวอน, LE SSERAFIM",
+      "title": "🚨 Get ready! The shop where goddesses appeared✨ Workdol Cosmetics Store NMIXX Haewon, LE SSERAFIM",
       "duration": "19:41",
       "durationSec": 1181,
       "thumb": "https://img.youtube.com/vi/n9MOgn-LIXs/hqdefault.jpg",
@@ -6090,7 +6090,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย",
+      "subBadge": "SUBBED",
       "source": "youtube"
     },
     {
