@@ -524,6 +524,22 @@ def main():
                 "source": "patreon",
             })
 
+    # 5.6 Auto-group custom SUMBAKKOKJIL / archive series into playlists
+    custom_items = [v for v in videos_out if v.get("source") in ("artplayer", "embed")]
+    sumb_vids = [v["ytId"] for v in custom_items if "sumbakkokjil" in v["title"].lower()]
+    if sumb_vids:
+        sumb_vids.sort()
+        playlists_out.insert(0, {
+            "id": "custom_sumbakkokjil_2",
+            "title": "SUMBAKKOKJIL 2 — Hearts2Hearts (Full VOD ซับไทย)",
+            "count": len(sumb_vids),
+            "thumb": vid_by_id[sumb_vids[0]]["thumb"],
+            "groupId": "hearts2hearts",
+            "groupIds": ["hearts2hearts"],
+            "videoIds": sumb_vids,
+            "source": "custom",
+        })
+
     # Pick channel avatar from channel thumbnails if present
     channel_thumbs = videos_raw.get("thumbnails") or []
     avatar_url = ""
