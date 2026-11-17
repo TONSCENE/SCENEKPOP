@@ -204,6 +204,74 @@
       box-shadow: 0 4px 14px rgba(239, 68, 68, 0.4);
     }
 
+    .patreon-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #ff424d;
+      color: white;
+      padding: 7px 15px;
+      border-radius: 22px;
+      font-size: 12.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .patreon-btn:hover {
+      background: #e11d48;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(255, 66, 77, 0.45);
+    }
+
+    .patreon-banner {
+      background: linear-gradient(135deg, rgba(255, 66, 77, 0.16) 0%, rgba(168, 85, 247, 0.14) 60%, rgba(236, 72, 153, 0.12) 100%);
+      border: 1px solid rgba(255, 66, 77, 0.38);
+      border-radius: 14px;
+      padding: 22px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .patreon-banner-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .patreon-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: #ff424d;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+      box-shadow: 0 6px 18px rgba(255, 66, 77, 0.4);
+    }
+
+    .patreon-banner-info h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .patreon-banner-info p {
+      font-size: 13.5px;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
     /* Hero Section */
     .hero {
       position: relative;
@@ -1075,7 +1143,7 @@
       .search-input:focus {
         width: 185px;
       }
-      .yt-btn span {
+      .yt-btn span, .patreon-btn span {
         display: none;
       }
       .hero {
@@ -1144,6 +1212,9 @@
         <input type="text" class="search-input" id="searchInput" placeholder="ค้นหาวง / คลิป / ซีรีส์..." oninput="handleSearch(this.value)" autocomplete="off">
         <button id="searchClearBtn" class="search-clear" onclick="clearSearch()" title="ล้างการค้นหา">&times;</button>
       </div>
+      <a href="https://www.patreon.com/c/SCENEKPOP" target="_blank" rel="noopener noreferrer" class="patreon-btn" title="SCENEKPOP on Patreon">
+        <i class="fa-brands fa-patreon"></i> <span>Patreon</span>
+      </a>
       <a href="https://www.youtube.com/@SCENEKPOP" target="_blank" rel="noopener noreferrer" class="yt-btn">
         <i class="fa-brands fa-youtube"></i> <span>@SCENEKPOP</span>
       </a>
@@ -1184,6 +1255,9 @@
         <button class="btn btn-neon" onclick="scrollToId('sec-groups')">
           <i class="fa-solid fa-layer-group"></i> เลือกดูตามวง (Browse Groups)
         </button>
+        <a href="https://www.patreon.com/c/SCENEKPOP" target="_blank" rel="noopener noreferrer" class="btn" style="background: #ff424d; color: white; text-decoration: none;">
+          <i class="fa-brands fa-patreon"></i> Patreon (ซับไทยพิเศษ)
+        </a>
       </div>
     </div>
   </header>
@@ -1225,6 +1299,23 @@
           <span class="section-sub">รวมตอนเรียงลำดับตามเพลย์ลิสต์ของช่อง @SCENEKPOP</span>
         </div>
         <div class="video-grid" id="playlistsGrid"></div>
+      </section>
+
+      <section class="section-block" id="sec-patreon">
+        <div class="patreon-banner">
+          <div class="patreon-banner-info">
+            <div class="patreon-icon-box">
+              <i class="fa-brands fa-patreon"></i>
+            </div>
+            <div>
+              <h3>SCENEKPOP on Patreon — Video Content Sub Thai Translated</h3>
+              <p>รับชมคอนเทนต์ซับไทยแบบเต็ม/คลิปพิเศษที่ลงไม่ได้บน YouTube พร้อมร่วมสนับสนุนการทำซับไทยของช่อง @SCENEKPOP ได้ที่ Patreon</p>
+            </div>
+          </div>
+          <a href="https://www.patreon.com/c/SCENEKPOP" target="_blank" rel="noopener noreferrer" class="btn" style="background: #ff424d; color: white; text-decoration: none; white-space: nowrap;">
+            <i class="fa-brands fa-patreon"></i> เปิดดูบน Patreon
+          </a>
+        </div>
       </section>
 
       <section class="section-block" id="sec-latest">
@@ -1283,7 +1374,12 @@
   </main>
 
   <footer>
-    <p>SCENEKPOP+ Directory — คลังรวมคลิป K-Pop แยกตามวงจากช่อง <a href="https://www.youtube.com/@SCENEKPOP" target="_blank" rel="noopener noreferrer">@SCENEKPOP</a></p>
+    <p>
+      SCENEKPOP+ Directory — คลังรวมคลิป K-Pop แยกตามวงจากช่อง
+      <a href="https://www.youtube.com/@SCENEKPOP" target="_blank" rel="noopener noreferrer">YouTube (@SCENEKPOP)</a>
+      •
+      <a href="https://www.patreon.com/c/SCENEKPOP" target="_blank" rel="noopener noreferrer" style="color: #ff6b74;">Patreon (SCENEKPOP)</a>
+    </p>
     <p style="margin-top: 6px; font-size: 12px;" id="footerUpdated"></p>
   </footer>
 
