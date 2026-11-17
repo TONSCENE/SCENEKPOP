@@ -1483,7 +1483,7 @@
     </div>
   </div>
 
-  <script src="db.js?v=20261117_05"></script>
+  <script src="db.js?v=20261117_06"></script>
   <script>
     const IS_MOBILE_OR_INAPP = /Android|iPhone|iPad|iPod|FBAN|FBAV|Messenger|Line|Instagram|MicroMessenger/i.test(navigator.userAgent);
     const EXT_LINK_ATTRS = IS_MOBILE_OR_INAPP ? '' : 'target="_blank" rel="noopener noreferrer"';
@@ -2066,11 +2066,13 @@
         directBtn.innerHTML = '<i class="fa-solid fa-play"></i> เปิดไฟล์วิดีโอตรง';
       } else if (ep.source === 'embed' && ep.embedUrl) {
         playerEl.classList.remove('is-patreon');
-        playerEl.innerHTML = `<iframe src="${ep.embedUrl}" allow="autoplay; fullscreen" allowfullscreen style="width:100%; height:100%; border:none;"></iframe>`;
+        playerEl.innerHTML = `<iframe src="${ep.embedUrl}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen style="width:100%; height:100%; border:none;"></iframe>`;
         directBtn.href = ep.directUrl || ep.embedUrl;
+        if (IS_MOBILE_OR_INAPP) directBtn.removeAttribute('target');
+        else directBtn.setAttribute('target', '_blank');
         directBtn.style.background = '#2563eb';
         directBtn.style.borderColor = '#2563eb';
-        directBtn.innerHTML = '<i class="fa-solid fa-up-right-from-square"></i> เปิดลิงก์เต็มจอ';
+        directBtn.innerHTML = '<i class="fa-solid fa-up-right-from-square"></i> เปิดดูบน Archive.org';
       } else if (ep.source === 'patreon') {
         playerEl.classList.add('is-patreon');
         const isFree = ep.patreonStatus === 'public';

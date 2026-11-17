@@ -11,7 +11,7 @@ const sceneDatabase = {
     "totalPatreon": 47,
     "totalGroups": 26,
     "totalPlaylists": 23,
-    "updatedAt": "2026-11-17 16:20"
+    "updatedAt": "2026-11-17 16:24"
   },
   "groups": [
     {
@@ -738,22 +738,12 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "TH / EN SUB",
-      "source": "artplayer",
-      "videoUrl": "https://archive.org/download/scenekpop-h2h-sumbakkokjil-ep4-2/h2h_sumbakkokjil_ep4-2.mp4",
-      "embedUrl": "",
+      "subBadge": "MULTI SUBS",
+      "source": "embed",
+      "videoUrl": "",
+      "embedUrl": "https://archive.org/embed/scenekpop-h2h-sumbakkokjil-ep4-2",
       "directUrl": "https://archive.org/details/scenekpop-h2h-sumbakkokjil-ep4-2",
-      "subtitles": [
-        {
-          "name": "ไทย (ซับไทย)",
-          "url": "subs/h2h_sumbakkokjil_ep4-2.th.vtt",
-          "default": true
-        },
-        {
-          "name": "English",
-          "url": "subs/h2h_sumbakkokjil_ep4-2.en.vtt"
-        }
-      ]
+      "subtitles": []
     },
     {
       "num": 2,
@@ -767,22 +757,12 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "TH / EN SUB",
-      "source": "artplayer",
-      "videoUrl": "https://archive.org/download/scenekpop-h2h-sumbakkokjil-ep4-1/h2h_sumbakkokjil_ep4-1.mp4",
-      "embedUrl": "",
+      "subBadge": "MULTI SUBS",
+      "source": "embed",
+      "videoUrl": "",
+      "embedUrl": "https://archive.org/embed/scenekpop-h2h-sumbakkokjil-ep4-1",
       "directUrl": "https://archive.org/details/scenekpop-h2h-sumbakkokjil-ep4-1",
-      "subtitles": [
-        {
-          "name": "ไทย (ซับไทย)",
-          "url": "subs/h2h_sumbakkokjil_ep4-1.th.vtt",
-          "default": true
-        },
-        {
-          "name": "English",
-          "url": "subs/h2h_sumbakkokjil_ep4-1.en.vtt"
-        }
-      ]
+      "subtitles": []
     },
     {
       "num": 3,
@@ -1756,7 +1736,7 @@ const sceneDatabase = {
     {
       "num": 64,
       "ytId": "8yexD4KLN8Y",
-      "title": "260919 2026 THE FACT MUSIC AWARDS in Busan ILLIT ศิลปินแห่งปี บอนซัง ซับไทย",
+      "title": "260919 2026 THE FACT MUSIC AWARDS in Busan ILLIT Artist of the Year Bonsang ENG SUB",
       "duration": "1:31",
       "durationSec": 91,
       "thumb": "https://img.youtube.com/vi/8yexD4KLN8Y/hqdefault.jpg",
@@ -1765,7 +1745,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ซับไทย",
+      "subBadge": "ENG SUB",
       "source": "youtube"
     },
     {
@@ -2328,7 +2308,7 @@ const sceneDatabase = {
     {
       "num": 99,
       "ytId": "lgpON1HHa9k",
-      "title": "08/24/2026 I TUIDE DEBUT SPECIAL WEVERSE LIVE [THAI SUB]",
+      "title": "24.8.2026 I TUIDE DEBUT SPECIAL WEVERSE LIVE  [ซับไทย]",
       "duration": "15:56",
       "durationSec": 956,
       "thumb": "https://img.youtube.com/vi/lgpON1HHa9k/hqdefault.jpg",
@@ -3537,7 +3517,7 @@ const sceneDatabase = {
     {
       "num": 175,
       "ytId": "4aSkFHX0epM",
-      "title": "Weverse Live ชียอน QWER 28.05.26 ซับไทย",
+      "title": "Weverse Live Siyeon QWER 05.26.28 ENG SUB",
       "duration": "23:00",
       "durationSec": 1380,
       "thumb": "https://img.youtube.com/vi/4aSkFHX0epM/hqdefault.jpg",
@@ -3546,7 +3526,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย",
+      "subBadge": "ENG SUB",
       "source": "youtube"
     },
     {
@@ -3627,7 +3607,7 @@ const sceneDatabase = {
     {
       "num": 181,
       "ytId": "SXTI0cwLF08",
-      "title": "Weverse Live ชียอน QWER วันเกิด ซับไทย 16.05.26",
+      "title": "Weverse Live Siyeon QWER Birthday (Thai Subtitles) 16.05.26",
       "duration": "30:34",
       "durationSec": 1834,
       "thumb": "https://img.youtube.com/vi/SXTI0cwLF08/hqdefault.jpg",
@@ -3972,7 +3952,7 @@ const sceneDatabase = {
     {
       "num": 204,
       "ytId": "XycqgACRGfk",
-      "title": "21.02.26 ABEMA QWER (Thai Translation)",
+      "title": "21.02.26 ABEMA QWER แปลไทย",
       "duration": "34:16",
       "durationSec": 2056,
       "thumb": "https://img.youtube.com/vi/XycqgACRGfk/hqdefault.jpg",
@@ -3981,7 +3961,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
@@ -4501,7 +4481,7 @@ const sceneDatabase = {
     {
       "num": 239,
       "ytId": "Zr7tNmdDQXc",
-      "title": "Weverse Hearts2Hearts Christmas Day 25.12.25 ซับไทย",
+      "title": "Weverse Hearts2Hearts Christmas Day 12/25/25 ENG SUB",
       "duration": "27:25",
       "durationSec": 1645,
       "thumb": "https://img.youtube.com/vi/Zr7tNmdDQXc/hqdefault.jpg",
@@ -4510,7 +4490,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย",
+      "subBadge": "ENG SUB",
       "source": "youtube"
     },
     {

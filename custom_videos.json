@@ -7,21 +7,10 @@
     "durationSec": 1702,
     "thumb": "images/custom/h2h_sumbakkokjil_ep4-1.webp",
     "contentType": "variety",
-    "subBadge": "TH / EN SUB",
-    "source": "artplayer",
-    "videoUrl": "https://archive.org/download/scenekpop-h2h-sumbakkokjil-ep4-1/h2h_sumbakkokjil_ep4-1.mp4",
-    "directUrl": "https://archive.org/details/scenekpop-h2h-sumbakkokjil-ep4-1",
-    "subtitles": [
-      {
-        "name": "ไทย (ซับไทย)",
-        "url": "subs/h2h_sumbakkokjil_ep4-1.th.vtt",
-        "default": true
-      },
-      {
-        "name": "English",
-        "url": "subs/h2h_sumbakkokjil_ep4-1.en.vtt"
-      }
-    ]
+    "subBadge": "MULTI SUBS",
+    "source": "embed",
+    "embedUrl": "https://archive.org/embed/scenekpop-h2h-sumbakkokjil-ep4-1",
+    "directUrl": "https://archive.org/details/scenekpop-h2h-sumbakkokjil-ep4-1"
   },
   {
     "id": "h2h_sumbakkokjil_ep4_2",
@@ -31,20 +20,9 @@
     "durationSec": 3189,
     "thumb": "images/custom/h2h_sumbakkokjil_ep4-2.webp",
     "contentType": "variety",
-    "subBadge": "TH / EN SUB",
-    "source": "artplayer",
-    "videoUrl": "https://archive.org/download/scenekpop-h2h-sumbakkokjil-ep4-2/h2h_sumbakkokjil_ep4-2.mp4",
-    "directUrl": "https://archive.org/details/scenekpop-h2h-sumbakkokjil-ep4-2",
-    "subtitles": [
-      {
-        "name": "ไทย (ซับไทย)",
-        "url": "subs/h2h_sumbakkokjil_ep4-2.th.vtt",
-        "default": true
-      },
-      {
-        "name": "English",
-        "url": "subs/h2h_sumbakkokjil_ep4-2.en.vtt"
-      }
-    ]
+    "subBadge": "MULTI SUBS",
+    "source": "embed",
+    "embedUrl": "https://archive.org/embed/scenekpop-h2h-sumbakkokjil-ep4-2",
+    "directUrl": "https://archive.org/details/scenekpop-h2h-sumbakkokjil-ep4-2"
   }
 ]
