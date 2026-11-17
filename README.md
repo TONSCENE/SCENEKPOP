@@ -14,9 +14,9 @@
 
 | วง / หมวดหมู่ | จำนวนคลิป | ลิงก์เปิดดูเฉพาะวง |
 | :--- | :---: | :--- |
-| **QWER** | 117 | https://tonscene.github.io/SCENEKPOP/#group=qwer |
+| **QWER** | 116 | https://tonscene.github.io/SCENEKPOP/#group=qwer |
 | **Hearts2Hearts** | 81 | https://tonscene.github.io/SCENEKPOP/#group=hearts2hearts |
-| **RESCENE** | 50 | https://tonscene.github.io/SCENEKPOP/#group=rescene |
+| **RESCENE** | 51 | https://tonscene.github.io/SCENEKPOP/#group=rescene |
 | **tripleS** | 20 | https://tonscene.github.io/SCENEKPOP/#group=triples |
 | **KiiiKiii** | 19 | https://tonscene.github.io/SCENEKPOP/#group=kiiikiii |
 | **ILLIT** | 19 | https://tonscene.github.io/SCENEKPOP/#group=illit |

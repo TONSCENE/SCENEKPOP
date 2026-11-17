@@ -11,7 +11,7 @@ const sceneDatabase = {
     "totalPatreon": 47,
     "totalGroups": 26,
     "totalPlaylists": 15,
-    "updatedAt": "2026-11-17 14:35"
+    "updatedAt": "2026-11-17 14:39"
   },
   "groups": [
     {
@@ -20,7 +20,7 @@ const sceneDatabase = {
       "thaiName": "คิวดับเบิลยูอีอาร์",
       "accent": "#ec4899",
       "tagline": "Chodan • Magenta • Hina • Siyeon — เกิร์ลแบนด์ 4 สาวสุดปั่น",
-      "count": 117,
+      "count": 116,
       "thumb": "https://img.youtube.com/vi/9bzCT2WQzJk/hqdefault.jpg",
       "playlistIds": [
         "PLLg0CmUn7KVM",
@@ -46,7 +46,7 @@ const sceneDatabase = {
       "thaiName": "รีซีน",
       "accent": "#38bdf8",
       "tagline": "Woni • Liv • Minami • May • Zena — วอนอี ยินดีที่ได้รู้จัก & วาไรตี้",
-      "count": 50,
+      "count": 51,
       "thumb": "https://img.youtube.com/vi/GQTvQF_FIm4/hqdefault.jpg",
       "playlistIds": [
         "PLK0euQjdYbEU",
@@ -1480,7 +1480,7 @@ const sceneDatabase = {
     {
       "num": 60,
       "ytId": "tQcbIVuCykk",
-      "title": "09/19/26 2026 THE FACT MUSIC AWARDS in Busan RESCENE Artist of the Year Bonsang ENG SUB",
+      "title": "260919 2026 THE FACT MUSIC AWARDS in Busan RESCENE ศิลปินแห่งปี บอนซัง ซับไทย",
       "duration": "1:58",
       "durationSec": 118,
       "thumb": "https://img.youtube.com/vi/tQcbIVuCykk/hqdefault.jpg",
@@ -1489,7 +1489,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ENG SUB",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
@@ -1510,7 +1510,7 @@ const sceneDatabase = {
     {
       "num": 62,
       "ytId": "8yexD4KLN8Y",
-      "title": "260919 2026 THE FACT MUSIC AWARDS in Busan ILLIT Artist of the Year Bonsang ENG SUB",
+      "title": "260919 2026 THE FACT MUSIC AWARDS in Busan ILLIT ศิลปินแห่งปี บอนซัง ซับไทย",
       "duration": "1:31",
       "durationSec": 91,
       "thumb": "https://img.youtube.com/vi/8yexD4KLN8Y/hqdefault.jpg",
@@ -1519,7 +1519,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ENG SUB",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
@@ -2004,7 +2004,7 @@ const sceneDatabase = {
     {
       "num": 92,
       "ytId": "m5WF31rCCgM",
-      "title": "[FULL] รุกกี้เกิร์ลกรุ๊ปจาก JYP OURBIRTHDAY 🎂 ｜ 2 O'Clock Escape Cultwo Show ｜ 260830 [TH][EN]",
+      "title": "[FULL] Rookie Girl Group from JYP OURBIRTHDAY 🎂 ｜ 2 O'Clock Escape Cultwo Show ｜ 08/30/26 [TH][EN]",
       "duration": "26:15",
       "durationSec": 1575,
       "thumb": "https://img.youtube.com/vi/m5WF31rCCgM/hqdefault.jpg",
@@ -2569,7 +2569,7 @@ const sceneDatabase = {
     {
       "num": 127,
       "ytId": "OHZsGOOJsoE",
-      "title": "What if Jiwoo and Yuha Hearts2Hearts were directing the acting? | Silent Game Club EP02",
+      "title": "ถ้าจะให้จีอูและยูฮา Hearts2Hearts คอยสั่งคอยกำกับการแสดงล่ะก็? | ชมรมเกมเงียบ EP02",
       "duration": "29:50",
       "durationSec": 1790,
       "thumb": "https://img.youtube.com/vi/OHZsGOOJsoE/hqdefault.jpg",
@@ -2578,7 +2578,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
@@ -2721,7 +2721,7 @@ const sceneDatabase = {
       "durationSec": 1099,
       "thumb": "https://img.youtube.com/vi/FJe97ZEDOWs/hqdefault.jpg",
       "groups": [
-        "qwer"
+        "rescene"
       ],
       "playlists": [
         "PLK0euQjdYbEU"
@@ -2897,7 +2897,7 @@ const sceneDatabase = {
     {
       "num": 147,
       "ytId": "GjRUnMgARAM",
-      "title": "Hearts2Hearts Plays Who's Who (ENG SUB)",
+      "title": "Hearts2Hearts Plays Who's Who ซับไทย",
       "duration": "13:15",
       "durationSec": 795,
       "thumb": "https://img.youtube.com/vi/GjRUnMgARAM/hqdefault.jpg",
@@ -2906,7 +2906,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ENG SUB",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
@@ -3433,7 +3433,7 @@ const sceneDatabase = {
     {
       "num": 182,
       "ytId": "J2pSZSH6xkI",
-      "title": "Guessing what kids these days are thinking with NMIXX | ODG",
+      "title": "ทายความคิดเด็กสมัยนี้กับ NMIXX｜ODG",
       "duration": "17:40",
       "durationSec": 1060,
       "thumb": "https://img.youtube.com/vi/J2pSZSH6xkI/hqdefault.jpg",
@@ -3442,7 +3442,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
@@ -3553,7 +3553,7 @@ const sceneDatabase = {
     {
       "num": 190,
       "ytId": "S5UpMqo4afg",
-      "title": "260427 Weverse Live QWER Ceremony for us 🩵🎉 (Thai Subtitles)",
+      "title": "260427 Weverse Live QWER Ceremony for us🩵🎉ซับไทย",
       "duration": "5:55",
       "durationSec": 355,
       "thumb": "https://img.youtube.com/vi/S5UpMqo4afg/hqdefault.jpg",
@@ -3718,7 +3718,7 @@ const sceneDatabase = {
     {
       "num": 201,
       "ytId": "dUey2o_F84U",
-      "title": "IDOL RADIO Belle Nutty Baby Don't Cry CUT",
+      "title": "IDOL RADIO เบลล์ นัตตี้ Baby Dont Cry CUT",
       "duration": "10:14",
       "durationSec": 614,
       "thumb": "https://img.youtube.com/vi/dUey2o_F84U/hqdefault.jpg",
@@ -3727,13 +3727,13 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "SUBBED",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
       "num": 202,
       "ytId": "XycqgACRGfk",
-      "title": "21.02.26 ABEMA QWER (Thai Translation)",
+      "title": "21.02.26 ABEMA QWER แปลไทย",
       "duration": "34:16",
       "durationSec": 2056,
       "thumb": "https://img.youtube.com/vi/XycqgACRGfk/hqdefault.jpg",
@@ -3742,7 +3742,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
@@ -4862,7 +4862,7 @@ const sceneDatabase = {
     {
       "num": 277,
       "ytId": "gUYTontRB0s",
-      "title": "สึกิ Billlie โชว์ความสวยสะท้าน WaterBomb! ｜ Worldol Special",
+      "title": "Tsuki Billlie showcases her stunning beauty in WaterBomb! ｜ Worldol Special",
       "duration": "15:01",
       "durationSec": 901,
       "thumb": "https://img.youtube.com/vi/gUYTontRB0s/hqdefault.jpg",
@@ -4870,8 +4870,8 @@ const sceneDatabase = {
         "billlie"
       ],
       "playlists": [],
-      "contentType": "variety",
-      "subBadge": "ซับไทย",
+      "contentType": "stage",
+      "subBadge": "SUBBED",
       "source": "youtube"
     },
     {
@@ -5841,7 +5841,7 @@ const sceneDatabase = {
     {
       "num": 341,
       "ytId": "n9MOgn-LIXs",
-      "title": "🚨 เตรียมตัวให้ดี! ร้านที่เหล่าเทพธิดาปรากฏตัว✨  Workdol  ร้านเครื่องสำอาง  NMIXX แฮวอน, LE SSERAFIM",
+      "title": "🚨 Get ready! The shop where goddesses appeared✨ Workdol Cosmetics Store NMIXX Haewon, LE SSERAFIM",
       "duration": "19:41",
       "durationSec": 1181,
       "thumb": "https://img.youtube.com/vi/n9MOgn-LIXs/hqdefault.jpg",
@@ -5851,7 +5851,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย",
+      "subBadge": "SUBBED",
       "source": "youtube"
     },
     {
