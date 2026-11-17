@@ -1481,7 +1481,7 @@
     </div>
   </div>
 
-  <script src="db.js?v=20261117_02"></script>
+  <script src="db.js?v=20261117_03"></script>
   <script>
     const IS_MOBILE_OR_INAPP = /Android|iPhone|iPad|iPod|FBAN|FBAV|Messenger|Line|Instagram|MicroMessenger/i.test(navigator.userAgent);
     const EXT_LINK_ATTRS = IS_MOBILE_OR_INAPP ? '' : 'target="_blank" rel="noopener noreferrer"';
@@ -1621,7 +1621,7 @@
     function createVideoCardHTML(v, queueSourceExpr, indexInQueue) {
       const groupChips = v.groups.slice(0, 2).map(gid => {
         const g = GROUP_MAP[gid];
-        return g ? `<span class="tag-chip" style="border-color:${g.accent}55; color:${g.accent}; background:${g.accent}18;">${escapeHtml(g.name)}</span>` : '';
+        return g ? `<span class="tag-chip" onclick="event.stopPropagation(); selectGroup('${gid}')" style="cursor:pointer; border-color:${g.accent}55; color:${g.accent}; background:${g.accent}18;" title="ดูคลิปทั้งหมดของ ${escapeHtml(g.name)}">${escapeHtml(g.name)}</span>` : '';
       }).join('');
       const isPatreon = v.source === 'patreon';
       const isPatreonFree = isPatreon && v.patreonStatus === 'public';
@@ -1762,14 +1762,25 @@
       homeView.style.display = 'none';
       groupView.style.display = 'block';
 
+      const grpVids = getGroupVideos(groupId);
+      const ptCnt = grpVids.filter(v => v.source === 'patreon').length;
+      const ytCnt = grpVids.length - ptCnt;
+      const countText = ptCnt > 0
+        ? `ทั้งหมด ${grpVids.length} คลิป (YouTube ${ytCnt} + Patreon ${ptCnt})`
+        : `ทั้งหมด ${grpVids.length} คลิป`;
+
       document.getElementById('gvTitle').innerHTML = `
         <span style="color:${grp.accent};">${escapeHtml(grp.name)}</span>
         ${grp.thaiName ? `<span class="group-spotlight-thai">${escapeHtml(grp.thaiName)}</span>` : ''}
       `;
-      document.getElementById('gvTagline').textContent = `${grp.tagline} • ทั้งหมด ${grp.count} คลิป`;
+      document.getElementById('gvTagline').textContent = `${grp.tagline} • ${countText}`;
 
-      // Group playlists
-      const grpPlaylists = DB.playlists.filter(p => p.groupId === groupId || grp.playlistIds.includes(p.id));
+      // Group playlists (including Patreon multi-episode series)
+      const grpPlaylists = DB.playlists.filter(p =>
+        p.groupId === groupId ||
+        (p.groupIds && p.groupIds.includes(groupId)) ||
+        grp.playlistIds.includes(p.id)
+      );
       const plSec = document.getElementById('gvPlaylistsSec');
       if (grpPlaylists.length > 0) {
         plSec.style.display = 'block';

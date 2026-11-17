@@ -10,8 +10,8 @@ const sceneDatabase = {
     "totalYoutube": 359,
     "totalPatreon": 47,
     "totalGroups": 26,
-    "totalPlaylists": 15,
-    "updatedAt": "2026-11-17 14:41"
+    "totalPlaylists": 22,
+    "updatedAt": "2026-11-17 14:58"
   },
   "groups": [
     {
@@ -305,6 +305,9 @@ const sceneDatabase = {
       "count": 2,
       "thumb": "https://img.youtube.com/vi/yEkqlDEVk6A/hqdefault.jpg",
       "groupId": "qwer",
+      "groupIds": [
+        "qwer"
+      ],
       "videoIds": [
         "yEkqlDEVk6A",
         "FFeeGfR_kzI"
@@ -316,6 +319,9 @@ const sceneDatabase = {
       "count": 3,
       "thumb": "https://img.youtube.com/vi/1K8MhlaSLoo/hqdefault.jpg",
       "groupId": "hearts2hearts",
+      "groupIds": [
+        "hearts2hearts"
+      ],
       "videoIds": [
         "1K8MhlaSLoo",
         "x4XFDMy2V0Y",
@@ -328,6 +334,9 @@ const sceneDatabase = {
       "count": 2,
       "thumb": "https://img.youtube.com/vi/U6s0c9vOYd0/hqdefault.jpg",
       "groupId": "triples",
+      "groupIds": [
+        "triples"
+      ],
       "videoIds": [
         "U6s0c9vOYd0",
         "Jf9CJV2IvQM"
@@ -339,6 +348,9 @@ const sceneDatabase = {
       "count": 4,
       "thumb": "https://img.youtube.com/vi/7bkANd_L6lM/hqdefault.jpg",
       "groupId": "meovv",
+      "groupIds": [
+        "meovv"
+      ],
       "videoIds": [
         "7bkANd_L6lM",
         "5uZFsTTCZsc",
@@ -352,6 +364,9 @@ const sceneDatabase = {
       "count": 7,
       "thumb": "https://img.youtube.com/vi/8pZrsHbe5fw/hqdefault.jpg",
       "groupId": "kiiikiii",
+      "groupIds": [
+        "kiiikiii"
+      ],
       "videoIds": [
         "8pZrsHbe5fw",
         "xkYpp1a5SxA",
@@ -368,6 +383,9 @@ const sceneDatabase = {
       "count": 10,
       "thumb": "https://img.youtube.com/vi/wGCAAIXPljU/hqdefault.jpg",
       "groupId": "illit",
+      "groupIds": [
+        "illit"
+      ],
       "videoIds": [
         "wGCAAIXPljU",
         "R-7kuCcPRW8",
@@ -387,6 +405,9 @@ const sceneDatabase = {
       "count": 14,
       "thumb": "https://img.youtube.com/vi/DRWBHc2fldY/hqdefault.jpg",
       "groupId": "tuide",
+      "groupIds": [
+        "tuide"
+      ],
       "videoIds": [
         "DRWBHc2fldY",
         "5JXI8ZB2xOc",
@@ -410,6 +431,9 @@ const sceneDatabase = {
       "count": 4,
       "thumb": "https://img.youtube.com/vi/q4heroH0ytE/hqdefault.jpg",
       "groupId": "triples",
+      "groupIds": [
+        "triples"
+      ],
       "videoIds": [
         "q4heroH0ytE",
         "YEsstetyxeM",
@@ -423,6 +447,9 @@ const sceneDatabase = {
       "count": 2,
       "thumb": "https://img.youtube.com/vi/na5IsColIBM/hqdefault.jpg",
       "groupId": "rescene",
+      "groupIds": [
+        "rescene"
+      ],
       "videoIds": [
         "na5IsColIBM",
         "EWFC85s5o_Y"
@@ -434,6 +461,9 @@ const sceneDatabase = {
       "count": 27,
       "thumb": "https://img.youtube.com/vi/UkOu7L8WbXI/hqdefault.jpg",
       "groupId": "rescene",
+      "groupIds": [
+        "rescene"
+      ],
       "videoIds": [
         "UkOu7L8WbXI",
         "7xg9gwH9zTE",
@@ -470,6 +500,9 @@ const sceneDatabase = {
       "count": 8,
       "thumb": "https://img.youtube.com/vi/-cGLrlr6thA/hqdefault.jpg",
       "groupId": "qwer",
+      "groupIds": [
+        "qwer"
+      ],
       "videoIds": [
         "-cGLrlr6thA",
         "cFrUSw_DruU",
@@ -487,6 +520,9 @@ const sceneDatabase = {
       "count": 2,
       "thumb": "https://img.youtube.com/vi/x3zul4_NzOM/hqdefault.jpg",
       "groupId": "kiiikiii",
+      "groupIds": [
+        "kiiikiii"
+      ],
       "videoIds": [
         "x3zul4_NzOM",
         "kVOtaqGzLK0"
@@ -498,6 +534,9 @@ const sceneDatabase = {
       "count": 5,
       "thumb": "https://img.youtube.com/vi/EZ68m3j37mM/hqdefault.jpg",
       "groupId": "qwer",
+      "groupIds": [
+        "qwer"
+      ],
       "videoIds": [
         "EZ68m3j37mM",
         "iINsnaALbI0",
@@ -512,6 +551,9 @@ const sceneDatabase = {
       "count": 4,
       "thumb": "https://img.youtube.com/vi/YExPMimZKlU/hqdefault.jpg",
       "groupId": "triples",
+      "groupIds": [
+        "triples"
+      ],
       "videoIds": [
         "YExPMimZKlU",
         "ITbRsYlPc6Q",
@@ -525,12 +567,147 @@ const sceneDatabase = {
       "count": 4,
       "thumb": "https://img.youtube.com/vi/mOnGS-Ni3XI/hqdefault.jpg",
       "groupId": "triples",
+      "groupIds": [
+        "triples"
+      ],
       "videoIds": [
         "mOnGS-Ni3XI",
         "xO5-GoNiZcY",
         "QXfbb0wsTjk",
         "MrkR5ipF1c0"
       ]
+    },
+    {
+      "id": "pt_hyemilee",
+      "title": "HyeMiLeeYeChaePa S01 ซับไทย (Patreon)",
+      "count": 12,
+      "thumb": "images/patreon/p_44.jpg",
+      "groupId": "hyemileeyechaepa",
+      "groupIds": [
+        "hyemileeyechaepa",
+        "le_sserafim",
+        "idle"
+      ],
+      "videoIds": [
+        "patreon_44",
+        "patreon_43",
+        "patreon_42",
+        "patreon_41",
+        "patreon_40",
+        "patreon_39",
+        "patreon_38",
+        "patreon_37",
+        "patreon_36",
+        "patreon_35",
+        "patreon_34",
+        "patreon_33"
+      ],
+      "source": "patreon"
+    },
+    {
+      "id": "pt_smtm12",
+      "title": "Show Me The Money 12 ซับไทย (Patreon)",
+      "count": 12,
+      "thumb": "images/patreon/p_19.jpg",
+      "groupId": "smtm12_milli",
+      "groupIds": [
+        "smtm12_milli"
+      ],
+      "videoIds": [
+        "patreon_19",
+        "patreon_20",
+        "patreon_21",
+        "patreon_23",
+        "patreon_24",
+        "patreon_25",
+        "patreon_26",
+        "patreon_27",
+        "patreon_28",
+        "patreon_29",
+        "patreon_30",
+        "patreon_31"
+      ],
+      "source": "patreon"
+    },
+    {
+      "id": "pt_wonhee",
+      "title": "Hello Twenty Wonhee S01 ซับไทย (Patreon)",
+      "count": 4,
+      "thumb": "images/patreon/p_11.jpg",
+      "groupId": "illit",
+      "groupIds": [
+        "illit"
+      ],
+      "videoIds": [
+        "patreon_11",
+        "patreon_12",
+        "patreon_13",
+        "patreon_15"
+      ],
+      "source": "patreon"
+    },
+    {
+      "id": "pt_idol_bingo",
+      "title": "Idol Bingo x ILLIT ซับไทย (Patreon)",
+      "count": 2,
+      "thumb": "images/patreon/p_03.jpg",
+      "groupId": "illit",
+      "groupIds": [
+        "illit"
+      ],
+      "videoIds": [
+        "patreon_3",
+        "patreon_4"
+      ],
+      "source": "patreon"
+    },
+    {
+      "id": "pt_mzine_h2h",
+      "title": "TV Asahi - MZINE Hearts2Hearts (Patreon)",
+      "count": 3,
+      "thumb": "images/patreon/p_06.jpg",
+      "groupId": "hearts2hearts",
+      "groupIds": [
+        "hearts2hearts"
+      ],
+      "videoIds": [
+        "patreon_6",
+        "patreon_7",
+        "patreon_10"
+      ],
+      "source": "patreon"
+    },
+    {
+      "id": "pt_kawaii_h2h",
+      "title": "Kawaii Lab. vs Hearts2Hearts (Patreon)",
+      "count": 2,
+      "thumb": "https://img.youtube.com/vi/oWc_rbCGcPY/hqdefault.jpg",
+      "groupId": "hearts2hearts",
+      "groupIds": [
+        "hearts2hearts"
+      ],
+      "videoIds": [
+        "patreon_2",
+        "patreon_5"
+      ],
+      "source": "patreon"
+    },
+    {
+      "id": "pt_veiled_full",
+      "title": "Veiled Cup EP1-4 FULL ซับไทย (Patreon)",
+      "count": 4,
+      "thumb": "images/patreon/p_47.jpg",
+      "groupId": "veiled_cup",
+      "groupIds": [
+        "veiled_cup"
+      ],
+      "videoIds": [
+        "patreon_47",
+        "patreon_46",
+        "patreon_45",
+        "patreon_32"
+      ],
+      "source": "patreon"
     }
   ],
   "videos": [
@@ -2501,7 +2678,7 @@ const sceneDatabase = {
     {
       "num": 123,
       "ytId": "3xvtMfqwtzM",
-      "title": "Yaho! Asking the hottest group right now, RESCENE, why they're exploding in popularity! Just 30 m...",
+      "title": "ยาโฮ! ถาม RESCENE วงสุดฮอตช่วงนี้ถึงเหตุผลที่ปังเปรี้ยง! ร่วมกับกวางฮีแค่ 30 นาทีพอ! EP.03",
       "duration": "33:48",
       "durationSec": 2028,
       "thumb": "https://img.youtube.com/vi/3xvtMfqwtzM/hqdefault.jpg",
@@ -2510,7 +2687,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
@@ -2561,7 +2738,7 @@ const sceneDatabase = {
     {
       "num": 127,
       "ytId": "OHZsGOOJsoE",
-      "title": "What if Jiwoo and Yuha Hearts2Hearts were directing the acting? | Silent Game Club EP02",
+      "title": "ถ้าจะให้จีอูและยูฮา Hearts2Hearts คอยสั่งคอยกำกับการแสดงล่ะก็? | ชมรมเกมเงียบ EP02",
       "duration": "29:50",
       "durationSec": 1790,
       "thumb": "https://img.youtube.com/vi/OHZsGOOJsoE/hqdefault.jpg",
@@ -2570,7 +2747,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
@@ -2889,7 +3066,7 @@ const sceneDatabase = {
     {
       "num": 147,
       "ytId": "GjRUnMgARAM",
-      "title": "Hearts2Hearts Plays Who's Who (ENG SUB)",
+      "title": "Hearts2Hearts Plays Who's Who ซับไทย",
       "duration": "13:15",
       "durationSec": 795,
       "thumb": "https://img.youtube.com/vi/GjRUnMgARAM/hqdefault.jpg",
@@ -2898,7 +3075,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ENG SUB",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {

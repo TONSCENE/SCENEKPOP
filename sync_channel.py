@@ -461,8 +461,37 @@ def main():
             "count": len(pl_vids),
             "thumb": vid_by_id[pl_vids[0]]["thumb"],
             "groupId": primary_group,
+            "groupIds": [primary_group],
             "videoIds": pl_vids,
         })
+
+    # 5.5 Auto-group multi-episode Patreon series into playlists
+    patreon_series_defs = [
+        ("pt_hyemilee", "HyeMiLeeYeChaePa S01 ซับไทย (Patreon)", "hyemileeyechaepa", ["hyemileeyechaepa", "le_sserafim", "idle"], lambda v: "hyemileeyechaepa" in v["title"].lower()),
+        ("pt_smtm12", "Show Me The Money 12 ซับไทย (Patreon)", "smtm12_milli", ["smtm12_milli"], lambda v: "smtm12" in v["title"].lower()),
+        ("pt_wonhee", "Hello Twenty Wonhee S01 ซับไทย (Patreon)", "illit", ["illit"], lambda v: "hello twenty wonhee" in v["title"].lower()),
+        ("pt_idol_bingo", "Idol Bingo x ILLIT ซับไทย (Patreon)", "illit", ["illit"], lambda v: "idol bingo" in v["title"].lower()),
+        ("pt_mzine_h2h", "TV Asahi - MZINE Hearts2Hearts (Patreon)", "hearts2hearts", ["hearts2hearts"], lambda v: "mzine hearts2hearts" in v["title"].lower()),
+        ("pt_kawaii_h2h", "Kawaii Lab. vs Hearts2Hearts (Patreon)", "hearts2hearts", ["hearts2hearts"], lambda v: "kawaii lab" in v["title"].lower()),
+        ("pt_veiled_full", "Veiled Cup EP1-4 FULL ซับไทย (Patreon)", "veiled_cup", ["veiled_cup"], lambda v: "veiled cup" in v["title"].lower()),
+    ]
+    patreon_items = [v for v in videos_out if v.get("source") == "patreon"]
+    for sid, stitle, main_grp, all_grps, pred in patreon_series_defs:
+        matched_vids = [v["ytId"] for v in patreon_items if pred(v)]
+        if matched_vids:
+            # Reverse if episodes are numbered descending (e.g., E012 -> E01)
+            if any("e01" in vid_by_id[x]["title"].lower() or "ep1" in vid_by_id[x]["title"].lower() for x in matched_vids[-1:]):
+                matched_vids.reverse()
+            playlists_out.append({
+                "id": sid,
+                "title": stitle,
+                "count": len(matched_vids),
+                "thumb": vid_by_id[matched_vids[0]]["thumb"],
+                "groupId": main_grp,
+                "groupIds": all_grps,
+                "videoIds": matched_vids,
+                "source": "patreon",
+            })
 
     # Pick channel avatar from channel thumbnails if present
     channel_thumbs = videos_raw.get("thumbnails") or []
