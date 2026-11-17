@@ -1539,7 +1539,7 @@
       }
 
       // Hero background video (pick first YouTube video)
-      const firstYt = DB.videos.find(v => v.source !== 'patreon');
+      const firstYt = DB.videos.find(v => v.source === 'youtube');
       if (firstYt) {
         const heroVid = firstYt.ytId;
         document.getElementById('heroVideoIframe').src =
