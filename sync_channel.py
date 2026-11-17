@@ -168,12 +168,12 @@ def match_text_to_groups(text: str, playlist_ids: set, groups_cfg: list) -> list
         gid = grp["id"]
         if gid == "other_kpop":
             continue
+        # Exclusions (checked before playlist or keyword match)
+        if any(ex.lower() in t for ex in grp.get("exclude_if", [])):
+            continue
         # Direct playlist assignment
         if any(pid in playlist_ids for pid in grp.get("playlist_ids", [])):
             matched.append(gid)
-            continue
-        # Exclusions
-        if any(ex.lower() in t for ex in grp.get("exclude_if", [])):
             continue
         # Substring keywords
         hit = any(kw.lower() in t for kw in grp.get("keywords", []))

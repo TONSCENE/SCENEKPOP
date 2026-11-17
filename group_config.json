@@ -32,9 +32,12 @@
       "tagline": "Jiwoo • Carmen • Yuha • Stella • Juun • A-na • Ian • Yeon",
       "keywords": [
         "hearts2hearts", "h2h", "heartspod", "하츠투하츠",
-        "จีอู", "jiwoo", "ยูฮา", "yuha", "สเตลล่า", "stella",
+        "จีอู", "ยูฮา", "สเตลล่า", "stella",
         "เอนา", "a-na", "คาร์เมน", "carmen", "จูอึน", "jueun", "ju-eun",
-        "เอียน", "อีอัน", "ian", "เยอน", "yeon", "s2u", "hearts 2 house"
+        "เอียน", "อีอัน", "เยอน", "s2u", "hearts 2 house"
+      ],
+      "regex_keywords": [
+        "\\bjiwoo\\b(?!.*nmixx)", "\\byuha\\b", "\\bian\\b", "\\byeon\\b", "\\bye-on\\b"
       ],
       "playlist_ids": ["PLHrapbf9Q3g4"]
     },
@@ -265,7 +268,8 @@
       "thaiName": "Show Me The Money 12 / มิลลิ",
       "accent": "#fb7185",
       "tagline": "มิลลิ (MILLI) & Show Me The Money 12 ซับไทยบน Patreon",
-      "keywords": ["smtm12", "milli", "มิลลิ"],
+      "keywords": ["smtm12", "มิลลิ"],
+      "regex_keywords": ["\\bmilli\\b"],
       "playlist_ids": []
     },
     {
@@ -306,6 +310,8 @@
     "Ro2xZ1Pvqns": ["hearts2hearts"],
     "1ost-zTrW7k": ["qwer"],
     "n_I3V6cKUB4": ["qwer"],
-    "dUey2o_F84U": ["kiss_of_life"]
+    "dUey2o_F84U": ["kiss_of_life"],
+    "rOB-qGh-4JA": ["nmixx"],
+    "pibPgMV0LSk": ["hearts2hearts"]
   }
 }

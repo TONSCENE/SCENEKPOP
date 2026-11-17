@@ -11,7 +11,7 @@ const sceneDatabase = {
     "totalPatreon": 47,
     "totalGroups": 26,
     "totalPlaylists": 15,
-    "updatedAt": "2026-11-17 14:39"
+    "updatedAt": "2026-11-17 14:41"
   },
   "groups": [
     {
@@ -20,7 +20,7 @@ const sceneDatabase = {
       "thaiName": "คิวดับเบิลยูอีอาร์",
       "accent": "#ec4899",
       "tagline": "Chodan • Magenta • Hina • Siyeon — เกิร์ลแบนด์ 4 สาวสุดปั่น",
-      "count": 116,
+      "count": 115,
       "thumb": "https://img.youtube.com/vi/9bzCT2WQzJk/hqdefault.jpg",
       "playlistIds": [
         "PLLg0CmUn7KVM",
@@ -34,7 +34,7 @@ const sceneDatabase = {
       "thaiName": "ฮาร์ตส์ทูฮาร์ตส์ (H2H)",
       "accent": "#a855f7",
       "tagline": "Jiwoo • Carmen • Yuha • Stella • Juun • A-na • Ian • Yeon",
-      "count": 81,
+      "count": 74,
       "thumb": "https://img.youtube.com/vi/oWc_rbCGcPY/hqdefault.jpg",
       "playlistIds": [
         "PLHrapbf9Q3g4"
@@ -146,16 +146,6 @@ const sceneDatabase = {
       "playlistIds": []
     },
     {
-      "id": "smtm12_milli",
-      "name": "SMTM12 & MILLI",
-      "thaiName": "Show Me The Money 12 / มิลลิ",
-      "accent": "#fb7185",
-      "tagline": "มิลลิ (MILLI) & Show Me The Money 12 ซับไทยบน Patreon",
-      "count": 15,
-      "thumb": "https://img.youtube.com/vi/e-6-cE4dKOM/hqdefault.jpg",
-      "playlistIds": []
-    },
-    {
       "id": "hyemileeyechaepa",
       "name": "HyeMiLeeYeChaePa",
       "thaiName": "ฮเยมิรีเยแชพา (Chaewon • Miyeon • Hyeri • Yena)",
@@ -163,6 +153,16 @@ const sceneDatabase = {
       "tagline": "วาไรตี้บ้านพักสุดฮา EP.01-12 ซับไทยบน Patreon",
       "count": 12,
       "thumb": "images/patreon/p_33.jpg",
+      "playlistIds": []
+    },
+    {
+      "id": "smtm12_milli",
+      "name": "SMTM12 & MILLI",
+      "thaiName": "Show Me The Money 12 / มิลลิ",
+      "accent": "#fb7185",
+      "tagline": "มิลลิ (MILLI) & Show Me The Money 12 ซับไทยบน Patreon",
+      "count": 12,
+      "thumb": "images/patreon/p_19.jpg",
       "playlistIds": []
     },
     {
@@ -327,7 +327,7 @@ const sceneDatabase = {
       "title": "Triples",
       "count": 2,
       "thumb": "https://img.youtube.com/vi/U6s0c9vOYd0/hqdefault.jpg",
-      "groupId": "hearts2hearts",
+      "groupId": "triples",
       "videoIds": [
         "U6s0c9vOYd0",
         "Jf9CJV2IvQM"
@@ -873,7 +873,6 @@ const sceneDatabase = {
       "durationSec": 1869,
       "thumb": "https://img.youtube.com/vi/rOB-qGh-4JA/hqdefault.jpg",
       "groups": [
-        "qwer",
         "nmixx"
       ],
       "playlists": [
@@ -1015,7 +1014,6 @@ const sceneDatabase = {
       "durationSec": 1566,
       "thumb": "https://img.youtube.com/vi/JLAXdn0BaCs/hqdefault.jpg",
       "groups": [
-        "hearts2hearts",
         "babymonster"
       ],
       "playlists": [],
@@ -1143,8 +1141,7 @@ const sceneDatabase = {
       "durationSec": 1697,
       "thumb": "https://img.youtube.com/vi/e-6-cE4dKOM/hqdefault.jpg",
       "groups": [
-        "qwer",
-        "smtm12_milli"
+        "qwer"
       ],
       "playlists": [
         "PLHoETizL_iaeH1V3_BkJemczZzae-1Lgd"
@@ -1259,7 +1256,6 @@ const sceneDatabase = {
       "durationSec": 898,
       "thumb": "https://img.youtube.com/vi/U6s0c9vOYd0/hqdefault.jpg",
       "groups": [
-        "hearts2hearts",
         "triples"
       ],
       "playlists": [
@@ -1480,7 +1476,7 @@ const sceneDatabase = {
     {
       "num": 60,
       "ytId": "tQcbIVuCykk",
-      "title": "260919 2026 THE FACT MUSIC AWARDS in Busan RESCENE ศิลปินแห่งปี บอนซัง ซับไทย",
+      "title": "09/19/26 2026 THE FACT MUSIC AWARDS in Busan RESCENE Artist of the Year Bonsang ENG SUB",
       "duration": "1:58",
       "durationSec": 118,
       "thumb": "https://img.youtube.com/vi/tQcbIVuCykk/hqdefault.jpg",
@@ -1489,13 +1485,13 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ซับไทย",
+      "subBadge": "ENG SUB",
       "source": "youtube"
     },
     {
       "num": 61,
       "ytId": "S78oB6WI23c",
-      "title": "260919 2026 THE FACT MUSIC AWARDS in Busan KiiiKiii ศิลปินแห่งปี บอนซัง ซับไทย",
+      "title": "260919 2026 THE FACT MUSIC AWARDS in Busan KiiiKiii Artist of the Year Bonsang English Subtitles",
       "duration": "1:51",
       "durationSec": 111,
       "thumb": "https://img.youtube.com/vi/S78oB6WI23c/hqdefault.jpg",
@@ -1504,13 +1500,13 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ซับไทย",
+      "subBadge": "ENG SUB",
       "source": "youtube"
     },
     {
       "num": 62,
       "ytId": "8yexD4KLN8Y",
-      "title": "260919 2026 THE FACT MUSIC AWARDS in Busan ILLIT ศิลปินแห่งปี บอนซัง ซับไทย",
+      "title": "260919 2026 THE FACT MUSIC AWARDS in Busan ILLIT Artist of the Year Bonsang ENG SUB",
       "duration": "1:31",
       "durationSec": 91,
       "thumb": "https://img.youtube.com/vi/8yexD4KLN8Y/hqdefault.jpg",
@@ -1519,7 +1515,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ซับไทย",
+      "subBadge": "ENG SUB",
       "source": "youtube"
     },
     {
@@ -1530,7 +1526,6 @@ const sceneDatabase = {
       "durationSec": 1806,
       "thumb": "https://img.youtube.com/vi/Jf9CJV2IvQM/hqdefault.jpg",
       "groups": [
-        "hearts2hearts",
         "triples"
       ],
       "playlists": [
@@ -1712,7 +1707,6 @@ const sceneDatabase = {
       "durationSec": 1509,
       "thumb": "https://img.youtube.com/vi/POvilADXwnE/hqdefault.jpg",
       "groups": [
-        "hearts2hearts",
         "twice",
         "idle"
       ],
@@ -1724,7 +1718,7 @@ const sceneDatabase = {
     {
       "num": 75,
       "ytId": "WkoJFd3BAEQ",
-      "title": "มิยอน I-DLE กับการตรวจสุขภาพครั้งแรกในวัย 30, นี่ฉัน.. พูดเพ้อเจ้ออะไรออกไปไหมเนี้ย? | จอนโดซา EP.00",
+      "title": "(G)I-DLE Miyeon's First Health Checkup in Her 30s: Did I... Just Say Something Crazy? | Jeon Do-s...",
       "duration": "15:47",
       "durationSec": 947,
       "thumb": "https://img.youtube.com/vi/WkoJFd3BAEQ/hqdefault.jpg",
@@ -1733,7 +1727,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย",
+      "subBadge": "SUBBED",
       "source": "youtube"
     },
     {
@@ -1842,8 +1836,7 @@ const sceneDatabase = {
       "durationSec": 1980,
       "thumb": "https://img.youtube.com/vi/Ggj-reUE7HA/hqdefault.jpg",
       "groups": [
-        "rescene",
-        "smtm12_milli"
+        "rescene"
       ],
       "playlists": [
         "PLK0euQjdYbEU"
@@ -2528,7 +2521,6 @@ const sceneDatabase = {
       "durationSec": 2581,
       "thumb": "https://img.youtube.com/vi/kFkx8-yZI2I/hqdefault.jpg",
       "groups": [
-        "hearts2hearts",
         "rescene"
       ],
       "playlists": [],
@@ -2569,7 +2561,7 @@ const sceneDatabase = {
     {
       "num": 127,
       "ytId": "OHZsGOOJsoE",
-      "title": "ถ้าจะให้จีอูและยูฮา Hearts2Hearts คอยสั่งคอยกำกับการแสดงล่ะก็? | ชมรมเกมเงียบ EP02",
+      "title": "What if Jiwoo and Yuha Hearts2Hearts were directing the acting? | Silent Game Club EP02",
       "duration": "29:50",
       "durationSec": 1790,
       "thumb": "https://img.youtube.com/vi/OHZsGOOJsoE/hqdefault.jpg",
@@ -2578,7 +2570,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย",
+      "subBadge": "SUBBED",
       "source": "youtube"
     },
     {
@@ -2897,7 +2889,7 @@ const sceneDatabase = {
     {
       "num": 147,
       "ytId": "GjRUnMgARAM",
-      "title": "Hearts2Hearts Plays Who's Who ซับไทย",
+      "title": "Hearts2Hearts Plays Who's Who (ENG SUB)",
       "duration": "13:15",
       "durationSec": 795,
       "thumb": "https://img.youtube.com/vi/GjRUnMgARAM/hqdefault.jpg",
@@ -2906,7 +2898,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย",
+      "subBadge": "ENG SUB",
       "source": "youtube"
     },
     {
@@ -3144,8 +3136,7 @@ const sceneDatabase = {
       "durationSec": 1794,
       "thumb": "https://img.youtube.com/vi/cFrUSw_DruU/hqdefault.jpg",
       "groups": [
-        "qwer",
-        "smtm12_milli"
+        "qwer"
       ],
       "playlists": [
         "PLHoETizL_iaeH1V3_BkJemczZzae-1Lgd"
@@ -3301,8 +3292,7 @@ const sceneDatabase = {
       "durationSec": 1380,
       "thumb": "https://img.youtube.com/vi/4aSkFHX0epM/hqdefault.jpg",
       "groups": [
-        "qwer",
-        "hearts2hearts"
+        "qwer"
       ],
       "playlists": [],
       "contentType": "live",
@@ -3392,8 +3382,7 @@ const sceneDatabase = {
       "durationSec": 1834,
       "thumb": "https://img.youtube.com/vi/SXTI0cwLF08/hqdefault.jpg",
       "groups": [
-        "qwer",
-        "hearts2hearts"
+        "qwer"
       ],
       "playlists": [],
       "contentType": "live",
@@ -3433,7 +3422,7 @@ const sceneDatabase = {
     {
       "num": 182,
       "ytId": "J2pSZSH6xkI",
-      "title": "ทายความคิดเด็กสมัยนี้กับ NMIXX｜ODG",
+      "title": "Guessing what kids these days are thinking with NMIXX | ODG",
       "duration": "17:40",
       "durationSec": 1060,
       "thumb": "https://img.youtube.com/vi/J2pSZSH6xkI/hqdefault.jpg",
@@ -3442,7 +3431,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย",
+      "subBadge": "SUBBED",
       "source": "youtube"
     },
     {
@@ -3553,7 +3542,7 @@ const sceneDatabase = {
     {
       "num": 190,
       "ytId": "S5UpMqo4afg",
-      "title": "260427 Weverse Live QWER Ceremony for us🩵🎉ซับไทย",
+      "title": "260427 Weverse Live QWER Ceremony for us 🩵🎉 (Thai Subtitles)",
       "duration": "5:55",
       "durationSec": 355,
       "thumb": "https://img.youtube.com/vi/S5UpMqo4afg/hqdefault.jpg",
@@ -3718,7 +3707,7 @@ const sceneDatabase = {
     {
       "num": 201,
       "ytId": "dUey2o_F84U",
-      "title": "IDOL RADIO เบลล์ นัตตี้ Baby Dont Cry CUT",
+      "title": "IDOL RADIO Belle Nutty Baby Don't Cry CUT",
       "duration": "10:14",
       "durationSec": 614,
       "thumb": "https://img.youtube.com/vi/dUey2o_F84U/hqdefault.jpg",
@@ -3727,13 +3716,13 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "ซับไทย",
+      "subBadge": "SUBBED",
       "source": "youtube"
     },
     {
       "num": 202,
       "ytId": "XycqgACRGfk",
-      "title": "21.02.26 ABEMA QWER แปลไทย",
+      "title": "21.02.26 ABEMA QWER (Thai Translation)",
       "duration": "34:16",
       "durationSec": 2056,
       "thumb": "https://img.youtube.com/vi/XycqgACRGfk/hqdefault.jpg",
@@ -3742,7 +3731,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย",
+      "subBadge": "SUBBED",
       "source": "youtube"
     },
     {
@@ -6611,7 +6600,7 @@ const sceneDatabase = {
       "title": "SMTM12 EP11 SEMI FINAL OSUN ซับไทย",
       "duration": "March 27",
       "durationSec": 0,
-      "thumb": "https://img.youtube.com/vi/e-6-cE4dKOM/hqdefault.jpg",
+      "thumb": "images/patreon/p_19.jpg",
       "groups": [
         "smtm12_milli"
       ],

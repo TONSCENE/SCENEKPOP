@@ -14,8 +14,8 @@
 
 | วง / หมวดหมู่ | จำนวนคลิป | ลิงก์เปิดดูเฉพาะวง |
 | :--- | :---: | :--- |
-| **QWER** | 116 | https://tonscene.github.io/SCENEKPOP/#group=qwer |
-| **Hearts2Hearts** | 81 | https://tonscene.github.io/SCENEKPOP/#group=hearts2hearts |
+| **QWER** | 115 | https://tonscene.github.io/SCENEKPOP/#group=qwer |
+| **Hearts2Hearts** | 74 | https://tonscene.github.io/SCENEKPOP/#group=hearts2hearts |
 | **RESCENE** | 51 | https://tonscene.github.io/SCENEKPOP/#group=rescene |
 | **tripleS** | 20 | https://tonscene.github.io/SCENEKPOP/#group=triples |
 | **KiiiKiii** | 19 | https://tonscene.github.io/SCENEKPOP/#group=kiiikiii |
@@ -25,8 +25,8 @@
 | **BABYMONSTER** | 15 | https://tonscene.github.io/SCENEKPOP/#group=babymonster |
 | **TUIDE** | 15 | https://tonscene.github.io/SCENEKPOP/#group=tuide |
 | **i-dle** | 15 | https://tonscene.github.io/SCENEKPOP/#group=idle |
-| **SMTM12 & MILLI** | 15 | https://tonscene.github.io/SCENEKPOP/#group=smtm12_milli |
 | **HyeMiLeeYeChaePa** | 12 | https://tonscene.github.io/SCENEKPOP/#group=hyemileeyechaepa |
+| **SMTM12 & MILLI** | 12 | https://tonscene.github.io/SCENEKPOP/#group=smtm12_milli |
 | **NMIXX** | 5 | https://tonscene.github.io/SCENEKPOP/#group=nmixx |
 | **KISS OF LIFE** | 5 | https://tonscene.github.io/SCENEKPOP/#group=kiss_of_life |
 | **TWICE** | 5 | https://tonscene.github.io/SCENEKPOP/#group=twice |
