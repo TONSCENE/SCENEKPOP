@@ -1,0 +1,364 @@
+#!/usr/bin/env python3
+"""
+Sync all videos and playlists from https://www.youtube.com/@SCENEKPOP
+and generate db.js for SCENEKPOP+ (grouped by K-Pop group, playlist, and content type).
+"""
+import argparse
+import concurrent.futures
+import json
+import os
+import re
+import subprocess
+import sys
+from datetime import datetime
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+CONFIG_PATH = os.path.join(SCRIPT_DIR, "group_config.json")
+DESC_CACHE_PATH = os.path.join(SCRIPT_DIR, ".desc_cache.json")
+OUTPUT_DB_PATH = os.path.join(SCRIPT_DIR, "db.js")
+
+
+def run_yt_dlp_json(url: str) -> dict:
+    """Fetch flat-playlist metadata JSON for a YouTube channel tab or playlist."""
+    cmd = [
+        "yt-dlp",
+        "--no-update",
+        "--flat-playlist",
+        "--dump-single-json",
+        url,
+    ]
+    res = subprocess.run(cmd, capture_output=True, text=True)
+    if res.returncode != 0:
+        raise RuntimeError(f"yt-dlp failed for {url}: {res.stderr.strip()}")
+    return json.loads(res.stdout)
+
+
+def fetch_video_detail(vid: str) -> dict:
+    """Fetch full metadata (description/tags) for a single video when title alone is ambiguous."""
+    cmd = [
+        "yt-dlp",
+        "--no-update",
+        "--skip-download",
+        "--dump-json",
+        f"https://www.youtube.com/watch?v={vid}",
+    ]
+    res = subprocess.run(cmd, capture_output=True, text=True)
+    if res.returncode != 0:
+        return {}
+    data = json.loads(res.stdout)
+    return {
+        "description": data.get("description") or "",
+        "tags": data.get("tags") or [],
+    }
+
+
+def format_duration(seconds) -> str:
+    """Format duration in seconds into MM:SS or H:MM:SS."""
+    if not seconds:
+        return ""
+    sec = int(seconds)
+    h, rem = divmod(sec, 3600)
+    m, s = divmod(rem, 60)
+    if h > 0:
+        return f"{h}:{m:02d}:{s:02d}"
+    return f"{m}:{s:02d}"
+
+
+def detect_sub_badge(title: str) -> str:
+    """Detect subtitle language tag from video title."""
+    t = title.lower()
+    has_th = any(k in t for k in ["ซับไทย", "แปลไทย", "thai sub", "[th]", "(th)"])
+    has_en = any(k in t for k in ["eng sub", "english sub", "[en]", "[eng]", "(en)"])
+    if has_th and has_en:
+        return "TH / EN SUB"
+    if has_th:
+        return "ซับไทย"
+    if has_en:
+        return "ENG SUB"
+    # Default for Thai-titled videos on @SCENEKPOP
+    if re.search(r"[\u0e00-\u0e7f]", title):
+        return "ซับไทย"
+    return "SUBBED"
+
+
+def detect_content_type(title: str, playlist_titles: list) -> str:
+    """Classify video into live, radio, stage, or variety."""
+    text = f"{title} {' '.join(playlist_titles)}".lower()
+    if any(k in text for k in ["weverse live", "weverse", "ig live", "live ig", "hbd live", "syncroom live", "birthday", "christmas day"]):
+        if "studio choom" not in text and "cultwo" not in text:
+            return "live"
+    if any(k in text for k in ["radio", "cultwo", "youngstreet", "young street", "volume up", "kiss the radio", "gayo plaza", "yoon sang", "mbc radio", "heartspod", "bae sung-jae", "you in radio"]):
+        return "radio"
+    if any(k in text for k in ["awards", "bonsang", "m countdown", "busking", "rocketlaunch", "concert", "fanmeeting", "fan meeting", "showcase", "show case", "studio choom", "kcon", "live vocal", "dingo attack"]):
+        return "stage"
+    return "variety"
+
+
+def match_text_to_groups(text: str, playlist_ids: set, groups_cfg: list) -> list:
+    """Return matching group IDs for a given text blob and playlist membership."""
+    t = text.lower()
+    matched = []
+    for grp in groups_cfg:
+        gid = grp["id"]
+        if gid == "other_kpop":
+            continue
+        # Direct playlist assignment
+        if any(pid in playlist_ids for pid in grp.get("playlist_ids", [])):
+            matched.append(gid)
+            continue
+        # Exclusions
+        if any(ex.lower() in t for ex in grp.get("exclude_if", [])):
+            continue
+        # Substring keywords
+        hit = any(kw.lower() in t for kw in grp.get("keywords", []))
+        # Regex keywords
+        if not hit:
+            for pattern in grp.get("regex_keywords", []):
+                if re.search(pattern, t, flags=re.IGNORECASE):
+                    hit = True
+                    break
+        if hit:
+            matched.append(gid)
+    return matched
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Sync @SCENEKPOP YouTube channel to db.js")
+    parser.add_argument("--videos-json", help="Optional path to pre-fetched videos JSON")
+    parser.add_argument("--playlists-json", help="Optional path to pre-fetched playlists JSON")
+    parser.add_argument("--pl-map-json", help="Optional path to pre-fetched playlist->videos map JSON")
+    parser.add_argument("--skip-detail-lookup", action="store_true", help="Skip fetching descriptions for unmatched videos")
+    args = parser.parse_args()
+
+    with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+        cfg = json.load(f)
+
+    channel_url = cfg["channel"]["url"]
+    groups_cfg = cfg["groups"]
+    overrides = cfg.get("video_overrides", {})
+
+    desc_cache = {}
+    if os.path.exists(DESC_CACHE_PATH):
+        with open(DESC_CACHE_PATH, "r", encoding="utf-8") as f:
+            desc_cache = json.load(f)
+
+    # 1. Fetch videos
+    if args.videos_json and os.path.exists(args.videos_json):
+        print(f"Loading cached videos from {args.videos_json}...")
+        videos_raw = json.load(open(args.videos_json, "r", encoding="utf-8"))
+    else:
+        print(f"Fetching videos from {channel_url}/videos ...")
+        videos_raw = run_yt_dlp_json(f"{channel_url}/videos")
+
+    entries = [e for e in videos_raw.get("entries", []) if e and e.get("id")]
+    print(f"Found {len(entries)} videos.")
+
+    # 2. Fetch playlists & their video IDs
+    if args.playlists_json and os.path.exists(args.playlists_json):
+        playlists_raw = json.load(open(args.playlists_json, "r", encoding="utf-8"))
+    else:
+        print(f"Fetching playlists from {channel_url}/playlists ...")
+        playlists_raw = run_yt_dlp_json(f"{channel_url}/playlists")
+
+    pl_entries = [p for p in playlists_raw.get("entries", []) if p and p.get("id")]
+    print(f"Found {len(pl_entries)} playlists.")
+
+    if args.pl_map_json and os.path.exists(args.pl_map_json):
+        pl_map = json.load(open(args.pl_map_json, "r", encoding="utf-8"))
+    else:
+        print("Fetching video lists for each playlist in parallel...")
+        pl_map = {}
+
+        def _fetch_pl(pl_item):
+            pid = pl_item["id"]
+            ptitle = pl_item.get("title") or pid
+            pdata = run_yt_dlp_json(f"https://www.youtube.com/playlist?list={pid}")
+            pl_entries_list = [
+                {
+                    "id": v["id"],
+                    "title": v.get("title") or "",
+                    "duration": v.get("duration"),
+                }
+                for v in pdata.get("entries", [])
+                if v and v.get("id") and v.get("title") not in ("[Private video]", "[Deleted video]")
+            ]
+            return pid, {
+                "title": ptitle,
+                "videos": [v["id"] for v in pl_entries_list],
+                "entries": pl_entries_list,
+            }
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
+            for pid, pinfo in pool.map(_fetch_pl, pl_entries):
+                pl_map[pid] = pinfo
+                print(f"  - {pinfo['title']}: {len(pinfo['videos'])} videos")
+
+    # Merge any playlist-only (e.g. unlisted) videos into entries so all 15 playlists work
+    seen_entry_ids = {e["id"] for e in entries}
+    for pid, pinfo in pl_map.items():
+        for pe in pinfo.get("entries", []):
+            if pe["id"] not in seen_entry_ids:
+                seen_entry_ids.add(pe["id"])
+                entries.append(pe)
+
+    # Build reverse index: video_id -> list of playlist IDs
+    vid_to_pl_ids = {}
+    for pid, pinfo in pl_map.items():
+        for vid in pinfo.get("videos", []):
+            vid_to_pl_ids.setdefault(vid, []).append(pid)
+
+    # 3. Classify videos
+    videos_out = []
+    unmatched_indices = []
+    for idx, entry in enumerate(entries):
+        vid = entry["id"]
+        title = entry.get("title") or ""
+        pl_ids = vid_to_pl_ids.get(vid, [])
+        pl_titles = [pl_map[pid]["title"] for pid in pl_ids if pid in pl_map]
+
+        if vid in overrides:
+            matched_groups = list(overrides[vid])
+        else:
+            matched_groups = match_text_to_groups(
+                f"{title} {' '.join(pl_titles)}",
+                set(pl_ids),
+                groups_cfg,
+            )
+
+        if not matched_groups:
+            # Check description cache first
+            cached = desc_cache.get(vid)
+            if cached:
+                blob = f"{title} {cached.get('description', '')} {' '.join(cached.get('tags', []))}"
+                matched_groups = match_text_to_groups(blob, set(pl_ids), groups_cfg)
+
+        if not matched_groups:
+            unmatched_indices.append(idx)
+
+        videos_out.append({
+            "num": idx + 1,
+            "ytId": vid,
+            "title": title,
+            "duration": format_duration(entry.get("duration")),
+            "durationSec": int(entry.get("duration") or 0),
+            "thumb": f"https://img.youtube.com/vi/{vid}/hqdefault.jpg",
+            "groups": matched_groups,
+            "playlists": pl_ids,
+            "contentType": detect_content_type(title, pl_titles),
+            "subBadge": detect_sub_badge(title),
+        })
+
+    # Optionally resolve unmatched videos via description lookup
+    if unmatched_indices and not args.skip_detail_lookup:
+        print(f"Inspecting descriptions for {len(unmatched_indices)} unmatched videos...")
+        for idx in unmatched_indices:
+            vid = videos_out[idx]["ytId"]
+            detail = desc_cache.get(vid) or fetch_video_detail(vid)
+            if detail:
+                desc_cache[vid] = detail
+                blob = f"{videos_out[idx]['title']} {detail.get('description', '')} {' '.join(detail.get('tags', []))}"
+                pl_ids = set(videos_out[idx]["playlists"])
+                matched = match_text_to_groups(blob, pl_ids, groups_cfg)
+                if matched:
+                    videos_out[idx]["groups"] = matched
+
+        with open(DESC_CACHE_PATH, "w", encoding="utf-8") as f:
+            json.dump(desc_cache, f, ensure_ascii=False, indent=2)
+
+    # Final fallback to "other_kpop"
+    for v in videos_out:
+        if not v["groups"]:
+            # Also check if it matched other_kpop keywords specifically, either way place in other_kpop
+            v["groups"] = ["other_kpop"]
+
+    # 4. Build group summaries sorted by count (keep other_kpop at the end)
+    vid_by_id = {v["ytId"]: v for v in videos_out}
+    group_counts = {g["id"]: 0 for g in groups_cfg}
+    group_thumbs = {}
+    for v in videos_out:
+        for gid in v["groups"]:
+            group_counts[gid] = group_counts.get(gid, 0) + 1
+            if gid not in group_thumbs:
+                group_thumbs[gid] = v["thumb"]
+
+    groups_out = []
+    for g in groups_cfg:
+        gid = g["id"]
+        cnt = group_counts.get(gid, 0)
+        if cnt == 0:
+            continue
+        groups_out.append({
+            "id": gid,
+            "name": g["name"],
+            "thaiName": g.get("thaiName", ""),
+            "accent": g.get("accent", "#a855f7"),
+            "tagline": g.get("tagline", ""),
+            "count": cnt,
+            "thumb": group_thumbs.get(gid, ""),
+            "playlistIds": g.get("playlist_ids", []),
+        })
+
+    groups_out.sort(key=lambda x: (x["id"] == "other_kpop", -x["count"]))
+
+    # 5. Build playlists / series output
+    playlists_out = []
+    for pl_item in pl_entries:
+        pid = pl_item["id"]
+        pinfo = pl_map.get(pid, {})
+        pl_vids = [vid for vid in pinfo.get("videos", []) if vid in vid_by_id]
+        if not pl_vids:
+            continue
+        # Infer primary group for playlist
+        g_tally = {}
+        for vid in pl_vids:
+            for gid in vid_by_id[vid]["groups"]:
+                g_tally[gid] = g_tally.get(gid, 0) + 1
+        primary_group = max(g_tally.items(), key=lambda kv: kv[1])[0] if g_tally else "other_kpop"
+        playlists_out.append({
+            "id": pid,
+            "title": pinfo.get("title", pid),
+            "count": len(pl_vids),
+            "thumb": vid_by_id[pl_vids[0]]["thumb"],
+            "groupId": primary_group,
+            "videoIds": pl_vids,
+        })
+
+    # Pick channel avatar from channel thumbnails if present
+    channel_thumbs = videos_raw.get("thumbnails") or []
+    avatar_url = ""
+    for th in channel_thumbs:
+        if th.get("url") and "yt3.googleusercontent" in th["url"]:
+            avatar_url = th["url"]
+            break
+
+    db = {
+        "channel": {
+            "handle": cfg["channel"]["handle"],
+            "url": cfg["channel"]["url"],
+            "name": cfg["channel"]["name"],
+            "subtitle": cfg["channel"]["subtitle"],
+            "avatar": avatar_url,
+            "totalVideos": len(videos_out),
+            "totalGroups": len(groups_out),
+            "totalPlaylists": len(playlists_out),
+            "updatedAt": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        },
+        "groups": groups_out,
+        "playlists": playlists_out,
+        "videos": videos_out,
+    }
+
+    with open(OUTPUT_DB_PATH, "w", encoding="utf-8") as f:
+        f.write("// Auto-generated by sync_channel.py — Do not edit manually\n")
+        f.write("const sceneDatabase = ")
+        json.dump(db, f, ensure_ascii=False, indent=2)
+        f.write(";\n")
+
+    print(f"\nGenerated {OUTPUT_DB_PATH}")
+    print(f"Summary: {len(videos_out)} videos across {len(groups_out)} groups & {len(playlists_out)} playlists:")
+    for g in groups_out:
+        print(f"  - {g['name']:18s} ({g['id']}): {g['count']} videos")
+
+
+if __name__ == "__main__":
+    main()

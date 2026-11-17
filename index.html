@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCENEKPOP+ — คลังคลิป K-Pop ซับไทย แยกตามวง (@SCENEKPOP)</title>
+  <meta name="description" content="คลังรวมวิดีโอ วาไรตี้ ซับไทย ไลฟ์ และรายการวิทยุ K-Pop หลายวงจากช่อง @SCENEKPOP แยกดูตามวงได้ครบจบในที่เดียว">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-color: #050508;
+      --surface-color: #0e0f15;
+      --card-bg: #13141c;
+      --card-hover: #1d1f2b;
+      --accent-purple: #a855f7;
+      --accent-pink: #ec4899;
+      --accent-cyan: #38bdf8;
+      --text-white: #ffffff;
+      --text-gray: #9ca3af;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --neon-gradient: linear-gradient(135deg, #a855f7 0%, #ec4899 52%, #38bdf8 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-white);
+      font-family: 'Prompt', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #050508;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #27273a;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-purple);
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 68px;
+      padding: 0 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 120;
+      background: linear-gradient(180deg, rgba(5,5,8,0.94) 0%, rgba(5,5,8,0.55) 75%, rgba(5,5,8,0) 100%);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      background: rgba(5, 5, 8, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(168, 85, 247, 0.22);
+      box-shadow: 0 6px 26px rgba(0, 0, 0, 0.75);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .brand-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      letter-spacing: 2px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--neon-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .brand-logo:hover {
+      transform: scale(1.03);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #e2e8f0;
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 500;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-pink);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .search-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-input {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 22px;
+      padding: 7px 32px 7px 34px;
+      color: white;
+      font-size: 13px;
+      font-family: 'Prompt', sans-serif;
+      width: 220px;
+      transition: all 0.25s ease;
+      outline: none;
+    }
+
+    .search-input:focus {
+      width: 280px;
+      background: rgba(255, 255, 255, 0.14);
+      border-color: var(--accent-purple);
+      box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      font-size: 12.5px;
+      color: var(--text-gray);
+      pointer-events: none;
+    }
+
+    .search-clear {
+      display: none;
+      position: absolute;
+      right: 10px;
+      background: none;
+      border: none;
+      color: var(--text-gray);
+      font-size: 16px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .yt-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #ff0000;
+      color: white;
+      padding: 7px 15px;
+      border-radius: 22px;
+      font-size: 12.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .yt-btn:hover {
+      background: #dc2626;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(239, 68, 68, 0.4);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 68vh;
+      min-height: 470px;
+      display: flex;
+      align-items: center;
+      padding: 68px 36px 28px 36px;
+      overflow: hidden;
+      background: radial-gradient(circle at 70% 25%, rgba(168, 85, 247, 0.25), transparent 55%), #050508;
+    }
+
+    .hero-video-wrapper {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-video-wrapper iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100vw;
+      height: 56.25vw;
+      min-height: 100vh;
+      min-width: 177.77vh;
+      transform: translate(-50%, -50%) scale(1.24);
+      border: none;
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    .hero-vignette {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(85deg, rgba(5,5,8,0.96) 0%, rgba(5,5,8,0.72) 48%, rgba(5,5,8,0.28) 100%),
+        linear-gradient(to top, var(--bg-color) 0%, rgba(5,5,8,0) 48%),
+        linear-gradient(to bottom, rgba(5,5,8,0.8) 0%, rgba(5,5,8,0) 24%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      max-width: 680px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(168, 85, 247, 0.18);
+      border: 1px solid rgba(168, 85, 247, 0.45);
+      color: #e9d5ff;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 14px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-title {
+      font-size: 50px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 14px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.85);
+      letter-spacing: -0.5px;
+    }
+
+    .hero-title span {
+      background: var(--neon-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: #cbd5e1;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .meta-tag {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .meta-tag.accent {
+      background: var(--neon-gradient);
+      border: none;
+      color: white;
+    }
+
+    .hero-desc {
+      font-size: 14.5px;
+      color: #d1d5db;
+      margin-bottom: 24px;
+      line-height: 1.75;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+      font-family: 'Prompt', sans-serif;
+    }
+
+    .btn-play {
+      background: white;
+      color: #050508;
+    }
+
+    .btn-play:hover {
+      background: #f3e8ff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-neon {
+      background: rgba(168, 85, 247, 0.24);
+      border: 1px solid rgba(236, 72, 153, 0.5);
+      color: white;
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-neon:hover {
+      background: rgba(168, 85, 247, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(168, 85, 247, 0.35);
+    }
+
+    /* Sticky Group Filter Bar */
+    .group-bar-wrapper {
+      position: sticky;
+      top: 68px;
+      z-index: 90;
+      background: rgba(5, 5, 8, 0.9);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+      padding: 12px 36px;
+    }
+
+    .group-bar {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+      padding-bottom: 2px;
+    }
+
+    .group-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #e2e8f0;
+      font-size: 13px;
+      font-weight: 500;
+      font-family: 'Prompt', sans-serif;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .group-pill:hover {
+      background: rgba(168, 85, 247, 0.18);
+      border-color: rgba(168, 85, 247, 0.5);
+      color: white;
+    }
+
+    .group-pill.active {
+      background: var(--neon-gradient);
+      border-color: transparent;
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 4px 16px rgba(168, 85, 247, 0.4);
+    }
+
+    .group-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .group-pill .pill-count {
+      font-size: 11px;
+      opacity: 0.8;
+      background: rgba(0, 0, 0, 0.28);
+      padding: 1px 6px;
+      border-radius: 999px;
+    }
+
+    /* Main Content Container */
+    .content-container {
+      max-width: 1280px;
+      margin: 28px auto 70px auto;
+      padding: 0 28px;
+    }
+
+    .section-block {
+      margin-bottom: 48px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-sub {
+      font-size: 13px;
+      color: var(--text-gray);
+    }
+
+    /* Group Showcase Cards Grid */
+    .groups-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .group-card {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .group-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.68);
+      transition: transform 0.35s ease, filter 0.35s ease;
+    }
+
+    .group-card:hover {
+      transform: translateY(-4px) scale(1.02);
+      border-color: var(--grp-accent, var(--accent-purple));
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.7), 0 0 20px rgba(168, 85, 247, 0.25);
+    }
+
+    .group-card:hover img {
+      transform: scale(1.06);
+      filter: brightness(0.85);
+    }
+
+    .group-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(5,5,8,0.95) 0%, rgba(5,5,8,0.45) 55%, rgba(5,5,8,0.15) 100%);
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .group-card-top {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(5, 5, 8, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 9px;
+      border-radius: 999px;
+      backdrop-filter: blur(6px);
+    }
+
+    .group-card-name {
+      font-size: 17px;
+      font-weight: 800;
+      color: white;
+      line-height: 1.25;
+    }
+
+    .group-card-thai {
+      font-size: 11.5px;
+      color: #cbd5e1;
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* 3-Column Video & Playlist Grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .media-card {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .media-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-purple);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.75), 0 0 18px rgba(168, 85, 247, 0.22);
+    }
+
+    .media-thumb-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #0a0b10;
+      overflow: hidden;
+    }
+
+    .media-thumb-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .media-card:hover .media-thumb-box img {
+      transform: scale(1.04);
+    }
+
+    .thumb-play-hover {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(5, 5, 8, 0.35);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .media-card:hover .thumb-play-hover {
+      opacity: 1;
+    }
+
+    .thumb-play-circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--neon-gradient);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 4px 20px rgba(236, 72, 153, 0.55);
+    }
+
+    .thumb-duration {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
+    .thumb-sub-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: rgba(5, 5, 8, 0.82);
+      border: 1px solid rgba(56, 189, 248, 0.55);
+      color: #7dd3fc;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .thumb-sub-badge.th {
+      border-color: rgba(74, 222, 128, 0.6);
+      color: #4ade80;
+    }
+
+    .media-body {
+      padding: 12px 14px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .media-title {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: white;
+      line-height: 1.45;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .media-footer {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .media-tags {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .tag-chip {
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(168, 85, 247, 0.16);
+      border: 1px solid rgba(168, 85, 247, 0.35);
+      color: #e9d5ff;
+    }
+
+    .tag-chip.type {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.12);
+      color: #cbd5e1;
+    }
+
+    /* Playlist Card Variant */
+    .playlist-card {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .playlist-card:hover {
+      transform: scale(1.03);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.75);
+    }
+
+    .playlist-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .playlist-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(5,5,8,0.92) 0%, rgba(5,5,8,0.35) 60%, rgba(5,5,8,0.1) 100%);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .playlist-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .playlist-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11.5px;
+      color: #cbd5e1;
+    }
+
+    .playlist-badge {
+      background: rgba(56, 189, 248, 0.22);
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      color: #7dd3fc;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 700;
+    }
+
+    /* Group Spotlight Banner (when a group is selected) */
+    .group-spotlight {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.16) 0%, rgba(236, 72, 153, 0.12) 50%, rgba(56, 189, 248, 0.12) 100%);
+      border: 1px solid rgba(168, 85, 247, 0.32);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .group-spotlight-info h2 {
+      font-size: 30px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .group-spotlight-thai {
+      font-size: 14px;
+      font-weight: 500;
+      color: #e9d5ff;
+      background: rgba(168, 85, 247, 0.22);
+      padding: 2px 10px;
+      border-radius: 999px;
+    }
+
+    .group-spotlight-info p {
+      color: #cbd5e1;
+      font-size: 14px;
+      margin-top: 6px;
+    }
+
+    .group-spotlight-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Sub-filter & Sort Toolbar */
+    .toolbar-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .type-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .type-tab {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #cbd5e1;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-family: 'Prompt', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .type-tab:hover {
+      border-color: var(--accent-cyan);
+      color: white;
+    }
+
+    .type-tab.active {
+      background: rgba(56, 189, 248, 0.2);
+      border-color: var(--accent-cyan);
+      color: #7dd3fc;
+      font-weight: 600;
+    }
+
+    .sort-select {
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: white;
+      padding: 7px 12px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-family: 'Prompt', sans-serif;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .load-more-wrap {
+      text-align: center;
+      margin-top: 28px;
+    }
+
+    /* Modal Player */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(10px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 18px;
+    }
+
+    .modal-content {
+      background: #11121a;
+      width: 100%;
+      max-width: 960px;
+      max-height: 92vh;
+      border-radius: 14px;
+      overflow-y: auto;
+      position: relative;
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      width: 36px;
+      height: 36px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: white;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .modal-close-btn:hover {
+      background: white;
+      color: black;
+      transform: scale(1.08);
+    }
+
+    .modal-player-container {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      max-height: 480px;
+      background: #000;
+    }
+
+    .modal-player-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .modal-body {
+      padding: 22px 26px;
+    }
+
+    .modal-title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.4;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .modal-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--text-gray);
+      margin-bottom: 16px;
+    }
+
+    .modal-nav-btns {
+      display: flex;
+      gap: 8px;
+      margin-left: auto;
+      flex-wrap: wrap;
+    }
+
+    .modal-mini-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-family: 'Prompt', sans-serif;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .modal-mini-btn:hover {
+      background: rgba(168, 85, 247, 0.3);
+      border-color: var(--accent-purple);
+    }
+
+    .modal-mini-btn.yt {
+      background: #ff0000;
+      border-color: #ff0000;
+    }
+
+    .episodes-header {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .ep-list-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 360px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .episode-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .episode-item:hover, .episode-item.active {
+      background: var(--card-hover);
+      border-color: var(--accent-purple);
+    }
+
+    .ep-num {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-gray);
+      min-width: 26px;
+      text-align: center;
+    }
+
+    .ep-thumb {
+      width: 104px;
+      height: 58px;
+      border-radius: 4px;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: #1b1d28;
+    }
+
+    .ep-details {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .ep-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: white;
+      line-height: 1.45;
+      margin-bottom: 4px;
+    }
+
+    .ep-duration {
+      font-size: 11px;
+      color: var(--accent-cyan);
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 36px 20px;
+      text-align: center;
+      color: var(--text-gray);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .groups-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 0 14px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .search-input {
+        width: 145px;
+      }
+      .search-input:focus {
+        width: 185px;
+      }
+      .yt-btn span {
+        display: none;
+      }
+      .hero {
+        height: auto;
+        min-height: unset;
+        padding: 86px 18px 26px 18px;
+      }
+      .hero-title {
+        font-size: 32px;
+      }
+      .group-bar-wrapper {
+        padding: 10px 14px;
+      }
+      .content-container {
+        padding: 0 14px;
+        margin-top: 18px;
+      }
+      .groups-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+      .video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+      .media-body {
+        padding: 9px 10px 11px 10px;
+      }
+      .media-title {
+        font-size: 12px;
+      }
+      .group-spotlight {
+        padding: 16px;
+      }
+      .group-spotlight-info h2 {
+        font-size: 22px;
+      }
+      .modal-body {
+        padding: 16px;
+      }
+      .ep-thumb {
+        width: 82px;
+        height: 46px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-left">
+      <a class="brand-logo" onclick="selectGroup('all')">
+        <i class="fa-solid fa-play" style="font-size: 18px;"></i> SCENEKPOP+
+      </a>
+      <ul class="nav-links">
+        <li><a onclick="selectGroup('all')" id="nav-home" class="active">หน้าแรก</a></li>
+        <li><a onclick="selectGroup('all'); scrollToId('sec-groups')">แยกตามวง</a></li>
+        <li><a onclick="selectGroup('all'); scrollToId('sec-playlists')">เพลย์ลิสต์</a></li>
+        <li><a onclick="selectGroup('all'); scrollToId('sec-latest')">คลิปล่าสุด</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" class="search-input" id="searchInput" placeholder="ค้นหาวง / คลิป / ซีรีส์..." oninput="handleSearch(this.value)" autocomplete="off">
+        <button id="searchClearBtn" class="search-clear" onclick="clearSearch()" title="ล้างการค้นหา">&times;</button>
+      </div>
+      <a href="https://www.youtube.com/@SCENEKPOP" target="_blank" rel="noopener noreferrer" class="yt-btn">
+        <i class="fa-brands fa-youtube"></i> <span>@SCENEKPOP</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="heroSection">
+    <div class="hero-video-wrapper">
+      <iframe
+        id="heroVideoIframe"
+        src=""
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        tabindex="-1"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+      <div class="hero-vignette"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-sparkles"></i> SCENEKPOP DIRECTORY
+      </div>
+      <h1 class="hero-title">คลังซับไทย <span>SCENEKPOP+</span></h1>
+      <div class="hero-meta" id="heroStats">
+        <span class="meta-tag accent">🇹🇭 ซับไทย & ENG SUB</span>
+        <span class="meta-tag" id="statVideos">359 คลิป</span>
+        <span class="meta-tag" id="statGroups">22 วง</span>
+        <span class="meta-tag" id="statPlaylists">15 เพลย์ลิสต์</span>
+      </div>
+      <p class="hero-desc">
+        รวมคลิปรายการวาไรตี้, Weverse Live, รายการวิทยุ และสเตจจากช่อง <strong>@SCENEKPOP</strong> จัดหมวดหมู่แยกตามวงให้เลือกดูได้ง่ายๆ ครบจบในที่เดียว
+      </p>
+      <div class="hero-buttons">
+        <button class="btn btn-play" onclick="playLatestVideo()">
+          <i class="fa-solid fa-play"></i> เล่นคลิปล่าสุด
+        </button>
+        <button class="btn btn-neon" onclick="scrollToId('sec-groups')">
+          <i class="fa-solid fa-layer-group"></i> เลือกดูตามวง (Browse Groups)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Group Filter Bar -->
+  <div class="group-bar-wrapper" id="groupBarWrapper">
+    <div class="group-bar" id="groupFilterBar">
+      <!-- Group pills injected by JS -->
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="content-container" id="mainContainer">
+
+    <!-- Search Results Section -->
+    <section class="section-block" id="sec-search" style="display: none;">
+      <div class="section-header">
+        <h2 class="section-title" id="searchTitle">🔍 ผลการค้นหา</h2>
+        <span class="section-sub" id="searchCount"></span>
+      </div>
+      <div class="groups-grid" id="searchGroupsGrid" style="margin-bottom: 24px; display: none;"></div>
+      <div class="video-grid" id="searchPlaylistsGrid" style="margin-bottom: 24px; display: none;"></div>
+      <div class="video-grid" id="searchVideosGrid"></div>
+    </section>
+
+    <!-- Home View: Groups + Playlists + Latest -->
+    <div id="homeView">
+      <section class="section-block" id="sec-groups">
+        <div class="section-header">
+          <h2 class="section-title">🌟 เลือกดูแยกตามวง (K-Pop Groups)</h2>
+          <span class="section-sub">คลิกที่วงเพื่อเปิดดูเฉพาะคลิปและเพลย์ลิสต์ของวงนั้น</span>
+        </div>
+        <div class="groups-grid" id="groupsGrid"></div>
+      </section>
+
+      <section class="section-block" id="sec-playlists">
+        <div class="section-header">
+          <h2 class="section-title">📺 เพลย์ลิสต์ & ซีรีส์ทั้งหมด (Playlists)</h2>
+          <span class="section-sub">รวมตอนเรียงลำดับตามเพลย์ลิสต์ของช่อง @SCENEKPOP</span>
+        </div>
+        <div class="video-grid" id="playlistsGrid"></div>
+      </section>
+
+      <section class="section-block" id="sec-latest">
+        <div class="section-header">
+          <h2 class="section-title">🔥 คลิปทั้งหมด / อัปเดตล่าสุด</h2>
+          <span class="section-sub" id="latestSummary"></span>
+        </div>
+        <div class="video-grid" id="latestGrid"></div>
+        <div class="load-more-wrap" id="latestLoadMoreWrap">
+          <button class="btn btn-neon" onclick="loadMoreLatest()">
+            <i class="fa-solid fa-angles-down"></i> โหลดคลิปเพิ่มเติม
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- Single Group Dedicated View -->
+    <div id="groupView" style="display: none;">
+      <div class="group-spotlight" id="groupSpotlight">
+        <div class="group-spotlight-info">
+          <h2 id="gvTitle">Group Name</h2>
+          <p id="gvTagline"></p>
+        </div>
+        <div class="group-spotlight-actions">
+          <button class="btn btn-play" onclick="playCurrentGroupQueue(0)">
+            <i class="fa-solid fa-play"></i> เล่นต่อเนื่องทุกคลิป
+          </button>
+          <button class="btn btn-neon" onclick="selectGroup('all')">
+            <i class="fa-solid fa-arrow-left"></i> ดูทุกวง
+          </button>
+        </div>
+      </div>
+
+      <!-- Group Playlists (shown if this group has playlists) -->
+      <section class="section-block" id="gvPlaylistsSec" style="display: none; margin-bottom: 32px;">
+        <div class="section-header">
+          <h3 class="section-title" style="font-size: 1.15rem;">📂 เพลย์ลิสต์ของวงนี้</h3>
+        </div>
+        <div class="video-grid" id="gvPlaylistsGrid"></div>
+      </section>
+
+      <!-- Sub-filter & Sort -->
+      <div class="toolbar-row">
+        <div class="type-tabs" id="typeTabs"></div>
+        <select class="sort-select" id="sortSelect" onchange="renderGroupVideos()">
+          <option value="newest">เรียง: ใหม่สุดก่อน</option>
+          <option value="oldest">เรียง: เก่าสุดก่อน</option>
+          <option value="longest">ความยาว: มาก → น้อย</option>
+          <option value="shortest">ความยาว: น้อย → มาก</option>
+        </select>
+      </div>
+
+      <div class="video-grid" id="gvVideosGrid"></div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>SCENEKPOP+ Directory — คลังรวมคลิป K-Pop แยกตามวงจากช่อง <a href="https://www.youtube.com/@SCENEKPOP" target="_blank" rel="noopener noreferrer">@SCENEKPOP</a></p>
+    <p style="margin-top: 6px; font-size: 12px;" id="footerUpdated"></p>
+  </footer>
+
+  <!-- Video Player Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+      <button class="modal-close-btn" onclick="closeModal()">&times;</button>
+      <div class="modal-player-container" id="modalPlayer"></div>
+      <div class="modal-body">
+        <h2 class="modal-title" id="modalTitle">Title</h2>
+        <div class="modal-meta-row">
+          <span class="meta-tag accent" id="modalBadge">ซับไทย</span>
+          <span id="modalCounter">1 / 1</span>
+          <div class="modal-nav-btns">
+            <button class="modal-mini-btn" onclick="stepEpisode(-1)" id="btnPrevEp"><i class="fa-solid fa-backward-step"></i> ก่อนหน้า</button>
+            <button class="modal-mini-btn" onclick="stepEpisode(1)" id="btnNextEp">ถัดไป <i class="fa-solid fa-forward-step"></i></button>
+            <a id="modalYtLink" href="#" target="_blank" rel="noopener noreferrer" class="modal-mini-btn yt">
+              <i class="fa-brands fa-youtube"></i> ดูบน YouTube
+            </a>
+          </div>
+        </div>
+        <div class="episodes-header">
+          <span id="modalListLabel"><i class="fa-solid fa-list-ul"></i> รายการคลิปในคิว</span>
+          <span style="font-size: 12.5px; color: var(--accent-cyan);" id="modalListCount"></span>
+        </div>
+        <div class="ep-list-container" id="epListContainer"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="db.js"></script>
+  <script>
+    const DB = typeof sceneDatabase !== 'undefined' ? sceneDatabase : { channel: {}, groups: [], playlists: [], videos: [] };
+    const GROUP_MAP = Object.fromEntries(DB.groups.map(g => [g.id, g]));
+    const VIDEO_MAP = Object.fromEntries(DB.videos.map(v => [v.ytId, v]));
+    const PLAYLIST_MAP = Object.fromEntries(DB.playlists.map(p => [p.id, p]));
+
+    const TYPE_LABELS = {
+      all: 'ทั้งหมด',
+      variety: '🎬 วาไรตี้ & รายการ',
+      live: '📱 Weverse / IG Live',
+      radio: '🎙️ วิทยุ (Radio)',
+      stage: '🎤 สเตจ & รางวัล'
+    };
+
+    let activeGroupId = 'all';
+    let activeContentType = 'all';
+    let latestLimit = 24;
+    let currentQueue = [];
+    let currentQueueIndex = 0;
+
+    // Navbar scroll styling
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 36);
+    });
+
+    function scrollToId(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        const y = el.getBoundingClientRect().top + window.scrollY - 130;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      }
+    }
+
+    function escapeHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function initApp() {
+      // Hero background video
+      if (DB.videos.length > 0) {
+        const heroVid = DB.videos[0].ytId;
+        document.getElementById('heroVideoIframe').src =
+          `https://www.youtube.com/embed/${heroVid}?autoplay=1&mute=1&controls=0&loop=1&playlist=${heroVid}&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&enablejsapi=1`;
+      }
+
+      document.getElementById('statVideos').textContent = `${DB.channel.totalVideos || DB.videos.length} คลิป`;
+      document.getElementById('statGroups').textContent = `${DB.groups.length} วง / หมวด`;
+      document.getElementById('statPlaylists').textContent = `${DB.playlists.length} เพลย์ลิสต์`;
+      document.getElementById('latestSummary').textContent = `ทั้งหมด ${DB.videos.length} คลิปจาก @SCENEKPOP`;
+      if (DB.channel.updatedAt) {
+        document.getElementById('footerUpdated').textContent = `อัปเดตข้อมูลล่าสุด: ${DB.channel.updatedAt}`;
+      }
+
+      renderGroupBar();
+      renderHomeGroups();
+      renderHomePlaylists();
+      renderLatestVideos();
+
+      // Check URL hash (#group=qwer)
+      const hashMatch = window.location.hash.match(/group=([a-z0-9_]+)/i);
+      if (hashMatch && GROUP_MAP[hashMatch[1]]) {
+        selectGroup(hashMatch[1], false);
+      }
+    }
+
+    function renderGroupBar() {
+      const bar = document.getElementById('groupFilterBar');
+      const allBtn = `
+        <button class="group-pill ${activeGroupId === 'all' ? 'active' : ''}" onclick="selectGroup('all')">
+          <span>✦ ทั้งหมด</span>
+          <span class="pill-count">${DB.videos.length}</span>
+        </button>
+      `;
+      const groupBtns = DB.groups.map(g => `
+        <button class="group-pill ${activeGroupId === g.id ? 'active' : ''}" onclick="selectGroup('${g.id}')">
+          <span class="group-dot" style="background:${g.accent};"></span>
+          <span>${escapeHtml(g.name)}</span>
+          <span class="pill-count">${g.count}</span>
+        </button>
+      `).join('');
+      bar.innerHTML = allBtn + groupBtns;
+    }
+
+    function renderHomeGroups() {
+      const grid = document.getElementById('groupsGrid');
+      grid.innerHTML = DB.groups.map(g => `
+        <div class="group-card" style="--grp-accent: ${g.accent};" onclick="selectGroup('${g.id}')">
+          <img src="${g.thumb}" loading="lazy" alt="${escapeHtml(g.name)}" referrerpolicy="no-referrer">
+          <div class="group-card-top">${g.count} คลิป</div>
+          <div class="group-card-overlay">
+            <div class="group-card-name" style="color: ${g.accent};">${escapeHtml(g.name)}</div>
+            <div class="group-card-thai">${escapeHtml(g.thaiName || g.tagline)}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function createPlaylistCardHTML(pl) {
+      const grp = GROUP_MAP[pl.groupId];
+      const grpName = grp ? grp.name : 'SCENEKPOP';
+      return `
+        <div class="playlist-card" onclick="openPlaylistModal('${pl.id}')">
+          <img src="${pl.thumb}" loading="lazy" alt="${escapeHtml(pl.title)}" referrerpolicy="no-referrer">
+          <div class="playlist-overlay">
+            <div class="playlist-title">${escapeHtml(pl.title)}</div>
+            <div class="playlist-meta">
+              <span class="playlist-badge">${escapeHtml(grpName)}</span>
+              <span><i class="fa-solid fa-layer-group"></i> ${pl.count} ตอน</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderHomePlaylists() {
+      document.getElementById('playlistsGrid').innerHTML = DB.playlists.map(createPlaylistCardHTML).join('');
+    }
+
+    function createVideoCardHTML(v, queueSourceExpr, indexInQueue) {
+      const groupChips = v.groups.slice(0, 2).map(gid => {
+        const g = GROUP_MAP[gid];
+        return g ? `<span class="tag-chip" style="border-color:${g.accent}55; color:${g.accent}; background:${g.accent}18;">${escapeHtml(g.name)}</span>` : '';
+      }).join('');
+      const isThai = v.subBadge.includes('ซับไทย') || v.subBadge.includes('TH');
+      const typeLabel = TYPE_LABELS[v.contentType] || '🎬 วาไรตี้';
+
+      return `
+        <div class="media-card" onclick="${queueSourceExpr}(${indexInQueue})">
+          <div class="media-thumb-box">
+            <img src="${v.thumb}" loading="lazy" alt="${escapeHtml(v.title)}" referrerpolicy="no-referrer">
+            <div class="thumb-play-hover">
+              <div class="thumb-play-circle"><i class="fa-solid fa-play"></i></div>
+            </div>
+            <span class="thumb-sub-badge ${isThai ? 'th' : ''}">${escapeHtml(v.subBadge)}</span>
+            ${v.duration ? `<span class="thumb-duration">${escapeHtml(v.duration)}</span>` : ''}
+          </div>
+          <div class="media-body">
+            <div class="media-title">${escapeHtml(v.title)}</div>
+            <div class="media-footer">
+              <div class="media-tags">
+                ${groupChips}
+                <span class="tag-chip type">${typeLabel}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    let latestSlice = [];
+    function renderLatestVideos() {
+      latestSlice = DB.videos.slice(0, latestLimit);
+      document.getElementById('latestGrid').innerHTML = latestSlice
+        .map((v, idx) => createVideoCardHTML(v, 'playFromLatest', idx))
+        .join('');
+      const wrap = document.getElementById('latestLoadMoreWrap');
+      wrap.style.display = latestLimit >= DB.videos.length ? 'none' : 'block';
+    }
+
+    function loadMoreLatest() {
+      latestLimit += 24;
+      renderLatestVideos();
+    }
+
+    function playFromLatest(idx) {
+      openQueueModal(latestSlice, idx, '🔥 คลิปล่าสุดทั้งหมดจาก @SCENEKPOP');
+    }
+
+    function playLatestVideo() {
+      if (DB.videos.length > 0) {
+        openQueueModal(DB.videos.slice(0, 30), 0, '🔥 คลิปล่าสุดจาก @SCENEKPOP');
+      }
+    }
+
+    // Group Selection
+    function selectGroup(groupId, shouldScroll = true) {
+      activeGroupId = groupId;
+      activeContentType = 'all';
+
+      // Clear search if active
+      const searchInput = document.getElementById('searchInput');
+      if (searchInput.value.trim()) {
+        searchInput.value = '';
+        document.getElementById('searchClearBtn').style.display = 'none';
+        document.getElementById('sec-search').style.display = 'none';
+      }
+
+      renderGroupBar();
+
+      const heroSec = document.getElementById('heroSection');
+      const homeView = document.getElementById('homeView');
+      const groupView = document.getElementById('groupView');
+
+      if (groupId === 'all') {
+        history.replaceState(null, '', '#');
+        heroSec.style.display = '';
+        homeView.style.display = 'block';
+        groupView.style.display = 'none';
+        if (shouldScroll) window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
+      const grp = GROUP_MAP[groupId];
+      if (!grp) return;
+
+      history.replaceState(null, '', `#group=${groupId}`);
+      heroSec.style.display = 'none';
+      homeView.style.display = 'none';
+      groupView.style.display = 'block';
+
+      document.getElementById('gvTitle').innerHTML = `
+        <span style="color:${grp.accent};">${escapeHtml(grp.name)}</span>
+        ${grp.thaiName ? `<span class="group-spotlight-thai">${escapeHtml(grp.thaiName)}</span>` : ''}
+      `;
+      document.getElementById('gvTagline').textContent = `${grp.tagline} • ทั้งหมด ${grp.count} คลิป`;
+
+      // Group playlists
+      const grpPlaylists = DB.playlists.filter(p => p.groupId === groupId || grp.playlistIds.includes(p.id));
+      const plSec = document.getElementById('gvPlaylistsSec');
+      if (grpPlaylists.length > 0) {
+        plSec.style.display = 'block';
+        document.getElementById('gvPlaylistsGrid').innerHTML = grpPlaylists.map(createPlaylistCardHTML).join('');
+      } else {
+        plSec.style.display = 'none';
+      }
+
+      renderGroupTypeTabs(groupId);
+      renderGroupVideos();
+
+      if (shouldScroll) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function getGroupVideos(groupId) {
+      return DB.videos.filter(v => v.groups.includes(groupId));
+    }
+
+    function renderGroupTypeTabs(groupId) {
+      const vids = getGroupVideos(groupId);
+      const counts = { all: vids.length, variety: 0, live: 0, radio: 0, stage: 0 };
+      vids.forEach(v => {
+        if (counts[v.contentType] !== undefined) counts[v.contentType]++;
+      });
+
+      const tabsEl = document.getElementById('typeTabs');
+      tabsEl.innerHTML = Object.entries(TYPE_LABELS)
+        .filter(([k]) => k === 'all' || counts[k] > 0)
+        .map(([k, label]) => `
+          <button class="type-tab ${activeContentType === k ? 'active' : ''}" onclick="setContentType('${k}')">
+            ${label} (${counts[k]})
+          </button>
+        `).join('');
+    }
+
+    function setContentType(type) {
+      activeContentType = type;
+      renderGroupTypeTabs(activeGroupId);
+      renderGroupVideos();
+    }
+
+    let currentGroupFiltered = [];
+    function renderGroupVideos() {
+      let vids = getGroupVideos(activeGroupId);
+      if (activeContentType !== 'all') {
+        vids = vids.filter(v => v.contentType === activeContentType);
+      }
+
+      const sortBy = document.getElementById('sortSelect').value;
+      vids = [...vids];
+      if (sortBy === 'oldest') vids.reverse();
+      else if (sortBy === 'longest') vids.sort((a, b) => b.durationSec - a.durationSec);
+      else if (sortBy === 'shortest') vids.sort((a, b) => a.durationSec - b.durationSec);
+
+      currentGroupFiltered = vids;
+      document.getElementById('gvVideosGrid').innerHTML = vids
+        .map((v, idx) => createVideoCardHTML(v, 'playCurrentGroupQueue', idx))
+        .join('');
+    }
+
+    function playCurrentGroupQueue(idx) {
+      const grp = GROUP_MAP[activeGroupId];
+      const label = grp ? `🎬 คลิปทั้งหมดของ ${grp.name}` : 'รายการคลิป';
+      openQueueModal(currentGroupFiltered, idx, label);
+    }
+
+    // Playlist Modal
+    function openPlaylistModal(plId) {
+      const pl = PLAYLIST_MAP[plId];
+      if (!pl) return;
+      const eps = pl.videoIds.map(id => VIDEO_MAP[id]).filter(Boolean);
+      if (eps.length === 0) return;
+      openQueueModal(eps, 0, `📂 เพลย์ลิสต์: ${pl.title}`);
+    }
+
+    // Search
+    let searchVideoMatches = [];
+    function handleSearch(term) {
+      const q = (term || '').trim().toLowerCase();
+      document.getElementById('searchClearBtn').style.display = q ? 'block' : 'none';
+
+      const searchSec = document.getElementById('sec-search');
+      const heroSec = document.getElementById('heroSection');
+      const homeView = document.getElementById('homeView');
+      const groupView = document.getElementById('groupView');
+
+      if (!q) {
+        searchSec.style.display = 'none';
+        if (activeGroupId === 'all') {
+          heroSec.style.display = '';
+          homeView.style.display = 'block';
+          groupView.style.display = 'none';
+        } else {
+          heroSec.style.display = 'none';
+          homeView.style.display = 'none';
+          groupView.style.display = 'block';
+        }
+        return;
+      }
+
+      heroSec.style.display = 'none';
+      homeView.style.display = 'none';
+      groupView.style.display = 'none';
+      searchSec.style.display = 'block';
+
+      const matchedGroups = DB.groups.filter(g =>
+        g.name.toLowerCase().includes(q) || (g.thaiName || '').toLowerCase().includes(q)
+      );
+      const matchedPlaylists = DB.playlists.filter(p =>
+        p.title.toLowerCase().includes(q)
+      );
+      searchVideoMatches = DB.videos.filter(v => {
+        if (v.title.toLowerCase().includes(q)) return true;
+        return v.groups.some(gid => {
+          const g = GROUP_MAP[gid];
+          return g && (g.name.toLowerCase().includes(q) || (g.thaiName || '').toLowerCase().includes(q));
+        });
+      });
+
+      const gGrid = document.getElementById('searchGroupsGrid');
+      if (matchedGroups.length > 0) {
+        gGrid.style.display = 'grid';
+        gGrid.innerHTML = matchedGroups.map(g => `
+          <div class="group-card" style="--grp-accent:${g.accent};" onclick="selectGroup('${g.id}')">
+            <img src="${g.thumb}" alt="${escapeHtml(g.name)}" referrerpolicy="no-referrer">
+            <div class="group-card-top">${g.count} คลิป</div>
+            <div class="group-card-overlay">
+              <div class="group-card-name" style="color:${g.accent};">${escapeHtml(g.name)}</div>
+              <div class="group-card-thai">${escapeHtml(g.thaiName)}</div>
+            </div>
+          </div>
+        `).join('');
+      } else {
+        gGrid.style.display = 'none';
+      }
+
+      const pGrid = document.getElementById('searchPlaylistsGrid');
+      if (matchedPlaylists.length > 0) {
+        pGrid.style.display = 'grid';
+        pGrid.innerHTML = matchedPlaylists.map(createPlaylistCardHTML).join('');
+      } else {
+        pGrid.style.display = 'none';
+      }
+
+      const vGrid = document.getElementById('searchVideosGrid');
+      const totalHits = matchedGroups.length + matchedPlaylists.length + searchVideoMatches.length;
+      document.getElementById('searchTitle').innerHTML = `🔍 ผลการค้นหา: <span style="color:var(--accent-pink);">"${escapeHtml(term)}"</span>`;
+      document.getElementById('searchCount').textContent = `พบ ${totalHits} รายการ (${searchVideoMatches.length} คลิป)`;
+
+      if (searchVideoMatches.length === 0 && matchedGroups.length === 0 && matchedPlaylists.length === 0) {
+        vGrid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:50px 16px; color:var(--text-gray);">ไม่พบคลิปที่ตรงกับ "${escapeHtml(term)}" ลองพิมพ์ชื่อวง เช่น QWER, RESCENE, Hearts2Hearts, tripleS, ILLIT, BABYMONSTER</div>`;
+      } else {
+        vGrid.innerHTML = searchVideoMatches
+          .slice(0, 60)
+          .map((v, idx) => createVideoCardHTML(v, 'playFromSearch', idx))
+          .join('');
+      }
+    }
+
+    function playFromSearch(idx) {
+      openQueueModal(searchVideoMatches, idx, '🔍 ผลการค้นหา');
+    }
+
+    function clearSearch() {
+      document.getElementById('searchInput').value = '';
+      handleSearch('');
+    }
+
+    // Modal Video Player
+    function openQueueModal(queue, startIndex, listLabel) {
+      currentQueue = queue || [];
+      currentQueueIndex = startIndex || 0;
+      if (currentQueue.length === 0) return;
+
+      document.getElementById('modalListLabel').innerHTML = `<i class="fa-solid fa-list-ul"></i> ${escapeHtml(listLabel)}`;
+      document.getElementById('modalListCount').textContent = `${currentQueue.length} คลิป`;
+
+      const listEl = document.getElementById('epListContainer');
+      listEl.innerHTML = currentQueue.map((ep, idx) => `
+        <div class="episode-item ${idx === currentQueueIndex ? 'active' : ''}" id="ep-item-${idx}" onclick="switchQueueIndex(${idx})">
+          <span class="ep-num">${idx + 1}</span>
+          <img src="${ep.thumb}" class="ep-thumb" loading="lazy" alt="${escapeHtml(ep.title)}" referrerpolicy="no-referrer">
+          <div class="ep-details">
+            <div class="ep-title">${escapeHtml(ep.title)}</div>
+            <div class="ep-duration"><i class="fa-solid fa-clock"></i> ${ep.duration || 'HD'} • ${escapeHtml(ep.subBadge)}</div>
+          </div>
+          <i class="fa-regular fa-circle-play" style="color:var(--accent-pink); font-size:18px;"></i>
+        </div>
+      `).join('');
+
+      playQueueItem(currentQueueIndex);
+      document.getElementById('modalOverlay').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function switchQueueIndex(idx) {
+      if (idx < 0 || idx >= currentQueue.length) return;
+      currentQueueIndex = idx;
+      document.querySelectorAll('.episode-item').forEach(el => el.classList.remove('active'));
+      const activeEl = document.getElementById(`ep-item-${idx}`);
+      if (activeEl) {
+        activeEl.classList.add('active');
+        activeEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+      playQueueItem(idx);
+    }
+
+    function stepEpisode(delta) {
+      switchQueueIndex(currentQueueIndex + delta);
+    }
+
+    function playQueueItem(idx) {
+      const ep = currentQueue[idx];
+      if (!ep) return;
+      document.getElementById('modalPlayer').innerHTML = `
+        <iframe
+          src="https://www.youtube.com/embed/${ep.ytId}?autoplay=1&enablejsapi=1&rel=0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>`;
+      document.getElementById('modalTitle').textContent = ep.title;
+      document.getElementById('modalBadge').textContent = ep.subBadge;
+      document.getElementById('modalCounter').textContent = `คลิปที่ ${idx + 1} / ${currentQueue.length}`;
+      document.getElementById('modalYtLink').href = `https://www.youtube.com/watch?v=${ep.ytId}`;
+      document.getElementById('btnPrevEp').disabled = idx === 0;
+      document.getElementById('btnNextEp').disabled = idx >= currentQueue.length - 1;
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').style.display = 'none';
+      document.getElementById('modalPlayer').innerHTML = '';
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('modalOverlay').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('modalOverlay')) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    initApp();
+  </script>
+</body>
+</html>
