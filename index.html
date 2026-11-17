@@ -14,6 +14,8 @@
 
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Artplayer for R2 / Direct MP4 + Multi-Subs -->
+  <script src="https://cdn.jsdelivr.net/npm/artplayer/dist/artplayer.js"></script>
 
   <style>
     :root {
@@ -1624,8 +1626,9 @@
         return g ? `<span class="tag-chip" onclick="event.stopPropagation(); selectGroup('${gid}')" style="cursor:pointer; border-color:${g.accent}55; color:${g.accent}; background:${g.accent}18;" title="ดูคลิปทั้งหมดของ ${escapeHtml(g.name)}">${escapeHtml(g.name)}</span>` : '';
       }).join('');
       const isPatreon = v.source === 'patreon';
+      const isCustom = v.source === 'artplayer' || v.source === 'embed';
       const isPatreonFree = isPatreon && v.patreonStatus === 'public';
-      const isThai = !isPatreon && (v.subBadge.includes('ซับไทย') || v.subBadge.includes('TH'));
+      const isThai = !isPatreon && (v.subBadge.includes('ซับไทย') || v.subBadge.includes('TH') || v.subBadge.includes('MULTI'));
       const typeLabel = TYPE_LABELS[v.contentType] || '🎬 วาไรตี้';
       const badgeStyle = isPatreon
         ? (isPatreonFree
@@ -1637,7 +1640,7 @@
         : v.subBadge;
       const directUrl = isPatreon
         ? (v.patreonUrl || 'https://www.patreon.com/c/SCENEKPOP/posts')
-        : `https://www.youtube.com/watch?v=${v.ytId}`;
+        : (isCustom ? (v.directUrl || v.videoUrl || v.embedUrl || '#') : `https://www.youtube.com/watch?v=${v.ytId}`);
 
       return `
         <div class="media-card" onclick="${queueSourceExpr}(${indexInQueue})">
@@ -1658,9 +1661,9 @@
                 ${groupChips}
                 <span class="tag-chip type">${typeLabel}</span>
               </div>
-              <a class="card-direct-link ${isPatreon ? 'patreon' : ''}" href="${directUrl}" ${EXT_LINK_ATTRS} onclick="event.stopPropagation()">
+              ${!isCustom ? `<a class="card-direct-link ${isPatreon ? 'patreon' : ''}" href="${directUrl}" ${EXT_LINK_ATTRS} onclick="event.stopPropagation()">
                 <i class="fa-brands ${isPatreon ? 'fa-patreon' : 'fa-youtube'}"></i> เปิดดู ↗
-              </a>
+              </a>` : ''}
             </div>
           </div>
         </div>
@@ -1997,13 +2000,78 @@
       switchQueueIndex(currentQueueIndex + delta);
     }
 
+    let activeArtplayer = null;
+    function destroyArtplayer() {
+      if (activeArtplayer) {
+        try { activeArtplayer.destroy(false); } catch (_) {}
+        activeArtplayer = null;
+      }
+    }
+
     function playQueueItem(idx) {
       const ep = currentQueue[idx];
       if (!ep) return;
+      destroyArtplayer();
       const playerEl = document.getElementById('modalPlayer');
       const directBtn = document.getElementById('modalYtLink');
 
-      if (ep.source === 'patreon') {
+      if (ep.source === 'artplayer' && ep.videoUrl && typeof Artplayer !== 'undefined') {
+        playerEl.classList.remove('is-patreon');
+        playerEl.innerHTML = `<div id="artplayerMount" style="width:100%; height:100%;"></div>`;
+        const subs = Array.isArray(ep.subtitles) ? ep.subtitles : [];
+        const defSub = subs.find(s => s.default) || subs[0];
+        activeArtplayer = new Artplayer({
+          container: '#artplayerMount',
+          url: ep.videoUrl,
+          poster: ep.thumb || '',
+          autoplay: true,
+          fullscreen: true,
+          fullscreenWeb: true,
+          pip: true,
+          playbackRate: true,
+          setting: true,
+          playsInline: true,
+          theme: '#ec4899',
+          subtitle: defSub ? {
+            url: defSub.url,
+            type: 'vtt',
+            encoding: 'utf-8',
+            style: { color: '#ffffff', fontSize: '20px', textShadow: '0 2px 6px rgba(0,0,0,0.9)' }
+          } : {},
+          settings: subs.length > 0 ? [{
+            html: 'คำบรรยาย (Subtitles)',
+            tooltip: defSub ? defSub.name : 'Off',
+            selector: [
+              ...subs.map(s => ({
+                default: s === defSub,
+                html: s.name,
+                url: s.url,
+              })),
+              { html: 'ปิดซับ (Off)', url: '' }
+            ],
+            onSelect(item) {
+              if (!item.url) {
+                activeArtplayer.subtitle.show = false;
+              } else {
+                activeArtplayer.subtitle.switch(item.url, { name: item.html, type: 'vtt' });
+                activeArtplayer.subtitle.show = true;
+              }
+              return item.html;
+            }
+          }] : []
+        });
+        directBtn.href = ep.directUrl || ep.videoUrl;
+        directBtn.style.background = '#a855f7';
+        directBtn.style.borderColor = '#a855f7';
+        directBtn.innerHTML = '<i class="fa-solid fa-play"></i> เปิดไฟล์วิดีโอตรง';
+      } else if (ep.source === 'embed' && ep.embedUrl) {
+        playerEl.classList.remove('is-patreon');
+        playerEl.innerHTML = `<iframe src="${ep.embedUrl}" allow="autoplay; fullscreen" allowfullscreen style="width:100%; height:100%; border:none;"></iframe>`;
+        directBtn.href = ep.directUrl || ep.embedUrl;
+        directBtn.style.background = '#2563eb';
+        directBtn.style.borderColor = '#2563eb';
+        directBtn.innerHTML = '<i class="fa-solid fa-up-right-from-square"></i> เปิดลิงก์เต็มจอ';
+      } else if (ep.source === 'patreon') {
         playerEl.classList.add('is-patreon');
         const isFree = ep.patreonStatus === 'public';
         const pUrl = ep.patreonUrl || 'https://www.patreon.com/c/SCENEKPOP/posts';
@@ -2052,6 +2120,7 @@
     }
 
     function closeModal() {
+      destroyArtplayer();
       document.getElementById('modalOverlay').style.display = 'none';
       document.getElementById('modalPlayer').innerHTML = '';
       document.body.style.overflow = '';

@@ -18,6 +18,7 @@ from datetime import datetime
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(SCRIPT_DIR, "group_config.json")
 PATREON_PATH = os.path.join(SCRIPT_DIR, "patreon_posts.json")
+CUSTOM_VIDEOS_PATH = os.path.join(SCRIPT_DIR, "custom_videos.json")
 DESC_CACHE_PATH = os.path.join(SCRIPT_DIR, ".desc_cache.json")
 VISION_CACHE_PATH = os.path.join(SCRIPT_DIR, ".vision_cache.json")
 OUTPUT_DB_PATH = os.path.join(SCRIPT_DIR, "db.js")
@@ -412,6 +413,36 @@ def main():
                 "date": p.get("date") or "",
             })
             patreon_count += 1
+
+    # 3.6 Merge custom hosted videos (Cloudflare R2 / Artplayer / archive.org / OneDrive)
+    if os.path.exists(CUSTOM_VIDEOS_PATH):
+        with open(CUSTOM_VIDEOS_PATH, "r", encoding="utf-8") as f:
+            custom_list = json.load(f)
+        for c in custom_list:
+            if not c or not c.get("id"):
+                continue
+            grps = c.get("groups") or match_text_to_groups(c.get("title", ""), set(), groups_cfg) or ["other_kpop"]
+            src_type = c.get("source") or ("artplayer" if c.get("videoUrl") else "embed")
+            thumb = c.get("thumb") or group_thumbs.get(grps[0], "")
+            videos_out.insert(0, {
+                "num": 0,
+                "ytId": c["id"],
+                "title": c.get("title", c["id"]),
+                "duration": c.get("duration", ""),
+                "durationSec": int(c.get("durationSec") or 0),
+                "thumb": thumb,
+                "groups": grps,
+                "playlists": c.get("playlists", []),
+                "contentType": c.get("contentType", "variety"),
+                "subBadge": c.get("subBadge", "MULTI SUBS"),
+                "source": src_type,
+                "videoUrl": c.get("videoUrl", ""),
+                "embedUrl": c.get("embedUrl", ""),
+                "directUrl": c.get("directUrl", ""),
+                "subtitles": c.get("subtitles", []),
+            })
+        for i, v in enumerate(videos_out, 1):
+            v["num"] = i
 
     # 4. Build group summaries sorted by count (keep other_kpop at the end)
     vid_by_id = {v["ytId"]: v for v in videos_out}
