@@ -760,6 +760,42 @@
       color: #cbd5e1;
     }
 
+    .card-direct-link {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: rgba(255, 0, 0, 0.16);
+      border: 1px solid rgba(255, 0, 0, 0.45);
+      color: #fca5a5;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .card-direct-link:hover {
+      background: #ff0000;
+      color: white;
+    }
+
+    .card-direct-link.patreon {
+      background: rgba(255, 66, 77, 0.18);
+      border-color: rgba(255, 66, 77, 0.5);
+      color: #fda4af;
+    }
+
+    .card-direct-link.patreon:hover {
+      background: #ff424d;
+      color: white;
+    }
+
+    body.compact-top .group-bar-wrapper {
+      margin-top: 68px;
+    }
+
     /* Playlist Card Variant */
     .playlist-card {
       position: relative;
@@ -1124,7 +1160,10 @@
     }
 
     /* Responsive */
-    @media (max-width: 1024px) {
+    @media (max-width: 1080px) {
+      .nav-links {
+        display: none;
+      }
       .groups-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
@@ -1132,16 +1171,29 @@
 
     @media (max-width: 768px) {
       .navbar {
-        padding: 0 14px;
+        padding: 0 10px;
+      }
+      .brand-logo {
+        font-size: 24px;
+        letter-spacing: 1px;
+        gap: 5px;
       }
       .nav-links {
         display: none;
       }
+      .nav-right {
+        gap: 6px;
+      }
       .search-input {
-        width: 145px;
+        width: 118px;
+        padding: 6px 26px 6px 28px;
+        font-size: 12px;
       }
       .search-input:focus {
-        width: 185px;
+        width: 145px;
+      }
+      .yt-btn, .patreon-btn {
+        padding: 7px 10px;
       }
       .yt-btn span, .patreon-btn span {
         display: none;
@@ -1424,8 +1476,11 @@
     </div>
   </div>
 
-  <script src="db.js"></script>
+  <script src="db.js?v=20261117_02"></script>
   <script>
+    const IS_MOBILE_OR_INAPP = /Android|iPhone|iPad|iPod|FBAN|FBAV|Messenger|Line|Instagram|MicroMessenger/i.test(navigator.userAgent);
+    const EXT_LINK_ATTRS = IS_MOBILE_OR_INAPP ? '' : 'target="_blank" rel="noopener noreferrer"';
+
     const DB = typeof sceneDatabase !== 'undefined' ? sceneDatabase : { channel: {}, groups: [], playlists: [], videos: [] };
     const GROUP_MAP = Object.fromEntries(DB.groups.map(g => [g.id, g]));
     const VIDEO_MAP = Object.fromEntries(DB.videos.map(v => [v.ytId, v]));
@@ -1471,6 +1526,11 @@
     }
 
     function initApp() {
+      // On mobile / in-app browsers (Messenger, LINE, IG), target="_blank" is often blocked by WebViews
+      if (IS_MOBILE_OR_INAPP) {
+        document.querySelectorAll('a[target="_blank"]').forEach(a => a.removeAttribute('target'));
+      }
+
       // Hero background video (pick first YouTube video)
       const firstYt = DB.videos.find(v => v.source !== 'patreon');
       if (firstYt) {
@@ -1570,6 +1630,9 @@
       const badgeText = isPatreon
         ? (isPatreonFree ? '🎁 Patreon ดูฟรี' : '🔒 Member Only')
         : v.subBadge;
+      const directUrl = isPatreon
+        ? (v.patreonUrl || 'https://www.patreon.com/c/SCENEKPOP/posts')
+        : `https://www.youtube.com/watch?v=${v.ytId}`;
 
       return `
         <div class="media-card" onclick="${queueSourceExpr}(${indexInQueue})">
@@ -1590,6 +1653,9 @@
                 ${groupChips}
                 <span class="tag-chip type">${typeLabel}</span>
               </div>
+              <a class="card-direct-link ${isPatreon ? 'patreon' : ''}" href="${directUrl}" ${EXT_LINK_ATTRS} onclick="event.stopPropagation()">
+                <i class="fa-brands ${isPatreon ? 'fa-patreon' : 'fa-youtube'}"></i> เปิดดู ↗
+              </a>
             </div>
           </div>
         </div>
@@ -1673,6 +1739,7 @@
       const groupView = document.getElementById('groupView');
 
       if (groupId === 'all') {
+        document.body.classList.remove('compact-top');
         history.replaceState(null, '', '#');
         heroSec.style.display = '';
         homeView.style.display = 'block';
@@ -1684,6 +1751,7 @@
       const grp = GROUP_MAP[groupId];
       if (!grp) return;
 
+      document.body.classList.add('compact-top');
       history.replaceState(null, '', `#group=${groupId}`);
       heroSec.style.display = 'none';
       homeView.style.display = 'none';
@@ -1788,10 +1856,12 @@
       if (!q) {
         searchSec.style.display = 'none';
         if (activeGroupId === 'all') {
+          document.body.classList.remove('compact-top');
           heroSec.style.display = '';
           homeView.style.display = 'block';
           groupView.style.display = 'none';
         } else {
+          document.body.classList.add('compact-top');
           heroSec.style.display = 'none';
           homeView.style.display = 'none';
           groupView.style.display = 'block';
@@ -1799,6 +1869,7 @@
         return;
       }
 
+      document.body.classList.add('compact-top');
       heroSec.style.display = 'none';
       homeView.style.display = 'none';
       groupView.style.display = 'none';
@@ -1928,12 +1999,14 @@
               </span>
               <h3 style="color:white; font-size:17px; margin-bottom:8px; line-height:1.5;">${escapeHtml(ep.title)}</h3>
               <p style="color:#cbd5e1; font-size:13px; margin-bottom:18px;">โพสต์เมื่อ ${escapeHtml(ep.date || 'Patreon')} • รับชมวิดีโอตัวเต็มได้บน Patreon ของ @SCENEKPOP</p>
-              <a href="${pUrl}" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:9px; background:#ff424d; color:white; padding:12px 24px; border-radius:8px; font-size:15px; font-weight:700; text-decoration:none; box-shadow:0 6px 20px rgba(255,66,77,0.45);">
+              <a href="${pUrl}" ${EXT_LINK_ATTRS} style="display:inline-flex; align-items:center; gap:9px; background:#ff424d; color:white; padding:12px 24px; border-radius:8px; font-size:15px; font-weight:700; text-decoration:none; box-shadow:0 6px 20px rgba(255,66,77,0.45);">
                 <i class="fa-brands fa-patreon"></i> เปิดดูบน Patreon
               </a>
             </div>
           </div>`;
         directBtn.href = pUrl;
+        if (IS_MOBILE_OR_INAPP) directBtn.removeAttribute('target');
+        else directBtn.setAttribute('target', '_blank');
         directBtn.style.background = '#ff424d';
         directBtn.style.borderColor = '#ff424d';
         directBtn.innerHTML = '<i class="fa-brands fa-patreon"></i> เปิดดูบน Patreon';
@@ -1946,6 +2019,8 @@
             referrerpolicy="strict-origin-when-cross-origin"
           ></iframe>`;
         directBtn.href = `https://www.youtube.com/watch?v=${ep.ytId}`;
+        if (IS_MOBILE_OR_INAPP) directBtn.removeAttribute('target');
+        else directBtn.setAttribute('target', '_blank');
         directBtn.style.background = '#ff0000';
         directBtn.style.borderColor = '#ff0000';
         directBtn.innerHTML = '<i class="fa-brands fa-youtube"></i> ดูบน YouTube';
