@@ -1619,6 +1619,7 @@
     let currentHeroVideo = null;
     let activePlaylistId = null;
     let shareCopyTimer = null;
+    let modalPushedHistory = false;
 
     // Navbar scroll styling
     window.addEventListener('scroll', () => {
@@ -1661,7 +1662,8 @@
         : 0;
       const startParam = startSec > 0 ? `&start=${startSec}` : '';
 
-      const iframe = document.getElementById('heroVideoIframe');
+      const oldIframe = document.getElementById('heroVideoIframe');
+      const iframe = oldIframe.cloneNode(false);
       iframe.src =
         `https://www.youtube.com/embed/${picked.ytId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${picked.ytId}${startParam}&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&enablejsapi=1&vq=hd1080`;
       iframe.onload = () => {
@@ -1673,6 +1675,7 @@
           }), 'https://www.youtube.com');
         } catch (e) {}
       };
+      oldIframe.replaceWith(iframe);
 
       const pill = document.getElementById('heroPreviewPill');
       const titleEl = document.getElementById('heroPreviewTitle');
@@ -1686,6 +1689,56 @@
       if (!currentHeroVideo) return;
       openQueueModal([currentHeroVideo], 0, '🎬 คลิปพรีวิวหน้าแรก');
     }
+
+    function pushHashIfChanged(newHash) {
+      const currentHash = window.location.hash || '#';
+      if (currentHash !== newHash) {
+        history.pushState({ hash: newHash }, '', newHash);
+        return true;
+      }
+      return false;
+    }
+
+    function applyHashState() {
+      const hashParams = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+      const groupParam = hashParams.get('group');
+      const playlistParam = hashParams.get('playlist');
+      const watchParam = hashParams.get('watch');
+
+      const targetGroup = (groupParam && GROUP_MAP[groupParam]) ? groupParam : 'all';
+      if (targetGroup !== activeGroupId || document.getElementById('sec-search').style.display === 'block') {
+        selectGroup(targetGroup, false, { skipHistory: true });
+      }
+
+      if (playlistParam && PLAYLIST_MAP[playlistParam]) {
+        const pl = PLAYLIST_MAP[playlistParam];
+        const idx = watchParam ? Math.max(0, pl.videoIds.indexOf(watchParam)) : 0;
+        openPlaylistModal(playlistParam, idx, { skipHistory: true });
+      } else if (watchParam && VIDEO_MAP[watchParam]) {
+        const targetVid = VIDEO_MAP[watchParam];
+        if (activeGroupId !== 'all') {
+          const grpVids = getGroupVideos(activeGroupId);
+          const idx = grpVids.findIndex(v => v.ytId === watchParam);
+          if (idx >= 0) {
+            openQueueModal(grpVids, idx, `🎬 คลิปทั้งหมดของ ${GROUP_MAP[activeGroupId].name}`, { skipHistory: true });
+          } else {
+            openQueueModal([targetVid], 0, '🎬 คลิปที่แชร์', { skipHistory: true });
+          }
+        } else if (targetVid.playlists && targetVid.playlists.length > 0 && PLAYLIST_MAP[targetVid.playlists[0]]) {
+          const pid = targetVid.playlists[0];
+          const pl = PLAYLIST_MAP[pid];
+          openPlaylistModal(pid, Math.max(0, pl.videoIds.indexOf(watchParam)), { skipHistory: true });
+        } else {
+          openQueueModal([targetVid], 0, '🎬 คลิปที่แชร์', { skipHistory: true });
+        }
+      } else if (document.getElementById('modalOverlay').style.display === 'flex') {
+        closeModal({ skipHistory: true });
+      }
+    }
+
+    window.addEventListener('popstate', () => {
+      applyHashState();
+    });
 
     function initApp() {
       // On mobile / in-app browsers (Messenger, LINE, IG), target="_blank" is often blocked by WebViews
@@ -1711,37 +1764,7 @@
       renderLatestVideos();
 
       // Check URL hash (#group=qwer, #playlist=..., #watch=...)
-      const hashParams = new URLSearchParams(window.location.hash.replace(/^#/, ''));
-      const groupParam = hashParams.get('group');
-      const playlistParam = hashParams.get('playlist');
-      const watchParam = hashParams.get('watch');
-
-      if (groupParam && GROUP_MAP[groupParam]) {
-        selectGroup(groupParam, false);
-      }
-
-      if (playlistParam && PLAYLIST_MAP[playlistParam]) {
-        const pl = PLAYLIST_MAP[playlistParam];
-        const idx = watchParam ? Math.max(0, pl.videoIds.indexOf(watchParam)) : 0;
-        openPlaylistModal(playlistParam, idx);
-      } else if (watchParam && VIDEO_MAP[watchParam]) {
-        const targetVid = VIDEO_MAP[watchParam];
-        if (activeGroupId !== 'all') {
-          const grpVids = getGroupVideos(activeGroupId);
-          const idx = grpVids.findIndex(v => v.ytId === watchParam);
-          if (idx >= 0) {
-            openQueueModal(grpVids, idx, `🎬 คลิปทั้งหมดของ ${GROUP_MAP[activeGroupId].name}`);
-          } else {
-            openQueueModal([targetVid], 0, '🎬 คลิปที่แชร์');
-          }
-        } else if (targetVid.playlists && targetVid.playlists.length > 0 && PLAYLIST_MAP[targetVid.playlists[0]]) {
-          const pid = targetVid.playlists[0];
-          const pl = PLAYLIST_MAP[pid];
-          openPlaylistModal(pid, Math.max(0, pl.videoIds.indexOf(watchParam)));
-        } else {
-          openQueueModal([targetVid], 0, '🎬 คลิปที่แชร์');
-        }
-      }
+      applyHashState();
     }
 
     function renderGroupBar() {
@@ -1905,7 +1928,7 @@
     }
 
     // Group Selection
-    function selectGroup(groupId, shouldScroll = true) {
+    function selectGroup(groupId, shouldScroll = true, opts = {}) {
       activeGroupId = groupId;
       activeContentType = 'all';
 
@@ -1925,7 +1948,7 @@
 
       if (groupId === 'all') {
         document.body.classList.remove('compact-top');
-        history.replaceState(null, '', '#');
+        if (!opts.skipHistory) pushHashIfChanged('#');
         heroSec.style.display = '';
         homeView.style.display = 'block';
         groupView.style.display = 'none';
@@ -1937,7 +1960,7 @@
       if (!grp) return;
 
       document.body.classList.add('compact-top');
-      history.replaceState(null, '', `#group=${groupId}`);
+      if (!opts.skipHistory) pushHashIfChanged(`#group=${groupId}`);
       heroSec.style.display = 'none';
       homeView.style.display = 'none';
       groupView.style.display = 'block';
@@ -2030,13 +2053,13 @@
     }
 
     // Playlist Modal
-    function openPlaylistModal(plId, startIdx = 0) {
+    function openPlaylistModal(plId, startIdx = 0, opts = {}) {
       const pl = PLAYLIST_MAP[plId];
       if (!pl) return;
       const eps = pl.videoIds.map(id => VIDEO_MAP[id]).filter(Boolean);
       if (eps.length === 0) return;
       activePlaylistId = plId;
-      openQueueModal(eps, startIdx, `📂 เพลย์ลิสต์: ${pl.title}`, { keepPlaylist: true });
+      openQueueModal(eps, startIdx, `📂 เพลย์ลิสต์: ${pl.title}`, { ...opts, keepPlaylist: true });
     }
 
     // Search
@@ -2185,6 +2208,7 @@
     // Modal Video Player
     function openQueueModal(queue, startIndex, listLabel, opts = {}) {
       if (!opts.keepPlaylist) activePlaylistId = null;
+      const wasOpen = document.getElementById('modalOverlay').style.display === 'flex';
       currentQueue = queue || [];
       currentQueueIndex = startIndex || 0;
       if (currentQueue.length === 0) return;
@@ -2205,7 +2229,10 @@
         </div>
       `).join('');
 
-      playQueueItem(currentQueueIndex);
+      playQueueItem(currentQueueIndex, {
+        pushHistory: !wasOpen && !opts.skipHistory,
+        skipHistory: Boolean(opts.skipHistory),
+      });
       document.getElementById('modalOverlay').style.display = 'flex';
       document.body.style.overflow = 'hidden';
     }
@@ -2234,7 +2261,7 @@
       }
     }
 
-    function playQueueItem(idx) {
+    function playQueueItem(idx, opts = {}) {
       const ep = currentQueue[idx];
       if (!ep) return;
       destroyArtplayer();
@@ -2346,18 +2373,33 @@
       document.getElementById('btnPrevEp').disabled = idx === 0;
       document.getElementById('btnNextEp').disabled = idx >= currentQueue.length - 1;
 
-      history.replaceState(null, '', buildShareHash(ep));
+      const newHash = buildShareHash(ep);
+      if (opts.pushHistory) {
+        modalPushedHistory = pushHashIfChanged(newHash);
+      } else if (!opts.skipHistory) {
+        history.replaceState({ hash: newHash }, '', newHash);
+      }
       document.title = `${ep.title} — SCENEKPOP+`;
     }
 
-    function closeModal() {
+    function closeModal(opts = {}) {
       destroyArtplayer();
       activePlaylistId = null;
       document.getElementById('modalOverlay').style.display = 'none';
       document.getElementById('modalPlayer').innerHTML = '';
       document.body.style.overflow = '';
       document.title = DEFAULT_DOC_TITLE;
-      history.replaceState(null, '', activeGroupId && activeGroupId !== 'all' ? `#group=${activeGroupId}` : '#');
+      if (!opts.skipHistory) {
+        if (modalPushedHistory) {
+          modalPushedHistory = false;
+          history.back();
+        } else {
+          const backHash = activeGroupId && activeGroupId !== 'all' ? `#group=${activeGroupId}` : '#';
+          history.replaceState({ hash: backHash }, '', backHash);
+        }
+      } else {
+        modalPushedHistory = false;
+      }
     }
 
     document.getElementById('modalOverlay').addEventListener('click', (e) => {
