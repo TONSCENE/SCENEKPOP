@@ -618,7 +618,8 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.68);
+      object-position: center 22%;
+      filter: brightness(0.8);
       transition: transform 0.35s ease, filter 0.35s ease;
     }
 
@@ -630,13 +631,13 @@
 
     .group-card:hover img {
       transform: scale(1.06);
-      filter: brightness(0.85);
+      filter: brightness(0.95);
     }
 
     .group-card-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(0deg, rgba(5,5,8,0.95) 0%, rgba(5,5,8,0.45) 55%, rgba(5,5,8,0.15) 100%);
+      background: linear-gradient(0deg, rgba(5,5,8,0.92) 0%, rgba(5,5,8,0.35) 50%, rgba(5,5,8,0.06) 100%);
       padding: 12px 14px;
       display: flex;
       flex-direction: column;
@@ -1567,7 +1568,7 @@
     </div>
   </div>
 
-  <script src="db.js?v=20261118_01"></script>
+  <script src="db.js?v=20261118_02"></script>
   <script>
     const IS_MOBILE_OR_INAPP = /Android|iPhone|iPad|iPod|FBAN|FBAV|Messenger|Line|Instagram|MicroMessenger/i.test(navigator.userAgent);
     const EXT_LINK_ATTRS = IS_MOBILE_OR_INAPP ? '' : 'target="_blank" rel="noopener noreferrer"';

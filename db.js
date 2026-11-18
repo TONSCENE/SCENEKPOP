@@ -21,7 +21,7 @@ const sceneDatabase = {
       "accent": "#ec4899",
       "tagline": "Chodan • Magenta • Hina • Siyeon — เกิร์ลแบนด์ 4 สาวสุดปั่น",
       "count": 116,
-      "thumb": "https://img.youtube.com/vi/mAd1Gtop34M/hqdefault.jpg",
+      "thumb": "images/groups/qwer.webp",
       "playlistIds": [
         "PLLg0CmUn7KVM",
         "PLHoETizL_iaeA6AMba5ot1L1O9hMZeJXQ",
@@ -35,7 +35,7 @@ const sceneDatabase = {
       "accent": "#a855f7",
       "tagline": "Jiwoo • Carmen • Yuha • Stella • Juun • A-na • Ian • Yeon",
       "count": 76,
-      "thumb": "https://img.youtube.com/vi/oWc_rbCGcPY/hqdefault.jpg",
+      "thumb": "images/groups/hearts2hearts.webp",
       "playlistIds": [
         "PLHrapbf9Q3g4"
       ]
@@ -47,7 +47,7 @@ const sceneDatabase = {
       "accent": "#38bdf8",
       "tagline": "Woni • Liv • Minami • May • Zena — วอนอี ยินดีที่ได้รู้จัก & วาไรตี้",
       "count": 53,
-      "thumb": "https://img.youtube.com/vi/hlaM0aCUBSI/hqdefault.jpg",
+      "thumb": "images/groups/rescene.webp",
       "playlistIds": [
         "PLK0euQjdYbEU",
         "PLOGsxVhUUspA"
@@ -60,7 +60,7 @@ const sceneDatabase = {
       "accent": "#f43f5e",
       "tagline": "Badge War SS1 / SS2 / SS4 & วาไรตี้ครบเครื่อง 24 เมมเบอร์",
       "count": 20,
-      "thumb": "https://img.youtube.com/vi/U6s0c9vOYd0/hqdefault.jpg",
+      "thumb": "images/groups/triples.webp",
       "playlistIds": [
         "PLS0OvbNWc_s4",
         "PLTvQc1qFV3yU",
@@ -75,7 +75,7 @@ const sceneDatabase = {
       "accent": "#22d3ee",
       "tagline": "Jiyu • Leesol • Sui • Haum • Kya — MYSTERY CLUB & วาไรตี้",
       "count": 19,
-      "thumb": "https://img.youtube.com/vi/8pZrsHbe5fw/hqdefault.jpg",
+      "thumb": "images/groups/kiiikiii.webp",
       "playlistIds": [
         "PLHCirUutU7Oo",
         "PLHoETizL_iac8oLJM6A3YpBN-7V110Mu6"
@@ -88,7 +88,7 @@ const sceneDatabase = {
       "accent": "#f472b6",
       "tagline": "Yunah • Minju • Moka • Wonhee • Iroha — UPCONO & วาไรตี้",
       "count": 19,
-      "thumb": "https://img.youtube.com/vi/wGCAAIXPljU/hqdefault.jpg",
+      "thumb": "images/groups/illit.webp",
       "playlistIds": [
         "PLB6llFcx8HqI"
       ]
@@ -110,7 +110,7 @@ const sceneDatabase = {
       "accent": "#60a5fa",
       "tagline": "Sakura • Chaewon • Yunjin • Kazuha • Eunchae",
       "count": 16,
-      "thumb": "https://img.youtube.com/vi/J0O7g8SW7fs/hqdefault.jpg",
+      "thumb": "images/groups/le_sserafim.webp",
       "playlistIds": []
     },
     {
@@ -120,7 +120,7 @@ const sceneDatabase = {
       "accent": "#ef4444",
       "tagline": "Ruka • Pharita • Asa • Ahyeon • Rami • Rora • Chiquita",
       "count": 15,
-      "thumb": "https://img.youtube.com/vi/NYMY_r85N4E/hqdefault.jpg",
+      "thumb": "images/groups/babymonster.webp",
       "playlistIds": []
     },
     {
@@ -130,7 +130,7 @@ const sceneDatabase = {
       "accent": "#fb923c",
       "tagline": "เกิร์ลกรุ๊ปน้องใหม่ — Weverse Live, Radio & Studio Choom",
       "count": 15,
-      "thumb": "https://img.youtube.com/vi/DRWBHc2fldY/hqdefault.jpg",
+      "thumb": "images/groups/tuide.webp",
       "playlistIds": [
         "PLY7qXB0aEPdE"
       ]
@@ -142,7 +142,7 @@ const sceneDatabase = {
       "accent": "#e879f9",
       "tagline": "Miyeon • JeonDoSa & Variety",
       "count": 15,
-      "thumb": "https://img.youtube.com/vi/lQzoaGxySEM/hqdefault.jpg",
+      "thumb": "images/groups/idle.webp",
       "playlistIds": []
     },
     {
@@ -172,7 +172,7 @@ const sceneDatabase = {
       "accent": "#3b82f6",
       "tagline": "Lily • Haewon • Sullyoon • Bae • Jiwoo • Kyujin",
       "count": 5,
-      "thumb": "https://img.youtube.com/vi/rOB-qGh-4JA/hqdefault.jpg",
+      "thumb": "images/groups/nmixx.webp",
       "playlistIds": []
     },
     {
@@ -182,7 +182,7 @@ const sceneDatabase = {
       "accent": "#c084fc",
       "tagline": "Julie • Natty • Belle • Haneul — Dingo Attack & Idol Radio",
       "count": 5,
-      "thumb": "https://img.youtube.com/vi/lX61DJx4b3s/hqdefault.jpg",
+      "thumb": "images/groups/kiss_of_life.webp",
       "playlistIds": []
     },
     {
@@ -192,7 +192,7 @@ const sceneDatabase = {
       "accent": "#fb7185",
       "tagline": "Sana's Fridge Interview & Collaboration Episodes",
       "count": 5,
-      "thumb": "https://img.youtube.com/vi/5uZFsTTCZsc/hqdefault.jpg",
+      "thumb": "images/groups/twice.webp",
       "playlistIds": []
     },
     {
@@ -202,7 +202,7 @@ const sceneDatabase = {
       "accent": "#eab308",
       "tagline": "Sooin • Gawon • Anna • Narin • Ella — Workdol & Variety",
       "count": 4,
-      "thumb": "https://img.youtube.com/vi/7bkANd_L6lM/hqdefault.jpg",
+      "thumb": "images/groups/meovv.webp",
       "playlistIds": [
         "PLfAukGsRQjqE"
       ]
@@ -214,7 +214,7 @@ const sceneDatabase = {
       "accent": "#f43f5e",
       "tagline": "Tsuki & Workdol / Variety Specials",
       "count": 3,
-      "thumb": "https://img.youtube.com/vi/4FleWMmbvL0/hqdefault.jpg",
+      "thumb": "images/groups/billlie.webp",
       "playlistIds": []
     },
     {
@@ -224,7 +224,7 @@ const sceneDatabase = {
       "accent": "#818cf8",
       "tagline": "An Yujin • Gaeul • Rei • Jang Wonyoung • Liz • Leeseo",
       "count": 2,
-      "thumb": "https://img.youtube.com/vi/GPi_WfuzkDo/hqdefault.jpg",
+      "thumb": "images/groups/ive.webp",
       "playlistIds": []
     },
     {
@@ -234,7 +234,7 @@ const sceneDatabase = {
       "accent": "#38bdf8",
       "tagline": "UPCONO Season 2 & วาไรตี้",
       "count": 2,
-      "thumb": "https://img.youtube.com/vi/hlaM0aCUBSI/hqdefault.jpg",
+      "thumb": "images/groups/treasure.webp",
       "playlistIds": []
     },
     {
@@ -244,7 +244,7 @@ const sceneDatabase = {
       "accent": "#f59e0b",
       "tagline": "UPCONO Season 2 — MZ Gang Variety",
       "count": 2,
-      "thumb": "https://img.youtube.com/vi/eO87d8i5cHg/hqdefault.jpg",
+      "thumb": "images/groups/allday_project.webp",
       "playlistIds": []
     },
     {
@@ -254,7 +254,7 @@ const sceneDatabase = {
       "accent": "#2dd4bf",
       "tagline": "Jurin • Chisa • Hinata • Harvey • Juria • Maya • Cocona",
       "count": 2,
-      "thumb": "https://img.youtube.com/vi/HntSwtbOl5o/hqdefault.jpg",
+      "thumb": "images/groups/xg.webp",
       "playlistIds": []
     },
     {
@@ -274,7 +274,7 @@ const sceneDatabase = {
       "accent": "#34d399",
       "tagline": "You Quiz on the Block & Kangho Bookstore ซับไทย",
       "count": 2,
-      "thumb": "images/patreon/p_18.jpg",
+      "thumb": "images/groups/akmu.webp",
       "playlistIds": []
     },
     {
@@ -284,7 +284,7 @@ const sceneDatabase = {
       "accent": "#a78bfa",
       "tagline": "Karina • Giselle • Winter • Ningning",
       "count": 1,
-      "thumb": "https://img.youtube.com/vi/JIHRA0MfGk8/hqdefault.jpg",
+      "thumb": "images/groups/aespa.webp",
       "playlistIds": []
     },
     {

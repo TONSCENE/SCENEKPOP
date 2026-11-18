@@ -13,16 +13,37 @@
       "accent": "#ec4899",
       "tagline": "Chodan • Magenta • Hina • Siyeon — เกิร์ลแบนด์ 4 สาวสุดปั่น",
       "keywords": [
-        "qwer", "chodan", "โชดัน", "magenta", "มาเจนต้า", "hina", "ฮินะ",
-        "siyeon", "ชียอน", "ซียอน", "ชิยอน", "นายอง", "ซองซูกิ", "seongsu-gi",
-        "อาฮี", "คิมอเกรัน", "กเยรัน", "kim egg", "rockation", "rocketlaunchinbkk"
+        "qwer",
+        "chodan",
+        "โชดัน",
+        "magenta",
+        "มาเจนต้า",
+        "hina",
+        "ฮินะ",
+        "siyeon",
+        "ชียอน",
+        "ซียอน",
+        "ชิยอน",
+        "นายอง",
+        "ซองซูกิ",
+        "seongsu-gi",
+        "อาฮี",
+        "คิมอเกรัน",
+        "กเยรัน",
+        "kim egg",
+        "rockation",
+        "rocketlaunchinbkk"
       ],
-      "exclude_if": ["nmixx", "kyujin"],
+      "exclude_if": [
+        "nmixx",
+        "kyujin"
+      ],
       "playlist_ids": [
         "PLLg0CmUn7KVM",
         "PLHoETizL_iaeA6AMba5ot1L1O9hMZeJXQ",
         "PLHoETizL_iaeH1V3_BkJemczZzae-1Lgd"
-      ]
+      ],
+      "thumb": "images/groups/qwer.webp"
     },
     {
       "id": "hearts2hearts",
@@ -31,15 +52,38 @@
       "accent": "#a855f7",
       "tagline": "Jiwoo • Carmen • Yuha • Stella • Juun • A-na • Ian • Yeon",
       "keywords": [
-        "hearts2hearts", "h2h", "heartspod", "하츠투하츠",
-        "จีอู", "ยูฮา", "สเตลล่า", "stella",
-        "เอนา", "a-na", "คาร์เมน", "carmen", "จูอึน", "jueun", "ju-eun",
-        "เอียน", "อีอัน", "เยอน", "s2u", "hearts 2 house"
+        "hearts2hearts",
+        "h2h",
+        "heartspod",
+        "하츠투하츠",
+        "จีอู",
+        "ยูฮา",
+        "สเตลล่า",
+        "stella",
+        "เอนา",
+        "a-na",
+        "คาร์เมน",
+        "carmen",
+        "จูอึน",
+        "jueun",
+        "ju-eun",
+        "เอียน",
+        "อีอัน",
+        "เยอน",
+        "s2u",
+        "hearts 2 house"
       ],
       "regex_keywords": [
-        "\\bjiwoo\\b(?!.*nmixx)", "\\byuha\\b", "\\bian\\b", "\\byeon\\b", "\\bye-on\\b"
+        "\\bjiwoo\\b(?!.*nmixx)",
+        "\\byuha\\b",
+        "\\bian\\b",
+        "\\byeon\\b",
+        "\\bye-on\\b"
       ],
-      "playlist_ids": ["PLHrapbf9Q3g4"]
+      "playlist_ids": [
+        "PLHrapbf9Q3g4"
+      ],
+      "thumb": "images/groups/hearts2hearts.webp"
     },
     {
       "id": "rescene",
@@ -48,16 +92,30 @@
       "accent": "#38bdf8",
       "tagline": "Woni • Liv • Minami • May • Zena — วอนอี ยินดีที่ได้รู้จัก & วาไรตี้",
       "keywords": [
-        "rescene", "รีซีน", "woni", "won-e", "wone", "wonie", "วอนอี",
-        "minami", "มินามิ", "ลีฟ", "เจนา", "zena", "jeongseon"
+        "rescene",
+        "รีซีน",
+        "woni",
+        "won-e",
+        "wone",
+        "wonie",
+        "วอนอี",
+        "minami",
+        "มินามิ",
+        "ลีฟ",
+        "เจนา",
+        "zena",
+        "jeongseon"
       ],
       "regex_keywords": [
-        "\\bliv\\b", "\\bmay\\b", "เมย์\\s*(?:🐘|rescene|ผู้ถูกทิ้ง)"
+        "\\bliv\\b",
+        "\\bmay\\b",
+        "เมย์\\s*(?:🐘|rescene|ผู้ถูกทิ้ง)"
       ],
       "playlist_ids": [
         "PLK0euQjdYbEU",
         "PLOGsxVhUUspA"
-      ]
+      ],
+      "thumb": "images/groups/rescene.webp"
     },
     {
       "id": "triples",
@@ -66,15 +124,21 @@
       "accent": "#f43f5e",
       "tagline": "Badge War SS1 / SS2 / SS4 & วาไรตี้ครบเครื่อง 24 เมมเบอร์",
       "keywords": [
-        "triples", "ทริปเปิลเอส", "badge war", "แบดจ์วอร์",
-        "yooyeon", "chaeyeon", "แชยอน"
+        "triples",
+        "ทริปเปิลเอส",
+        "badge war",
+        "แบดจ์วอร์",
+        "yooyeon",
+        "chaeyeon",
+        "แชยอน"
       ],
       "playlist_ids": [
         "PLS0OvbNWc_s4",
         "PLTvQc1qFV3yU",
         "PLHoETizL_iaec-ViG9QF-0p5gnDdKtHxC",
         "PLHoETizL_iafjPRmGIoH4mgKIOBbYSK7U"
-      ]
+      ],
+      "thumb": "images/groups/triples.webp"
     },
     {
       "id": "kiiikiii",
@@ -83,13 +147,23 @@
       "accent": "#22d3ee",
       "tagline": "Jiyu • Leesol • Sui • Haum • Kya — MYSTERY CLUB & วาไรตี้",
       "keywords": [
-        "kiiikiii", "คิคิ", "kya kiii", "eat sol", "ha-eum",
-        "คิยา", "คียา", "อีซอล", "จียู", "ฮาอึม", "ซูอี"
+        "kiiikiii",
+        "คิคิ",
+        "kya kiii",
+        "eat sol",
+        "ha-eum",
+        "คิยา",
+        "คียา",
+        "อีซอล",
+        "จียู",
+        "ฮาอึม",
+        "ซูอี"
       ],
       "playlist_ids": [
         "PLHCirUutU7Oo",
         "PLHoETizL_iac8oLJM6A3YpBN-7V110Mu6"
-      ]
+      ],
+      "thumb": "images/groups/kiiikiii.webp"
     },
     {
       "id": "babymonster",
@@ -98,10 +172,21 @@
       "accent": "#ef4444",
       "tagline": "Ruka • Pharita • Asa • Ahyeon • Rami • Rora • Chiquita",
       "keywords": [
-        "babymonster", "bamon", "เบม่อน", "monstiez",
-        "ruka", "รุกะ", "pharita", "ภริตา", "ahyeon", "อาฮยอน", "chiquita", "ชิกิต้า"
+        "babymonster",
+        "bamon",
+        "เบม่อน",
+        "monstiez",
+        "ruka",
+        "รุกะ",
+        "pharita",
+        "ภริตา",
+        "ahyeon",
+        "อาฮยอน",
+        "chiquita",
+        "ชิกิต้า"
       ],
-      "playlist_ids": []
+      "playlist_ids": [],
+      "thumb": "images/groups/babymonster.webp"
     },
     {
       "id": "tuide",
@@ -109,8 +194,15 @@
       "thaiName": "ทูอิด",
       "accent": "#fb923c",
       "tagline": "เกิร์ลกรุ๊ปน้องใหม่ — Weverse Live, Radio & Studio Choom",
-      "keywords": ["tuide", "ทูอิด", "sun kiss"],
-      "playlist_ids": ["PLY7qXB0aEPdE"]
+      "keywords": [
+        "tuide",
+        "ทูอิด",
+        "sun kiss"
+      ],
+      "playlist_ids": [
+        "PLY7qXB0aEPdE"
+      ],
+      "thumb": "images/groups/tuide.webp"
     },
     {
       "id": "illit",
@@ -119,10 +211,23 @@
       "accent": "#f472b6",
       "tagline": "Yunah • Minju • Moka • Wonhee • Iroha — UPCONO & วาไรตี้",
       "keywords": [
-        "illit", "ไอลิท", "wonhee", "วอนฮี", "yunah", "ยุนอา",
-        "minju", "มินจู", "moka", "โมกะ", "iroha", "อิโรฮะ"
+        "illit",
+        "ไอลิท",
+        "wonhee",
+        "วอนฮี",
+        "yunah",
+        "ยุนอา",
+        "minju",
+        "มินจู",
+        "moka",
+        "โมกะ",
+        "iroha",
+        "อิโรฮะ"
       ],
-      "playlist_ids": ["PLB6llFcx8HqI"]
+      "playlist_ids": [
+        "PLB6llFcx8HqI"
+      ],
+      "thumb": "images/groups/illit.webp"
     },
     {
       "id": "nmixx",
@@ -130,8 +235,14 @@
       "thaiName": "เอ็นมิกซ์",
       "accent": "#3b82f6",
       "tagline": "Lily • Haewon • Sullyoon • Bae • Jiwoo • Kyujin",
-      "keywords": ["nmixx", "kyujin", "แฮวอน", "ลิลลี่"],
-      "playlist_ids": []
+      "keywords": [
+        "nmixx",
+        "kyujin",
+        "แฮวอน",
+        "ลิลลี่"
+      ],
+      "playlist_ids": [],
+      "thumb": "images/groups/nmixx.webp"
     },
     {
       "id": "meovv",
@@ -139,8 +250,15 @@
       "thaiName": "เหมียว",
       "accent": "#eab308",
       "tagline": "Sooin • Gawon • Anna • Narin • Ella — Workdol & Variety",
-      "keywords": ["meovv", "เหมียว", "anna meovv"],
-      "playlist_ids": ["PLfAukGsRQjqE"]
+      "keywords": [
+        "meovv",
+        "เหมียว",
+        "anna meovv"
+      ],
+      "playlist_ids": [
+        "PLfAukGsRQjqE"
+      ],
+      "thumb": "images/groups/meovv.webp"
     },
     {
       "id": "le_sserafim",
@@ -148,8 +266,17 @@
       "thaiName": "เลอ เซราฟิม",
       "accent": "#60a5fa",
       "tagline": "Sakura • Chaewon • Yunjin • Kazuha • Eunchae",
-      "keywords": ["lesserafim", "le sserafim", "ซากุระ", "คาซึฮะ", "kazuha", "eunchae", "hyemileeyechaepa"],
-      "playlist_ids": []
+      "keywords": [
+        "lesserafim",
+        "le sserafim",
+        "ซากุระ",
+        "คาซึฮะ",
+        "kazuha",
+        "eunchae",
+        "hyemileeyechaepa"
+      ],
+      "playlist_ids": [],
+      "thumb": "images/groups/le_sserafim.webp"
     },
     {
       "id": "kiss_of_life",
@@ -157,8 +284,13 @@
       "thaiName": "คิสออฟไลฟ์",
       "accent": "#c084fc",
       "tagline": "Julie • Natty • Belle • Haneul — Dingo Attack & Idol Radio",
-      "keywords": ["kiss of life", "natty", "นัตตี้"],
-      "playlist_ids": []
+      "keywords": [
+        "kiss of life",
+        "natty",
+        "นัตตี้"
+      ],
+      "playlist_ids": [],
+      "thumb": "images/groups/kiss_of_life.webp"
     },
     {
       "id": "twice",
@@ -166,8 +298,13 @@
       "thaiName": "ทไวซ์",
       "accent": "#fb7185",
       "tagline": "Sana's Fridge Interview & Collaboration Episodes",
-      "keywords": ["twice", "sana", "ซานะ"],
-      "playlist_ids": []
+      "keywords": [
+        "twice",
+        "sana",
+        "ซานะ"
+      ],
+      "playlist_ids": [],
+      "thumb": "images/groups/twice.webp"
     },
     {
       "id": "ive",
@@ -175,9 +312,16 @@
       "thaiName": "ไอบึ",
       "accent": "#818cf8",
       "tagline": "An Yujin • Gaeul • Rei • Jang Wonyoung • Liz • Leeseo",
-      "keywords": ["#ive", "ไอบึ"],
-      "regex_keywords": ["\\bive\\b", "\\brei\\b(?!.*(rescene|tuide|hearts2hearts))"],
-      "playlist_ids": []
+      "keywords": [
+        "#ive",
+        "ไอบึ"
+      ],
+      "regex_keywords": [
+        "\\bive\\b",
+        "\\brei\\b(?!.*(rescene|tuide|hearts2hearts))"
+      ],
+      "playlist_ids": [],
+      "thumb": "images/groups/ive.webp"
     },
     {
       "id": "treasure",
@@ -185,8 +329,11 @@
       "thaiName": "เทรเชอร์",
       "accent": "#38bdf8",
       "tagline": "UPCONO Season 2 & วาไรตี้",
-      "keywords": ["treasure"],
-      "playlist_ids": []
+      "keywords": [
+        "treasure"
+      ],
+      "playlist_ids": [],
+      "thumb": "images/groups/treasure.webp"
     },
     {
       "id": "allday_project",
@@ -194,8 +341,13 @@
       "thaiName": "ออลเดย์ โปรเจกต์ (ADP)",
       "accent": "#f59e0b",
       "tagline": "UPCONO Season 2 — MZ Gang Variety",
-      "keywords": ["alldayproject", "allday project", "adp"],
-      "playlist_ids": []
+      "keywords": [
+        "alldayproject",
+        "allday project",
+        "adp"
+      ],
+      "playlist_ids": [],
+      "thumb": "images/groups/allday_project.webp"
     },
     {
       "id": "xg",
@@ -204,8 +356,11 @@
       "accent": "#2dd4bf",
       "tagline": "Jurin • Chisa • Hinata • Harvey • Juria • Maya • Cocona",
       "keywords": [],
-      "regex_keywords": ["\\bxg\\b"],
-      "playlist_ids": []
+      "regex_keywords": [
+        "\\bxg\\b"
+      ],
+      "playlist_ids": [],
+      "thumb": "images/groups/xg.webp"
     },
     {
       "id": "aespa",
@@ -213,8 +368,16 @@
       "thaiName": "เอสป้า",
       "accent": "#a78bfa",
       "tagline": "Karina • Giselle • Winter • Ningning",
-      "keywords": ["aespa", "karina", "คาริน่า", "winter", "giselle", "ningning"],
-      "playlist_ids": []
+      "keywords": [
+        "aespa",
+        "karina",
+        "คาริน่า",
+        "winter",
+        "giselle",
+        "ningning"
+      ],
+      "playlist_ids": [],
+      "thumb": "images/groups/aespa.webp"
     },
     {
       "id": "billlie",
@@ -222,8 +385,13 @@
       "thaiName": "บิลลี",
       "accent": "#f43f5e",
       "tagline": "Tsuki & Workdol / Variety Specials",
-      "keywords": ["billlie", "billie", "tsuki"],
-      "playlist_ids": []
+      "keywords": [
+        "billlie",
+        "billie",
+        "tsuki"
+      ],
+      "playlist_ids": [],
+      "thumb": "images/groups/billlie.webp"
     },
     {
       "id": "idle",
@@ -231,8 +399,14 @@
       "thaiName": "ไอเดิล",
       "accent": "#e879f9",
       "tagline": "Miyeon • JeonDoSa & Variety",
-      "keywords": ["i-dle", "miyeon", "มิยอน", "hyemileeyechaepa"],
-      "playlist_ids": []
+      "keywords": [
+        "i-dle",
+        "miyeon",
+        "มิยอน",
+        "hyemileeyechaepa"
+      ],
+      "playlist_ids": [],
+      "thumb": "images/groups/idle.webp"
     },
     {
       "id": "chuu_arin",
@@ -240,8 +414,12 @@
       "thaiName": "ชยู & อาริน (99z)",
       "accent": "#34d399",
       "tagline": "ทริปกรุงเทพฯ & วาไรตี้ 99z",
-      "keywords": ["chuu"],
-      "regex_keywords": ["\\barin\\b(?!.*atheart)"],
+      "keywords": [
+        "chuu"
+      ],
+      "regex_keywords": [
+        "\\barin\\b(?!.*atheart)"
+      ],
       "playlist_ids": []
     },
     {
@@ -250,7 +428,10 @@
       "thaiName": "รายการแข่งขันร้องเพลง Veiled Cup",
       "accent": "#f59e0b",
       "tagline": "รวมคลิปรายการประกวดร้องเพลง Veiled Cup ซับไทยทุกตอน",
-      "keywords": ["veiled cup", "veilecup"],
+      "keywords": [
+        "veiled cup",
+        "veilecup"
+      ],
       "playlist_ids": []
     },
     {
@@ -259,7 +440,9 @@
       "thaiName": "ฮเยมิรีเยแชพา (Chaewon • Miyeon • Hyeri • Yena)",
       "accent": "#f472b6",
       "tagline": "วาไรตี้บ้านพักสุดฮา EP.01-12 ซับไทยบน Patreon",
-      "keywords": ["hyemileeyechaepa"],
+      "keywords": [
+        "hyemileeyechaepa"
+      ],
       "playlist_ids": []
     },
     {
@@ -268,8 +451,13 @@
       "thaiName": "Show Me The Money 12 / มิลลิ",
       "accent": "#fb7185",
       "tagline": "มิลลิ (MILLI) & Show Me The Money 12 ซับไทยบน Patreon",
-      "keywords": ["smtm12", "มิลลิ"],
-      "regex_keywords": ["\\bmilli\\b"],
+      "keywords": [
+        "smtm12",
+        "มิลลิ"
+      ],
+      "regex_keywords": [
+        "\\bmilli\\b"
+      ],
       "playlist_ids": []
     },
     {
@@ -278,8 +466,11 @@
       "thaiName": "อัคมู",
       "accent": "#34d399",
       "tagline": "You Quiz on the Block & Kangho Bookstore ซับไทย",
-      "keywords": ["akmu"],
-      "playlist_ids": []
+      "keywords": [
+        "akmu"
+      ],
+      "playlist_ids": [],
+      "thumb": "images/groups/akmu.webp"
     },
     {
       "id": "other_kpop",
@@ -288,32 +479,81 @@
       "accent": "#94a3b8",
       "tagline": "OURBIRTHDAY, AtHeart, FIFTY FIFTY, S.E.S, Han So-hee และวาไรตี้อื่นๆ",
       "keywords": [
-        "izna", "fifty fifty", "atheart", "ourbirthday",
-        "nothing much prepared", "han so-hee", "eugene", "s.e.s", "hyorisoo"
+        "izna",
+        "fifty fifty",
+        "atheart",
+        "ourbirthday",
+        "nothing much prepared",
+        "han so-hee",
+        "eugene",
+        "s.e.s",
+        "hyorisoo"
       ],
       "playlist_ids": []
     }
   ],
   "video_overrides": {
-    "O0Li569qXr8": ["qwer"],
-    "rkKpwjwqpvk": ["qwer"],
-    "Dc9Bfyd54IM": ["qwer"],
-    "87KpTp4NhWo": ["qwer"],
-    "BJu6ZSj7WYQ": ["qwer"],
-    "x0KUhQt6mi8": ["qwer"],
-    "FR5b18-rkMs": ["qwer"],
-    "FJe97ZEDOWs": ["rescene"],
-    "UkOu7L8WbXI": ["rescene"],
-    "7xg9gwH9zTE": ["rescene"],
-    "Tn5rsRFJyeI": ["qwer"],
-    "Q8XfIR4mP3k": ["qwer"],
-    "Ro2xZ1Pvqns": ["hearts2hearts"],
-    "1ost-zTrW7k": ["qwer"],
-    "n_I3V6cKUB4": ["qwer"],
-    "dUey2o_F84U": ["kiss_of_life"],
-    "rOB-qGh-4JA": ["nmixx"],
-    "pibPgMV0LSk": ["hearts2hearts"],
-    "hlaM0aCUBSI": ["treasure", "rescene"],
-    "-WUxJtOWRgI": ["treasure", "rescene"]
+    "O0Li569qXr8": [
+      "qwer"
+    ],
+    "rkKpwjwqpvk": [
+      "qwer"
+    ],
+    "Dc9Bfyd54IM": [
+      "qwer"
+    ],
+    "87KpTp4NhWo": [
+      "qwer"
+    ],
+    "BJu6ZSj7WYQ": [
+      "qwer"
+    ],
+    "x0KUhQt6mi8": [
+      "qwer"
+    ],
+    "FR5b18-rkMs": [
+      "qwer"
+    ],
+    "FJe97ZEDOWs": [
+      "rescene"
+    ],
+    "UkOu7L8WbXI": [
+      "rescene"
+    ],
+    "7xg9gwH9zTE": [
+      "rescene"
+    ],
+    "Tn5rsRFJyeI": [
+      "qwer"
+    ],
+    "Q8XfIR4mP3k": [
+      "qwer"
+    ],
+    "Ro2xZ1Pvqns": [
+      "hearts2hearts"
+    ],
+    "1ost-zTrW7k": [
+      "qwer"
+    ],
+    "n_I3V6cKUB4": [
+      "qwer"
+    ],
+    "dUey2o_F84U": [
+      "kiss_of_life"
+    ],
+    "rOB-qGh-4JA": [
+      "nmixx"
+    ],
+    "pibPgMV0LSk": [
+      "hearts2hearts"
+    ],
+    "hlaM0aCUBSI": [
+      "treasure",
+      "rescene"
+    ],
+    "-WUxJtOWRgI": [
+      "treasure",
+      "rescene"
+    ]
   }
 }

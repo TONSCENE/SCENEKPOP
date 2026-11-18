@@ -466,7 +466,7 @@ def main():
             "accent": g.get("accent", "#a855f7"),
             "tagline": g.get("tagline", ""),
             "count": cnt,
-            "thumb": group_thumbs.get(gid, ""),
+            "thumb": g.get("thumb") or group_thumbs.get(gid, ""),
             "playlistIds": g.get("playlist_ids", []),
         })
 
