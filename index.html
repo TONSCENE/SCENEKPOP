@@ -392,6 +392,72 @@
       flex-wrap: wrap;
     }
 
+    .hero-preview-pill {
+      position: absolute;
+      right: 28px;
+      bottom: 22px;
+      z-index: 4;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      max-width: 420px;
+      padding: 6px 8px 6px 12px;
+      border-radius: 999px;
+      background: rgba(10, 10, 18, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(10px);
+      font-size: 12px;
+      color: #e2e8f0;
+    }
+
+    .hero-preview-link {
+      background: transparent;
+      border: none;
+      color: inherit;
+      font-family: inherit;
+      font-size: inherit;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      min-width: 0;
+      padding: 0;
+      text-align: left;
+    }
+
+    .hero-preview-link:hover {
+      color: #fff;
+    }
+
+    .hero-preview-title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 240px;
+    }
+
+    .hero-shuffle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(168, 85, 247, 0.45);
+      background: rgba(168, 85, 247, 0.22);
+      color: #f3e8ff;
+      font-family: inherit;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .hero-shuffle-btn:hover {
+      background: rgba(168, 85, 247, 0.4);
+      color: #fff;
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -1209,6 +1275,16 @@
         height: auto;
         min-height: unset;
         padding: 86px 18px 26px 18px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero-preview-pill {
+        position: static;
+        margin-top: 14px;
+        max-width: 100%;
+      }
+      .hero-preview-title {
+        max-width: 170px;
       }
       .hero-title {
         font-size: 32px;
@@ -1318,6 +1394,16 @@
           <i class="fa-brands fa-patreon"></i> Patreon (ซับไทยพิเศษ)
         </a>
       </div>
+    </div>
+
+    <div class="hero-preview-pill" id="heroPreviewPill" style="display: none;">
+      <button class="hero-preview-link" onclick="playHeroPreviewVideo()" title="เปิดดูคลิปตัวอย่างนี้">
+        <i class="fa-solid fa-tv" style="color: var(--accent-cyan);"></i>
+        <span class="hero-preview-title" id="heroPreviewTitle"></span>
+      </button>
+      <button class="hero-shuffle-btn" onclick="setRandomHeroPreview()" title="สุ่มคลิปพรีวิวพื้นหลังใหม่">
+        <i class="fa-solid fa-shuffle"></i> สุ่มพรีวิว
+      </button>
     </div>
   </header>
 
@@ -1509,6 +1595,7 @@
     let patreonLimit = 12;
     let currentQueue = [];
     let currentQueueIndex = 0;
+    let currentHeroVideo = null;
 
     // Navbar scroll styling
     window.addEventListener('scroll', () => {
@@ -1532,19 +1619,49 @@
         .replace(/'/g, '&#39;');
     }
 
+    function setRandomHeroPreview() {
+      const ytAll = DB.videos.filter(v => v.source === 'youtube');
+      const ytAction = ytAll.filter(v => v.contentType === 'variety' || v.contentType === 'stage');
+      const pool = ytAction.length > 0 ? ytAction : ytAll;
+      if (pool.length === 0) return;
+
+      let candidates = pool;
+      if (currentHeroVideo && pool.length > 1) {
+        candidates = pool.filter(v => v.ytId !== currentHeroVideo.ytId);
+      }
+      const picked = candidates[Math.floor(Math.random() * candidates.length)];
+      currentHeroVideo = picked;
+
+      const dur = picked.durationSec || 0;
+      const startSec = dur > 45
+        ? 15 + Math.floor(Math.random() * Math.max(1, Math.min(180, Math.floor(dur * 0.4)) - 15))
+        : 0;
+      const startParam = startSec > 0 ? `&start=${startSec}` : '';
+
+      document.getElementById('heroVideoIframe').src =
+        `https://www.youtube.com/embed/${picked.ytId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${picked.ytId}${startParam}&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&enablejsapi=1`;
+
+      const pill = document.getElementById('heroPreviewPill');
+      const titleEl = document.getElementById('heroPreviewTitle');
+      if (pill && titleEl) {
+        titleEl.textContent = picked.title;
+        pill.style.display = 'inline-flex';
+      }
+    }
+
+    function playHeroPreviewVideo() {
+      if (!currentHeroVideo) return;
+      openQueueModal([currentHeroVideo], 0, '🎬 คลิปพรีวิวหน้าแรก');
+    }
+
     function initApp() {
       // On mobile / in-app browsers (Messenger, LINE, IG), target="_blank" is often blocked by WebViews
       if (IS_MOBILE_OR_INAPP) {
         document.querySelectorAll('a[target="_blank"]').forEach(a => a.removeAttribute('target'));
       }
 
-      // Hero background video (pick first YouTube video)
-      const firstYt = DB.videos.find(v => v.source === 'youtube');
-      if (firstYt) {
-        const heroVid = firstYt.ytId;
-        document.getElementById('heroVideoIframe').src =
-          `https://www.youtube.com/embed/${heroVid}?autoplay=1&mute=1&controls=0&loop=1&playlist=${heroVid}&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&enablejsapi=1`;
-      }
+      // Hero background video (randomize on load)
+      setRandomHeroPreview();
 
       document.getElementById('statVideos').textContent = `${DB.channel.totalVideos || DB.videos.length} คลิป (YT + Patreon)`;
       document.getElementById('statGroups').textContent = `${DB.groups.length} วง / หมวด`;
