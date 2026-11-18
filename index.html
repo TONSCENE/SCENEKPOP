@@ -298,14 +298,13 @@
 
     .hero-video-wrapper iframe {
       position: absolute;
-      top: 0;
+      top: -56px;
       left: 50%;
-      width: max(100cqw, calc(100cqh * 16 / 9));
-      height: max(100cqh, calc(100cqw * 9 / 16));
-      transform-origin: center top;
-      transform: translate(-50%, -48px) scale(1.16);
+      width: max(100cqw, calc((100cqh + 112px) * 16 / 9));
+      height: max(calc(100cqh + 112px), calc(100cqw * 9 / 16));
+      transform: translateX(-50%);
       border: none;
-      opacity: 0.86;
+      opacity: 1;
       pointer-events: none;
     }
 
@@ -313,9 +312,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(88deg, rgba(5,5,8,0.95) 0%, rgba(5,5,8,0.72) 38%, rgba(5,5,8,0.12) 68%, rgba(5,5,8,0.04) 100%),
-        linear-gradient(to top, var(--bg-color) 0%, rgba(5,5,8,0) 34%),
-        linear-gradient(to bottom, rgba(5,5,8,0.72) 0%, rgba(5,5,8,0) 18%);
+        linear-gradient(90deg, rgba(5,5,8,0.92) 0%, rgba(5,5,8,0.62) 32%, rgba(5,5,8,0) 56%),
+        linear-gradient(to top, var(--bg-color) 0%, rgba(5,5,8,0) 16%);
       z-index: 2;
     }
 
@@ -1638,8 +1636,18 @@
         : 0;
       const startParam = startSec > 0 ? `&start=${startSec}` : '';
 
-      document.getElementById('heroVideoIframe').src =
-        `https://www.youtube.com/embed/${picked.ytId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${picked.ytId}${startParam}&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&enablejsapi=1`;
+      const iframe = document.getElementById('heroVideoIframe');
+      iframe.src =
+        `https://www.youtube.com/embed/${picked.ytId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${picked.ytId}${startParam}&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&enablejsapi=1&vq=hd1080`;
+      iframe.onload = () => {
+        try {
+          iframe.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'setPlaybackQuality',
+            args: ['hd1080']
+          }), 'https://www.youtube.com');
+        } catch (e) {}
+      };
 
       const pill = document.getElementById('heroPreviewPill');
       const titleEl = document.getElementById('heroPreviewTitle');
