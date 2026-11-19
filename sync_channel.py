@@ -529,6 +529,7 @@ def main():
     custom_series_defs = [
         ("custom_sumbakkokjil_2", "SUMBAKKOKJIL 2 — Hearts2Hearts (Full VOD ซับไทย)", "hearts2hearts", "images/custom/sumbakkokjil_2_cover.webp"),
         ("custom_illit_sumbakkokjil_2", "SUMBAKKOKJIL 2 — ILLIT (Full VOD ซับไทย)", "illit", "images/custom/illit_sumbakkokjil_2_cover.webp"),
+        ("custom_rescene_sumbakkokjil_2", "SUMBAKKOKJIL 2 — RESCENE (Full VOD ซับไทย)", "rescene", "images/custom/rescene_sumbakkokjil_2_cover.webp"),
     ]
     for sid, stitle, gid, poster in custom_series_defs:
         matched_vids = sorted(

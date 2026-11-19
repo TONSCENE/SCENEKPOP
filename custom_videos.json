@@ -50,5 +50,31 @@
     "source": "embed",
     "embedUrl": "https://archive.org/embed/scenekpop-illit-sumbakkokjil-ep2",
     "directUrl": "https://archive.org/details/scenekpop-illit-sumbakkokjil-ep2"
+  },
+  {
+    "id": "rescene_sumbakkokjil_ep8_1",
+    "title": "[Full VOD 8-1] 8th PLAYER RESCENE - SUMBAKKOKJIL 2 ซับไทย",
+    "groups": ["rescene"],
+    "duration": "1:04:38",
+    "durationSec": 3878,
+    "thumb": "images/custom/rescene_sumbakkokjil_ep8-1.webp",
+    "contentType": "variety",
+    "subBadge": "ซับไทย",
+    "source": "embed",
+    "embedUrl": "https://archive.org/embed/scenekpop-rescene-sumbakkokjil-ep8-1",
+    "directUrl": "https://archive.org/details/scenekpop-rescene-sumbakkokjil-ep8-1"
+  },
+  {
+    "id": "rescene_sumbakkokjil_ep8_2",
+    "title": "[Full VOD 8-2] 8th PLAYER RESCENE - SUMBAKKOKJIL 2 ซับไทย",
+    "groups": ["rescene"],
+    "duration": "23:03",
+    "durationSec": 1383,
+    "thumb": "images/custom/rescene_sumbakkokjil_ep8-2.webp",
+    "contentType": "variety",
+    "subBadge": "ซับไทย",
+    "source": "embed",
+    "embedUrl": "https://archive.org/embed/scenekpop-rescene-sumbakkokjil-ep8-2",
+    "directUrl": "https://archive.org/details/scenekpop-rescene-sumbakkokjil-ep8-2"
   }
 ]
