@@ -10,11 +10,11 @@
 
 ---
 
-## ลิงก์แยกตามวง (นำไปแชร์ต่อได้เลย — รวม 413 คลิป: YouTube 360 + Patreon 47 + Archive 6)
+## ลิงก์แยกตามวง (นำไปแชร์ต่อได้เลย — รวม 414 คลิป: YouTube 361 + Patreon 47 + Archive 6)
 
 | วง / หมวดหมู่ | จำนวนคลิป | ลิงก์เปิดดูเฉพาะวง |
 | :--- | :---: | :--- |
-| **QWER** | 116 | https://tonscene.github.io/SCENEKPOP/#group=qwer |
+| **QWER** | 117 | https://tonscene.github.io/SCENEKPOP/#group=qwer |
 | **Hearts2Hearts** | 76 | https://tonscene.github.io/SCENEKPOP/#group=hearts2hearts |
 | **RESCENE** | 55 | https://tonscene.github.io/SCENEKPOP/#group=rescene |
 | **ILLIT** | 21 | https://tonscene.github.io/SCENEKPOP/#group=illit |
