@@ -303,7 +303,7 @@ const sceneDatabase = {
       "id": "custom_illit_sumbakkokjil_2",
       "title": "SUMBAKKOKJIL 2 — ILLIT (Full VOD ซับไทย)",
       "count": 2,
-      "thumb": "images/custom/illit_sumbakkokjil_ep1.webp",
+      "thumb": "images/custom/illit_sumbakkokjil_2_cover.webp",
       "groupId": "illit",
       "groupIds": [
         "illit"
