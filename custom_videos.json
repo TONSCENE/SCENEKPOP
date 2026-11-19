@@ -24,5 +24,31 @@
     "source": "embed",
     "embedUrl": "https://archive.org/embed/scenekpop-h2h-sumbakkokjil-ep4-2",
     "directUrl": "https://archive.org/details/scenekpop-h2h-sumbakkokjil-ep4-2"
+  },
+  {
+    "id": "illit_sumbakkokjil_ep1",
+    "title": "[Full VOD 7-1] 7th PLAYER ILLIT - SUMBAKKOKJIL 2 ซับไทย",
+    "groups": ["illit"],
+    "duration": "22:32",
+    "durationSec": 1352,
+    "thumb": "images/custom/illit_sumbakkokjil_ep1.webp",
+    "contentType": "variety",
+    "subBadge": "ซับไทย",
+    "source": "embed",
+    "embedUrl": "https://archive.org/embed/scenekpop-illit-sumbakkokjil-ep1",
+    "directUrl": "https://archive.org/details/scenekpop-illit-sumbakkokjil-ep1"
+  },
+  {
+    "id": "illit_sumbakkokjil_ep2",
+    "title": "[Full VOD 7-2] 7th PLAYER ILLIT - SUMBAKKOKJIL 2 ซับไทย",
+    "groups": ["illit"],
+    "duration": "52:36",
+    "durationSec": 3156,
+    "thumb": "images/custom/illit_sumbakkokjil_ep2.webp",
+    "contentType": "variety",
+    "subBadge": "ซับไทย",
+    "source": "embed",
+    "embedUrl": "https://archive.org/embed/scenekpop-illit-sumbakkokjil-ep2",
+    "directUrl": "https://archive.org/details/scenekpop-illit-sumbakkokjil-ep2"
   }
 ]

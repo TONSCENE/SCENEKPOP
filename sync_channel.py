@@ -526,20 +526,26 @@ def main():
 
     # 5.6 Auto-group custom SUMBAKKOKJIL / archive series into playlists
     custom_items = [v for v in videos_out if v.get("source") in ("artplayer", "embed")]
-    sumb_vids = [v["ytId"] for v in custom_items if "sumbakkokjil" in v["title"].lower()]
-    if sumb_vids:
-        sumb_vids.sort()
-        sumb_poster = "images/custom/sumbakkokjil_2_cover.webp"
-        playlists_out.insert(0, {
-            "id": "custom_sumbakkokjil_2",
-            "title": "SUMBAKKOKJIL 2 — Hearts2Hearts (Full VOD ซับไทย)",
-            "count": len(sumb_vids),
-            "thumb": sumb_poster if os.path.exists(os.path.join(SCRIPT_DIR, sumb_poster)) else vid_by_id[sumb_vids[0]]["thumb"],
-            "groupId": "hearts2hearts",
-            "groupIds": ["hearts2hearts"],
-            "videoIds": sumb_vids,
-            "source": "custom",
-        })
+    custom_series_defs = [
+        ("custom_sumbakkokjil_2", "SUMBAKKOKJIL 2 — Hearts2Hearts (Full VOD ซับไทย)", "hearts2hearts", "images/custom/sumbakkokjil_2_cover.webp"),
+        ("custom_illit_sumbakkokjil_2", "SUMBAKKOKJIL 2 — ILLIT (Full VOD ซับไทย)", "illit", "images/custom/illit_sumbakkokjil_ep1.webp"),
+    ]
+    for sid, stitle, gid, poster in custom_series_defs:
+        matched_vids = sorted(
+            v["ytId"] for v in custom_items
+            if "sumbakkokjil" in v["title"].lower() and gid in v["groups"]
+        )
+        if matched_vids:
+            playlists_out.insert(0, {
+                "id": sid,
+                "title": stitle,
+                "count": len(matched_vids),
+                "thumb": poster if os.path.exists(os.path.join(SCRIPT_DIR, poster)) else vid_by_id[matched_vids[0]]["thumb"],
+                "groupId": gid,
+                "groupIds": [gid],
+                "videoIds": matched_vids,
+                "source": "custom",
+            })
 
     # Pick channel avatar from channel thumbnails if present
     channel_thumbs = videos_raw.get("thumbnails") or []
