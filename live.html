@@ -193,11 +193,37 @@
     }
 
     .player-shell {
+      position: relative;
       background: var(--card-bg);
       border: 1px solid var(--border-color);
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 18px 46px rgba(0, 0, 0, 0.55);
+    }
+
+    .unmute-overlay {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 30;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(5, 5, 8, 0.82);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .unmute-overlay:hover {
+      background: rgba(236, 72, 153, 0.88);
     }
 
     #dplayer {
@@ -389,6 +415,9 @@
 
     <!-- DPlayer Theater -->
     <section class="player-shell">
+      <button id="unmuteOverlay" class="unmute-overlay" onclick="unmutePlayer()">
+        <i class="fa-solid fa-volume-xmark" style="color: var(--accent-pink);"></i> แตะเพื่อเปิดเสียง
+      </button>
       <div id="dplayer"></div>
     </section>
 
@@ -434,7 +463,33 @@
       };
     }
 
+    async function ensureAutoPlay(video) {
+      const unmuteBtn = document.getElementById('unmuteOverlay');
+      video.setAttribute('playsinline', '');
+      video.setAttribute('webkit-playsinline', '');
+      try {
+        video.muted = false;
+        await video.play();
+        unmuteBtn.style.display = 'none';
+      } catch {
+        try {
+          video.muted = true;
+          await video.play();
+          unmuteBtn.style.display = 'inline-flex';
+        } catch {}
+      }
+    }
+
+    function unmutePlayer() {
+      if (!dp || !dp.video) return;
+      dp.video.muted = false;
+      dp.video.volume = 1;
+      dp.video.play().catch(() => {});
+      document.getElementById('unmuteOverlay').style.display = 'none';
+    }
+
     function initPlayer(m3u8Url, isLive = true, title = '') {
+      document.getElementById('unmuteOverlay').style.display = 'none';
       if (title) {
         document.getElementById('streamTitle').textContent = title;
         document.title = `${title} — LIVE`;
@@ -468,6 +523,11 @@
           type: 'customHls',
           customType: {
             customHls: function (video) {
+              video.addEventListener('volumechange', () => {
+                if (!video.muted && video.volume > 0) {
+                  document.getElementById('unmuteOverlay').style.display = 'none';
+                }
+              });
               if (window.Hls && Hls.isSupported()) {
                 activeHls = new Hls({
                   enableWorker: true,
@@ -476,8 +536,14 @@
                 });
                 activeHls.loadSource(m3u8Url);
                 activeHls.attachMedia(video);
+                activeHls.on(Hls.Events.MANIFEST_PARSED, () => {
+                  ensureAutoPlay(video);
+                });
               } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
                 video.src = m3u8Url;
+                video.addEventListener('loadedmetadata', () => {
+                  ensureAutoPlay(video);
+                }, { once: true });
               }
             },
           },
