@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>SCENEKPOP+ LIVE — รับชมถ่ายทอดสด 1080P</title>
-  <meta name="description" content="หมวดหมู่ถ่ายทอดสดเฉพาะกิจ SCENEKPOP+ LIVE รองรับ PC, Mac, Android และ iPhone" />
+  <title>SCENEKPOP+ MAMA AWARD 2026 — LIVE</title>
+  <meta name="description" content="SCENEKPOP+ MAMA AWARD 2026 ถ่ายทอดสดผ่าน DPlayer + HLS รองรับ PC, Mac, Android และ iPhone" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
 
   <!-- Fonts & Icons (ตรงกับ SCENEKPOP+) -->
@@ -384,8 +384,8 @@
     <div class="live-header">
       <div>
         <h1>
-          <span id="streamTitle">SCENEKPOP+ LIVE เฉพาะกิจ</span>
-          <span class="tag-1080">1080P FHD</span>
+          <span id="streamTitle">SCENEKPOP+ MAMA AWARD 2026</span>
+          <span class="tag-1080">LIVE</span>
         </h1>
         <p id="streamSub">รับชมถ่ายทอดสดผ่าน DPlayer + HLS (รองรับ PC, Mac, Android และ iPhone)</p>
       </div>
@@ -436,9 +436,9 @@
     const LIVE_CHANNELS = [
       {
         id: 'mnet-main',
-        title: 'Mnet Plus Live 1080P (เฉพาะกิจ)',
-        group: 'SCENEKPOP LIVE',
-        desc: 'สตรีมสดความชัด 1080P Full HD (ใส่ลิงก์ Cloudflare Tunnel เมื่อเปิดไลฟ์)',
+        title: 'SCENEKPOP+ MAMA AWARD 2026',
+        group: 'SCENEKPOP+ LIVE',
+        desc: 'ช่องถ่ายทอดสดเฉพาะกิจ (ใส่ลิงก์ Cloudflare Tunnel เมื่อเปิดไลฟ์)',
         url: '',
         live: true
       }
@@ -583,7 +583,7 @@
     const q = getQueryParams();
     const firstChannelWithUrl = LIVE_CHANNELS.find((c) => c.url);
     const initialUrl = q.url || (firstChannelWithUrl ? firstChannelWithUrl.url : '');
-    const initialTitle = q.title || (firstChannelWithUrl ? firstChannelWithUrl.title : 'SCENEKPOP+ LIVE เฉพาะกิจ');
+    const initialTitle = q.title || (firstChannelWithUrl ? firstChannelWithUrl.title : 'SCENEKPOP+ MAMA AWARD 2026');
     if (initialUrl) {
       document.getElementById('m3u8Input').value = initialUrl;
     }
