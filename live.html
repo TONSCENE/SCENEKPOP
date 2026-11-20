@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>SCENEKPOP+ LIVE — รับชมถ่ายทอดสด 1080P</title>
+  <meta name="description" content="หมวดหมู่ถ่ายทอดสดเฉพาะกิจ SCENEKPOP+ LIVE รองรับ PC, Mac, Android และ iPhone" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <!-- Fonts & Icons (ตรงกับ SCENEKPOP+) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- DPlayer + HLS.js -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dplayer@1.27.1/dist/DPlayer.min.js"></script>
+
+  <style>
+    :root {
+      --bg-color: #050508;
+      --surface-color: #0e0f15;
+      --card-bg: #13141c;
+      --card-hover: #1d1f2b;
+      --accent-purple: #a855f7;
+      --accent-pink: #ec4899;
+      --accent-cyan: #38bdf8;
+      --live-red: #ef4444;
+      --text-white: #ffffff;
+      --text-gray: #9ca3af;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --neon-gradient: linear-gradient(135deg, #a855f7 0%, #ec4899 52%, #38bdf8 100%);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      background-color: var(--bg-color);
+      background-image:
+        radial-gradient(circle at 12% 0%, rgba(168, 85, 247, 0.14), transparent 38%),
+        radial-gradient(circle at 88% 0%, rgba(236, 72, 153, 0.12), transparent 36%);
+      color: var(--text-white);
+      font-family: 'Prompt', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* Navbar (สไตล์เดียวกับ SCENEKPOP+) */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 68px;
+      padding: 0 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 120;
+      background: rgba(5, 5, 8, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(168, 85, 247, 0.22);
+      box-shadow: 0 6px 26px rgba(0, 0, 0, 0.75);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .brand-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      letter-spacing: 2px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--neon-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #e2e8f0;
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-pink);
+    }
+
+    .nav-live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 11px;
+      border-radius: 999px;
+      background: rgba(239, 68, 68, 0.18);
+      border: 1px solid rgba(239, 68, 68, 0.55);
+      color: #fecaca !important;
+      font-weight: 700 !important;
+    }
+
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--live-red);
+      box-shadow: 0 0 8px var(--live-red);
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.85); }
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      transition: transform 0.15s;
+    }
+    .nav-pill-btn:hover { transform: translateY(-1px); }
+    .patreon-btn { background: #ff424d; }
+    .yt-btn { background: #dc2626; }
+
+    /* Main Content */
+    .main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 92px 24px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .live-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .live-header h1 {
+      font-size: 1.55rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .live-header p {
+      font-size: 0.9rem;
+      color: var(--text-gray);
+      margin-top: 2px;
+    }
+
+    .tag-1080 {
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: var(--neon-gradient);
+      color: #fff;
+      letter-spacing: 0.04em;
+    }
+
+    .player-shell {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.55);
+    }
+
+    #dplayer {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+    }
+
+    .controls-panel {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .url-input {
+      flex: 1;
+      min-width: 240px;
+      background: var(--surface-color);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      outline: none;
+    }
+
+    .url-input:focus {
+      border-color: var(--accent-purple);
+    }
+
+    .btn {
+      appearance: none;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.07);
+      color: #fff;
+      padding: 9px 15px;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: background 0.15s, transform 0.12s;
+    }
+
+    .btn:hover { background: rgba(255, 255, 255, 0.14); }
+    .btn:active { transform: scale(0.97); }
+    .btn-neon {
+      background: var(--neon-gradient);
+      border-color: transparent;
+    }
+
+    /* Channels Section */
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 6px;
+    }
+
+    .section-head h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .channels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+
+    .channel-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 14px;
+      cursor: pointer;
+      transition: transform 0.16s, background 0.16s, border-color 0.16s;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .channel-card:hover {
+      transform: translateY(-2px);
+      background: var(--card-hover);
+      border-color: rgba(236, 72, 153, 0.45);
+    }
+
+    .channel-card.active {
+      border-color: var(--accent-pink);
+      box-shadow: 0 0 0 1px rgba(236, 72, 153, 0.4);
+    }
+
+    .channel-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .channel-badge {
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(239, 68, 68, 0.18);
+      color: #fca5a5;
+    }
+
+    .channel-badge.off {
+      background: rgba(148, 163, 184, 0.15);
+      color: var(--text-gray);
+    }
+
+    .channel-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+    }
+
+    .channel-desc {
+      font-size: 0.8rem;
+      color: var(--text-gray);
+    }
+
+    .note {
+      font-size: 0.8rem;
+      color: var(--text-gray);
+    }
+
+    @media (max-width: 820px) {
+      .navbar { padding: 0 16px; }
+      .nav-links { gap: 12px; }
+      .nav-links li:not(.keep-mobile) { display: none; }
+      .nav-right .patreon-btn span, .nav-right .yt-btn span { display: none; }
+      .main { padding: 84px 14px 36px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="./" class="brand-logo">
+        <i class="fa-solid fa-play" style="font-size: 18px;"></i> SCENEKPOP+
+      </a>
+      <ul class="nav-links">
+        <li><a href="./">หน้าแรก</a></li>
+        <li><a href="./#sec-groups">แยกตามวง</a></li>
+        <li><a href="./#sec-playlists">เพลย์ลิสต์</a></li>
+        <li><a href="./#sec-latest">คลิปล่าสุด</a></li>
+        <li class="keep-mobile">
+          <a href="live.html" class="nav-live-badge"><span class="pulse-dot"></span> LIVE</a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <a href="https://www.patreon.com/c/SCENEKPOP" target="_blank" rel="noopener noreferrer" class="nav-pill-btn patreon-btn">
+        <i class="fa-brands fa-patreon"></i> <span>Patreon</span>
+      </a>
+      <a href="https://www.youtube.com/@SCENEKPOP" target="_blank" rel="noopener noreferrer" class="nav-pill-btn yt-btn">
+        <i class="fa-brands fa-youtube"></i> <span>@SCENEKPOP</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="main">
+    <div class="live-header">
+      <div>
+        <h1>
+          <span id="streamTitle">SCENEKPOP+ LIVE เฉพาะกิจ</span>
+          <span class="tag-1080">1080P FHD</span>
+        </h1>
+        <p id="streamSub">รับชมถ่ายทอดสดผ่าน DPlayer + HLS (รองรับ PC, Mac, Android และ iPhone)</p>
+      </div>
+      <div class="row">
+        <button class="btn" onclick="switchLiveMode(true)" id="btnLiveMode">🔴 โหมดดูสด</button>
+        <button class="btn" onclick="switchLiveMode(false)" id="btnVodMode">⏮️ โหมดย้อนหลัง</button>
+      </div>
+    </div>
+
+    <!-- DPlayer Theater -->
+    <section class="player-shell">
+      <div id="dplayer"></div>
+    </section>
+
+    <!-- Quick M3U8 Input & External Players -->
+    <section class="controls-panel">
+      <div class="row">
+        <input id="m3u8Input" class="url-input" type="text" placeholder="วางลิงก์ https://...trycloudflare.com/live.m3u8 ที่นี่" />
+        <button class="btn btn-neon" onclick="playFromInput()">
+          <i class="fa-solid fa-play"></i> เล่นสตรีม
+        </button>
+        <button class="btn" onclick="copyShareUrl()">
+          <i class="fa-solid fa-share-nodes"></i> ก๊อปลิงก์แชร์หน้านี้
+        </button>
+      </div>
+
+      <div class="row">
+        <a class="btn" id="openVlc" href="#"><i class="fa-solid fa-clapperboard"></i> เปิดใน VLC</a>
+        <a class="btn" id="openIina" href="#"><i class="fa-solid fa-tv"></i> เปิดใน IINA (Mac)</a>
+        <a class="btn" id="openInfuse" href="#"><i class="fa-solid fa-mobile-screen"></i> เปิดใน Infuse (iOS)</a>
+        <a class="btn" id="openRaw" href="#" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> ลิงก์ .m3u8 ตรง</a>
+      </div>
+
+      <p class="note">
+        หมายเหตุ: บนหน้าเว็บ <code>https://tonscene.github.io/SCENEKPOP/live.html</code> ควรใช้ลิงก์ <b>https://...trycloudflare.com/live.m3u8</b> จากสคริปต์ <code>mnet_live_iina.py --online</code> เพื่อไม่ให้เบราว์เซอร์บล็อก Mixed Content
+      </p>
+    </section>
+
+    <!-- Live Channels Directory -->
+    <div class="section-head">
+      <h2><i class="fa-solid fa-tower-broadcast" style="color: var(--live-red);"></i> ช่องรายการ LIVE</h2>
+    </div>
+    <section class="channels-grid" id="channelsGrid"></section>
+  </main>
+
+  <script>
+    // รายการช่อง LIVE เฉพาะกิจ (เพิ่ม/แก้ช่องได้ตรงนี้ หรือส่งผ่าน ?url=...&title=... ได้เลย)
+    const LIVE_CHANNELS = [
+      {
+        id: 'mnet-main',
+        title: 'Mnet Plus Live 1080P (เฉพาะกิจ)',
+        group: 'SCENEKPOP LIVE',
+        desc: 'สตรีมสดความชัด 1080P Full HD (ใส่ลิงก์ Cloudflare Tunnel เมื่อเปิดไลฟ์)',
+        url: '',
+        live: true
+      }
+    ];
+
+    let dp = null;
+    let activeHls = null;
+    let currentUrl = '';
+    let currentIsLive = true;
+
+    function getQueryParams() {
+      const sp = new URLSearchParams(window.location.search);
+      return {
+        url: sp.get('url') || '',
+        title: sp.get('title') || '',
+        live: sp.get('live') !== '0',
+      };
+    }
+
+    function updateExternalButtons(m3u8Url) {
+      document.getElementById('openVlc').href = m3u8Url ? `vlc://${m3u8Url}` : '#';
+      document.getElementById('openIina').href = m3u8Url ? `iina://weblink?url=${encodeURIComponent(m3u8Url)}` : '#';
+      document.getElementById('openInfuse').href = m3u8Url ? `infuse://x-callback-url/play?url=${encodeURIComponent(m3u8Url)}` : '#';
+      document.getElementById('openRaw').href = m3u8Url || '#';
+    }
+
+    function initPlayer(m3u8Url, isLive = true, title = '') {
+      currentUrl = m3u8Url;
+      currentIsLive = isLive;
+
+      if (title) {
+        document.getElementById('streamTitle').textContent = title;
+        document.title = `${title} — SCENEKPOP+ LIVE`;
+      }
+
+      document.getElementById('btnLiveMode').style.borderColor = isLive ? 'var(--accent-pink)' : '';
+      document.getElementById('btnVodMode').style.borderColor = !isLive ? 'var(--accent-pink)' : '';
+      updateExternalButtons(m3u8Url);
+
+      if (activeHls) {
+        activeHls.destroy();
+        activeHls = null;
+      }
+      if (dp) {
+        dp.destroy();
+        dp = null;
+      }
+
+      if (!m3u8Url) {
+        document.getElementById('dplayer').innerHTML =
+          '<div style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#9ca3af;padding:24px;text-align:center;gap:8px;">' +
+          '<i class="fa-solid fa-tower-broadcast" style="font-size:32px;color:#ec4899;"></i>' +
+          '<div>ยังไม่ได้ตั้งค่าลิงก์ไลฟ์ในขณะนี้</div>' +
+          '<div style="font-size:13px;">วางลิงก์ <code>https://...trycloudflare.com/live.m3u8</code> ด้านล่างแล้วกด ▶️ เล่นสตรีม</div>' +
+          '</div>';
+        return;
+      }
+
+      dp = new DPlayer({
+        container: document.getElementById('dplayer'),
+        live: isLive,
+        autoplay: true,
+        theme: '#ec4899',
+        video: {
+          url: m3u8Url,
+          type: 'customHls',
+          customType: {
+            customHls: function (video) {
+              if (window.Hls && Hls.isSupported()) {
+                activeHls = new Hls({
+                  enableWorker: true,
+                  lowLatencyMode: isLive,
+                  backBufferLength: 90,
+                });
+                activeHls.loadSource(m3u8Url);
+                activeHls.attachMedia(video);
+              } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = m3u8Url;
+              }
+            },
+          },
+        },
+      });
+    }
+
+    function switchLiveMode(isLive) {
+      if (!currentUrl) return;
+      initPlayer(currentUrl, isLive);
+    }
+
+    function playFromInput() {
+      const url = document.getElementById('m3u8Input').value.trim();
+      if (!url) return;
+      const isLive = !url.includes('replay.m3u8');
+      const nextUrl = new URL(window.location.href);
+      nextUrl.searchParams.set('url', url);
+      window.history.replaceState({}, '', nextUrl.toString());
+      initPlayer(url, isLive);
+    }
+
+    async function copyShareUrl() {
+      const val = document.getElementById('m3u8Input').value.trim();
+      const shareUrl = val
+        ? `${window.location.origin}${window.location.pathname}?url=${encodeURIComponent(val)}`
+        : window.location.href;
+      try {
+        await navigator.clipboard.writeText(shareUrl);
+        alert('คัดลอกลิงก์ SCENEKPOP+ LIVE แล้ว:\n' + shareUrl);
+      } catch {
+        prompt('คัดลอกลิงก์นี้ได้เลย:', shareUrl);
+      }
+    }
+
+    function renderChannels() {
+      const grid = document.getElementById('channelsGrid');
+      grid.innerHTML = '';
+      LIVE_CHANNELS.forEach((ch) => {
+        const card = document.createElement('div');
+        card.className = 'channel-card' + (currentUrl && currentUrl === ch.url ? ' active' : '');
+        const hasUrl = Boolean(ch.url);
+        card.innerHTML = `
+          <div class="channel-top">
+            <span style="color:var(--accent-cyan);">${ch.group}</span>
+            <span class="channel-badge ${hasUrl ? '' : 'off'}">${hasUrl ? '● LIVE' : 'STANDBY'}</span>
+          </div>
+          <div class="channel-title">${ch.title}</div>
+          <div class="channel-desc">${ch.desc}</div>
+        `;
+        card.onclick = () => {
+          if (ch.url) {
+            document.getElementById('m3u8Input').value = ch.url;
+            initPlayer(ch.url, ch.live, ch.title);
+            renderChannels();
+          } else {
+            document.getElementById('m3u8Input').focus();
+          }
+        };
+        grid.appendChild(card);
+      });
+    }
+
+    const q = getQueryParams();
+    const firstChannelWithUrl = LIVE_CHANNELS.find((c) => c.url);
+    const initialUrl = q.url || (firstChannelWithUrl ? firstChannelWithUrl.url : '');
+    const initialTitle = q.title || (firstChannelWithUrl ? firstChannelWithUrl.title : 'SCENEKPOP+ LIVE เฉพาะกิจ');
+    if (initialUrl) {
+      document.getElementById('m3u8Input').value = initialUrl;
+    }
+    initPlayer(initialUrl, q.live, initialTitle);
+    renderChannels();
+  </script>
+</body>
+</html>
