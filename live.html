@@ -265,6 +265,21 @@
       border-color: transparent;
     }
 
+    .quality-select {
+      appearance: none;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: var(--card-bg);
+      color: #fff;
+      padding: 9px 14px;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+    }
+    .quality-select:focus { border-color: var(--accent-pink); }
+
     /* Channels Section */
     .section-head {
       display: flex;
@@ -405,6 +420,9 @@
         <p id="streamSub">รับชมถ่ายทอดสดผ่านหน้าเว็บได้เลย รองรับทั้ง PC, Mac, Android และ iPhone</p>
       </div>
       <div class="row">
+        <select id="qualitySelect" class="quality-select" onchange="changeQuality(this.value)" style="display:none;" title="เลือกความละเอียด">
+          <option value="-1">ความละเอียด: Auto</option>
+        </select>
         <button class="btn" onclick="reloadStream()">
           <i class="fa-solid fa-rotate-right"></i> รีเฟรชสตรีม
         </button>
@@ -491,6 +509,9 @@
 
     function initPlayer(m3u8Url, isLive = true, title = '') {
       document.getElementById('unmuteOverlay').style.display = 'none';
+      const qSel = document.getElementById('qualitySelect');
+      qSel.style.display = 'none';
+      qSel.innerHTML = '<option value="-1">ความละเอียด: Auto</option>';
       if (title) {
         document.getElementById('streamTitle').textContent = title;
         document.title = `${title} — LIVE`;
@@ -537,7 +558,21 @@
                 });
                 activeHls.loadSource(m3u8Url);
                 activeHls.attachMedia(video);
-                activeHls.on(Hls.Events.MANIFEST_PARSED, () => {
+                activeHls.on(Hls.Events.MANIFEST_PARSED, (_, data) => {
+                  const qSel = document.getElementById('qualitySelect');
+                  if (data && Array.isArray(data.levels) && data.levels.length > 1) {
+                    const sorted = data.levels
+                      .map((lvl, idx) => ({ lvl, idx }))
+                      .sort((a, b) => (b.lvl.height || 0) - (a.lvl.height || 0));
+                    sorted.forEach(({ lvl, idx }) => {
+                      const opt = document.createElement('option');
+                      opt.value = String(idx);
+                      const label = lvl.height ? `${lvl.height}p` : `${Math.round((lvl.bitrate || 0) / 1000)} kbps`;
+                      opt.textContent = label;
+                      qSel.appendChild(opt);
+                    });
+                    qSel.style.display = 'inline-block';
+                  }
                   ensureAutoPlay(video);
                 });
               } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
@@ -550,6 +585,13 @@
           },
         },
       });
+    }
+
+    function changeQuality(val) {
+      if (!activeHls) return;
+      activeHls.currentLevel = parseInt(val, 10);
+      const text = document.getElementById('qualitySelect').selectedOptions[0]?.textContent || 'Auto';
+      showToast(`สลับความละเอียดเป็น ${text}`);
     }
 
     function reloadStream() {
