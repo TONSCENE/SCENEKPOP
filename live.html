@@ -431,21 +431,21 @@
   <div id="toast" class="toast">คัดลอกลิงก์แล้ว</div>
 
   <script>
-    // รายการช่อง LIVE (แก้ลิงก์สตรีมได้ตรงนี้ หรือส่ง ?url=... มาชั่วคราว)
-    const LIVE_CHANNELS = [
+    const FALLBACK_CHANNELS = [
       {
         id: 'mama-2026',
         title: 'SCENEKPOP+ MAMA AWARD 2026',
         group: 'SCENEKPOP+ LIVE',
         desc: 'ถ่ายทอดสดผ่านหน้าเว็บ SCENEKPOP+',
-        url: 'https://tving-live-o2-xcdn.tving.com/o2/v1/019d66afd810153d786553381d0e3/019d719c3005153d786553381d0f0/playlist.m3u8?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ0dmluZy5jb20iLCJleHAiOjE3OTUxOTUyMjAsInBhdGgiOiIvbzIifQ.kZINNo2GQO6S8bhO6UTCCv8caxegvSBLinyZyqzn6rY',
+        url: '',
         live: true
       }
     ];
 
+    let liveChannels = [...FALLBACK_CHANNELS];
     let dp = null;
     let activeHls = null;
-    let currentChannel = LIVE_CHANNELS[0];
+    let currentChannel = liveChannels[0];
 
     function showToast(msg) {
       const t = document.getElementById('toast');
@@ -582,45 +582,58 @@
     function renderChannels() {
       const grid = document.getElementById('channelsGrid');
       grid.innerHTML = '';
-      LIVE_CHANNELS.forEach((ch) => {
+      liveChannels.forEach((ch) => {
         const card = document.createElement('div');
         const isActive = currentChannel && currentChannel.id === ch.id;
         card.className = 'channel-card' + (isActive ? ' active' : '');
         const hasUrl = Boolean(ch.url);
         card.innerHTML = `
           <div class="channel-top">
-            <span style="color:var(--accent-cyan);">${ch.group}</span>
+            <span style="color:var(--accent-cyan);">${ch.group || 'SCENEKPOP+ LIVE'}</span>
             <span class="channel-badge ${hasUrl ? '' : 'off'}">${hasUrl ? '● LIVE' : 'STANDBY'}</span>
           </div>
           <div class="channel-title">${ch.title}</div>
-          <div class="channel-desc">${ch.desc}</div>
+          <div class="channel-desc">${ch.desc || ''}</div>
         `;
         card.onclick = () => {
           currentChannel = ch;
-          initPlayer(ch.url, ch.live, ch.title);
+          initPlayer(ch.url, ch.live !== false, ch.title);
           renderChannels();
         };
         grid.appendChild(card);
       });
     }
 
-    const q = getQueryParams();
-    if (q.url) {
-      currentChannel = {
-        id: 'custom',
-        title: q.title || 'SCENEKPOP+ MAMA AWARD 2026',
-        group: 'SCENEKPOP+ LIVE',
-        desc: 'ถ่ายทอดสดผ่านหน้าเว็บ SCENEKPOP+',
-        url: q.url,
-        live: q.live,
-      };
-    } else {
-      const firstChannelWithUrl = LIVE_CHANNELS.find((c) => c.url);
-      if (firstChannelWithUrl) currentChannel = firstChannelWithUrl;
+    async function loadChannelsAndStart() {
+      try {
+        const res = await fetch(`./live_channels.json?t=${Date.now()}`, { cache: 'no-store' });
+        if (res.ok) {
+          const data = await res.json();
+          if (Array.isArray(data.channels) && data.channels.length > 0) {
+            liveChannels = data.channels;
+          }
+        }
+      } catch {}
+
+      const q = getQueryParams();
+      if (q.url) {
+        currentChannel = {
+          id: 'custom',
+          title: q.title || 'SCENEKPOP+ MAMA AWARD 2026',
+          group: 'SCENEKPOP+ LIVE',
+          desc: 'ถ่ายทอดสดผ่านหน้าเว็บ SCENEKPOP+',
+          url: q.url,
+          live: q.live,
+        };
+      } else {
+        currentChannel = liveChannels.find((c) => c.url) || liveChannels[0];
+      }
+
+      initPlayer(currentChannel.url, currentChannel.live !== false, currentChannel.title);
+      renderChannels();
     }
 
-    initPlayer(currentChannel.url, currentChannel.live, currentChannel.title);
-    renderChannels();
+    loadChannelsAndStart();
   </script>
 </body>
 </html>
