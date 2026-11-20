@@ -156,7 +156,7 @@
       padding: 92px 24px 48px;
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      gap: 20px;
     }
 
     .live-header {
@@ -171,6 +171,7 @@
       font-size: 1.55rem;
       font-weight: 800;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 10px;
     }
@@ -181,10 +182,10 @@
       margin-top: 2px;
     }
 
-    .tag-1080 {
+    .tag-live {
       font-size: 0.72rem;
       font-weight: 800;
-      padding: 3px 9px;
+      padding: 3px 10px;
       border-radius: 6px;
       background: var(--neon-gradient);
       color: #fff;
@@ -205,16 +206,6 @@
       background: #000;
     }
 
-    .controls-panel {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 16px 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
     .row {
       display: flex;
       flex-wrap: wrap;
@@ -222,32 +213,15 @@
       align-items: center;
     }
 
-    .url-input {
-      flex: 1;
-      min-width: 240px;
-      background: var(--surface-color);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      color: #fff;
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-family: inherit;
-      font-size: 0.88rem;
-      outline: none;
-    }
-
-    .url-input:focus {
-      border-color: var(--accent-purple);
-    }
-
     .btn {
       appearance: none;
       border: 1px solid rgba(255, 255, 255, 0.12);
       background: rgba(255, 255, 255, 0.07);
       color: #fff;
-      padding: 9px 15px;
+      padding: 9px 16px;
       border-radius: 10px;
       font-family: inherit;
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       font-weight: 600;
       cursor: pointer;
       text-decoration: none;
@@ -269,7 +243,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 6px;
+      margin-top: 4px;
     }
 
     .section-head h2 {
@@ -339,10 +313,24 @@
       color: var(--text-gray);
     }
 
-    .note {
-      font-size: 0.8rem;
-      color: var(--text-gray);
+    .toast {
+      position: fixed;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: #13141c;
+      color: #fff;
+      border: 1px solid rgba(236, 72, 153, 0.45);
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      transition: transform 0.22s ease;
+      z-index: 999;
+      pointer-events: none;
     }
+    .toast.show { transform: translateX(-50%) translateY(0); }
 
     @media (max-width: 820px) {
       .navbar { padding: 0 16px; }
@@ -385,43 +373,23 @@
       <div>
         <h1>
           <span id="streamTitle">SCENEKPOP+ MAMA AWARD 2026</span>
-          <span class="tag-1080">LIVE</span>
+          <span class="tag-live">LIVE</span>
         </h1>
-        <p id="streamSub">รับชมถ่ายทอดสดผ่าน DPlayer + HLS (รองรับ PC, Mac, Android และ iPhone)</p>
+        <p id="streamSub">รับชมถ่ายทอดสดผ่านหน้าเว็บได้เลย รองรับทั้ง PC, Mac, Android และ iPhone</p>
       </div>
       <div class="row">
-        <button class="btn" onclick="switchLiveMode(true)" id="btnLiveMode">🔴 โหมดดูสด</button>
-        <button class="btn" onclick="switchLiveMode(false)" id="btnVodMode">⏮️ โหมดย้อนหลัง</button>
+        <button class="btn" onclick="reloadStream()">
+          <i class="fa-solid fa-rotate-right"></i> รีเฟรชสตรีม
+        </button>
+        <button class="btn btn-neon" onclick="sharePage()">
+          <i class="fa-solid fa-share-nodes"></i> แชร์ลิงก์รับชม
+        </button>
       </div>
     </div>
 
     <!-- DPlayer Theater -->
     <section class="player-shell">
       <div id="dplayer"></div>
-    </section>
-
-    <!-- Quick M3U8 Input & External Players -->
-    <section class="controls-panel">
-      <div class="row">
-        <input id="m3u8Input" class="url-input" type="text" placeholder="วางลิงก์ https://...trycloudflare.com/live.m3u8 ที่นี่" />
-        <button class="btn btn-neon" onclick="playFromInput()">
-          <i class="fa-solid fa-play"></i> เล่นสตรีม
-        </button>
-        <button class="btn" onclick="copyShareUrl()">
-          <i class="fa-solid fa-share-nodes"></i> ก๊อปลิงก์แชร์หน้านี้
-        </button>
-      </div>
-
-      <div class="row">
-        <a class="btn" id="openVlc" href="#"><i class="fa-solid fa-clapperboard"></i> เปิดใน VLC</a>
-        <a class="btn" id="openIina" href="#"><i class="fa-solid fa-tv"></i> เปิดใน IINA (Mac)</a>
-        <a class="btn" id="openInfuse" href="#"><i class="fa-solid fa-mobile-screen"></i> เปิดใน Infuse (iOS)</a>
-        <a class="btn" id="openRaw" href="#" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> ลิงก์ .m3u8 ตรง</a>
-      </div>
-
-      <p class="note">
-        หมายเหตุ: บนหน้าเว็บ <code>https://tonscene.github.io/SCENEKPOP/live.html</code> ควรใช้ลิงก์ <b>https://...trycloudflare.com/live.m3u8</b> จากสคริปต์ <code>mnet_live_iina.py --online</code> เพื่อไม่ให้เบราว์เซอร์บล็อก Mixed Content
-      </p>
     </section>
 
     <!-- Live Channels Directory -->
@@ -431,23 +399,31 @@
     <section class="channels-grid" id="channelsGrid"></section>
   </main>
 
+  <div id="toast" class="toast">คัดลอกลิงก์แล้ว</div>
+
   <script>
-    // รายการช่อง LIVE เฉพาะกิจ (เพิ่ม/แก้ช่องได้ตรงนี้ หรือส่งผ่าน ?url=...&title=... ได้เลย)
+    // รายการช่อง LIVE (แก้ลิงก์สตรีมได้ตรงนี้ หรือส่ง ?url=... มาชั่วคราว)
     const LIVE_CHANNELS = [
       {
-        id: 'mnet-main',
+        id: 'mama-2026',
         title: 'SCENEKPOP+ MAMA AWARD 2026',
         group: 'SCENEKPOP+ LIVE',
-        desc: 'ช่องถ่ายทอดสดเฉพาะกิจ (ใส่ลิงก์ Cloudflare Tunnel เมื่อเปิดไลฟ์)',
-        url: '',
+        desc: 'ถ่ายทอดสดผ่านหน้าเว็บ SCENEKPOP+',
+        url: 'https://tving-live-o2-xcdn.tving.com/o2/v1/019d66afd810153d786553381d0e3/019d719c3005153d786553381d0f0/playlist.m3u8?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ0dmluZy5jb20iLCJleHAiOjE3OTUxOTUyMjAsInBhdGgiOiIvbzIifQ.kZINNo2GQO6S8bhO6UTCCv8caxegvSBLinyZyqzn6rY',
         live: true
       }
     ];
 
     let dp = null;
     let activeHls = null;
-    let currentUrl = '';
-    let currentIsLive = true;
+    let currentChannel = LIVE_CHANNELS[0];
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2200);
+    }
 
     function getQueryParams() {
       const sp = new URLSearchParams(window.location.search);
@@ -458,25 +434,11 @@
       };
     }
 
-    function updateExternalButtons(m3u8Url) {
-      document.getElementById('openVlc').href = m3u8Url ? `vlc://${m3u8Url}` : '#';
-      document.getElementById('openIina').href = m3u8Url ? `iina://weblink?url=${encodeURIComponent(m3u8Url)}` : '#';
-      document.getElementById('openInfuse').href = m3u8Url ? `infuse://x-callback-url/play?url=${encodeURIComponent(m3u8Url)}` : '#';
-      document.getElementById('openRaw').href = m3u8Url || '#';
-    }
-
     function initPlayer(m3u8Url, isLive = true, title = '') {
-      currentUrl = m3u8Url;
-      currentIsLive = isLive;
-
       if (title) {
         document.getElementById('streamTitle').textContent = title;
-        document.title = `${title} — SCENEKPOP+ LIVE`;
+        document.title = `${title} — LIVE`;
       }
-
-      document.getElementById('btnLiveMode').style.borderColor = isLive ? 'var(--accent-pink)' : '';
-      document.getElementById('btnVodMode').style.borderColor = !isLive ? 'var(--accent-pink)' : '';
-      updateExternalButtons(m3u8Url);
 
       if (activeHls) {
         activeHls.destroy();
@@ -491,8 +453,7 @@
         document.getElementById('dplayer').innerHTML =
           '<div style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#9ca3af;padding:24px;text-align:center;gap:8px;">' +
           '<i class="fa-solid fa-tower-broadcast" style="font-size:32px;color:#ec4899;"></i>' +
-          '<div>ยังไม่ได้ตั้งค่าลิงก์ไลฟ์ในขณะนี้</div>' +
-          '<div style="font-size:13px;">วางลิงก์ <code>https://...trycloudflare.com/live.m3u8</code> ด้านล่างแล้วกด ▶️ เล่นสตรีม</div>' +
+          '<div>ยังไม่มีสัญญาณถ่ายทอดสดในขณะนี้</div>' +
           '</div>';
         return;
       }
@@ -524,29 +485,29 @@
       });
     }
 
-    function switchLiveMode(isLive) {
-      if (!currentUrl) return;
-      initPlayer(currentUrl, isLive);
+    function reloadStream() {
+      initPlayer(currentChannel.url, currentChannel.live, currentChannel.title);
+      showToast('รีเฟรชสตรีมแล้ว');
     }
 
-    function playFromInput() {
-      const url = document.getElementById('m3u8Input').value.trim();
-      if (!url) return;
-      const isLive = !url.includes('replay.m3u8');
-      const nextUrl = new URL(window.location.href);
-      nextUrl.searchParams.set('url', url);
-      window.history.replaceState({}, '', nextUrl.toString());
-      initPlayer(url, isLive);
-    }
+    async function sharePage() {
+      const shareUrl = `${window.location.origin}${window.location.pathname}`;
+      const shareTitle = document.getElementById('streamTitle').textContent;
 
-    async function copyShareUrl() {
-      const val = document.getElementById('m3u8Input').value.trim();
-      const shareUrl = val
-        ? `${window.location.origin}${window.location.pathname}?url=${encodeURIComponent(val)}`
-        : window.location.href;
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: shareTitle,
+            text: `ดูสด ${shareTitle} ที่ SCENEKPOP+`,
+            url: shareUrl,
+          });
+          return;
+        } catch {}
+      }
+
       try {
         await navigator.clipboard.writeText(shareUrl);
-        alert('คัดลอกลิงก์ SCENEKPOP+ LIVE แล้ว:\n' + shareUrl);
+        showToast('คัดลอกลิงก์หน้าเว็บสำหรับแชร์แล้ว');
       } catch {
         prompt('คัดลอกลิงก์นี้ได้เลย:', shareUrl);
       }
@@ -557,7 +518,8 @@
       grid.innerHTML = '';
       LIVE_CHANNELS.forEach((ch) => {
         const card = document.createElement('div');
-        card.className = 'channel-card' + (currentUrl && currentUrl === ch.url ? ' active' : '');
+        const isActive = currentChannel && currentChannel.id === ch.id;
+        card.className = 'channel-card' + (isActive ? ' active' : '');
         const hasUrl = Boolean(ch.url);
         card.innerHTML = `
           <div class="channel-top">
@@ -568,26 +530,30 @@
           <div class="channel-desc">${ch.desc}</div>
         `;
         card.onclick = () => {
-          if (ch.url) {
-            document.getElementById('m3u8Input').value = ch.url;
-            initPlayer(ch.url, ch.live, ch.title);
-            renderChannels();
-          } else {
-            document.getElementById('m3u8Input').focus();
-          }
+          currentChannel = ch;
+          initPlayer(ch.url, ch.live, ch.title);
+          renderChannels();
         };
         grid.appendChild(card);
       });
     }
 
     const q = getQueryParams();
-    const firstChannelWithUrl = LIVE_CHANNELS.find((c) => c.url);
-    const initialUrl = q.url || (firstChannelWithUrl ? firstChannelWithUrl.url : '');
-    const initialTitle = q.title || (firstChannelWithUrl ? firstChannelWithUrl.title : 'SCENEKPOP+ MAMA AWARD 2026');
-    if (initialUrl) {
-      document.getElementById('m3u8Input').value = initialUrl;
+    if (q.url) {
+      currentChannel = {
+        id: 'custom',
+        title: q.title || 'SCENEKPOP+ MAMA AWARD 2026',
+        group: 'SCENEKPOP+ LIVE',
+        desc: 'ถ่ายทอดสดผ่านหน้าเว็บ SCENEKPOP+',
+        url: q.url,
+        live: q.live,
+      };
+    } else {
+      const firstChannelWithUrl = LIVE_CHANNELS.find((c) => c.url);
+      if (firstChannelWithUrl) currentChannel = firstChannelWithUrl;
     }
-    initPlayer(initialUrl, q.live, initialTitle);
+
+    initPlayer(currentChannel.url, currentChannel.live, currentChannel.title);
     renderChannels();
   </script>
 </body>
