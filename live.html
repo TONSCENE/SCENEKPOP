@@ -567,7 +567,11 @@
                     sorted.forEach(({ lvl, idx }) => {
                       const opt = document.createElement('option');
                       opt.value = String(idx);
-                      const label = lvl.height ? `${lvl.height}p` : `${Math.round((lvl.bitrate || 0) / 1000)} kbps`;
+                      const h = lvl.height || 0;
+                      let label = h ? `${h}p` : `${Math.round((lvl.bitrate || 0) / 1000)} kbps`;
+                      if (h >= 2160) label = '2160p (4K)';
+                      else if (h >= 1440) label = '1440p (QHD)';
+                      else if (h >= 1080) label = '1080p (FHD)';
                       opt.textContent = label;
                       qSel.appendChild(opt);
                     });
