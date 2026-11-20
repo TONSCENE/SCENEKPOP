@@ -36,7 +36,7 @@ def main():
         sys.exit(1)
 
     print(f"🚀 Deploying SCENEKPOP+ to {PAGES_URL} ...")
-    run(["git", "add", "index.html", "live.html", "live_channels.json", "db.js", "group_config.json", "patreon_posts.json", "custom_videos.json", "images/", "subs/", "sync_channel.py", "upload_ia.py", "deploy.py", "README.md", ".gitignore"])
+    run(["git", "add", "index.html", "db.js", "group_config.json", "patreon_posts.json", "custom_videos.json", "images/", "subs/", "sync_channel.py", "upload_ia.py", "deploy.py", "README.md", ".gitignore"])
 
     status = subprocess.run(["git", "status", "--porcelain"], cwd=SCRIPT_DIR, capture_output=True, text=True)
     if status.stdout.strip():
