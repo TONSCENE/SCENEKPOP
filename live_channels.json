@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-11-20T11:16:00+07:00",
+  "updatedAt": "2026-11-20T12:54:00+07:00",
   "channels": [
     {
-      "id": "mama-2026",
-      "title": "SCENEKPOP+ MAMA AWARD 2026",
+      "id": "scenekpop-live",
+      "title": "2026 MAMA AWARDS - CHAPTER 1🏆",
       "group": "SCENEKPOP+ LIVE",
-      "desc": "ถ่ายทอดสดผ่านหน้าเว็บ SCENEKPOP+",
-      "url": "https://tving-live-o2-xcdn.tving.com/o2/v1/019d66afd810153d786553381d0e3/019d719c3005153d786553381d0f0/playlist.m3u8?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ0dmluZy5jb20iLCJleHAiOjE3OTUxOTUyMjAsInBhdGgiOiIvbzIifQ.kZINNo2GQO6S8bhO6UTCCv8caxegvSBLinyZyqzn6rY",
+      "desc": "กำลังรอสัญญาณถ่ายทอดสด Red Carpet 13:30 น. / Awards Show 16:00 น.",
+      "url": "",
       "live": true
     }
   ]
