@@ -14,7 +14,8 @@
 
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Artplayer for R2 / Direct MP4 + Multi-Subs -->
+  <!-- Artplayer + hls.js for R2 / Direct MP4 / Live HLS (.m3u8) + Multi-Subs -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
   <script src="https://cdn.jsdelivr.net/npm/artplayer/dist/artplayer.js"></script>
 
   <style>
@@ -1299,9 +1300,10 @@
       .search-input:focus {
         width: 100%;
       }
-      .yt-btn, .patreon-btn {
+      .yt-btn, .patreon-btn, .live-nav-btn {
         padding: 7px 10px;
         flex-shrink: 0;
+        font-size: 11px;
       }
       .yt-btn span, .patreon-btn span {
         display: none;
@@ -1625,6 +1627,96 @@
         font-size: 12.5px;
       }
     }
+    .live-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: linear-gradient(135deg, #ef4444, #ec4899);
+      color: white;
+      border: none;
+      padding: 7px 15px;
+      border-radius: 22px;
+      font-size: 12.5px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+      box-shadow: 0 2px 12px rgba(239, 68, 68, 0.35);
+    }
+
+    .live-nav-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 18px rgba(239, 68, 68, 0.55);
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ffffff;
+      display: inline-block;
+      animation: livePulse 1.4s infinite ease-in-out;
+    }
+
+    @keyframes livePulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.75); }
+    }
+
+    .live-mama-banner {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.18) 0%, rgba(168, 85, 247, 0.18) 55%, rgba(56, 189, 248, 0.14) 100%);
+      border: 1px solid rgba(239, 68, 68, 0.45);
+      border-radius: 16px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .live-mama-banner:hover {
+      transform: translateY(-2px);
+      border-color: rgba(236, 72, 153, 0.7);
+      box-shadow: 0 10px 28px rgba(239, 68, 68, 0.22);
+    }
+
+    .modal-server-bar {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 10px 24px;
+      background: rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .server-chip {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #e2e8f0;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .server-chip:hover {
+      border-color: var(--accent-cyan);
+      color: white;
+    }
+
+    .server-chip.active {
+      background: linear-gradient(135deg, #ef4444, #ec4899);
+      border-color: transparent;
+      color: white;
+    }
   </style>
 </head>
 <body>
@@ -1648,6 +1740,9 @@
         <input type="text" class="search-input" id="searchInput" placeholder="ค้นหาวง / คลิป / ซีรีส์..." oninput="handleSearch(this.value)" autocomplete="off">
         <button id="searchClearBtn" class="search-clear" onclick="clearSearch()" title="ล้างการค้นหา">&times;</button>
       </div>
+      <button class="live-nav-btn" onclick="openMamaLive()" title="รับชมถ่ายทอดสด 2026 MAMA AWARDS">
+        <span class="live-dot"></span> <span>LIVE MAMA 2026</span>
+      </button>
       <a href="https://www.patreon.com/c/SCENEKPOP" target="_blank" rel="noopener noreferrer" class="patreon-btn" title="SCENEKPOP on Patreon">
         <i class="fa-brands fa-patreon"></i> <span>Patreon</span>
       </a>
@@ -1685,6 +1780,9 @@
         รวมคลิปรายการวาไรตี้, Weverse Live, รายการวิทยุ และสเตจจากช่อง <strong>@SCENEKPOP</strong> จัดหมวดหมู่แยกตามวงให้เลือกดูได้ง่ายๆ ครบจบในที่เดียว
       </p>
       <div class="hero-buttons">
+        <button class="btn" onclick="openMamaLive()" style="background: linear-gradient(135deg, #ef4444, #ec4899); color: white; box-shadow: 0 4px 18px rgba(239,68,68,0.4);">
+          <span class="live-dot"></span> LIVE MAMA 2026 (1080P)
+        </button>
         <button class="btn btn-play" onclick="playLatestVideo()">
           <i class="fa-solid fa-play"></i> เล่นคลิปล่าสุด
         </button>
@@ -1729,8 +1827,28 @@
       <div class="video-grid" id="searchVideosGrid"></div>
     </section>
 
-    <!-- Home View: Groups + Playlists + Latest -->
+    <!-- Home View: Live Banner + Groups + Playlists + Latest -->
     <div id="homeView">
+      <section class="section-block" id="sec-live-mama">
+        <div class="live-mama-banner" onclick="openMamaLive()">
+          <div class="patreon-banner-info">
+            <img src="images/custom/mama_2026_live.svg" alt="LIVE MAMA 2026" style="width: 112px; height: 63px; object-fit: cover; border-radius: 10px; border: 1px solid rgba(255,255,255,0.18); flex-shrink: 0;">
+            <div>
+              <h3 style="display:flex; align-items:center; gap:8px; color:white; font-size:17px; margin-bottom:4px;">
+                <span style="display:inline-flex; align-items:center; gap:5px; background:#ef4444; color:white; font-size:11px; font-weight:800; padding:2px 9px; border-radius:999px;">
+                  <span class="live-dot"></span> LIVE 1080P
+                </span>
+                2026 MAMA AWARDS — CJ ENM K-POP
+              </h3>
+              <p style="color:#cbd5e1; font-size:13px;">รับชมถ่ายทอดสดคมชัด Full HD 1080p • รองรับสลับเซิร์ฟเวอร์สำรอง 4 โซน (Canada / UK / Germany / France)</p>
+            </div>
+          </div>
+          <span class="btn" style="background: linear-gradient(135deg, #ef4444, #ec4899); color: white; white-space: nowrap;">
+            <i class="fa-solid fa-tv"></i> เปิดดูสดตอนนี้
+          </span>
+        </div>
+      </section>
+
       <section class="section-block" id="sec-groups">
         <div class="section-header">
           <h2 class="section-title">🌟 เลือกดูแยกตามวง (K-Pop Groups)</h2>
@@ -1848,6 +1966,7 @@
     <div class="modal-content">
       <button class="modal-close-btn" onclick="closeModal()">&times;</button>
       <div class="modal-player-container" id="modalPlayer"></div>
+      <div class="modal-server-bar" id="modalServerBar"></div>
       <div class="modal-body">
         <h2 class="modal-title" id="modalTitle">Title</h2>
         <div class="modal-meta-row">
@@ -1873,7 +1992,7 @@
     </div>
   </div>
 
-  <script src="db.js?v=20261119_04"></script>
+  <script src="db.js?v=20261121_01"></script>
   <script>
     const IS_MOBILE_OR_INAPP = /Android|iPhone|iPad|iPod|FBAN|FBAV|Messenger|Line|Instagram|MicroMessenger/i.test(navigator.userAgent);
     const EXT_LINK_ATTRS = IS_MOBILE_OR_INAPP ? '' : 'target="_blank" rel="noopener noreferrer"';
@@ -2538,11 +2657,63 @@
     }
 
     let activeArtplayer = null;
+    let activeHls = null;
+    let activeLiveServerIndex = 0;
+
     function destroyArtplayer() {
+      if (activeHls) {
+        try { activeHls.destroy(); } catch (_) {}
+        activeHls = null;
+      }
       if (activeArtplayer) {
         try { activeArtplayer.destroy(false); } catch (_) {}
         activeArtplayer = null;
       }
+    }
+
+    function openMamaLive() {
+      const liveItem = VIDEO_MAP['mama_2026_live'] || {
+        ytId: 'mama_2026_live',
+        title: '🔴 [LIVE] 2026 MAMA AWARDS — CJ ENM K-POP (1080P)',
+        duration: 'LIVE',
+        thumb: 'images/custom/mama_2026_live.svg',
+        contentType: 'live',
+        subBadge: '🔴 LIVE 1080P',
+        source: 'artplayer',
+        videoUrl: 'https://d1rj53ajbds2mt.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ajbgumr94jms9/f4acc9ba_daae_4ed0_b836_32126cead919/hls/playlist.m3u8',
+        servers: [
+          { name: 'Server 1 (Canada 1080p)', url: 'https://d1rj53ajbds2mt.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ajbgumr94jms9/f4acc9ba_daae_4ed0_b836_32126cead919/hls/playlist.m3u8' },
+          { name: 'Server 2 (UK 1080p)', url: 'https://dah0tmei2n9kh.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-2mutb75ey0ywd/f4acc9ba_daae_4ed0_b836_32126cead919/hls/playlist.m3u8' },
+          { name: 'Server 3 (Germany 1080p)', url: 'https://d3pownkmx1wzf3.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-nfl1ekfpr1ewf/f4acc9ba_daae_4ed0_b836_32126cead919/hls/playlist.m3u8' },
+          { name: 'Server 4 (France 1080p)', url: 'https://d1yfnvvjbfegl.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-w0r1mnmjpu0qh/f4acc9ba_daae_4ed0_b836_32126cead919/hls/playlist.m3u8' }
+        ]
+      };
+      activeLiveServerIndex = 0;
+      openQueueModal([liveItem], 0, '🔴 ถ่ายทอดสด 2026 MAMA AWARDS');
+    }
+
+    function renderModalServerBar(ep) {
+      const bar = document.getElementById('modalServerBar');
+      if (!bar) return;
+      const servers = Array.isArray(ep.servers) ? ep.servers : [];
+      if (servers.length <= 1) {
+        bar.style.display = 'none';
+        bar.innerHTML = '';
+        return;
+      }
+      if (activeLiveServerIndex >= servers.length) activeLiveServerIndex = 0;
+      bar.style.display = 'flex';
+      bar.innerHTML = `<span style="font-size:12px; color:#9ca3af; font-weight:600; margin-right:4px;"><i class="fa-solid fa-server" style="color:var(--accent-cyan);"></i> สัญญาณสตรีม:</span>` +
+        servers.map((srv, i) => `
+          <button class="server-chip ${i === activeLiveServerIndex ? 'active' : ''}" onclick="switchLiveServer(${i})">
+            ${escapeHtml(srv.name)}
+          </button>
+        `).join('');
+    }
+
+    function switchLiveServer(srvIdx) {
+      activeLiveServerIndex = srvIdx;
+      playQueueItem(currentQueueIndex, { skipHistory: true });
     }
 
     function playQueueItem(idx, opts = {}) {
@@ -2551,24 +2722,63 @@
       destroyArtplayer();
       const playerEl = document.getElementById('modalPlayer');
       const directBtn = document.getElementById('modalYtLink');
+      renderModalServerBar(ep);
 
       if (ep.source === 'artplayer' && ep.videoUrl && typeof Artplayer !== 'undefined') {
         playerEl.classList.remove('is-patreon');
         playerEl.innerHTML = `<div id="artplayerMount" style="width:100%; height:100%;"></div>`;
+        const servers = Array.isArray(ep.servers) ? ep.servers : [];
+        const streamUrl = (servers[activeLiveServerIndex] && servers[activeLiveServerIndex].url) || ep.videoUrl;
+        const isHls = streamUrl.toLowerCase().includes('.m3u8');
+        const isLiveStream = ep.duration === 'LIVE' || isHls;
         const subs = Array.isArray(ep.subtitles) ? ep.subtitles : [];
         const defSub = subs.find(s => s.default) || subs[0];
-        activeArtplayer = new Artplayer({
+
+        const artOpts = {
           container: '#artplayerMount',
-          url: ep.videoUrl,
+          url: streamUrl,
+          type: isHls ? 'm3u8' : '',
+          isLive: isLiveStream,
           poster: ep.thumb || '',
           autoplay: true,
           fullscreen: true,
           fullscreenWeb: true,
           pip: true,
-          playbackRate: true,
+          playbackRate: !isLiveStream,
           setting: true,
           playsInline: true,
-          theme: '#ec4899',
+          theme: isLiveStream ? '#ef4444' : '#ec4899',
+          customType: isHls ? {
+            m3u8: function (video, url, art) {
+              if (typeof Hls !== 'undefined' && Hls.isSupported()) {
+                if (activeHls) { try { activeHls.destroy(); } catch (_) {} }
+                const hls = new Hls({
+                  enableWorker: true,
+                  lowLatencyMode: true,
+                  backBufferLength: 60
+                });
+                activeHls = hls;
+                hls.loadSource(url);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                  video.play().catch(() => {});
+                });
+                hls.on(Hls.Events.ERROR, function (_event, data) {
+                  if (data && data.fatal && servers.length > 1 && activeLiveServerIndex + 1 < servers.length) {
+                    switchLiveServer(activeLiveServerIndex + 1);
+                  }
+                });
+                art.on('destroy', () => {
+                  try { hls.destroy(); } catch (_) {}
+                  if (activeHls === hls) activeHls = null;
+                });
+              } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = url;
+              } else {
+                art.notice.show = 'เบราว์เซอร์ไม่รองรับ HLS (.m3u8)';
+              }
+            }
+          } : {},
           subtitle: defSub ? {
             url: defSub.url,
             type: 'vtt',
@@ -2596,11 +2806,14 @@
               return item.html;
             }
           }] : []
-        });
-        directBtn.href = ep.directUrl || ep.videoUrl;
-        directBtn.style.background = '#a855f7';
-        directBtn.style.borderColor = '#a855f7';
-        directBtn.innerHTML = '<i class="fa-solid fa-play"></i> เปิดไฟล์วิดีโอตรง';
+        };
+        activeArtplayer = new Artplayer(artOpts);
+        directBtn.href = streamUrl;
+        directBtn.style.background = isLiveStream ? '#ef4444' : '#a855f7';
+        directBtn.style.borderColor = isLiveStream ? '#ef4444' : '#a855f7';
+        directBtn.innerHTML = isLiveStream
+          ? '<i class="fa-solid fa-tower-broadcast"></i> ลิงก์ .m3u8 ตรง'
+          : '<i class="fa-solid fa-play"></i> เปิดไฟล์วิดีโอตรง';
       } else if (ep.source === 'embed' && ep.embedUrl) {
         playerEl.classList.remove('is-patreon');
         playerEl.innerHTML = `<iframe src="${ep.embedUrl}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen style="width:100%; height:100%; border:none;"></iframe>`;
@@ -2668,6 +2881,9 @@
 
     function closeModal(opts = {}) {
       destroyArtplayer();
+      activeLiveServerIndex = 0;
+      const bar = document.getElementById('modalServerBar');
+      if (bar) { bar.style.display = 'none'; bar.innerHTML = ''; }
       activePlaylistId = null;
       document.getElementById('modalOverlay').style.display = 'none';
       document.getElementById('modalPlayer').innerHTML = '';

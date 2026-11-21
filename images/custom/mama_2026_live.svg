@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090714"/>
+      <stop offset="50%" stop-color="#1a0b2e"/>
+      <stop offset="100%" stop-color="#2a0826"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="25%" cy="25%" r="55%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="80%" cy="75%" r="55%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="neonText" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#f472b6"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect width="1280" height="720" fill="url(#glow1)"/>
+  <rect width="1280" height="720" fill="url(#glow2)"/>
+  <rect x="44" y="44" width="1192" height="632" rx="28" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+
+  <!-- LIVE badge -->
+  <rect x="96" y="96" width="230" height="54" rx="27" fill="#ef4444"/>
+  <circle cx="132" cy="123" r="10" fill="#ffffff"/>
+  <text x="156" y="133" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800" fill="#ffffff" letter-spacing="2">LIVE 1080P</text>
+
+  <!-- Channel badge -->
+  <rect x="346" y="96" width="290" height="54" rx="27" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
+  <text x="491" y="132" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#e2e8f0" letter-spacing="1">CJ ENM K-POP</text>
+
+  <!-- Main Title -->
+  <text x="96" y="310" font-family="Inter, Arial, sans-serif" font-size="112" font-weight="900" fill="url(#neonText)" letter-spacing="3">2026 MAMA</text>
+  <text x="96" y="408" font-family="Inter, Arial, sans-serif" font-size="68" font-weight="800" fill="#ffffff" letter-spacing="8">AWARDS LIVE</text>
+
+  <!-- Subtitle -->
+  <text x="96" y="495" font-family="Prompt, Inter, Arial, sans-serif" font-size="30" font-weight="500" fill="#cbd5e1">ถ่ายทอดสดคมชัดระดับ Full HD 1080p • ช่อง CJ ENM K-POP (SCENEKPOP+)</text>
+
+  <!-- Bottom tags -->
+  <rect x="96" y="555" width="210" height="48" rx="12" fill="rgba(168,85,247,0.25)" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="201" y="587" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" fill="#e9d5ff">HLS LIVE STREAM</text>
+
+  <rect x="326" y="555" width="240" height="48" rx="12" fill="rgba(56,189,248,0.2)" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="446" y="587" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" fill="#bae6fd">4 CDN SERVERS</text>
+</svg>

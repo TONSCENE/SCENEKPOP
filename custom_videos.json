@@ -1,5 +1,36 @@
 [
   {
+    "id": "mama_2026_live",
+    "title": "🔴 [LIVE] 2026 MAMA AWARDS — CJ ENM K-POP (1080P)",
+    "groups": ["live_tv"],
+    "duration": "LIVE",
+    "durationSec": 0,
+    "thumb": "images/custom/mama_2026_live.svg",
+    "contentType": "live",
+    "subBadge": "🔴 LIVE 1080P",
+    "source": "artplayer",
+    "videoUrl": "https://d1rj53ajbds2mt.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ajbgumr94jms9/f4acc9ba_daae_4ed0_b836_32126cead919/hls/playlist.m3u8",
+    "directUrl": "https://d1rj53ajbds2mt.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ajbgumr94jms9/f4acc9ba_daae_4ed0_b836_32126cead919/hls/playlist.m3u8",
+    "servers": [
+      {
+        "name": "Server 1 (Canada 1080p)",
+        "url": "https://d1rj53ajbds2mt.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ajbgumr94jms9/f4acc9ba_daae_4ed0_b836_32126cead919/hls/playlist.m3u8"
+      },
+      {
+        "name": "Server 2 (UK 1080p)",
+        "url": "https://dah0tmei2n9kh.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-2mutb75ey0ywd/f4acc9ba_daae_4ed0_b836_32126cead919/hls/playlist.m3u8"
+      },
+      {
+        "name": "Server 3 (Germany 1080p)",
+        "url": "https://d3pownkmx1wzf3.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-nfl1ekfpr1ewf/f4acc9ba_daae_4ed0_b836_32126cead919/hls/playlist.m3u8"
+      },
+      {
+        "name": "Server 4 (France 1080p)",
+        "url": "https://d1yfnvvjbfegl.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-w0r1mnmjpu0qh/f4acc9ba_daae_4ed0_b836_32126cead919/hls/playlist.m3u8"
+      }
+    ]
+  },
+  {
     "id": "h2h_sumbakkokjil_ep4_1",
     "title": "[Full VOD 4-1] 4th PLAYER Hearts2Hearts - SUMBAKKOKJIL 2 ซับไทย",
     "groups": ["hearts2hearts"],
