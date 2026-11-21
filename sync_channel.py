@@ -440,7 +440,6 @@ def main():
                 "embedUrl": c.get("embedUrl", ""),
                 "directUrl": c.get("directUrl", ""),
                 "subtitles": c.get("subtitles", []),
-                "servers": c.get("servers", []),
             })
         for i, v in enumerate(videos_out, 1):
             v["num"] = i

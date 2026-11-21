@@ -7,20 +7,6 @@
   },
   "groups": [
     {
-      "id": "live_tv",
-      "name": "LIVE MAMA 2026",
-      "thaiName": "ถ่ายทอดสด 2026 MAMA • CJ ENM K-POP",
-      "accent": "#ef4444",
-      "tagline": "สตรีมสด 1080p HD ช่อง CJ ENM K-POP (รองรับสลับ 4 Server อัตโนมัติ)",
-      "keywords": [
-        "mama 2026",
-        "cj enm k-pop",
-        "live tv"
-      ],
-      "playlist_ids": [],
-      "thumb": "images/custom/mama_2026_live.svg"
-    },
-    {
       "id": "qwer",
       "name": "QWER",
       "thaiName": "คิวดับเบิลยูอีอาร์",
