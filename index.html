@@ -14,8 +14,9 @@
 
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Artplayer + hls.js for R2 / Direct MP4 / Live HLS (.m3u8) + Multi-Subs -->
+  <!-- DPlayer + hls.js + Artplayer for Live HLS (.m3u8) & Multi-Subs VOD -->
   <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/artplayer/dist/artplayer.js"></script>
 
   <style>
@@ -1627,35 +1628,26 @@
         font-size: 12.5px;
       }
     }
-    .live-nav-btn {
-      display: inline-flex;
+    .nav-live-tab {
+      display: inline-flex !important;
       align-items: center;
-      gap: 7px;
-      background: linear-gradient(135deg, #ef4444, #ec4899);
-      color: white;
-      border: none;
-      padding: 7px 15px;
-      border-radius: 22px;
-      font-size: 12.5px;
-      font-weight: 700;
-      font-family: inherit;
-      cursor: pointer;
-      transition: all 0.2s;
-      white-space: nowrap;
-      box-shadow: 0 2px 12px rgba(239, 68, 68, 0.35);
+      gap: 6px;
+      color: #ff6b74 !important;
+      font-weight: 700 !important;
     }
 
-    .live-nav-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 18px rgba(239, 68, 68, 0.55);
+    .nav-live-tab.active,
+    .nav-live-tab:hover {
+      color: #ffffff !important;
     }
 
     .live-dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: #ffffff;
+      background: #ef4444;
       display: inline-block;
+      box-shadow: 0 0 8px #ef4444;
       animation: livePulse 1.4s infinite ease-in-out;
     }
 
@@ -1664,24 +1656,58 @@
       50% { opacity: 0.4; transform: scale(0.75); }
     }
 
-    .live-mama-banner {
-      background: linear-gradient(135deg, rgba(239, 68, 68, 0.18) 0%, rgba(168, 85, 247, 0.18) 55%, rgba(56, 189, 248, 0.14) 100%);
-      border: 1px solid rgba(239, 68, 68, 0.45);
-      border-radius: 16px;
-      padding: 20px 24px;
+    .live-stage-shell {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .live-stage-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 14px;
       flex-wrap: wrap;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      margin-bottom: 16px;
     }
 
-    .live-mama-banner:hover {
-      transform: translateY(-2px);
-      border-color: rgba(236, 72, 153, 0.7);
-      box-shadow: 0 10px 28px rgba(239, 68, 68, 0.22);
+    .live-dplayer-box {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+    }
+
+    .live-dplayer-box .dplayer {
+      width: 100%;
+      height: 100%;
+    }
+
+    .live-controls-panel {
+      margin-top: 14px;
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .live-control-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .live-control-label {
+      font-size: 12.5px;
+      color: var(--text-gray);
+      font-weight: 600;
+      min-width: 112px;
     }
 
     .modal-server-bar {
@@ -1698,9 +1724,9 @@
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.14);
       color: #e2e8f0;
-      padding: 5px 12px;
+      padding: 6px 13px;
       border-radius: 999px;
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 600;
       font-family: inherit;
       cursor: pointer;
@@ -1714,6 +1740,12 @@
 
     .server-chip.active {
       background: linear-gradient(135deg, #ef4444, #ec4899);
+      border-color: transparent;
+      color: white;
+    }
+
+    .server-chip.quality-active {
+      background: linear-gradient(135deg, #a855f7, #38bdf8);
       border-color: transparent;
       color: white;
     }
@@ -1732,6 +1764,7 @@
         <li><a onclick="selectGroup('all'); scrollToId('sec-groups')">แยกตามวง</a></li>
         <li><a onclick="selectGroup('all'); scrollToId('sec-playlists')">เพลย์ลิสต์</a></li>
         <li><a onclick="selectGroup('all'); scrollToId('sec-latest')">คลิปล่าสุด</a></li>
+        <li><a onclick="openLivePage()" id="nav-live" class="nav-live-tab"><span class="live-dot"></span> LIVE MAMA 2026</a></li>
       </ul>
     </div>
     <div class="nav-right">
@@ -1740,9 +1773,6 @@
         <input type="text" class="search-input" id="searchInput" placeholder="ค้นหาวง / คลิป / ซีรีส์..." oninput="handleSearch(this.value)" autocomplete="off">
         <button id="searchClearBtn" class="search-clear" onclick="clearSearch()" title="ล้างการค้นหา">&times;</button>
       </div>
-      <button class="live-nav-btn" onclick="openMamaLive()" title="รับชมถ่ายทอดสด 2026 MAMA AWARDS">
-        <span class="live-dot"></span> <span>LIVE MAMA 2026</span>
-      </button>
       <a href="https://www.patreon.com/c/SCENEKPOP" target="_blank" rel="noopener noreferrer" class="patreon-btn" title="SCENEKPOP on Patreon">
         <i class="fa-brands fa-patreon"></i> <span>Patreon</span>
       </a>
@@ -1780,9 +1810,6 @@
         รวมคลิปรายการวาไรตี้, Weverse Live, รายการวิทยุ และสเตจจากช่อง <strong>@SCENEKPOP</strong> จัดหมวดหมู่แยกตามวงให้เลือกดูได้ง่ายๆ ครบจบในที่เดียว
       </p>
       <div class="hero-buttons">
-        <button class="btn" onclick="openMamaLive()" style="background: linear-gradient(135deg, #ef4444, #ec4899); color: white; box-shadow: 0 4px 18px rgba(239,68,68,0.4);">
-          <span class="live-dot"></span> LIVE MAMA 2026 (1080P)
-        </button>
         <button class="btn btn-play" onclick="playLatestVideo()">
           <i class="fa-solid fa-play"></i> เล่นคลิปล่าสุด
         </button>
@@ -1827,28 +1854,8 @@
       <div class="video-grid" id="searchVideosGrid"></div>
     </section>
 
-    <!-- Home View: Live Banner + Groups + Playlists + Latest -->
+    <!-- Home View: Groups + Playlists + Latest -->
     <div id="homeView">
-      <section class="section-block" id="sec-live-mama">
-        <div class="live-mama-banner" onclick="openMamaLive()">
-          <div class="patreon-banner-info">
-            <img src="images/custom/mama_2026_live.svg" alt="LIVE MAMA 2026" style="width: 112px; height: 63px; object-fit: cover; border-radius: 10px; border: 1px solid rgba(255,255,255,0.18); flex-shrink: 0;">
-            <div>
-              <h3 style="display:flex; align-items:center; gap:8px; color:white; font-size:17px; margin-bottom:4px;">
-                <span style="display:inline-flex; align-items:center; gap:5px; background:#ef4444; color:white; font-size:11px; font-weight:800; padding:2px 9px; border-radius:999px;">
-                  <span class="live-dot"></span> LIVE 1080P
-                </span>
-                2026 MAMA AWARDS — CJ ENM K-POP
-              </h3>
-              <p style="color:#cbd5e1; font-size:13px;">รับชมถ่ายทอดสดคมชัด Full HD 1080p • รองรับสลับเซิร์ฟเวอร์สำรอง 4 โซน (Canada / UK / Germany / France)</p>
-            </div>
-          </div>
-          <span class="btn" style="background: linear-gradient(135deg, #ef4444, #ec4899); color: white; white-space: nowrap;">
-            <i class="fa-solid fa-tv"></i> เปิดดูสดตอนนี้
-          </span>
-        </div>
-      </section>
-
       <section class="section-block" id="sec-groups">
         <div class="section-header">
           <h2 class="section-title">🌟 เลือกดูแยกตามวง (K-Pop Groups)</h2>
@@ -1949,6 +1956,41 @@
       <div class="video-grid" id="gvVideosGrid"></div>
     </div>
 
+    <!-- Dedicated LIVE MAMA 2026 View (DPlayer + Resolution Selector) -->
+    <div id="liveView" style="display: none;">
+      <div class="live-stage-shell">
+        <div class="live-stage-header">
+          <div>
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:6px;">
+              <span style="display:inline-flex; align-items:center; gap:6px; background:#ef4444; color:white; font-size:12px; font-weight:800; padding:4px 12px; border-radius:999px;">
+                <span class="live-dot"></span> LIVE ON AIR
+              </span>
+              <span class="meta-tag accent" id="liveCurrentResBadge">กำลังโหลด...</span>
+            </div>
+            <h2 style="font-size: 1.55rem; font-weight: 800; color: white;">2026 MAMA AWARDS — CJ ENM K-POP</h2>
+            <p style="color: var(--text-gray); font-size: 13px; margin-top: 3px;">รับชมถ่ายทอดสดด้วย DPlayer (ปรับความละเอียดได้ในตัวเล่นหรือแถบด้านล่าง • สลับ 4 เซิร์ฟเวอร์ได้)</p>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-neon" onclick="selectGroup('all')">
+              <i class="fa-solid fa-arrow-left"></i> กลับหน้าแรก
+            </button>
+          </div>
+        </div>
+
+        <div class="live-dplayer-box">
+          <div id="dplayerMount"></div>
+        </div>
+
+        <div class="live-controls-panel">
+          <div class="live-control-row" id="liveQualityBar">
+            <span class="live-control-label"><i class="fa-solid fa-sliders" style="color:var(--accent-pink);"></i> ความละเอียด:</span>
+            <span style="font-size:12px; color:#9ca3af;">กำลังอ่านระดับความคมชัดจากสตรีม...</span>
+          </div>
+          <div class="live-control-row" id="liveServerBar"></div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <footer>
@@ -1992,7 +2034,7 @@
     </div>
   </div>
 
-  <script src="db.js?v=20261121_01"></script>
+  <script src="db.js?v=20261121_02"></script>
   <script>
     const IS_MOBILE_OR_INAPP = /Android|iPhone|iPad|iPod|FBAN|FBAV|Messenger|Line|Instagram|MicroMessenger/i.test(navigator.userAgent);
     const EXT_LINK_ATTRS = IS_MOBILE_OR_INAPP ? '' : 'target="_blank" rel="noopener noreferrer"';
@@ -2103,13 +2145,27 @@
     }
 
     function applyHashState() {
-      const hashParams = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+      const rawHash = window.location.hash || '';
+      if (rawHash === '#live') {
+        if (document.getElementById('modalOverlay').style.display === 'flex') {
+          closeModal({ skipHistory: true });
+        }
+        openLivePage({ skipHistory: true });
+        return;
+      }
+
+      const hashParams = new URLSearchParams(rawHash.replace(/^#/, ''));
       const groupParam = hashParams.get('group');
       const playlistParam = hashParams.get('playlist');
       const watchParam = hashParams.get('watch');
 
+      if (groupParam === 'live_tv' || watchParam === 'mama_2026_live') {
+        openLivePage({ skipHistory: true });
+        return;
+      }
+
       const targetGroup = (groupParam && GROUP_MAP[groupParam]) ? groupParam : 'all';
-      if (targetGroup !== activeGroupId || document.getElementById('sec-search').style.display === 'block') {
+      if (targetGroup !== activeGroupId || document.getElementById('sec-search').style.display === 'block' || document.getElementById('liveView').style.display === 'block') {
         selectGroup(targetGroup, false, { skipHistory: true });
       }
 
@@ -2325,13 +2381,29 @@
     }
 
     function playLatestVideo() {
-      if (DB.videos.length > 0) {
-        openQueueModal(DB.videos.slice(0, 30), 0, '🔥 คลิปล่าสุดจาก @SCENEKPOP');
+      const vods = DB.videos.filter(v => v.ytId !== 'mama_2026_live');
+      if (vods.length > 0) {
+        openQueueModal(vods.slice(0, 30), 0, '🔥 คลิปล่าสุดจาก @SCENEKPOP');
       }
     }
 
     // Group Selection
     function selectGroup(groupId, shouldScroll = true, opts = {}) {
+      if (groupId === 'live_tv') {
+        openLivePage(opts);
+        return;
+      }
+
+      destroyLiveDPlayer();
+      const liveView = document.getElementById('liveView');
+      if (liveView) liveView.style.display = 'none';
+      const groupBarWrapper = document.getElementById('groupBarWrapper');
+      if (groupBarWrapper) groupBarWrapper.style.display = '';
+      const navLive = document.getElementById('nav-live');
+      const navHome = document.getElementById('nav-home');
+      if (navLive) navLive.classList.remove('active');
+      if (navHome) navHome.classList.add('active');
+
       activeGroupId = groupId;
       activeContentType = 'all';
 
@@ -2351,6 +2423,7 @@
 
       if (groupId === 'all') {
         document.body.classList.remove('compact-top');
+        document.title = DEFAULT_DOC_TITLE;
         if (!opts.skipHistory) pushHashIfChanged('#');
         heroSec.style.display = '';
         homeView.style.display = 'block';
@@ -2475,9 +2548,13 @@
       const heroSec = document.getElementById('heroSection');
       const homeView = document.getElementById('homeView');
       const groupView = document.getElementById('groupView');
+      const liveView = document.getElementById('liveView');
+      const groupBarWrapper = document.getElementById('groupBarWrapper');
 
       if (!q) {
         searchSec.style.display = 'none';
+        if (liveView && liveView.style.display === 'block') return;
+        if (groupBarWrapper) groupBarWrapper.style.display = '';
         if (activeGroupId === 'all') {
           document.body.classList.remove('compact-top');
           heroSec.style.display = '';
@@ -2492,6 +2569,9 @@
         return;
       }
 
+      destroyLiveDPlayer();
+      if (liveView) liveView.style.display = 'none';
+      if (groupBarWrapper) groupBarWrapper.style.display = '';
       document.body.classList.add('compact-top');
       heroSec.style.display = 'none';
       homeView.style.display = 'none';
@@ -2610,6 +2690,11 @@
 
     // Modal Video Player
     function openQueueModal(queue, startIndex, listLabel, opts = {}) {
+      const picked = queue && queue[startIndex || 0];
+      if (picked && picked.ytId === 'mama_2026_live') {
+        openLivePage(opts);
+        return;
+      }
       if (!opts.keepPlaylist) activePlaylistId = null;
       const wasOpen = document.getElementById('modalOverlay').style.display === 'flex';
       currentQueue = queue || [];
@@ -2659,20 +2744,12 @@
     let activeArtplayer = null;
     let activeHls = null;
     let activeLiveServerIndex = 0;
+    let activeLiveDPlayer = null;
+    let activeLiveHls = null;
+    let activeLiveLevel = -1;
 
-    function destroyArtplayer() {
-      if (activeHls) {
-        try { activeHls.destroy(); } catch (_) {}
-        activeHls = null;
-      }
-      if (activeArtplayer) {
-        try { activeArtplayer.destroy(false); } catch (_) {}
-        activeArtplayer = null;
-      }
-    }
-
-    function openMamaLive() {
-      const liveItem = VIDEO_MAP['mama_2026_live'] || {
+    function getMamaLiveData() {
+      return VIDEO_MAP['mama_2026_live'] || {
         ytId: 'mama_2026_live',
         title: '🔴 [LIVE] 2026 MAMA AWARDS — CJ ENM K-POP (1080P)',
         duration: 'LIVE',
@@ -2688,8 +2765,216 @@
           { name: 'Server 4 (France 1080p)', url: 'https://d1yfnvvjbfegl.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-w0r1mnmjpu0qh/f4acc9ba_daae_4ed0_b836_32126cead919/hls/playlist.m3u8' }
         ]
       };
-      activeLiveServerIndex = 0;
-      openQueueModal([liveItem], 0, '🔴 ถ่ายทอดสด 2026 MAMA AWARDS');
+    }
+
+    function destroyLiveDPlayer() {
+      if (activeLiveHls) {
+        try { activeLiveHls.destroy(); } catch (_) {}
+        activeLiveHls = null;
+      }
+      if (activeLiveDPlayer) {
+        try { activeLiveDPlayer.destroy(); } catch (_) {}
+        activeLiveDPlayer = null;
+      }
+    }
+
+    function setLiveQuality(levelIdx) {
+      activeLiveLevel = Number(levelIdx);
+      if (activeLiveHls) {
+        activeLiveHls.currentLevel = activeLiveLevel;
+      }
+      renderLiveQualityUI();
+    }
+
+    function renderLiveQualityUI() {
+      const levels = activeLiveHls && Array.isArray(activeLiveHls.levels) ? activeLiveHls.levels : [];
+      const bar = document.getElementById('liveQualityBar');
+      const badge = document.getElementById('liveCurrentResBadge');
+
+      const labelFor = (idx) => {
+        if (idx === -1) return 'Auto';
+        const lv = levels[idx];
+        return lv && lv.height ? `${lv.height}p` : `Level ${idx}`;
+      };
+
+      const activeLabel = labelFor(activeLiveLevel);
+      if (badge) {
+        badge.textContent = levels.length > 0 ? `ความละเอียด: ${activeLabel}` : '1080p (Native HLS)';
+      }
+
+      if (bar) {
+        if (levels.length === 0) {
+          bar.innerHTML = `<span class="live-control-label"><i class="fa-solid fa-sliders" style="color:var(--accent-pink);"></i> ความละเอียด:</span><span style="font-size:12px; color:#cbd5e1;">Auto (Native HLS)</span>`;
+        } else {
+          // Sort levels highest resolution first while keeping original hls level index
+          const sortedIndices = levels
+            .map((lv, i) => ({ i, h: lv.height || 0 }))
+            .sort((a, b) => b.h - a.h)
+            .map(x => x.i);
+          const choices = [-1, ...sortedIndices];
+          bar.innerHTML = `<span class="live-control-label"><i class="fa-solid fa-sliders" style="color:var(--accent-pink);"></i> ความละเอียด:</span>` +
+            choices.map(idx => `
+              <button class="server-chip ${idx === activeLiveLevel ? 'quality-active' : ''}" onclick="setLiveQuality(${idx})">
+                ${escapeHtml(labelFor(idx))}
+              </button>
+            `).join('');
+        }
+      }
+
+      // Sync DPlayer's own quality button inside player bar
+      const dpRight = document.querySelector('#dplayerMount .dplayer-icons-right');
+      if (dpRight && levels.length > 0) {
+        let qWrap = dpRight.querySelector('.dplayer-quality');
+        if (!qWrap) {
+          qWrap = document.createElement('div');
+          qWrap.className = 'dplayer-quality';
+          dpRight.insertBefore(qWrap, dpRight.firstChild);
+        }
+        const sortedIndices = levels
+          .map((lv, i) => ({ i, h: lv.height || 0 }))
+          .sort((a, b) => b.h - a.h)
+          .map(x => x.i);
+        const choices = [-1, ...sortedIndices];
+        qWrap.innerHTML = `
+          <button class="dplayer-icon dplayer-quality-icon">${escapeHtml(activeLabel)}</button>
+          <div class="dplayer-quality-mask">
+            <div class="dplayer-quality-list">
+              ${choices.map(idx => `<div class="dplayer-quality-item" data-level="${idx}">${escapeHtml(labelFor(idx))}</div>`).join('')}
+            </div>
+          </div>
+        `;
+        qWrap.querySelectorAll('.dplayer-quality-item').forEach(el => {
+          el.addEventListener('click', () => {
+            setLiveQuality(parseInt(el.getAttribute('data-level'), 10));
+          });
+        });
+      }
+    }
+
+    function renderLiveServerBar() {
+      const liveItem = getMamaLiveData();
+      const servers = Array.isArray(liveItem.servers) ? liveItem.servers : [];
+      const bar = document.getElementById('liveServerBar');
+      if (!bar) return;
+      bar.innerHTML = `<span class="live-control-label"><i class="fa-solid fa-server" style="color:var(--accent-cyan);"></i> เซิร์ฟเวอร์:</span>` +
+        servers.map((srv, i) => `
+          <button class="server-chip ${i === activeLiveServerIndex ? 'active' : ''}" onclick="switchPageLiveServer(${i})">
+            ${escapeHtml(srv.name)}
+          </button>
+        `).join('');
+    }
+
+    function switchPageLiveServer(srvIdx) {
+      activeLiveServerIndex = srvIdx;
+      activeLiveLevel = -1;
+      mountLiveDPlayer(srvIdx);
+    }
+
+    function mountLiveDPlayer(srvIdx = 0) {
+      const liveItem = getMamaLiveData();
+      const servers = Array.isArray(liveItem.servers) ? liveItem.servers : [];
+      if (srvIdx >= servers.length) srvIdx = 0;
+      activeLiveServerIndex = srvIdx;
+      activeLiveLevel = -1;
+      const streamUrl = (servers[srvIdx] && servers[srvIdx].url) || liveItem.videoUrl;
+
+      destroyLiveDPlayer();
+      renderLiveServerBar();
+
+      const mountEl = document.getElementById('dplayerMount');
+      if (!mountEl || typeof DPlayer === 'undefined') return;
+      mountEl.innerHTML = '';
+
+      activeLiveDPlayer = new DPlayer({
+        container: mountEl,
+        live: true,
+        autoplay: true,
+        theme: '#ec4899',
+        hotkey: true,
+        preload: 'auto',
+        volume: 0.9,
+        video: {
+          url: streamUrl,
+          pic: liveItem.thumb || 'images/custom/mama_2026_live.svg',
+          type: 'customHls',
+          customType: {
+            customHls: function (video) {
+              if (typeof Hls !== 'undefined' && Hls.isSupported()) {
+                if (activeLiveHls) { try { activeLiveHls.destroy(); } catch (_) {} }
+                const hls = new Hls({
+                  enableWorker: true,
+                  lowLatencyMode: true,
+                  backBufferLength: 60
+                });
+                activeLiveHls = hls;
+                hls.loadSource(video.src);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                  renderLiveQualityUI();
+                  video.play().catch(() => {});
+                });
+                hls.on(Hls.Events.LEVEL_SWITCHED, function (_e, data) {
+                  const badge = document.getElementById('liveCurrentResBadge');
+                  const lv = hls.levels && hls.levels[data.level];
+                  if (badge && lv && lv.height && activeLiveLevel === -1) {
+                    badge.textContent = `Auto (${lv.height}p)`;
+                  }
+                });
+                hls.on(Hls.Events.ERROR, function (_e, data) {
+                  if (data && data.fatal && servers.length > 1 && activeLiveServerIndex + 1 < servers.length) {
+                    switchPageLiveServer(activeLiveServerIndex + 1);
+                  }
+                });
+              } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = streamUrl;
+                renderLiveQualityUI();
+              }
+            }
+          }
+        }
+      });
+    }
+
+    function openLivePage(opts = {}) {
+      const searchInput = document.getElementById('searchInput');
+      if (searchInput && searchInput.value.trim()) {
+        searchInput.value = '';
+        document.getElementById('searchClearBtn').style.display = 'none';
+        document.getElementById('sec-search').style.display = 'none';
+      }
+
+      document.body.classList.add('compact-top');
+      document.getElementById('heroSection').style.display = 'none';
+      document.getElementById('groupBarWrapper').style.display = 'none';
+      document.getElementById('homeView').style.display = 'none';
+      document.getElementById('groupView').style.display = 'none';
+      document.getElementById('sec-search').style.display = 'none';
+      document.getElementById('liveView').style.display = 'block';
+
+      const navLive = document.getElementById('nav-live');
+      const navHome = document.getElementById('nav-home');
+      if (navHome) navHome.classList.remove('active');
+      if (navLive) navLive.classList.add('active');
+
+      if (!opts.skipHistory) pushHashIfChanged('#live');
+      document.title = '🔴 LIVE MAMA 2026 — SCENEKPOP+';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      mountLiveDPlayer(activeLiveServerIndex);
+    }
+
+    function destroyArtplayer() {
+      if (activeHls) {
+        try { activeHls.destroy(); } catch (_) {}
+        activeHls = null;
+      }
+      if (activeArtplayer) {
+        try { activeArtplayer.destroy(false); } catch (_) {}
+        activeArtplayer = null;
+      }
+    }
+
+    function openMamaLive() {
+      openLivePage();
     }
 
     function renderModalServerBar(ep) {
