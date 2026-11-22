@@ -2186,8 +2186,15 @@
     }
 
     let latestSlice = [];
+    function getLatestOrderedVideos() {
+      return [
+        ...DB.videos.filter(v => v.source === 'youtube'),
+        ...DB.videos.filter(v => v.source !== 'youtube' && v.source !== 'patreon'),
+      ];
+    }
+
     function renderLatestVideos() {
-      const ytOnly = DB.videos.filter(v => v.source !== 'patreon');
+      const ytOnly = getLatestOrderedVideos();
       latestSlice = ytOnly.slice(0, latestLimit);
       document.getElementById('latestGrid').innerHTML = latestSlice
         .map((v, idx) => createVideoCardHTML(v, 'playFromLatest', idx))
@@ -2206,8 +2213,9 @@
     }
 
     function playLatestVideo() {
-      if (DB.videos.length > 0) {
-        openQueueModal(DB.videos.slice(0, 30), 0, '🔥 คลิปล่าสุดจาก @SCENEKPOP');
+      const latestVideos = getLatestOrderedVideos();
+      if (latestVideos.length > 0) {
+        openQueueModal(latestVideos.slice(0, 30), 0, '🔥 คลิปล่าสุดจาก @SCENEKPOP');
       }
     }
 
