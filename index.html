@@ -2560,6 +2560,7 @@
       destroyArtplayer();
       const playerEl = document.getElementById('modalPlayer');
       const directBtn = document.getElementById('modalYtLink');
+      directBtn.style.display = '';
 
       if (ep.source === 'artplayer' && ep.videoUrl && typeof Artplayer !== 'undefined') {
         playerEl.classList.remove('is-patreon');
@@ -2613,12 +2614,8 @@
       } else if (ep.source === 'embed' && ep.embedUrl) {
         playerEl.classList.remove('is-patreon');
         playerEl.innerHTML = `<iframe src="${ep.embedUrl}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen webkitallowfullscreen mozallowfullscreen style="width:100%; height:100%; border:none;"></iframe>`;
-        directBtn.href = ep.directUrl || ep.embedUrl;
-        if (IS_MOBILE_OR_INAPP) directBtn.removeAttribute('target');
-        else directBtn.setAttribute('target', '_blank');
-        directBtn.style.background = '#2563eb';
-        directBtn.style.borderColor = '#2563eb';
-        directBtn.innerHTML = '<i class="fa-solid fa-up-right-from-square"></i> เปิดดูบน Archive.org';
+        directBtn.style.display = 'none';
+        directBtn.removeAttribute('href');
       } else if (ep.source === 'patreon') {
         playerEl.classList.add('is-patreon');
         const isFree = ep.patreonStatus === 'public';
