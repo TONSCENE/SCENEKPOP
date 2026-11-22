@@ -14,9 +14,7 @@
 
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- DPlayer + hls.js + Artplayer for Live HLS (.m3u8) & Multi-Subs VOD -->
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
+  <!-- Artplayer for R2 / Direct MP4 + Multi-Subs -->
   <script src="https://cdn.jsdelivr.net/npm/artplayer/dist/artplayer.js"></script>
 
   <style>
@@ -1256,9 +1254,6 @@
       .nav-links {
         display: none;
       }
-      .mobile-live-pill {
-        display: inline-flex !important;
-      }
       .groups-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
@@ -1630,103 +1625,6 @@
         font-size: 12.5px;
       }
     }
-    .nav-live-tab {
-      display: inline-flex !important;
-      align-items: center;
-      gap: 6px;
-      color: #ff6b74 !important;
-      font-weight: 700 !important;
-    }
-    .nav-live-tab.active,
-    .nav-live-tab:hover {
-      color: #ffffff !important;
-    }
-    .live-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #ef4444;
-      display: inline-block;
-      box-shadow: 0 0 8px #ef4444;
-      animation: livePulse 1.4s infinite ease-in-out;
-    }
-    @keyframes livePulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.75); }
-    }
-    .live-stage-shell {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding-top: 28px;
-    }
-    body.live-mode .content-container {
-      padding-top: 90px;
-    }
-    @media (max-width: 768px) {
-      body.live-mode .content-container {
-        padding-top: 74px;
-      }
-      .live-stage-shell {
-        padding-top: 8px;
-      }
-    }
-    .mobile-live-pill {
-      display: none;
-      align-items: center;
-      gap: 5px;
-      background: linear-gradient(135deg, #ef4444, #ec4899);
-      color: white;
-      border: none;
-      padding: 6px 10px;
-      border-radius: 18px;
-      font-size: 11px;
-      font-weight: 800;
-      font-family: inherit;
-      cursor: pointer;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .live-unmute-btn {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      z-index: 25;
-      display: none;
-      align-items: center;
-      gap: 7px;
-      background: rgba(10, 10, 18, 0.88);
-      border: 1px solid rgba(236, 72, 153, 0.85);
-      color: white;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-      font-family: inherit;
-      cursor: pointer;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.55);
-    }
-    .live-dplayer-box {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #000;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
-    }
-    .live-stage-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
-    }
-    .live-dplayer-box .dplayer {
-      width: 100%;
-      height: 100%;
-    }
   </style>
 </head>
 <body>
@@ -1742,7 +1640,6 @@
         <li><a onclick="selectGroup('all'); scrollToId('sec-groups')">แยกตามวง</a></li>
         <li><a onclick="selectGroup('all'); scrollToId('sec-playlists')">เพลย์ลิสต์</a></li>
         <li><a onclick="selectGroup('all'); scrollToId('sec-latest')">คลิปล่าสุด</a></li>
-        <li><a onclick="openLivePage()" id="nav-live" class="nav-live-tab"><span class="live-dot"></span> LIVE FEST. INAZUMA</a></li>
       </ul>
     </div>
     <div class="nav-right">
@@ -1751,9 +1648,6 @@
         <input type="text" class="search-input" id="searchInput" placeholder="ค้นหาวง / คลิป / ซีรีส์..." oninput="handleSearch(this.value)" autocomplete="off">
         <button id="searchClearBtn" class="search-clear" onclick="clearSearch()" title="ล้างการค้นหา">&times;</button>
       </div>
-      <button class="mobile-live-pill" onclick="openLivePage()" title="ดูสด LIVE FEST. INAZUMA">
-        <span class="live-dot"></span> LIVE
-      </button>
       <a href="https://www.patreon.com/c/SCENEKPOP" target="_blank" rel="noopener noreferrer" class="patreon-btn" title="SCENEKPOP on Patreon">
         <i class="fa-brands fa-patreon"></i> <span>Patreon</span>
       </a>
@@ -1937,39 +1831,6 @@
       <div class="video-grid" id="gvVideosGrid"></div>
     </div>
 
-    <!-- Dedicated LIVE FEST. INAZUMA View (DPlayer + HLS) -->
-    <div id="liveView" style="display: none;">
-      <div class="live-stage-shell">
-        <div class="live-stage-header">
-          <div>
-            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:6px;">
-              <span style="display:inline-flex; align-items:center; gap:6px; background:#ef4444; color:white; font-size:12px; font-weight:800; padding:4px 12px; border-radius:999px;">
-                <span class="live-dot"></span> LIVE ON AIR
-              </span>
-              <span class="meta-tag accent" id="liveCurrentResBadge">กำลังเชื่อมต่อ...</span>
-            </div>
-            <h2 style="font-size: 1.55rem; font-weight: 800; color: white;">FEST. INAZUMA 2026 — Fuji TV TWO (DAY 2)</h2>
-            <p style="color: var(--text-gray); font-size: 13px; margin-top: 3px;">ถ่ายทอดสด DAY 2 (18:00 – 21:00 น. เวลาไทย) • ไลฟ์สดจาก @SCENEKPOP</p>
-          </div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <button class="btn btn-neon" onclick="mountLiveDPlayer()">
-              <i class="fa-solid fa-rotate-right"></i> รีเฟรชสัญญาณ
-            </button>
-            <button class="btn btn-neon" onclick="selectGroup('all')">
-              <i class="fa-solid fa-arrow-left"></i> กลับหน้าแรก
-            </button>
-          </div>
-        </div>
-
-        <div class="live-dplayer-box">
-          <button id="liveUnmuteBtn" class="live-unmute-btn" onclick="unmuteLivePlayer()">
-            <i class="fa-solid fa-volume-xmark" style="color:#ec4899;"></i> แตะเพื่อเปิดเสียง
-          </button>
-          <div id="dplayerMount"></div>
-        </div>
-      </div>
-    </div>
-
   </main>
 
   <footer>
@@ -2123,22 +1984,13 @@
     }
 
     function applyHashState() {
-      const rawHash = window.location.hash || '';
-      if (rawHash === '#live') {
-        if (document.getElementById('modalOverlay').style.display === 'flex') {
-          closeModal({ skipHistory: true });
-        }
-        openLivePage({ skipHistory: true });
-        return;
-      }
-
-      const hashParams = new URLSearchParams(rawHash.replace(/^#/, ''));
+      const hashParams = new URLSearchParams(window.location.hash.replace(/^#/, ''));
       const groupParam = hashParams.get('group');
       const playlistParam = hashParams.get('playlist');
       const watchParam = hashParams.get('watch');
 
       const targetGroup = (groupParam && GROUP_MAP[groupParam]) ? groupParam : 'all';
-      if (targetGroup !== activeGroupId || document.getElementById('sec-search').style.display === 'block' || document.getElementById('liveView').style.display === 'block') {
+      if (targetGroup !== activeGroupId || document.getElementById('sec-search').style.display === 'block') {
         selectGroup(targetGroup, false, { skipHistory: true });
       }
 
@@ -2370,17 +2222,6 @@
 
     // Group Selection
     function selectGroup(groupId, shouldScroll = true, opts = {}) {
-      destroyLiveDPlayer();
-      document.body.classList.remove('live-mode');
-      const liveView = document.getElementById('liveView');
-      if (liveView) liveView.style.display = 'none';
-      const groupBarWrapper = document.getElementById('groupBarWrapper');
-      if (groupBarWrapper) groupBarWrapper.style.display = '';
-      const navLive = document.getElementById('nav-live');
-      const navHome = document.getElementById('nav-home');
-      if (navLive) navLive.classList.remove('active');
-      if (navHome) navHome.classList.add('active');
-
       activeGroupId = groupId;
       activeContentType = 'all';
 
@@ -2524,13 +2365,9 @@
       const heroSec = document.getElementById('heroSection');
       const homeView = document.getElementById('homeView');
       const groupView = document.getElementById('groupView');
-      const liveView = document.getElementById('liveView');
-      const groupBarWrapper = document.getElementById('groupBarWrapper');
 
       if (!q) {
         searchSec.style.display = 'none';
-        if (liveView && liveView.style.display === 'block') return;
-        if (groupBarWrapper) groupBarWrapper.style.display = '';
         if (activeGroupId === 'all') {
           document.body.classList.remove('compact-top');
           heroSec.style.display = '';
@@ -2545,10 +2382,6 @@
         return;
       }
 
-      destroyLiveDPlayer();
-      document.body.classList.remove('live-mode');
-      if (liveView) liveView.style.display = 'none';
-      if (groupBarWrapper) groupBarWrapper.style.display = '';
       document.body.classList.add('compact-top');
       heroSec.style.display = 'none';
       homeView.style.display = 'none';
@@ -2714,176 +2547,6 @@
     }
 
     let activeArtplayer = null;
-    const LIVE_BASE_URL = 'https://requirements-vampire-hills-attraction.trycloudflare.com';
-    const LIVE_QUALITIES = [
-      { name: '1080p', url: `${LIVE_BASE_URL}/live/scenekpop/index.m3u8`, type: 'customHls' },
-      { name: '720p', url: `${LIVE_BASE_URL}/live/scenekpop_720/index.m3u8`, type: 'customHls' },
-      { name: '480p', url: `${LIVE_BASE_URL}/live/scenekpop_480/index.m3u8`, type: 'customHls' },
-    ];
-    let activeLiveDPlayer = null;
-    let activeLiveHls = null;
-    let liveRetryTimer = null;
-
-    function destroyLiveDPlayer() {
-      if (liveRetryTimer) {
-        clearTimeout(liveRetryTimer);
-        liveRetryTimer = null;
-      }
-      if (activeLiveHls) {
-        try { activeLiveHls.destroy(); } catch (_) {}
-        activeLiveHls = null;
-      }
-      if (activeLiveDPlayer) {
-        try { activeLiveDPlayer.destroy(); } catch (_) {}
-        activeLiveDPlayer = null;
-      }
-    }
-
-    function unmuteLivePlayer() {
-      const btn = document.getElementById('liveUnmuteBtn');
-      if (btn) btn.style.display = 'none';
-      if (activeLiveDPlayer && activeLiveDPlayer.video) {
-        activeLiveDPlayer.video.muted = false;
-        activeLiveDPlayer.volume(0.9, true, false);
-        activeLiveDPlayer.video.play().catch(() => {});
-      }
-    }
-
-    function tryLiveAutoplay(video) {
-      if (!video) return;
-      const unmuteBtn = document.getElementById('liveUnmuteBtn');
-      const p = video.play();
-      if (p && typeof p.catch === 'function') {
-        p.catch(() => {
-          video.muted = true;
-          if (unmuteBtn) unmuteBtn.style.display = 'inline-flex';
-          video.play().catch(() => {});
-        });
-      }
-    }
-
-    function mountLiveDPlayer() {
-      destroyLiveDPlayer();
-      const badge = document.getElementById('liveCurrentResBadge');
-      if (badge) badge.textContent = 'กำลังเชื่อมต่อ...';
-      const unmuteBtn = document.getElementById('liveUnmuteBtn');
-      if (unmuteBtn) unmuteBtn.style.display = 'none';
-
-      const mountEl = document.getElementById('dplayerMount');
-      if (!mountEl || typeof DPlayer === 'undefined') return;
-      mountEl.innerHTML = '';
-
-      const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
-        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-
-      activeLiveDPlayer = new DPlayer({
-        container: mountEl,
-        live: true,
-        autoplay: true,
-        theme: '#ec4899',
-        hotkey: true,
-        airplay: true,
-        preload: 'auto',
-        volume: 0.9,
-        video: {
-          quality: LIVE_QUALITIES,
-          defaultQuality: 0,
-          type: 'customHls',
-          customType: {
-            customHls: function (video) {
-              const streamUrl = video.getAttribute('src') || video.src || LIVE_QUALITIES[0].url;
-              video.setAttribute('playsinline', 'true');
-              video.setAttribute('webkit-playsinline', 'true');
-              video.playsInline = true;
-              const canNativeHls = Boolean(video.canPlayType('application/vnd.apple.mpegurl'));
-
-              if (activeLiveHls) {
-                try { activeLiveHls.destroy(); } catch (_) {}
-                activeLiveHls = null;
-              }
-              if (liveRetryTimer) {
-                clearTimeout(liveRetryTimer);
-                liveRetryTimer = null;
-              }
-
-              if (isIOS && canNativeHls) {
-                video.src = streamUrl;
-                const matchedQ = LIVE_QUALITIES.find(q => q.url === streamUrl);
-                if (badge) badge.textContent = matchedQ ? `LIVE ${matchedQ.name}` : 'LIVE HLS';
-                tryLiveAutoplay(video);
-                return;
-              }
-
-              if (typeof Hls !== 'undefined' && Hls.isSupported()) {
-                try { video.removeAttribute('src'); } catch (_) {}
-                const hls = new Hls({
-                  enableWorker: false,
-                  lowLatencyMode: false,
-                  liveSyncDurationCount: 3,
-                  liveMaxLatencyDurationCount: 8,
-                  maxBufferLength: 30,
-                  backBufferLength: 20
-                });
-                activeLiveHls = hls;
-                hls.loadSource(streamUrl);
-                hls.attachMedia(video);
-                hls.on(Hls.Events.MANIFEST_PARSED, function () {
-                  const lv = hls.levels && hls.levels[0];
-                  if (badge) badge.textContent = lv && lv.height ? `LIVE ${lv.height}p` : 'LIVE ON AIR';
-                  tryLiveAutoplay(video);
-                });
-                let mediaRecoveryCount = 0;
-                hls.on(Hls.Events.ERROR, function (_e, data) {
-                  if (!data || !data.fatal) return;
-                  if (data.type === Hls.ErrorTypes.MEDIA_ERROR && mediaRecoveryCount < 2) {
-                    mediaRecoveryCount++;
-                    hls.recoverMediaError();
-                    return;
-                  }
-                  if (badge) badge.textContent = 'รอสัญญาณจาก OBS...';
-                  liveRetryTimer = setTimeout(() => {
-                    if (document.getElementById('liveView').style.display === 'block') {
-                      mountLiveDPlayer();
-                    }
-                  }, 4000);
-                });
-              } else if (canNativeHls) {
-                video.src = streamUrl;
-                if (badge) badge.textContent = 'LIVE HLS';
-                tryLiveAutoplay(video);
-              }
-            }
-          }
-        }
-      });
-    }
-
-    function openLivePage(opts = {}) {
-      const searchInput = document.getElementById('searchInput');
-      if (searchInput && searchInput.value.trim()) {
-        searchInput.value = '';
-        document.getElementById('searchClearBtn').style.display = 'none';
-        document.getElementById('sec-search').style.display = 'none';
-      }
-      document.body.classList.add('compact-top', 'live-mode');
-      document.getElementById('heroSection').style.display = 'none';
-      document.getElementById('groupBarWrapper').style.display = 'none';
-      document.getElementById('homeView').style.display = 'none';
-      document.getElementById('groupView').style.display = 'none';
-      document.getElementById('sec-search').style.display = 'none';
-      document.getElementById('liveView').style.display = 'block';
-
-      const navLive = document.getElementById('nav-live');
-      const navHome = document.getElementById('nav-home');
-      if (navHome) navHome.classList.remove('active');
-      if (navLive) navLive.classList.add('active');
-
-      if (!opts.skipHistory) pushHashIfChanged('#live');
-      document.title = '🔴 LIVE FEST. INAZUMA 2026 — SCENEKPOP+';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      mountLiveDPlayer();
-    }
-
     function destroyArtplayer() {
       if (activeArtplayer) {
         try { activeArtplayer.destroy(false); } catch (_) {}
