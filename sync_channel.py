@@ -85,16 +85,17 @@ def classify_thumbnail_with_gemini(vid: str, title: str, thumb_url: str, groups_
     return []
 
 
-def run_yt_dlp_json(url: str) -> dict:
+def run_yt_dlp_json(url: str, playlist_end: int = 0) -> dict:
     """Fetch flat-playlist metadata JSON for a YouTube channel tab or playlist."""
     cmd = [
         "yt-dlp",
         "--no-update",
         "--flat-playlist",
-        "--dump-single-json",
-        url,
     ]
-    res = subprocess.run(cmd, capture_output=True, text=True)
+    if playlist_end > 0:
+        cmd.extend(["--playlist-end", str(playlist_end)])
+    cmd.extend(["--dump-single-json", url])
+    res = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace")
     if res.returncode != 0:
         raise RuntimeError(f"yt-dlp failed for {url}: {res.stderr.strip()}")
     return json.loads(res.stdout)
@@ -109,7 +110,7 @@ def fetch_video_detail(vid: str) -> dict:
         "--dump-json",
         f"https://www.youtube.com/watch?v={vid}",
     ]
-    res = subprocess.run(cmd, capture_output=True, text=True)
+    res = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace")
     if res.returncode != 0:
         return {}
     data = json.loads(res.stdout)
@@ -190,6 +191,8 @@ def match_text_to_groups(text: str, playlist_ids: set, groups_cfg: list) -> list
 
 
 def main():
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     parser = argparse.ArgumentParser(description="Sync @SCENEKPOP YouTube channel to db.js")
     parser.add_argument("--videos-json", help="Optional path to pre-fetched videos JSON")
     parser.add_argument("--playlists-json", help="Optional path to pre-fetched playlists JSON")
@@ -220,6 +223,29 @@ def main():
 
     entries = [e for e in videos_raw.get("entries", []) if e and e.get("id")]
     print(f"Found {len(entries)} videos.")
+
+    # 1.5 Check real-time UU uploads playlist for brand-new videos not yet cached on /videos tab
+    channel_id = videos_raw.get("channel_id") or ""
+    if not (args.videos_json and os.path.exists(args.videos_json)) and channel_id.startswith("UC"):
+        uploads_id = "UU" + channel_id[2:]
+        try:
+            uploads_raw = run_yt_dlp_json(f"https://www.youtube.com/playlist?list={uploads_id}", playlist_end=25)
+            short_ids = set()
+            try:
+                shorts_raw = run_yt_dlp_json(f"{channel_url}/shorts", playlist_end=25)
+                short_ids = {s["id"] for s in shorts_raw.get("entries", []) if s and s.get("id")}
+            except Exception:
+                pass
+            existing_ids = {e["id"] for e in entries}
+            fresh_uploads = [
+                e for e in uploads_raw.get("entries", [])
+                if e and e.get("id") and e["id"] not in existing_ids and e["id"] not in short_ids
+            ]
+            if fresh_uploads:
+                print(f"Found {len(fresh_uploads)} newer upload(s) via {uploads_id}: {[e['id'] for e in fresh_uploads]}")
+                entries = fresh_uploads + entries
+        except Exception as exc:
+            print(f"Warning: could not check {uploads_id} uploads playlist ({exc})")
 
     # 2. Fetch playlists & their video IDs
     if args.playlists_json and os.path.exists(args.playlists_json):

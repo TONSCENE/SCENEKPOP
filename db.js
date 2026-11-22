@@ -6,12 +6,12 @@ const sceneDatabase = {
     "name": "SCENEKPOP+",
     "subtitle": "คลังรวมคลิปซับไทย & วาไรตี้ K-Pop แยกตามวง โดยช่อง @SCENEKPOP",
     "avatar": "https://yt3.googleusercontent.com/2HMl_qrn6AQ2q6Q6-2Lt43BLk1VxGiVAYjMUjldgkhmIrsg2qLzuf5zwhnOKuCx0bHegq4oBjA=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
-    "totalVideos": 415,
-    "totalYoutube": 368,
+    "totalVideos": 416,
+    "totalYoutube": 369,
     "totalPatreon": 47,
     "totalGroups": 26,
     "totalPlaylists": 25,
-    "updatedAt": "2026-11-22 11:31"
+    "updatedAt": "2026-11-22 14:36"
   },
   "groups": [
     {
@@ -34,7 +34,7 @@ const sceneDatabase = {
       "thaiName": "ฮาร์ตส์ทูฮาร์ตส์ (H2H)",
       "accent": "#a855f7",
       "tagline": "Jiwoo • Carmen • Yuha • Stella • Juun • A-na • Ian • Yeon",
-      "count": 76,
+      "count": 77,
       "thumb": "images/groups/hearts2hearts.webp",
       "playlistIds": [
         "PLHrapbf9Q3g4"
@@ -727,7 +727,7 @@ const sceneDatabase = {
       "id": "pt_kawaii_h2h",
       "title": "Kawaii Lab. vs Hearts2Hearts (Patreon)",
       "count": 2,
-      "thumb": "https://img.youtube.com/vi/oWc_rbCGcPY/hqdefault.jpg",
+      "thumb": "https://img.youtube.com/vi/22G-LyqhNrs/hqdefault.jpg",
       "groupId": "hearts2hearts",
       "groupIds": [
         "hearts2hearts"
@@ -873,6 +873,21 @@ const sceneDatabase = {
     },
     {
       "num": 7,
+      "ytId": "22G-LyqhNrs",
+      "title": "ถ้าจีอู Hearts2Hearts คอยโค้ชยูฮาที่ PC บัง? (Feat. สเตลล่า Hearts2Hearts) ｜ ชมรมเกมอันเงียบสงบ EP06",
+      "duration": "34:43",
+      "durationSec": 2083,
+      "thumb": "https://img.youtube.com/vi/22G-LyqhNrs/hqdefault.jpg",
+      "groups": [
+        "hearts2hearts"
+      ],
+      "playlists": [],
+      "contentType": "variety",
+      "subBadge": "ซับไทย",
+      "source": "youtube"
+    },
+    {
+      "num": 8,
       "ytId": "oQGKaUbtm5Y",
       "title": "[Maejeomgayo! EP.24]  ILLIT บุกกวาดขนมในร้านค้าจนไม่เหลือ💥 จับพวกเธอให้ได้เลย🫵🏻🚓",
       "duration": "27:17",
@@ -889,7 +904,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 8,
+      "num": 9,
       "ytId": "2DMpX_uV0Us",
       "title": "Kicking things off by eating pig brain, new YouTuber Jam Nayoung (Jam Nayoung’s dipping sauce rec...",
       "duration": "19:40",
@@ -904,7 +919,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 9,
+      "num": 10,
       "ytId": "mAd1Gtop34M",
       "title": "♥โชดัน♥ (อดีต)ดารา (ปัจจุบัน)ยูทูบเบอร์ จองฮยองดน: ว้าว! ดารา! ร้านเด็ดสตาร์! ร้านนี้ไม่ได้นะ?!",
       "duration": "50:26",
@@ -919,7 +934,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 10,
+      "num": 11,
       "ytId": "hlaM0aCUBSI",
       "title": "🎤 Season2 EP.4 #TREASURE ｜ ช็อกยกวง‼️ กด PASS รัวจนสมองเบลอ ใบ้ก็ยาก ทายก็ไปไม่เป็น💦 #UP코노2",
       "duration": "17:46",
@@ -935,7 +950,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 11,
+      "num": 12,
       "ytId": "DRWBHc2fldY",
       "title": "[Friendship with REI] Saki & Se-a from TUIDE",
       "duration": "25:39",
@@ -952,7 +967,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 12,
+      "num": 13,
       "ytId": "9bzCT2WQzJk",
       "title": "QWER - Picaresque ROCKETLAUNCHinBKK 14.11.26 #QWER #ROCKATION #ROCKETLAUNCHinBKK",
       "duration": "2:59",
@@ -967,7 +982,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 13,
+      "num": 14,
       "ytId": "wGCAAIXPljU",
       "title": "DAMN!BULANCE  EP.4 I ยุนอา & ยองจี",
       "duration": "45:43",
@@ -984,7 +999,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 14,
+      "num": 15,
       "ytId": "7Kp_YtoLOPo",
       "title": "Tell me about it: The QWER Algorithm ｜ Kim Bum-soo's Listening Session🎶 EP 41 Guest QWER [EN]",
       "duration": "46:44",
@@ -999,7 +1014,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 15,
+      "num": 16,
       "ytId": "R-7kuCcPRW8",
       "title": "ไปเรียกคุณครูฝ่ายปกครองมาถามกันหน่อย มีเรื่องอยากถามเพียบ [Silence of the Idols] ILLIT",
       "duration": "24:35",
@@ -1016,7 +1031,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 16,
+      "num": 17,
       "ytId": "ckbNuT67vzs",
       "title": "QWER randomly singing the Chiikawa song! A heartwarming reason, plus sharing their favorite selfi...",
       "duration": "10:24",
@@ -1031,7 +1046,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 17,
+      "num": 18,
       "ytId": "yEkqlDEVk6A",
       "title": "I’m going to do everything I want to do and satisfy all my cravings! (EP1. Otaku Tour)",
       "duration": "18:28",
@@ -1048,7 +1063,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 18,
+      "num": 19,
       "ytId": "GQTvQF_FIm4",
       "title": "[RESCENE] ทางสายดอกไม้ vs ทางเลิกงาน 🌹 ปาร์ตี้ฉลองบุปผาบานสะพรั่งของมินามิ | Spotify Idol Party",
       "duration": "13:39",
@@ -1063,7 +1078,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 19,
+      "num": 20,
       "ytId": "EkbRKXuQRjE",
       "title": "RESCENE's Dream Come True 🌟 Pretty Girl's Shuffle Show with 'With' | Spotify K-Pop ON! RECORD",
       "duration": "26:57",
@@ -1078,7 +1093,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 20,
+      "num": 21,
       "ytId": "-WUxJtOWRgI",
       "title": "🎤 Season 2 EP.3 #TREASURE | No mercy for the Hanwoo beef🔥 Blue vs. White Autumn Sports Day🍂",
       "duration": "22:20",
@@ -1094,7 +1109,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 21,
+      "num": 22,
       "ytId": "Hr9KcdcCaj0",
       "title": "ILLIT's No-Laughing Fan Meeting [ENG SUB]",
       "duration": "27:08",
@@ -1111,7 +1126,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 22,
+      "num": 23,
       "ytId": "NYMY_r85N4E",
       "title": "[FULL] แค่ร้องสดก็ You Deserve It แล้ว!!! สมกับเป็น BABYMONSTER จริงๆ♥️ ｜ Cultwo Show ｜ 05.11.26",
       "duration": "36:54",
@@ -1126,7 +1141,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 23,
+      "num": 24,
       "ytId": "I6XjYGfpWUk",
       "title": "[FULL] เพลงนี้มันร้องสดได้ด้วยเหรอเนี่ย~? 😈 BABYMONSTER ｜ Wendy's Youngstreet ｜ 04.11.26",
       "duration": "40:46",
@@ -1141,7 +1156,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 24,
+      "num": 25,
       "ytId": "8pZrsHbe5fw",
       "title": "Guess I'm Having Buldak Tonight 🔥 | Eat SOL [ENG SUB]",
       "duration": "18:16",
@@ -1158,7 +1173,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 25,
+      "num": 26,
       "ytId": "rHRGTuRI7G0",
       "title": "MONSTIEZ assemble♥️ BABYMONSTER showing off their incredible live vocals again🎙️ ｜ BABYMONSTER 11...",
       "duration": "32:39",
@@ -1173,7 +1188,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 26,
+      "num": 27,
       "ytId": "FFeeGfR_kzI",
       "title": "\"How is my muscle condition?\" [Chodan QWER] ENG SUB",
       "duration": "15:05",
@@ -1190,7 +1205,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 27,
+      "num": 28,
       "ytId": "MKUI1iSBUHI",
       "title": "Raid on the RESCENE practice room",
       "duration": "21:57",
@@ -1207,7 +1222,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 28,
+      "num": 29,
       "ytId": "GPi_WfuzkDo",
       "title": "🔊ASMR Eating exotic fruits and Tanghulu (candied fruit) with real sounds | Momog TV EP.36 #ive #liz",
       "duration": "24:46",
@@ -1222,7 +1237,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 29,
+      "num": 30,
       "ytId": "CL72hDdQusA",
       "title": "[FULL] Morning Guest Segment🎶 with QWER on \"This Morning with Yoon Sang\"🌞 [EN]",
       "duration": "58:05",
@@ -1237,7 +1252,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 30,
+      "num": 31,
       "ytId": "OcJo25kt988",
       "title": "🤍🐶 HAPPY CHODAN DAY 🐶🤍 ENG SUB 11/26/01",
       "duration": "24:45",
@@ -1252,7 +1267,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 31,
+      "num": 32,
       "ytId": "rOB-qGh-4JA",
       "title": "🐱 Meeting my past self before becoming an idol 🐱 NMIXX Kyujin [Seongsu-gi EP.44] ENG SUB",
       "duration": "31:09",
@@ -1269,7 +1284,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 32,
+      "num": 33,
       "ytId": "QoWDjl414NQ",
       "title": "RESCENE May 🐘 & Woni 🐱 | Woni Multiverse: Factory & Pottery Workshop | 011126",
       "duration": "10:39",
@@ -1286,7 +1301,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 33,
+      "num": 34,
       "ytId": "xURAXAqDWmI",
       "title": "Bamon's rendition of DESERVE is even better...♥😈 Just 30 minutes with Kwanghee! EP.07",
       "duration": "33:39",
@@ -1301,7 +1316,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 34,
+      "num": 35,
       "ytId": "eO87d8i5cHg",
       "title": "🎤 ซีซั่น 2 EP.2 #ALLDAYPROJECT ｜ ความต่อเนื่องของ [ม]: ศึกต๊อกบกกีสุดโวยวายและวุ่นวาย🍽️ #UPCono2",
       "duration": "24:41",
@@ -1316,7 +1331,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 35,
+      "num": 36,
       "ytId": "cMAhh1All0g",
       "title": "The first day of being friends with Ruka-chan .｡o♡( ⸝⸝･໐･⸝⸝ ) ｜ Try it with Ray EP.101 English Sub",
       "duration": "19:42",
@@ -1331,7 +1346,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 36,
+      "num": 37,
       "ytId": "1hhkCgN4y0k",
       "title": "S2 EP.1 #ALLDAYPROJECT ｜ Into the Glittering World💖✨ The Best of ADP! UP CONO 2 with the MZ Gang,...",
       "duration": "30:19",
@@ -1346,7 +1361,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 37,
+      "num": 38,
       "ytId": "oWc_rbCGcPY",
       "title": "If I had to introduce Jiwoo and Yuha from Hearts2Hearts playing baseball? | Silent Game Club EP05...",
       "duration": "31:27",
@@ -1361,7 +1376,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 38,
+      "num": 39,
       "ytId": "sy-TWFY3wNw",
       "title": "BABYMONSTER vs Big Bellies-Monster Mouths! Not giving in easily on an outing | YAMA EP.4 BABYMONS...",
       "duration": "24:18",
@@ -1376,7 +1391,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 39,
+      "num": 40,
       "ytId": "5u2AQaGl8TE",
       "title": "RESCENE | The only 4-member girl group in a world without Woni: Gyaru & Satoori remake EP | 10/26/25",
       "duration": "28:48",
@@ -1393,7 +1408,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 40,
+      "num": 41,
       "ytId": "JLAXdn0BaCs",
       "title": "[ENG SUB] [Let's Eat] Monsters on stage, babies at the dining table (feat. BABYMONSTER Ahyeon, Ruka)",
       "duration": "26:06",
@@ -1408,7 +1423,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 41,
+      "num": 42,
       "ytId": "7bkANd_L6lM",
       "title": "Overnight Convenience Store Part-timer at Han River | WORKDOL | Jiwon fromis_9 & Anna MEOVV",
       "duration": "22:04",
@@ -1425,7 +1440,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 42,
+      "num": 43,
       "ytId": "rSrLP-4Jewg",
       "title": "Are the games you play mainstream? with Lee Jong-beom, Jung-hyuk, Magenta ｜ WASD EP01",
       "duration": "1:05:44",
@@ -1440,7 +1455,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 43,
+      "num": 44,
       "ytId": "gHeSc5s-coc",
       "title": "Who among the KiiiKiii members learns choreography the fastest! KiiiKiii MLB Interview",
       "duration": "7:35",
@@ -1455,7 +1470,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 44,
+      "num": 45,
       "ytId": "mGSuQwYPOr8",
       "title": "RESCENE ลีฟ 🐑 & เมย์ 🐘 ｜ เมย์ ผู้ถูกทิ้ง ผันตัวมาเป็นผู้กำกับสุดเฮี้ยบ ｜ 17.10.26",
       "duration": "34:04",
@@ -1472,7 +1487,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 45,
+      "num": 46,
       "ytId": "5uZFsTTCZsc",
       "title": "[Fridge Interview Sana EP.25] Do you know? They say that once you see Sana’s beauty, you’ll lose ...",
       "duration": "54:16",
@@ -1490,7 +1505,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 46,
+      "num": 47,
       "ytId": "4FleWMmbvL0",
       "title": "What if you found out an idol senior's secret? ｜ Kwakbeom x Tsuki ｜ Beom-in-Guard EP 2",
       "duration": "28:04",
@@ -1505,7 +1520,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 47,
+      "num": 48,
       "ytId": "XCpC28TagOQ",
       "title": "Why are you bothering me while I'm studying? Crashing the Megapass shoot with RESCENE",
       "duration": "20:35",
@@ -1520,7 +1535,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 48,
+      "num": 49,
       "ytId": "e-6-cE4dKOM",
       "title": "Chodan’s real reaction to a 30 million won whiskey?! A one-of-a-kind luxury hotel staycation [Seo...",
       "duration": "28:17",
@@ -1537,7 +1552,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 49,
+      "num": 50,
       "ytId": "OPx21kWuNmE",
       "title": "RESCENE | Minami’s Dream USJ Trip Turns Into a Halloween Horror Marathon | 10/26/12",
       "duration": "25:01",
@@ -1554,7 +1569,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 50,
+      "num": 51,
       "ytId": "_VgLLds2gBQ",
       "title": "SBS 8 News สัมภาษณ์ RESCENE 11.10.26",
       "duration": "7:06",
@@ -1569,7 +1584,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 51,
+      "num": 52,
       "ytId": "y8reJ1_REeI",
       "title": "Carmen & Stella Spill the Tea on Life in Korea, Plus Essential Tips for Expats! | HeartsPod Ep3 [...",
       "duration": "30:44",
@@ -1586,7 +1601,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 52,
+      "num": 53,
       "ytId": "UaHC6KBdAT4",
       "title": "อย่าบอกใครนะ🤫  เปิดเผยความลับที่มีแค่ ILLIT เท่านั้นที่รู้  | สัมภาษณ์แบบเจาะใจตอนพิเศษฤดูร้อน",
       "duration": "12:51",
@@ -1603,7 +1618,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 53,
+      "num": 54,
       "ytId": "gSPBrgfTdDM",
       "title": "RESCENE TV First Tears🥹 Our Joys, Sorrows, and Sadness ｜ RESCENE ｜ RESCENE TV 4 Summer",
       "duration": "21:33",
@@ -1618,7 +1633,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 54,
+      "num": 55,
       "ytId": "csC36jUuBno",
       "title": "RESCENE ｜ Minami's Free Osaka Trip: The 4 Clones, Heavy Rain & Urgent Mission to USJ ｜ 10/26/04",
       "duration": "25:46",
@@ -1635,7 +1650,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 55,
+      "num": 56,
       "ytId": "U6s0c9vOYd0",
       "title": "My Isekai Architecture Building Log (feat. Yooyeon of tripleS) EP.01",
       "duration": "14:58",
@@ -1652,7 +1667,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 56,
+      "num": 57,
       "ytId": "LZmnsN3iob8",
       "title": "[RESCENE Zena 🐿️ ｜ Chuseok Special: Zena's Trot Medley ｜ 09/18/26] ENG SUB",
       "duration": "11:19",
@@ -1669,7 +1684,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 57,
+      "num": 58,
       "ytId": "b6-AZwyjfLg",
       "title": "QWER Dreamer ชียอน, มาเจนต้า LIVE ｜ รายการ Coin Karaoke ที่ไม่มีเหรียญ EP 11",
       "duration": "5:07",
@@ -1684,7 +1699,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 58,
+      "num": 59,
       "ytId": "lQzoaGxySEM",
       "title": "RESCENE ลีฟ & มินามิ & เมย์ ตื่นเต้นจนตัวเกร็งไปหมด กับการเจอรุ่นพี่มิยอนครั้งแรก.. | Jeondosa EP.3",
       "duration": "32:41",
@@ -1700,7 +1715,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 59,
+      "num": 60,
       "ytId": "_GrQTwfVOp0",
       "title": "💌 In QWER's Shonen manga, there’s no such thing as cancellation 🦊🐹 | Personal Letter Ep.7",
       "duration": "57:41",
@@ -1715,7 +1730,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 60,
+      "num": 61,
       "ytId": "5JXI8ZB2xOc",
       "title": "TUIDE: Behind the Scenes of Idol Radio (with Thai Subtitles)",
       "duration": "10:08",
@@ -1732,7 +1747,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 61,
+      "num": 62,
       "ytId": "0YyRNbqUIF8",
       "title": "Watching a Real-Life Sibling Rivalry During Chuseok (Wonhee, Yunah of ILLIT) [ENG SUB]",
       "duration": "10:23",
@@ -1749,7 +1764,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 62,
+      "num": 63,
       "ytId": "sK-zc7-4X3g",
       "title": "สุดท้ายคังนามิก็ทำให้ ILLIT × JISOO & MOMOKA ถึงกับร้องไห้จนได้ 😂  [ซับไทย]",
       "duration": "32:14",
@@ -1766,7 +1781,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 63,
+      "num": 64,
       "ytId": "Yos39MYHeQ8",
       "title": "ถ้าแอบช่วยแนะนำตอนจีอูและยูฮาทำอาหาร? ｜ ชมรมเกมเงียบ EP04 [TH][EN]",
       "duration": "32:15",
@@ -1781,7 +1796,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 64,
+      "num": 65,
       "ytId": "a4Y8_OKhL8w",
       "title": "TUIDE I Behind the Scenes of 'SUN KISS' [ENG SUB]",
       "duration": "28:59",
@@ -1798,7 +1813,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 65,
+      "num": 66,
       "ytId": "MS7jnsirsSA",
       "title": "These super cute, fresh-faced girls have arrived! TUIDE I MBC Radio [ENG SUB]",
       "duration": "27:36",
@@ -1815,7 +1830,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 66,
+      "num": 67,
       "ytId": "8Q_jBWPI5IA",
       "title": "260919 2026 THE FACT MUSIC AWARDS in Busan NMIXX Sound Of The Year ซับไทย",
       "duration": "5:10",
@@ -1830,7 +1845,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 67,
+      "num": 68,
       "ytId": "6WGX4_raNog",
       "title": "260919 2026 THE FACT MUSIC AWARDS in Busan RESCENE Today's Choice ซับไทย",
       "duration": "2:55",
@@ -1845,7 +1860,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 68,
+      "num": 69,
       "ytId": "OBwkl-NBJRs",
       "title": "260919 2026 THE FACT MUSIC AWARDS in Busan TripleS Global Hot Trend ซับไทย",
       "duration": "1:18",
@@ -1860,9 +1875,9 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 69,
+      "num": 70,
       "ytId": "tQcbIVuCykk",
-      "title": "09/19/26 2026 THE FACT MUSIC AWARDS in Busan RESCENE Artist of the Year Bonsang ENG SUB",
+      "title": "260919 2026 THE FACT MUSIC AWARDS in Busan RESCENE ศิลปินแห่งปี บอนซัง ซับไทย",
       "duration": "1:58",
       "durationSec": 118,
       "thumb": "https://img.youtube.com/vi/tQcbIVuCykk/hqdefault.jpg",
@@ -1871,11 +1886,11 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ENG SUB",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
-      "num": 70,
+      "num": 71,
       "ytId": "S78oB6WI23c",
       "title": "260919 2026 THE FACT MUSIC AWARDS in Busan KiiiKiii ศิลปินแห่งปี บอนซัง ซับไทย",
       "duration": "1:51",
@@ -1890,9 +1905,9 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 71,
+      "num": 72,
       "ytId": "8yexD4KLN8Y",
-      "title": "260919 2026 THE FACT MUSIC AWARDS in Busan ILLIT ศิลปินแห่งปี บอนซัง ซับไทย",
+      "title": "260919 2026 THE FACT MUSIC AWARDS in Busan ILLIT Artist of the Year Bonsang ENG SUB",
       "duration": "1:31",
       "durationSec": 91,
       "thumb": "https://img.youtube.com/vi/8yexD4KLN8Y/hqdefault.jpg",
@@ -1901,11 +1916,11 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "stage",
-      "subBadge": "ซับไทย",
+      "subBadge": "ENG SUB",
       "source": "youtube"
     },
     {
-      "num": 72,
+      "num": 73,
       "ytId": "Jf9CJV2IvQM",
       "title": "Chaeyeon and Yooyeon of tripleS [ENG SUB]",
       "duration": "30:06",
@@ -1922,7 +1937,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 73,
+      "num": 74,
       "ytId": "OWwoS4clgPM",
       "title": "TUIDE  [TUNE & PLAY]  เบื้องหลังถ่ายทำที่ประเทศไทย",
       "duration": "18:51",
@@ -1939,7 +1954,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 74,
+      "num": 75,
       "ytId": "gWrMRVZMAGY",
       "title": "Just leave it on and fall asleep H2H: Carmen, Stella, Ju-eun, Ye-on [TH][EN]",
       "duration": "1:32:44",
@@ -1954,9 +1969,9 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 75,
+      "num": 76,
       "ytId": "xkYpp1a5SxA",
-      "title": "ฮาอึม KiiiKiii [อูดาดาคลับ EP.1] วิ่งไปเลย ฮาอึม",
+      "title": "Ha-eum KiiiKiii [Uda-da Club EP.1] Run, Ha-eum",
       "duration": "10:09",
       "durationSec": 609,
       "thumb": "https://img.youtube.com/vi/xkYpp1a5SxA/hqdefault.jpg",
@@ -1967,11 +1982,11 @@ const sceneDatabase = {
         "PLHCirUutU7Oo"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย",
+      "subBadge": "SUBBED",
       "source": "youtube"
     },
     {
-      "num": 76,
+      "num": 77,
       "ytId": "p-HVJn4Mjio",
       "title": "\"New girl group from HYBE has arrived!” | EP.20 TUIDE | MIMIMINU’s Room Analysis [ENG SUB]",
       "duration": "35:23",
@@ -1988,7 +2003,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 77,
+      "num": 78,
       "ytId": "EMPLOHsehFY",
       "title": "RESCENE Woni 🐱 & Minami 🦭 & Liv 🐑 | Weight Loss War: The Truth About the 20kg Rumor | 09/11/26",
       "duration": "36:28",
@@ -2003,7 +2018,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 78,
+      "num": 79,
       "ytId": "eCy6-J66ChY",
       "title": "เผยผู้ชนะเกมมาเฟีย! เจ้าหน้าที่ VS สปาย ใครจะได้เข็มกลัดทอง? | Badge War 4 EP.4 | tripleS",
       "duration": "2:15:32",
@@ -2020,7 +2035,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 79,
+      "num": 80,
       "ytId": "ELF6pwifpJs",
       "title": "เบื้องหลัง TUIDE 'SUN KISS' I STUDIO CHOOM [ซับไทย]",
       "duration": "16:54",
@@ -2037,7 +2052,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 80,
+      "num": 81,
       "ytId": "di1ptKQAkc0",
       "title": "[Maejeomgayo EP.16] KiiiKiii [ซับไทย]",
       "duration": "21:16",
@@ -2054,7 +2069,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 81,
+      "num": 82,
       "ytId": "MtU-j3zi8eI",
       "title": "[MAI WONI DAY] izna tiny line × RESCENE long-legged line, our meeting, Oishii~",
       "duration": "42:46",
@@ -2069,7 +2084,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 82,
+      "num": 83,
       "ytId": "oaTZBebl4S8",
       "title": "Eating has been such a struggle today I Is Eat Sol there [ENG SUB]",
       "duration": "16:25",
@@ -2086,9 +2101,9 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 83,
+      "num": 84,
       "ytId": "POvilADXwnE",
-      "title": "TWICE's Sana becomes best friends for life with Miyeon through a punch-up l JeonDoSa EP.01",
+      "title": "ซานะ TWICE ผูกมิตรเป็นเพื่อนแท้ตลอดชีพกับมิยอนด้วยการแลกหมัด l จอนโดซา EP.01",
       "duration": "25:09",
       "durationSec": 1509,
       "thumb": "https://img.youtube.com/vi/POvilADXwnE/hqdefault.jpg",
@@ -2098,13 +2113,13 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
-      "num": 84,
+      "num": 85,
       "ytId": "WkoJFd3BAEQ",
-      "title": "(G)I-DLE Miyeon's First Health Checkup in Her 30s: Did I... Just Say Something Crazy? | Jeon Do-s...",
+      "title": "มิยอน I-DLE กับการตรวจสุขภาพครั้งแรกในวัย 30, นี่ฉัน.. พูดเพ้อเจ้ออะไรออกไปไหมเนี้ย? | จอนโดซา EP.00",
       "duration": "15:47",
       "durationSec": 947,
       "thumb": "https://img.youtube.com/vi/WkoJFd3BAEQ/hqdefault.jpg",
@@ -2113,11 +2128,11 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
-      "num": 85,
+      "num": 86,
       "ytId": "uyQZ6xYh4SE",
       "title": "[Why?] Wonhee is here [ENG SUB]",
       "duration": "22:58",
@@ -2134,7 +2149,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 86,
+      "num": 87,
       "ytId": "gHipQe_OWug",
       "title": "KiiiKiii I Guess My Name I W Korea [ซับไทย]",
       "duration": "12:25",
@@ -2151,7 +2166,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 87,
+      "num": 88,
       "ytId": "_HHS-iPGy7E",
       "title": "09/06/26 2026 SPOTV K-POP AWARDS KiiiKiii Acceptance Speech (ENG SUB)",
       "duration": "3:52",
@@ -2166,7 +2181,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 88,
+      "num": 89,
       "ytId": "zQVxOacscCg",
       "title": "09/06/26 2026 SPOTV K-POP AWARDS RESCENE Award Acceptance Speech (ENG SUB)",
       "duration": "2:31",
@@ -2181,7 +2196,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 89,
+      "num": 90,
       "ytId": "YagjqahkhUQ",
       "title": "KiiiKiii | วิเคราะห์จากห้อง Mimiminu’s EP.19 [ซับไทย]",
       "duration": "36:34",
@@ -2198,7 +2213,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 90,
+      "num": 91,
       "ytId": "t3Iex4iQmnA",
       "title": "Extreme camping in seoul city MEOVV SOOIN & ANNA [ซับไทย]",
       "duration": "23:14",
@@ -2215,7 +2230,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 91,
+      "num": 92,
       "ytId": "Ggj-reUE7HA",
       "title": "RESCENE | How do you feel right now? | Q&A celebrating 1 million subscribers | 09/26/04",
       "duration": "33:00",
@@ -2232,7 +2247,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 92,
+      "num": 93,
       "ytId": "MFNRnEM4D9U",
       "title": "TUIDE WEVERSE LIVE (30.08.2026) ซับไทย",
       "duration": "16:17",
@@ -2249,7 +2264,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 93,
+      "num": 94,
       "ytId": "lVvRvjP8yEM",
       "title": "Alright, look up and see the real spy｜Badge War 4 EP.3｜Badge War 4: Trust No One｜tripleS",
       "duration": "1:36:30",
@@ -2266,7 +2281,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 94,
+      "num": 95,
       "ytId": "niMHKie8RXk",
       "title": "Sana's Fridge Interview ความฝัน★ของมินามิเป็นจริงแล้ว  EP 22 มินามิ RESCENE",
       "duration": "53:56",
@@ -2282,7 +2297,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 95,
+      "num": 96,
       "ytId": "1d71EyIWSMQ",
       "title": "จีอู & เอนา Hearts2Hearts ที่อยากได้มาเป็นน้องสาวจัง🐰🐵 | Follow Rei EP.95",
       "duration": "21:13",
@@ -2298,7 +2313,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 96,
+      "num": 97,
       "ytId": "ywv4KS5UIw4",
       "title": "3 Best Things to Do in Japan｜MEOVV｜ELLE Japan [ซับไทย]",
       "duration": "20:56",
@@ -2315,7 +2330,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 97,
+      "num": 98,
       "ytId": "KWm_V9Uz4S8",
       "title": "UPCONO I ILLIT ร้อนแรงสุดๆ EP.2  [ซับไทย]",
       "duration": "12:51",
@@ -2332,7 +2347,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 98,
+      "num": 99,
       "ytId": "jQhaplZyItY",
       "title": "Throw your worries away! H2H is here to clear up your problems💘 ｜ Johnny’s Random Ramblings EP.29...",
       "duration": "26:39",
@@ -2347,7 +2362,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 99,
+      "num": 100,
       "ytId": "UhhOg1rccO8",
       "title": "Gayo Plaza Guest Special with TUIDE | Paul Kim | KBS 09/01/26 [TH][EN]",
       "duration": "36:31",
@@ -2364,7 +2379,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 100,
+      "num": 101,
       "ytId": "bMm_wc7S4cg",
       "title": "[FULL] TUIDE Wendy's Young Street | 08/28/26 [TH][EN]",
       "duration": "50:06",
@@ -2381,7 +2396,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 101,
+      "num": 102,
       "ytId": "m5WF31rCCgM",
       "title": "[FULL] Rookie Girl Group from JYP OURBIRTHDAY 🎂 ｜ 2 O'Clock Escape Cultwo Show ｜ 08/30/26 [TH][EN]",
       "duration": "26:15",
@@ -2396,7 +2411,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 102,
+      "num": 103,
       "ytId": "mZJC5UgqPc8",
       "title": "KiiiKiii IDOL RADIO BEHIND [ENG SUB]",
       "duration": "10:05",
@@ -2413,7 +2428,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 103,
+      "num": 104,
       "ytId": "mW8dgihaX5M",
       "title": "ELLE Emoji Interview TUIDE [ซับไทย]",
       "duration": "9:15",
@@ -2430,7 +2445,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 104,
+      "num": 105,
       "ytId": "txqK_gbzMc0",
       "title": "Nothing Much Prepared EP.49 The Final Guest, Han So-hee [ENG SUB]",
       "duration": "48:50",
@@ -2445,7 +2460,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 105,
+      "num": 106,
       "ytId": "n3XVRIcQf6Q",
       "title": "UPCONO | ILLIT It’s Getting Really Hot EP.1 [ENG SUB]",
       "duration": "15:28",
@@ -2462,7 +2477,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 106,
+      "num": 107,
       "ytId": "lgpON1HHa9k",
       "title": "08/24/2026 I TUIDE DEBUT SPECIAL WEVERSE LIVE [THAI SUB]",
       "duration": "15:56",
@@ -2479,7 +2494,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 107,
+      "num": 108,
       "ytId": "YEsstetyxeM",
       "title": "The First Murder Night, Unveiling the Spy's True Identity | Badge War 4 EP.2: Trust No One | tripleS",
       "duration": "1:20:41",
@@ -2496,7 +2511,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 108,
+      "num": 109,
       "ytId": "cWvihm0Wjog",
       "title": "RESCENE วอนอี 🐱 & ลีฟ 🐑 ｜ ชีวิตซูเปอร์สตาร์ปี 2036 ของวอนอี (ft. มินามิ 🦭) ｜ 28.08.26",
       "duration": "37:20",
@@ -2513,7 +2528,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 109,
+      "num": 110,
       "ytId": "qAZfMviVO18",
       "title": "RESCENE is now taking on the US market [ENG SUB]",
       "duration": "24:51",
@@ -2528,7 +2543,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 110,
+      "num": 111,
       "ytId": "kadzR6i_9dc",
       "title": "เป็นไอดอลภาษาอะไรถึงแสดงเก่งเบอร์นี้？ (w. ยูฮา & เอนา) ｜ คยาคยา เอาต์ติ้ง สปินออฟ",
       "duration": "37:28",
@@ -2543,7 +2558,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 111,
+      "num": 112,
       "ytId": "zBOvrK8zloo",
       "title": "Rookie girl group TUIDE who work a little too hard [ENG SUB]",
       "duration": "16:30",
@@ -2560,7 +2575,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 112,
+      "num": 113,
       "ytId": "gCekLPA6sEk",
       "title": "Spotify Super Rookie I Tuide \"SUN KISS\" [ซับไทย]",
       "duration": "18:14",
@@ -2577,7 +2592,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 113,
+      "num": 114,
       "ytId": "MUNHmvN9hnU",
       "title": "คั้นความสดใสจี๊ดจ๊าด 100% ของ H2H มาเสิร์ฟแล้ว ｜ Hearts2Hearts ｜ You in Radio S3 EP.19 ซับไทย",
       "duration": "47:52",
@@ -2592,7 +2607,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 114,
+      "num": 115,
       "ytId": "8zviFcpeb_k",
       "title": "🎤 EP.18 #RESCENE ｜ เปียโนของ RESCENE มันโออิชี่มาก~!🎹 งานดนตรีพริตตี้เกิร์ลสุดสดใส",
       "duration": "13:48",
@@ -2607,7 +2622,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 115,
+      "num": 116,
       "ytId": "q4heroH0ytE",
       "title": "\"I hope everyone who voted against me drops dead\" 24-Person Mafia Game｜Badge War 4 EP.1",
       "duration": "1:21:06",
@@ -2624,7 +2639,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 116,
+      "num": 117,
       "ytId": "1Z3VBRcmeZA",
       "title": "The Ultimate Dopamine Party!😵‍💫 Cho-dan vs. Magenta: The Battle for the #1 Otaku Throne of QWER?!...",
       "duration": "32:32",
@@ -2641,7 +2656,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 117,
+      "num": 118,
       "ytId": "5mUrUNsKxIo",
       "title": "RESCENE เจนา 🐿️ & ลีฟ 🐑 ｜ คุณชอบ โกยุนจอง ไหม？ ｜ 210824",
       "duration": "19:02",
@@ -2658,7 +2673,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 118,
+      "num": 119,
       "ytId": "Lih7d7Dvy1Q",
       "title": "เมื่อลองไปนั่งสอนขับรถให้ จีอู x ยูฮา Hearts2Hearts | ชมรมเกมเงียบ EP.03",
       "duration": "33:48",
@@ -2673,7 +2688,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 119,
+      "num": 120,
       "ytId": "Iz3CSoUsv3M",
       "title": "มีโยไกชื่อ 'ยารึ' ด้วยเหรอ?! เรื่องสัตว์ประหลาดเกาหลีสุดทึ่ง โดย ศ.ควักแจชิก [ซองซูกิ EP.40]",
       "duration": "25:53",
@@ -2690,7 +2705,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 120,
+      "num": 121,
       "ytId": "JWFv1fd34sI",
       "title": "โชดันคัมแบ็ก รอบนี้พิชิตเบสบอล?! แต่ครูดันเป็น ชินแจยอง แห่ง \"เบสบอลไฟลุก\"🔥💦 [ซองซูกิ EP.39]",
       "duration": "26:06",
@@ -2707,7 +2722,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 121,
+      "num": 122,
       "ytId": "FjWDLq6y6GA",
       "title": "RESCENE เจนา 🐿️ & เมย์ 🐘 ｜ ฉันมาช่วยเธอแล้วนะ ｜ 140826",
       "duration": "24:10",
@@ -2724,7 +2739,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 122,
+      "num": 123,
       "ytId": "-ChDdZt4avg",
       "title": "EP.17 #RESCENE | The Princess has arrived! Who is the real one? ✧Princess Level Test✧ Pretty Girl...",
       "duration": "15:11",
@@ -2739,7 +2754,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 123,
+      "num": 124,
       "ytId": "qnZwJqEcsGQ",
       "title": "RESCENE Woni 🐱 & Zena 🐿️ / Zena, say something!!!!!!!!!!!!!! / 08/26/11",
       "duration": "29:54",
@@ -2756,7 +2771,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 124,
+      "num": 125,
       "ytId": "0mYUGjuoBhs",
       "title": "RESCENE วอนอี 🐱 & เจนา 🐿️ ｜ ไอดอลสาวผู้มาจากคย็องจู ｜ 070826",
       "duration": "28:43",
@@ -2773,7 +2788,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 125,
+      "num": 126,
       "ytId": "bjgoFOe78S8",
       "title": "[Sana's Fridge Interview] เธอเป็นคนมาตกฉันก่อนเองนะ?💘l EP.20 Hearts2Hearts (H2H) จีอู",
       "duration": "43:32",
@@ -2789,7 +2804,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 126,
+      "num": 127,
       "ytId": "x4XFDMy2V0Y",
       "title": "Let Me Sing You a Few Lines! Stella's Favorite Playlist | HeartsPod Ep. 2",
       "duration": "19:30",
@@ -2806,7 +2821,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 127,
+      "num": 128,
       "ytId": "pibPgMV0LSk",
       "title": "Don't call me Gen 2! How is hyorisoo Gen 2? ⧸ Fake Kim Hyoyeon ｜ hyorisoo Debut Project EP.5",
       "duration": "36:53",
@@ -2821,7 +2836,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 128,
+      "num": 129,
       "ytId": "na5IsColIBM",
       "title": "[4K] Definitely more fun than EP.1! 😆 Come watch RESCENE's epic summer vacation trip~⭐️ | My Dayt...",
       "duration": "14:43",
@@ -2838,7 +2853,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 129,
+      "num": 130,
       "ytId": "EWFC85s5o_Y",
       "title": "[4K] RESCENE’s First Vacation Trip, Playing and Eating for Real! 🏖️ | My Daytrip to Jeongseon Ep 01",
       "duration": "14:30",
@@ -2855,7 +2870,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 130,
+      "num": 131,
       "ytId": "Lr1GsOr0tAw",
       "title": "[Idol Booth EP.1] No way, stop it, please! 🔥 What is the final result of RESCENE’s dopamine-rushi...",
       "duration": "25:50",
@@ -2870,7 +2885,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 131,
+      "num": 132,
       "ytId": "oXNk6X0VW6Y",
       "title": "Hello, We're RESCENE! Nice to Meet You! | ZIP DAESUNG ep.117 RESCENE ENG SUB",
       "duration": "45:18",
@@ -2885,7 +2900,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 132,
+      "num": 133,
       "ytId": "3xvtMfqwtzM",
       "title": "Yaho! Asking the hottest group right now, RESCENE, why they're exploding in popularity! Just 30 m...",
       "duration": "33:48",
@@ -2900,7 +2915,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 133,
+      "num": 134,
       "ytId": "kFkx8-yZI2I",
       "title": "RESCENE | A Day in the Life of RESCENE with Kian84 | 07/26/21",
       "duration": "43:01",
@@ -2915,7 +2930,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 134,
+      "num": 135,
       "ytId": "rg2FE55-3dE",
       "title": "Not an idol today, but a teacher! (feat. Woni from RESCENE) | If you want to be a teacher, just g...",
       "duration": "15:41",
@@ -2930,7 +2945,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 135,
+      "num": 136,
       "ytId": "y8P_Oqfh2bc",
       "title": "Share Your Worries with Hearts2Hearts...🍋 \"Just Move On\" VS \"Help Me\" 😱｜EP.3 Idol Counseling Center",
       "duration": "15:04",
@@ -2945,7 +2960,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 136,
+      "num": 137,
       "ytId": "OHZsGOOJsoE",
       "title": "What if Jiwoo and Yuha Hearts2Hearts were directing the acting? | Silent Game Club EP02",
       "duration": "29:50",
@@ -2960,7 +2975,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 137,
+      "num": 138,
       "ytId": "N80r1fEKDFs",
       "title": "IDOL RADIO RESCENE 07/24/24 ENG SUB",
       "duration": "1:49:21",
@@ -2975,7 +2990,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 138,
+      "num": 139,
       "ytId": "7HDBAe9JcRw",
       "title": "RESCENE | Unreleased Footage An.Won.Jal.Bu | 07/26/17",
       "duration": "13:49",
@@ -2992,7 +3007,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 139,
+      "num": 140,
       "ytId": "6DPQcj8avWs",
       "title": "RESCENE Liv & May 🐑🐘 | Reading comments live after going viral | 06/26/26",
       "duration": "19:02",
@@ -3009,7 +3024,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 140,
+      "num": 141,
       "ytId": "w8jB_4tPo9g",
       "title": "Rescene May 🐘 Liv 🐑 | We’re also Rescene, you know... | 06/26/12",
       "duration": "28:16",
@@ -3026,7 +3041,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 141,
+      "num": 142,
       "ytId": "Tfd5qtaI_co",
       "title": "Who will be the Futsal King of Hearts2Hearts? The intense futsal battle, Team Minho vs. Team Chan...",
       "duration": "18:40",
@@ -3041,7 +3056,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 142,
+      "num": 143,
       "ytId": "UvnDILUWRZU",
       "title": "RESCENE Wonie 🐱 Zena 🐿️ ｜ Visiting Seongsu before it goes viral, Sature mode Part 2 ｜ 05/26/29",
       "duration": "22:37",
@@ -3058,7 +3073,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 143,
+      "num": 144,
       "ytId": "onLPcXHTUhA",
       "title": "RESCENE WonE, Minami, Jena | Q&A Celebrating 100k Subscribers | Did you feel harassed by Minami? ...",
       "duration": "21:22",
@@ -3075,7 +3090,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 144,
+      "num": 145,
       "ytId": "Z4VNcI8r3EE",
       "title": "RESCENE Woni 🐱 & Zena 🐿️ | Challenged to speak only in dialects all day! (feat. Minami 🦭) | 05/01...",
       "duration": "32:02",
@@ -3092,7 +3107,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 145,
+      "num": 146,
       "ytId": "FJe97ZEDOWs",
       "title": "มาเรียนรู้ชีวิต 1 วันของแยงกี้ ｜ คาแรคเตอร์ตอนพิเศษ (Side Story) ซับไทย",
       "duration": "18:19",
@@ -3109,7 +3124,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 146,
+      "num": 147,
       "ytId": "Bqz8v0eFuAE",
       "title": "IDOL RADIO Hearts2Hearts 08.07.26 [TH][EN]",
       "duration": "1:56:45",
@@ -3124,7 +3139,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 147,
+      "num": 148,
       "ytId": "mA-RAtyQ-8I",
       "title": "SM เจน 2 ปะทะ เจน 5 ท้าชน Hearts2Hearts แบบจัดเต็ม! (feat. ชเวกังชางมิน) ซับไทย",
       "duration": "20:03",
@@ -3139,7 +3154,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 148,
+      "num": 149,
       "ytId": "JXIXG0B0xKY",
       "title": "RESCENE Minami 🦭 & Woni 🐱 ｜ In Search of Minami's Roots: Finale ｜ 07/26/03",
       "duration": "28:12",
@@ -3156,7 +3171,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 149,
+      "num": 150,
       "ytId": "hlt9C-jLJx0",
       "title": "RESCENE Minami 🦭 & Woni 🐱 ｜ Finding Minami's Roots： The Final Chapter ｜ 07/03/26 ENG SUB",
       "duration": "27:46",
@@ -3173,7 +3188,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 150,
+      "num": 151,
       "ytId": "Cvw8PqEJtvM",
       "title": "RESCENE Woni🐱 & Minami🦭 | Do Japanese gyarus really say 'Yaho'? Tokyo Vlog | 06.26.19 ENG SUB",
       "duration": "20:15",
@@ -3190,7 +3205,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 151,
+      "num": 152,
       "ytId": "UkOu7L8WbXI",
       "title": "Learning Japanese with a Pro! Taught by a Former Gal, Thai Subtitles",
       "duration": "17:37",
@@ -3207,7 +3222,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 152,
+      "num": 153,
       "ytId": "8X_GbwZpHEQ",
       "title": "RESCENE | Woni 🐱 & Minami 🦭 Returning to their old school in Geoje, Part 2 | 06.05.26 ENG SUB",
       "duration": "24:35",
@@ -3224,7 +3239,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 153,
+      "num": 154,
       "ytId": "Bu5lxfFEAw4",
       "title": "วอนอี & มินามิ RESCENE ｜ พายัยสาวเกียรุบุกตะลุยบ้านเกิดที่กอเจ 🐱🦭 ｜ 22.05.26 ซับไทย",
       "duration": "27:12",
@@ -3241,7 +3256,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 154,
+      "num": 155,
       "ytId": "7xg9gwH9zTE",
       "title": "I Tried Learning Gyaru Mannerisms",
       "duration": "23:54",
@@ -3258,7 +3273,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 155,
+      "num": 156,
       "ytId": "u-GNyJW6Pak",
       "title": "ข่าวด่วน⚠️ พบมนุษย์เลมอน🍋 Hearts2Hearts ที่โรงเรียน ｜ Secret Transfer Student ซีซัน 2 Ep.06 ซับไทย",
       "duration": "31:59",
@@ -3273,7 +3288,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 156,
+      "num": 157,
       "ytId": "GjRUnMgARAM",
       "title": "Hearts2Hearts Plays Who's Who (ENG SUB)",
       "duration": "13:15",
@@ -3288,7 +3303,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 157,
+      "num": 158,
       "ytId": "Ro2xZ1Pvqns",
       "title": "ความสุขที่ได้เห็นคนรุ่น DMZ มาเจอกับรุ่น MZ! 🍓🌴😊｜ รายการบ้านคุณยายรายเดือน EP.03",
       "duration": "25:04",
@@ -3303,7 +3318,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 158,
+      "num": 159,
       "ytId": "HOgBCUCyUnY",
       "title": "Hearts2Hearts Trying and Rating Viral Snacks! ENG SUB",
       "duration": "27:35",
@@ -3318,7 +3333,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 159,
+      "num": 160,
       "ytId": "dDHsCthdHQY",
       "title": "Hearts2Hearts with Lemon Tang🍋, while A-Meng is a Jeyuk-tang (Spicy Stir-fried Pork) devotee🌶️",
       "duration": "25:19",
@@ -3333,7 +3348,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 160,
+      "num": 161,
       "ytId": "vcYjkBYSIkk",
       "title": "👑 NeverCry ..☆ The Hearts2Hearts Arm Wrestling Match (Wait, or is this an after-work party? 💨) | ...",
       "duration": "16:44",
@@ -3348,7 +3363,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 161,
+      "num": 162,
       "ytId": "laqqWDwfvg8",
       "title": "พออยู่กัน 4 คนปุ๊บก็กลายเป็นเด็กเลี้ยงแกะซะงั้น! I Hyell's club🍸 EP.77 ยูฮา สเตลล่า อีอัน ซับไทย",
       "duration": "33:51",
@@ -3363,7 +3378,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 162,
+      "num": 163,
       "ytId": "iYjVMSnzGE4",
       "title": "【Bread Unnie EP.10】มาเดาะวอลเลย์บอลแตงแตงแตงกับ Hearts2Hearts กันตอนนี้เลย! ชนะให้เรียบนะ ซับไทย",
       "duration": "42:51",
@@ -3378,7 +3393,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 163,
+      "num": 164,
       "ytId": "t_SHMP0ejMo",
       "title": "[IDOL DKDK CLUB] A girl group that’s suspiciously hilarious?🤭 Hearts2Hearts go all out until they...",
       "duration": "34:11",
@@ -3393,7 +3408,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 164,
+      "num": 165,
       "ytId": "El_tSZIlhzM",
       "title": "If I Had to Coach Jiwoo and Yuha's Hearts2Hearts During a Soccer Game ｜ Quiet Gamers Club EP.01",
       "duration": "27:28",
@@ -3408,7 +3423,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 165,
+      "num": 166,
       "ytId": "TRNvyVD73HU",
       "title": "Shuffle รับซัมเมอร์ไปกับ Hearts2Hearts | K-Pop ON! RECORD",
       "duration": "27:55",
@@ -3423,7 +3438,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 166,
+      "num": 167,
       "ytId": "gyjCvyiy5FQ",
       "title": "ศึกสายเลือด QWER?! โชดัน vs ชียอน ดวลเดือดลงนวมต่อยมวย 🥊 [ซองซูกิ EP.38]",
       "duration": "27:16",
@@ -3440,7 +3455,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 167,
+      "num": 168,
       "ytId": "BdT6QAW3c8k",
       "title": "Weverse live Jueun Hearts2Hearts 06/26/24 ENG SUB",
       "duration": "1:17:33",
@@ -3455,7 +3470,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 168,
+      "num": 169,
       "ytId": "pqUD3rdKWic",
       "title": "[FULL]พร้อมตกหลุมรักความเปรี้ยวอมหวานของ Hearts2Hearts หรือยัง?🍋 เที่ยงวันกับจูฮยอนยอง 240626 ซับไทย",
       "duration": "36:36",
@@ -3470,7 +3485,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 169,
+      "num": 170,
       "ytId": "ml21qK7sucU",
       "title": "Hearts2Hearts รู้จัก K-Pop ดีแค่ไหน?",
       "duration": "20:49",
@@ -3485,7 +3500,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 170,
+      "num": 171,
       "ytId": "4mFy5kRPi8c",
       "title": "ช่วงรับเชิญพิเศษ Volume Up x Hearts2Hearts | สวนลับของชเวฮโยจง | KBS 230626 ซับไทย",
       "duration": "39:47",
@@ -3500,7 +3515,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 171,
+      "num": 172,
       "ytId": "0XE_qSZcS_Q",
       "title": "[Hanhae's Kiss the Radio] Special Guest BABYMONSTER | KBS FM 06/26/19 [TH][EN]",
       "duration": "59:58",
@@ -3515,9 +3530,9 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 172,
+      "num": 173,
       "ytId": "cFrUSw_DruU",
-      "title": "💸 การ์ดโปเกมอนราคา 100 ล้านวอน?! โชดันหวังพลิกชีวิตด้วยการสุ่มเปิดซองการ์ดโปเกมอน [ซองซูกิ EP.37]",
+      "title": "💸 100 Million Won Pokémon Card?! Chodan Hopes to Change Her Life by Opening Pokémon Card Packs [S...",
       "duration": "29:54",
       "durationSec": 1794,
       "thumb": "https://img.youtube.com/vi/cFrUSw_DruU/hqdefault.jpg",
@@ -3528,11 +3543,11 @@ const sceneDatabase = {
         "PLHoETizL_iaeH1V3_BkJemczZzae-1Lgd"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย",
+      "subBadge": "SUBBED",
       "source": "youtube"
     },
     {
-      "num": 173,
+      "num": 174,
       "ytId": "NUHEQKUuSR8",
       "title": "เมื่อ Hearts2Hearts ลองกินอาหารอเมริกันครั้งแรกในชีวิต!  Buzz Bites",
       "duration": "12:03",
@@ -3547,7 +3562,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 174,
+      "num": 175,
       "ytId": "cw1NCRnbFEk",
       "title": "[FULL] Who wants some Sugar Honey Iced Tea!! Raise your hand!! BABYMONSTER Cultwo Show 170626 [TH...",
       "duration": "35:28",
@@ -3562,7 +3577,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 175,
+      "num": 176,
       "ytId": "a_XhbJfeI7M",
       "title": "[OH MY GIRL Hyojung's Volume Up] Choi Hyojung's Secret Garden with BABYMONSTER 150626 [TH][EN]",
       "duration": "54:26",
@@ -3577,7 +3592,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 176,
+      "num": 177,
       "ytId": "n_I3V6cKUB4",
       "title": "ยึดช่องเรียบร้อย!? 🎮 ปลุกพลังเกมเมอร์ย้อนวัยกับเกสต์หัดเล่น LoL🔥 ｜ feat.เกสต์คนสำคัญ Defconn(?)!!!",
       "duration": "33:22",
@@ -3592,7 +3607,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 177,
+      "num": 178,
       "ytId": "1K8MhlaSLoo",
       "title": "Clear up all your teenage worries and make them seem like trivial things! 🍋 Consultation booth wi...",
       "duration": "23:37",
@@ -3609,7 +3624,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 178,
+      "num": 179,
       "ytId": "x6b5CFjyzsI",
       "title": "06/09/26 BABYMONSTER on Mezamashi TV (ENG SUB)",
       "duration": "4:16",
@@ -3624,9 +3639,9 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 179,
+      "num": 180,
       "ytId": "-cGLrlr6thA",
-      "title": "🥊กิจกรรมคอมเมนต์🥊 ฉุกเฉิน! โชดัน MC ใหม่ ซัดวิสกี้ 17 แก้ว ดื่มโชว์ตั้งแต่ตอนแรก!😵‍💫 [ซองซูกิ EP.35]",
+      "title": "🥊Comment Event🥊 Emergency! New MC Chodan downs 17 glasses of whiskey, a drinking show from the ve...",
       "duration": "29:30",
       "durationSec": 1770,
       "thumb": "https://img.youtube.com/vi/-cGLrlr6thA/hqdefault.jpg",
@@ -3637,11 +3652,11 @@ const sceneDatabase = {
         "PLHoETizL_iaeH1V3_BkJemczZzae-1Lgd"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย",
+      "subBadge": "SUBBED",
       "source": "youtube"
     },
     {
-      "num": 180,
+      "num": 181,
       "ytId": "NFUp7YFJcLI",
       "title": "Weverse Live มาเจนต้า Birthday 02.06.26 ซับไทย",
       "duration": "41:42",
@@ -3656,9 +3671,9 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 181,
+      "num": 182,
       "ytId": "Z3F5PQfE9yA",
-      "title": "Weverse Live มาเจนต้า โชดัน QWER แกะกล่องสุ่ม 28.05.26 ซับไทย",
+      "title": "Weverse Live Magenta Chodan QWER Unboxing 28.05.26 (Thai Subtitles)",
       "duration": "31:14",
       "durationSec": 1874,
       "thumb": "https://img.youtube.com/vi/Z3F5PQfE9yA/hqdefault.jpg",
@@ -3671,9 +3686,9 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 182,
+      "num": 183,
       "ytId": "4aSkFHX0epM",
-      "title": "Weverse Live ชียอน QWER 28.05.26 ซับไทย",
+      "title": "Weverse Live Siyeon QWER 05.26.28 ENG SUB",
       "duration": "23:00",
       "durationSec": 1380,
       "thumb": "https://img.youtube.com/vi/4aSkFHX0epM/hqdefault.jpg",
@@ -3682,11 +3697,11 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "live",
-      "subBadge": "ซับไทย",
+      "subBadge": "ENG SUB",
       "source": "youtube"
     },
     {
-      "num": 183,
+      "num": 184,
       "ytId": "41OYmVQR2Lw",
       "title": "หนึ่งวันของ ฮินะ & ซียอน QWER ที่แวะมาเที่ยวงาน Kai'Sa's Beat Stop ✨ ｜ Wild Rift X Knotted",
       "duration": "7:56",
@@ -3701,7 +3716,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 184,
+      "num": 185,
       "ytId": "dKFe91lWvC4",
       "title": "260527 Yonaru no Brunch Hearts2Hearts ซับไทย",
       "duration": "2:50",
@@ -3716,7 +3731,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 185,
+      "num": 186,
       "ytId": "Szo4QZJmtZ8",
       "title": "Weverse QWER Live เกาะเชจู 25.05.26 ซับไทย",
       "duration": "4:33",
@@ -3731,7 +3746,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 186,
+      "num": 187,
       "ytId": "Jb01yknSTv8",
       "title": "BABYMONSTER arrives, creating a legendary and amazing vocal harmony! 🔥 ｜ [Dingo Attack] BABYMONSTER",
       "duration": "28:14",
@@ -3746,7 +3761,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 187,
+      "num": 188,
       "ytId": "9M5B0kvqfIw",
       "title": "ใครอยากดู NMIXX ลิลลี่, แฮวอน แบบซูมชัดยันรูขุมขนบ้าง? ｜ Bangbangchae EP.30 ซับไทย",
       "duration": "22:25",
@@ -3761,7 +3776,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 188,
+      "num": 189,
       "ytId": "SXTI0cwLF08",
       "title": "Weverse Live Siyeon QWER Birthday (Thai Subtitles) 16.05.26",
       "duration": "30:34",
@@ -3776,7 +3791,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 189,
+      "num": 190,
       "ytId": "8CBAgvQNBzI",
       "title": "Weverse Live QWER [ในที่สุดพวกเราก็ พิธีแลกเคสโทรศัพท์] 🐱🦊 12.05.26",
       "duration": "20:40",
@@ -3791,7 +3806,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 190,
+      "num": 191,
       "ytId": "1ost-zTrW7k",
       "title": "Went to film a video in Akihabara, but ended up at the police station... 🚔🚨",
       "duration": "32:04",
@@ -3806,9 +3821,9 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 191,
+      "num": 192,
       "ytId": "J2pSZSH6xkI",
-      "title": "Guessing what kids these days are thinking with NMIXX | ODG",
+      "title": "ทายความคิดเด็กสมัยนี้กับ NMIXX｜ODG",
       "duration": "17:40",
       "durationSec": 1060,
       "thumb": "https://img.youtube.com/vi/J2pSZSH6xkI/hqdefault.jpg",
@@ -3817,11 +3832,11 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
-      "num": 192,
+      "num": 193,
       "ytId": "MkpBFkxUp0U",
       "title": "[TH] ไม่ใช่พ่อแม่ Hearts2Hearts แต่ปลื้มปริ่มเหมือนได้ดอกคาร์เนชั่น ✿ | CHUKACHUKACHU EP.23",
       "duration": "34:15",
@@ -3836,7 +3851,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 193,
+      "num": 194,
       "ytId": "3pfnUnNLXxs",
       "title": "[TH] มิชชั่นเตรียมลุยเฟสติวัลของสาวๆ QWER 🥁🎸 I BB 삐삐 ｜ EP.14 QWER โชดัน & มาเจนต้า",
       "duration": "25:35",
@@ -3851,7 +3866,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 194,
+      "num": 195,
       "ytId": "0etQ8e6Tt80",
       "title": "ทริปเที่ยวของพัคแจจองกับ KiiiKiii Feat Joosiq",
       "duration": "29:15",
@@ -3866,7 +3881,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 195,
+      "num": 196,
       "ytId": "qe_jy2EHPww",
       "title": "เมื่อโชดัน QWER กลั้นน้ำตาไม่อยู่กลางม็อกบังชาบู 💦 เพราะคำสารภาพจากแฟนๆ | Kanjeol Han-ip EP.6",
       "duration": "29:36",
@@ -3881,7 +3896,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 196,
+      "num": 197,
       "ytId": "eMGxZRt63Lg",
       "title": "260430 ฉันเคยอยากจะทุบไข่ เทโปรเจ็กต์คุณกเยรัน ทิ้งค่ะ ｜ EP 13 QWER โชดัน ฮินะ ｜ ทรูแมนโชว์",
       "duration": "38:45",
@@ -3896,7 +3911,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 197,
+      "num": 198,
       "ytId": "nAhwPwrSLiE",
       "title": "[TH] QWER's amazing comeback! I'm completely captivated and can't find my way out! | Coin-operate...",
       "duration": "10:43",
@@ -3911,7 +3926,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 198,
+      "num": 199,
       "ytId": "O0Li569qXr8",
       "title": "พิธีแลกเปลี่ยนเคสมือถือ 🎉 (ชาเลนจ์ใส่ใช้งานจริง 1 สัปดาห์เต็ม!) 29.04.26 ซับไทย",
       "duration": "23:18",
@@ -3926,9 +3941,9 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 199,
+      "num": 200,
       "ytId": "S5UpMqo4afg",
-      "title": "260427 Weverse Live QWER Ceremony for us 🩵🎉 (Thai Subtitles)",
+      "title": "260427 Weverse Live QWER Ceremony for us🩵🎉ซับไทย",
       "duration": "5:55",
       "durationSec": 355,
       "thumb": "https://img.youtube.com/vi/S5UpMqo4afg/hqdefault.jpg",
@@ -3941,7 +3956,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 200,
+      "num": 201,
       "ytId": "3IfZxgaVo9I",
       "title": "[พับมุกจา] คุณพ่อคะ! สรุปแล้วใครคือลูกสาวตัวจริงกันแน่คะ? (feat. QWER) [TH] [EN]",
       "duration": "1:00:35",
@@ -3956,7 +3971,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 201,
+      "num": 202,
       "ytId": "AFLjZnIIv3k",
       "title": "QWER ฮินะ & ชียอน แวะมาพัฒนาโดนัทไคสะ 💙💚 ｜ Wild Rift X Knotted",
       "duration": "15:39",
@@ -3971,7 +3986,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 202,
+      "num": 203,
       "ytId": "2erA10_TFA4",
       "title": "ลองเปลี่ยนผ้าปูที่นอนที่พวก \"แชโบล\" เพิ่งนอนมา🛏️ | แม่บ้านโรงแรม | Workman | อีจุน · ฮินะ QWER",
       "duration": "19:28",
@@ -3986,7 +4001,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 203,
+      "num": 204,
       "ytId": "nRcbpi2DX2c",
       "title": "QWER Live โชดัน 13.04.26 ซับไทย",
       "duration": "13:52",
@@ -4001,7 +4016,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 204,
+      "num": 205,
       "ytId": "JIHRA0MfGk8",
       "title": "ปาร์ตี้วันเกิดห้ามขำของคาริน่า ซับไทย",
       "duration": "20:11",
@@ -4016,7 +4031,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 205,
+      "num": 206,
       "ytId": "EQ-dBtkTMko",
       "title": "KiiiKiii live 11.04.26 ซับไทย [Auto]",
       "duration": "58:13",
@@ -4031,7 +4046,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 206,
+      "num": 207,
       "ytId": "lX61DJx4b3s",
       "title": "When Gemini pressed Natty on the topic of Idol School, it left her speechless! | NATTY Verified |...",
       "duration": "12:49",
@@ -4046,7 +4061,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 207,
+      "num": 208,
       "ytId": "jSHpoDzcbCo",
       "title": "★Ailee เข้าสู่วงการแบนด์เต็มตัว★ งานนี้จะปังแค่ไหน    บอกเลยว่าคาดไม่ถึง! Cut QWER",
       "duration": "19:04",
@@ -4061,7 +4076,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 208,
+      "num": 209,
       "ytId": "UrdZSqBm1L0",
       "title": "Hearts2Hearts พูดคุยถึงทัวร์อเมริกาเหนือ, ชีวิตหลังเดบิวต์, เพลง “RUDE!” และก้าวต่อไปในปี 2026",
       "duration": "14:00",
@@ -4076,7 +4091,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 209,
+      "num": 210,
       "ytId": "39AOqRyNKXg",
       "title": "AtHeart บุกรายการ Cultwo Show! ชมความน่ารักของ อาริน, ซอฮยอน, นาฮยอน และบม | 29 มี.ค. 26 [FULL]",
       "duration": "27:11",
@@ -4091,9 +4106,9 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 210,
+      "num": 211,
       "ytId": "dUey2o_F84U",
-      "title": "IDOL RADIO Belle Nutty Baby Don't Cry CUT",
+      "title": "IDOL RADIO เบลล์ นัตตี้ Baby Dont Cry CUT",
       "duration": "10:14",
       "durationSec": 614,
       "thumb": "https://img.youtube.com/vi/dUey2o_F84U/hqdefault.jpg",
@@ -4102,11 +4117,11 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "SUBBED",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
-      "num": 211,
+      "num": 212,
       "ytId": "XycqgACRGfk",
       "title": "21.02.26 ABEMA QWER (Thai Translation)",
       "duration": "34:16",
@@ -4121,7 +4136,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 212,
+      "num": 213,
       "ytId": "PTELbc_8ii0",
       "title": "ยูฮา & เอนา! สรุปคู่นี้ยังไงกันแน่? 🤫 | WIDE K-POP NEWS ซับไทย",
       "duration": "7:45",
@@ -4136,7 +4151,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 213,
+      "num": 214,
       "ytId": "yF0tgg6OA68",
       "title": "ซับไทย KiiiKiii ไหนบอกว่าวันนี้ถ่ายทำกันสนุกไงล่ะ ｜ CHUKACHUKACHU EP 14 #KiiiKiii",
       "duration": "29:19",
@@ -4151,9 +4166,9 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 214,
+      "num": 215,
       "ytId": "VNmQywyCmFg",
-      "title": "Behind the scenes of the Hearts2Hearts X LILY BROWN photoshoot.",
+      "title": "เบื้องหลังการถ่ายทำ Hearts2Hearts X LILY BROWN",
       "duration": "19:48",
       "durationSec": 1188,
       "thumb": "https://img.youtube.com/vi/VNmQywyCmFg/hqdefault.jpg",
@@ -4162,11 +4177,11 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
-      "num": 215,
+      "num": 216,
       "ytId": "3b2lwcu4Emc",
       "title": "Recap วิดีโองาน 2026 Hearts2Hearts FANMEETING 'HEARTS 2 HOUSE'",
       "duration": "2:30",
@@ -4181,7 +4196,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 216,
+      "num": 217,
       "ytId": "dPfUfUE8zhY",
       "title": "Behind Hearts2Hearts 'RUDE!' ｜ STUDIO CHOOM ORIGINAL ซับไทย",
       "duration": "15:05",
@@ -4196,7 +4211,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 217,
+      "num": 218,
       "ytId": "VhUWKqii1YQ",
       "title": "เริ่มภารกิจ Balance Game! 💨 Hearts2Hearts จีอู & จูอึน จะเลิกงานได้สำเร็จหรือไม่?",
       "duration": "3:23",
@@ -4211,7 +4226,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 218,
+      "num": 219,
       "ytId": "Gq_6UMssl90",
       "title": "ไม่ใช่สัตว์ประหลาดซะหน่อย~ เป็นนูน่าแสนสวยต่างหาก💕 ｜Hearts2Hearts อีอัน & สเตลล่า Call Me Baby EP 22",
       "duration": "22:34",
@@ -4226,7 +4241,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 219,
+      "num": 220,
       "ytId": "qSLM8P0HR30",
       "title": "[ซับไทย] Hearts2Hearts ขอโทษเป็นทางการกลางมาเฟียแดนซ์?!🤣 | MAFIA DANCE | dingo Music",
       "duration": "19:02",
@@ -4241,7 +4256,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 220,
+      "num": 221,
       "ytId": "s0F_O3EdXK8",
       "title": "Hearts2Hearts บุกรายการ Spoiler King! ｜ Spoiler King โกยองแบ ｜ MBC 260301\" [FULL] [ซับไทย][EN]",
       "duration": "1:03:31",
@@ -4256,9 +4271,9 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 221,
+      "num": 222,
       "ytId": "xL4j9YszBAQ",
-      "title": "💗 สเตลล่า & ยูฮา 💕 ｜ Hearts2Hearts ｜ Produce 1077 ｜ Bae Sung-jae's Ten ｜ 26/02/2026 ซับไทย [EN]#h2h",
+      "title": "💗 Stella & Yuha 💕 ｜ Hearts2Hearts ｜ Produce 1077 ｜ Bae Sung-jae's Ten ｜ 02/26/2026 ENG SUB #h2h",
       "duration": "1:13:28",
       "durationSec": 4408,
       "thumb": "https://img.youtube.com/vi/xL4j9YszBAQ/hqdefault.jpg",
@@ -4267,11 +4282,11 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "TH / EN SUB",
+      "subBadge": "ENG SUB",
       "source": "youtube"
     },
     {
-      "num": 222,
+      "num": 223,
       "ytId": "zufGPrgKkIs",
       "title": "วงที่เต้นพร้อมกันเป๊ะเหมือนดาบ? แค่วันเดียวก็พอแล้ว 🤭 | Ep.43 Hearts2Hearts | คุณครูบาดา ณ ห้องซ้อม\"",
       "duration": "19:00",
@@ -4286,7 +4301,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 223,
+      "num": 224,
       "ytId": "N6OpLfqVit0",
       "title": "เมื่อมันฝรั่งมาเจอกับลิงน้อย＂ㅣEP.12 Hearts2Heartsㅣวิเคราะห์เจาะลึกมุมห้องกับ Mimiminu ซับไทย",
       "duration": "35:14",
@@ -4301,7 +4316,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 224,
+      "num": 225,
       "ytId": "Vjd8Du0sco4",
       "title": "คาบแรกก็งานเข้า! ฝนข้อสอบเกาหลีผิดช่อง\" บุกโรงเรียนกวดวิชาเป็น TA กับ QWER CHODAN & MAGENTA ซับไทย",
       "duration": "25:54",
@@ -4316,7 +4331,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 225,
+      "num": 226,
       "ytId": "fTfuXT-H5W8",
       "title": "น้องเล็ก SM พกความรักมาเต็ม✨ โฟกัสไปที่ Hearts2Hearts—♥ จีอู & ยูฮา & สเตลล่า & จูอึน | สตูดิโอซึลกิ",
       "duration": "22:01",
@@ -4331,7 +4346,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 226,
+      "num": 227,
       "ytId": "-TbIxstV57o",
       "title": "[FULL] ‼️404 Not Found‼️ มโนแค่ไหนก็ยอมถ้ามี KiiiKiii 💓 |(คียา,อีซอล,จียู,ฮาอึม,ซูอี) ซับไทย",
       "duration": "41:16",
@@ -4346,7 +4361,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 227,
+      "num": 228,
       "ytId": "kVOtaqGzLK0",
       "title": "CASE 1_Final ：และแล้วก็ไม่เหลือใคร ｜ KiiiKiii MYSTERY CLUB ｜ จียู อีซอล ซูอี ฮาอึม คิยา",
       "duration": "47:44",
@@ -4363,7 +4378,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 228,
+      "num": 229,
       "ytId": "x3zul4_NzOM",
       "title": "CASE 1 : คดีฆาตกรรมประธานค่าย KOKOA Entertainment [KiiiKiii MYSTERY CLUB] จียู อีซอล ซูอี ฮาอึม คิยา",
       "duration": "48:44",
@@ -4380,7 +4395,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 229,
+      "num": 230,
       "ytId": "NfXFS10TQLI",
       "title": "Veiled Cup ผู้ชนะรายการ Veiled Cup Congratulation Philippines[ฟิลิปปินส์] ซับไทย #veilecup",
       "duration": "27:50",
@@ -4395,7 +4410,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 230,
+      "num": 231,
       "ytId": "At1ba91VUU8",
       "title": "Veiled Cup เปิดเผยผู้เข้าแข่งขัน TOP 5 ซับไทย #veilecup",
       "duration": "13:05",
@@ -4410,7 +4425,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 231,
+      "num": 232,
       "ytId": "zY8kQmCVCzo",
       "title": "Veiled Cup Bangkok Soul Man รอบ Grand Final ซับไทย #veilecup",
       "duration": "13:54",
@@ -4425,7 +4440,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 232,
+      "num": 233,
       "ytId": "uD7IBSW2PkU",
       "title": "Veiled Cup 'นักสู้แห่งอ่าวพังงา (Phang Nga Bay Fighter) รอบ Grand Final ซับไทย #veilecup",
       "duration": "11:39",
@@ -4440,7 +4455,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 233,
+      "num": 234,
       "ytId": "-5BojnhGyWU",
       "title": "เสพติดรสชาติแห่งอำนาจ แต่ก็เคารพรสนิยม ｜ Jaefriends Ep 99 ｜ QWER คิมแจจุง",
       "duration": "35:04",
@@ -4455,7 +4470,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 234,
+      "num": 235,
       "ytId": "72iyADgHlsY",
       "title": "KiiiKiii บอกว่าฉันหมดกึ๋นแล้ว วันนี้คิมฮโยยอนสู้ชีวิต/ตัวปลอมคิมฮโยยอน EP.09 ตอนห้องรับรอง KiiiKiii",
       "duration": "17:46",
@@ -4470,7 +4485,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 235,
+      "num": 236,
       "ytId": "BmyF5Ftf_Zk",
       "title": "VEILED CUP EP3 อันดับ 1 ฟิลิปปินส์ Vs อันดับ 3 เกาหลีใต้ Vs อันดับ 3 ลาว ซับไทย",
       "duration": "18:26",
@@ -4485,7 +4500,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 236,
+      "num": 237,
       "ytId": "ikdcy4cJhxg",
       "title": "VEILED CUP EP3 อันดับ 2 ฟิลิปปินส์ Vs อันดับ 2 อินโดนีเซีย Vs อันดับ 2 ไทย ซับไทย",
       "duration": "36:17",
@@ -4500,7 +4515,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 237,
+      "num": 238,
       "ytId": "ELs8GJy1njA",
       "title": "VEILED CUP EP3 อันดับ 3 ของไทย เข้ารอบ Final ซับไทย",
       "duration": "7:47",
@@ -4515,7 +4530,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 238,
+      "num": 239,
       "ytId": "SX2fDJmfKJk",
       "title": "Veiled Cup EP2 ช่วงที่ 2 อันดับ 3 ไทย Vs อันดับ 1 อินโดนีเซีย Vs อันดับ 2 เกาหลี ซับไทย",
       "duration": "21:20",
@@ -4530,7 +4545,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 239,
+      "num": 240,
       "ytId": "pZsF48xdUzU",
       "title": "Veiled Cup EP2 ช่วงที่ 1 [อันดับ 1 จีน Vs อันดับ 2 ลาว Vs อันดับ 1 ไทย ซับไทย]",
       "duration": "27:50",
@@ -4545,7 +4560,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 240,
+      "num": 241,
       "ytId": "XZaKvZf9LPc",
       "title": "Veiled Cup EP2 MVP คัด 15 - 5 ซับไทย",
       "duration": "5:00",
@@ -4560,7 +4575,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 241,
+      "num": 242,
       "ytId": "mltGKva4fpU",
       "title": "Veiled Cup EP2 สรุป 15 คน ที่ผ่าน Semi Final ซับไทย",
       "duration": "9:39",
@@ -4575,7 +4590,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 242,
+      "num": 243,
       "ytId": "mY1sD56jxaY",
       "title": "Veiled Cup EP2 อันดับ 2 ลาว ซับไทย",
       "duration": "1:44",
@@ -4590,7 +4605,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 243,
+      "num": 244,
       "ytId": "w3rtChGP1Xo",
       "title": "Veiled Cup Bangkok Soul Man ซับไทย",
       "duration": "7:30",
@@ -4605,7 +4620,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 244,
+      "num": 245,
       "ytId": "fwSdVY1TI8c",
       "title": "Veiled Cup Phang Nga Bay Fighter [นักสู้แห่งอ่าวพังงา] ซับไทย",
       "duration": "8:48",
@@ -4620,7 +4635,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 245,
+      "num": 246,
       "ytId": "b0v9N0AVQIg",
       "title": "จะเกิดอะไรขึ้น?! เมื่อไอดอล K-Pop บุกเซอร์ไพรส์กลางวง Random Play Dance [dingo attack] KISS OF LIFE",
       "duration": "17:09",
@@ -4635,7 +4650,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 246,
+      "num": 247,
       "ytId": "Zr7tNmdDQXc",
       "title": "Weverse Hearts2Hearts Christmas Day 12/25/25 ENG SUB",
       "duration": "27:25",
@@ -4650,7 +4665,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 247,
+      "num": 248,
       "ytId": "hb0ravccGnU",
       "title": "Weverse QWER Christmas Day มาเจนต้า 25.12.25 ซับไทย",
       "duration": "54:58",
@@ -4665,7 +4680,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 248,
+      "num": 249,
       "ytId": "zMQXzG62OPQ",
       "title": "Weverse QWER Christmas Day ฮินะ โชดัน 25.12.25 ซับไทย",
       "duration": "35:55",
@@ -4680,7 +4695,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 249,
+      "num": 250,
       "ytId": "O0ZZMZWZlfA",
       "title": "Weverse QWER Christmas Day ชียอน ซับไทย 25.12.25",
       "duration": "41:22",
@@ -4695,7 +4710,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 250,
+      "num": 251,
       "ytId": "ikiG_GumaVc",
       "title": "Weverse QWER 🎄Happy Christmas Part 2 [แปลไทย AUTO]",
       "duration": "1:04:37",
@@ -4710,7 +4725,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 251,
+      "num": 252,
       "ytId": "8XT36umtKg0",
       "title": "Weverse QWER🎄Happy Christmas Part 1 [แปลไทย AUTO]",
       "duration": "1:33:48",
@@ -4725,7 +4740,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 252,
+      "num": 253,
       "ytId": "Ij5i2LzlbyQ",
       "title": "FIFTY FIFTY มีน้องใหม่? 😈 พิธีรับน้องสุดแสบของ 'Seowon' ม.2 🔥 | Hexagon Idol EP.01",
       "duration": "26:13",
@@ -4740,7 +4755,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 253,
+      "num": 254,
       "ytId": "Bh6YjQLM5VQ",
       "title": "251206 WEVERSE LIVE QWER AAA2025💕 รางวัล Best Band!! ซับไทย",
       "duration": "4:34",
@@ -4755,7 +4770,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 254,
+      "num": 255,
       "ytId": "r3dGEvlbFLw",
       "title": "บริษัทนี้เสร็จฉัน! วันแรกท่านประธานอายุน้อย วุ่นแค่ไหน CEO Never Die! - tripleS คิมแชยอน",
       "duration": "9:05",
@@ -4770,7 +4785,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 255,
+      "num": 256,
       "ytId": "Zd8MWGP1ZVM",
       "title": "tripleS โดนยุงทั่วโลกสิงร่าง (?) ท้าดวล One Breath Challenge 6 ภาษา 🗣ㅣOne Breath Challenge ซับไทย",
       "duration": "12:54",
@@ -4785,7 +4800,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 256,
+      "num": 257,
       "ytId": "JYPAo6-Fvpo",
       "title": "คริสต์มาสปีนี้ tripleS จะรับผิดชอบเองค่ะ 🎅🏻✨｜Spotify Line by Line ซับไทย",
       "duration": "10:28",
@@ -4800,7 +4815,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 257,
+      "num": 258,
       "ytId": "IMwnT_I_4Ro",
       "title": "2025 MAMA AWARD FAN CHOICE BABYMONSTER ซับไทย",
       "duration": "1:48",
@@ -4815,7 +4830,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 258,
+      "num": 259,
       "ytId": "F17PS8KLI6Q",
       "title": "[FULL] “ปลอบใจตัวเอง…จากฉันถึงฉัน” 🥹 KiiiKiii – รายการวิทยุแบบมองเห็น Cultwo Show 16.11.25",
       "duration": "25:09",
@@ -4830,7 +4845,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 259,
+      "num": 260,
       "ytId": "p2ikEcRGxwE",
       "title": "[Full] ตอนพิเศษครบรอบ 4 ปี กับ Kya KiiiKiii ｜ ราชาแห่งสปอยล์ โกยองเบ ｜ MBC 09.11.25 ซับไทย",
       "duration": "1:05:32",
@@ -4845,7 +4860,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 260,
+      "num": 261,
       "ytId": "APT-l94GPVo",
       "title": "ทริปเพื่อนแค่ข้ออ้าง💥 จริง ๆ มากรุงเทพฯ เพราะอยากกิน 🤤 ｜ ทริปกรุงเทพฯ Chuu X Arin 🇹🇭 EP2",
       "duration": "18:43",
@@ -4860,7 +4875,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 261,
+      "num": 262,
       "ytId": "rTZP4Ph9ces",
       "title": "🇹🇭 ออกเดินทางสู่ “กรุงเทพ ประเทศไทย” แล้ว! ☀️ 99z ร้อนแรงสุด ๆ 🔥 Chuu X Arin EP1 ✈️",
       "duration": "28:57",
@@ -4875,7 +4890,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 262,
+      "num": 263,
       "ytId": "rTFFsfvgJPA",
       "title": "Weverse Live QWER วันเกิดโชดัน 01.11.25 ซับไทย",
       "duration": "8:21",
@@ -4890,7 +4905,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 263,
+      "num": 264,
       "ytId": "a6l4XixhmyY",
       "title": "Weverse live QWER ชียอน ที่นั่นกี่โมงแล้ว 31.10.25 ซับไทย",
       "duration": "8:25",
@@ -4905,7 +4920,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 264,
+      "num": 265,
       "ytId": "PXooL_Dmdkc",
       "title": "ไอดอลสาวใหม่โดนจับดื้อซะแล้ว 💩 | Workdol x Hearts2Hearts (อีอัน, จีอู, เอนา)",
       "duration": "16:10",
@@ -4920,7 +4935,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 265,
+      "num": 266,
       "ytId": "eb08jZdM5Rc",
       "title": "ครูมูนบุก SM! สั่งสอนวงไอดอลหน้าใหม่ EP.1 Hearts2Hearts!",
       "duration": "17:32",
@@ -4935,7 +4950,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 266,
+      "num": 267,
       "ytId": "WJKHyzhzSPY",
       "title": "✨Hearts2Hearts✨ Focus สาว ๆ กับการปรากฏตัวครั้งแรกเช้าวันนี้ MBC 23.10.25",
       "duration": "1:01:11",
@@ -4950,7 +4965,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 267,
+      "num": 268,
       "ytId": "jp_624ej0LU",
       "title": "FOCUS ทันทีที่เห็น! โปรไฟล์ของ Hearts2Hearts 💖  Spotify Super Rookie",
       "duration": "14:26",
@@ -4965,7 +4980,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 268,
+      "num": 269,
       "ytId": "2nS8-FzMenM",
       "title": "25.10.21 Wendy YoungStreet Radio Hearts2Hearts ตัวเต็มซับไทย",
       "duration": "1:03:52",
@@ -4980,7 +4995,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 269,
+      "num": 270,
       "ytId": "Dh3AD5PRaVE",
       "title": "QWER มาเจนต้า LIVE ครบรอบ 2 ปี 18.10.25 ซับไทย",
       "duration": "31:37",
@@ -4995,7 +5010,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 270,
+      "num": 271,
       "ytId": "OYSAl19QRQY",
       "title": "QWER โชดัน LIVE ครบรอบ 2 ปี 18.10.25 ซับไทย",
       "duration": "17:17",
@@ -5010,7 +5025,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 271,
+      "num": 272,
       "ytId": "Cst0W-B9YEQ",
       "title": "QWER ฮินะ LIVE ครบรอบ 2 ปี 18.10.25 ซับไทย",
       "duration": "23:23",
@@ -5025,7 +5040,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 272,
+      "num": 273,
       "ytId": "g521LYNsbIg",
       "title": "QWER ชียอน LIVE ครบรอบ 2 ปี 18.10.25 ซับไทย",
       "duration": "22:41",
@@ -5040,7 +5055,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 273,
+      "num": 274,
       "ytId": "YKIvTKcrHSU",
       "title": "QWER ครบรอบ 2 ปี 18.10.25 ซับไทย",
       "duration": "38:46",
@@ -5055,7 +5070,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 274,
+      "num": 275,
       "ytId": "HntSwtbOl5o",
       "title": "💙 “#McParty สีฟ้า กับ XG 🚀 ซับไทย",
       "duration": "44:32",
@@ -5070,7 +5085,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 275,
+      "num": 276,
       "ytId": "FpbEUSBT48k",
       "title": "Hearts2Hearts ฉันอยากรู้นะ!｜งานง่ายๆ Hearts2Hearts ออมแทกู·คาร์เมน·เยอน",
       "duration": "25:52",
@@ -5085,7 +5100,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 276,
+      "num": 277,
       "ytId": "x8NUXYUybDc",
       "title": "สาว ๆ Hearts2Hearts ใช้ชีวิตกันอย่างอบอุ่น 😆 ห้องแชทลับสุดฮา ｜ SECRET CHAT ｜ Dingo Music 💖",
       "duration": "19:20",
@@ -5100,7 +5115,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 277,
+      "num": 278,
       "ytId": "AAOR286Tx6g",
       "title": "Weverse Live Hearts2Hearts 30.09.25 ซับไทย",
       "duration": "38:37",
@@ -5115,7 +5130,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 278,
+      "num": 279,
       "ytId": "3P5nriwOQY4",
       "title": "Weverse Live Hearts2Hearts 25.09.25 ซับไทย",
       "duration": "40:37",
@@ -5130,7 +5145,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 279,
+      "num": 280,
       "ytId": "20n6lbO8jt8",
       "title": "Problem Child in House CUT eugene S.E.S",
       "duration": "4:03",
@@ -5145,7 +5160,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 280,
+      "num": 281,
       "ytId": "llfyEAucapA",
       "title": "มากินข้าวกัน นี่ฮงดัน! ชั้นคือโกโดรี! โว้ย! ร่วมกับ โชดัน 22.07.23",
       "duration": "16:25",
@@ -5160,7 +5175,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 281,
+      "num": 282,
       "ytId": "c2TIsoMANbM",
       "title": "Weverse Live Hearts2Hearts / S2U อยากมาร่วมด้วยไหม..?   06.09.25",
       "duration": "9:31",
@@ -5175,7 +5190,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 282,
+      "num": 283,
       "ytId": "fFS-uL-t0DU",
       "title": "ทริปกินจุ เพื่อแก้ผลข้างเคียงจากการไดเอต 3 ปี /มาเจนต้า 25.08.25",
       "duration": "10:03",
@@ -5190,7 +5205,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 283,
+      "num": 284,
       "ytId": "NscvDn8HXiY",
       "title": "QWER live หลังจบงาน K World Dream Awards 2025 21.08.25",
       "duration": "8:08",
@@ -5205,7 +5220,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 284,
+      "num": 285,
       "ytId": "NEZ_lBWlXC8",
       "title": "มาเจนต้า QWER ขว้างเปิดเกม  Moonlight Series",
       "duration": "9:16",
@@ -5220,7 +5235,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 285,
+      "num": 286,
       "ytId": "r9vwmYZFaCo",
       "title": "คลาสเรียนกลอง กับโชดัน ซับไทย",
       "duration": "20:46",
@@ -5235,9 +5250,9 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 286,
+      "num": 287,
       "ytId": "gUYTontRB0s",
-      "title": "Tsuki Billlie showcases her stunning beauty in WaterBomb! ｜ Worldol Special",
+      "title": "สึกิ Billlie โชว์ความสวยสะท้าน WaterBomb! ｜ Worldol Special",
       "duration": "15:01",
       "durationSec": 901,
       "thumb": "https://img.youtube.com/vi/gUYTontRB0s/hqdefault.jpg",
@@ -5245,12 +5260,12 @@ const sceneDatabase = {
         "billlie"
       ],
       "playlists": [],
-      "contentType": "stage",
-      "subBadge": "SUBBED",
+      "contentType": "variety",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
-      "num": 287,
+      "num": 288,
       "ytId": "CExGbxye8X8",
       "title": "ถึงกับจะขุดคุ้ยอดีตทั้งหมดเลยเหรอ ใช่ ขุดเลย ｜ QWER Forensic",
       "duration": "22:07",
@@ -5265,7 +5280,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 288,
+      "num": 289,
       "ytId": "qA38c6DR-kA",
       "title": "ถ้า KISS OF LIFE มาที่ห้องเรียนแล้วแสดงสดล่ะ｜ช่วงดนตรีหลังเลิกเรียน",
       "duration": "15:49",
@@ -5280,7 +5295,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 289,
+      "num": 290,
       "ytId": "6zUltt8k_-s",
       "title": "Weverse Live QWER หลังจบงานเทศกาล PENTAPORT 01.08.25",
       "duration": "8:26",
@@ -5295,7 +5310,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 290,
+      "num": 291,
       "ytId": "tz-sQCrnwxs",
       "title": "Weverse QWER live Bikini City 29.07.25 ซับไทย",
       "duration": "13:08",
@@ -5310,7 +5325,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 291,
+      "num": 292,
       "ytId": "Kpx9fxMadFg",
       "title": "การฝึกหน่วยรบพิเศษ QWER ที่ได้รับการฝึกโดย UDT และเจ้าหน้าที่ตะวันออกกลาง",
       "duration": "28:42",
@@ -5325,7 +5340,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 292,
+      "num": 293,
       "ytId": "lnElPTpQLd4",
       "title": "QWER หวังจะ “ดวลเต้น” กับแฟน ๆ ชาวญี่ปุ่น! เผยคลิปเบื้องหลังการสัมภาษณ์ในงาน Kstyle PARTY",
       "duration": "3:18",
@@ -5340,7 +5355,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 293,
+      "num": 294,
       "ytId": "_hO5bEPa8v4",
       "title": "ปาร์ตี้ชุดนอนครั้งแรกของออมจองฮวากับ QWER จะเป็นยังไงนะ  Vlog Girls’ Night 🎀🎉 [EN]",
       "duration": "23:17",
@@ -5355,7 +5370,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 294,
+      "num": 295,
       "ytId": "HJTt8iIvFmU",
       "title": "My Essentials ในกระเป๋าของสมาชิก QWER ที่เผยให้เห็นทั้งนิสัยและรสนิยมแบบเต็ม ๆ น่ารักจนแทบกลั้นน้ำตา",
       "duration": "10:20",
@@ -5370,7 +5385,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 295,
+      "num": 296,
       "ytId": "liJkDi9FymY",
       "title": "ได้เจอกับวง QWER ที่อายุเท่ากัน… ไม่รู้ทำไมถึงรู้สึกซึ้งขึ้นมาเฉยเลย",
       "duration": "13:24",
@@ -5385,7 +5400,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 296,
+      "num": 297,
       "ytId": "cSHdYcXIkuc",
       "title": "มากินข้าวกัน มื้อหนึ่งกับ QWER ที่เอ่ยขอบคุณ กนแดฮี บนเวทีประกาศรางวัล พร้อมกับอาหารเลี้ยงฉลอง",
       "duration": "48:18",
@@ -5400,7 +5415,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 297,
+      "num": 298,
       "ytId": "fs59IwUUokc",
       "title": "รายการ ความเงียบของหิน — Hearts2Hearts (하츠투하츠) เพลง ‘STYLE’)",
       "duration": "19:44",
@@ -5415,7 +5430,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 298,
+      "num": 299,
       "ytId": "qriQjtLZpuI",
       "title": "น้องใหม่จากบริษัทใหญ่ น่ารักจริงๆ 💖ㅣSM PART-TIMEㅣWorkdolㅣWayV, Hearts2Hearts, Billie Tsuki",
       "duration": "18:25",
@@ -5431,7 +5446,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 299,
+      "num": 300,
       "ytId": "uINdoAUCV7c",
       "title": "BapSaHyo 2 ตอนที่ 3 แขกรับเชิญ Hearts2Hearts",
       "duration": "25:56",
@@ -5446,7 +5461,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 300,
+      "num": 301,
       "ytId": "0VN344L9iwI",
       "title": "หากพวกเขากำลังฟังเพลงในห้องโถง แล้ว Hearts2Hearts ปรากฏตัวขึ้นอย่างเซอร์ไพรส์! l Dingo Attack",
       "duration": "16:25",
@@ -5461,7 +5476,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 301,
+      "num": 302,
       "ytId": "JPrWqTfZfos",
       "title": "[ซับไทย] ทำไมมันถึงอยู่ในกระเป๋า...？🤔 สำรวจ LIFE STYLE ของ Hearts2Hearts 👀 ｜ งานประชุมแบบชิล ๆ",
       "duration": "21:22",
@@ -5476,7 +5491,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 302,
+      "num": 303,
       "ytId": "wAODUiUMXrk",
       "title": "พวกเรากลับมาแล้ว! #QWER #ฮินะ #ซียอน EP 52 C.K.C",
       "duration": "9:26",
@@ -5491,7 +5506,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 303,
+      "num": 304,
       "ytId": "167oVc2ZcY0",
       "title": "สถานที่ที่ QWER อยากไปกับแฟนๆ คือที่ไหนกันนะ Fill The Blank ตอนของ QWER",
       "duration": "12:43",
@@ -5506,7 +5521,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 304,
+      "num": 305,
       "ytId": "ESaXmCfRsvo",
       "title": "มาเจนต้า live รักไปแล้ว 💕19.06.25",
       "duration": "28:30",
@@ -5521,7 +5536,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 305,
+      "num": 306,
       "ytId": "rkKpwjwqpvk",
       "title": "รายการเพลงครั้งแรก ❤️ 19.06.25",
       "duration": "16:05",
@@ -5536,7 +5551,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 306,
+      "num": 307,
       "ytId": "O4DE8J3HnyE",
       "title": "ชียอน live 19.06.25",
       "duration": "27:25",
@@ -5551,7 +5566,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 307,
+      "num": 308,
       "ytId": "liciOx5NHbM",
       "title": "QWER ขึ้นเวที M Countdown ครั้งแรกแล้วนะ! 😻 19.06.25",
       "duration": "6:02",
@@ -5566,7 +5581,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 308,
+      "num": 309,
       "ytId": "Z-wgLpdvZfA",
       "title": "Hearts2Hearts แชร์ของไอเทมสุดรักสุดหวง เตรียมคัมแบ็กพร้อมพลังล้นๆ โดย W Korea",
       "duration": "10:42",
@@ -5581,7 +5596,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 309,
+      "num": 310,
       "ytId": "AemKXzHTi_4",
       "title": "มาเจนต้าที่สอน 4 บรรทัดให้เด็ก 4 ขวบ",
       "duration": "17:27",
@@ -5596,7 +5611,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 310,
+      "num": 311,
       "ytId": "vLKoOZe-vg0",
       "title": "Badge War ss2 EP4 ซับไทย",
       "duration": "49:06",
@@ -5613,7 +5628,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 311,
+      "num": 312,
       "ytId": "i92NhPKM3Dw",
       "title": "Badge War ss2 EP3 ซับไทย",
       "duration": "32:47",
@@ -5630,7 +5645,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 312,
+      "num": 313,
       "ytId": "ITbRsYlPc6Q",
       "title": "Badge War ss2 EP2 ซับไทย",
       "duration": "35:29",
@@ -5647,7 +5662,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 313,
+      "num": 314,
       "ytId": "YExPMimZKlU",
       "title": "Badge War ss2 EP1 ซับไทย",
       "duration": "39:49",
@@ -5664,7 +5679,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 314,
+      "num": 315,
       "ytId": "HAXYYEAUMX4",
       "title": "Holding Back Tears ของ QWER พวกเขานี่ชอบอนิเมะกันมากเลยนะ 🤣",
       "duration": "28:12",
@@ -5679,7 +5694,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 315,
+      "num": 316,
       "ytId": "MrkR5ipF1c0",
       "title": "Badge War ss1 EP4 ซับไทย",
       "duration": "39:54",
@@ -5696,7 +5711,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 316,
+      "num": 317,
       "ytId": "QXfbb0wsTjk",
       "title": "Badge War ss1 EP3 ซับไทย",
       "duration": "33:08",
@@ -5713,7 +5728,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 317,
+      "num": 318,
       "ytId": "PFmGSmw2zaM",
       "title": "QWER Live Debut New Mini Album 09.06.25 ซับไทย",
       "duration": "10:16",
@@ -5728,7 +5743,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 318,
+      "num": 319,
       "ytId": "foaHcHk07-M",
       "title": "[Full] QWER Show Case (ฉันอยู่ข้างเธอ แม้ทั้งโลกจะไม่เป็นใจ) – ช่วงแนะนำตัว + แนะนำอัลบั้ม ซับไทย",
       "duration": "14:20",
@@ -5743,7 +5758,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 319,
+      "num": 320,
       "ytId": "xO5-GoNiZcY",
       "title": "Badge War ss1 EP2 ซับไทย",
       "duration": "33:44",
@@ -5760,7 +5775,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 320,
+      "num": 321,
       "ytId": "mOnGS-Ni3XI",
       "title": "Badge War ss1 EP1 ซับไทย",
       "duration": "30:18",
@@ -5777,7 +5792,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 321,
+      "num": 322,
       "ytId": "hVFcTuCFQk0",
       "title": "ปาร์ตี้ฉลองวันเกิด มาเจนต้า 02.06.25",
       "duration": "10:29",
@@ -5792,7 +5807,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 322,
+      "num": 323,
       "ytId": "JY_XqoCKVH4",
       "title": "บทสัมภาษณ์พิเศษ! ตอนพิเศษ BABYMONSTER ตอนที่ 1",
       "duration": "6:18",
@@ -5807,7 +5822,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 323,
+      "num": 324,
       "ytId": "Ng8J-BWk_Tw",
       "title": "เขย่าโลก! ศิลปินญี่ปุ่น XG พลิกความเชื่อเดิมของวงการเพลง [รายการพิเศษ Hodo Station] 28.05.25",
       "duration": "14:52",
@@ -5822,7 +5837,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 324,
+      "num": 325,
       "ytId": "FR5b18-rkMs",
       "title": "เธอคือแฟนสาวยากูซ่าที่สารภาพเรื่องรอยสักกับคุณพ่อ?",
       "duration": "22:56",
@@ -5837,7 +5852,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 325,
+      "num": 326,
       "ytId": "87KpTp4NhWo",
       "title": "Kcon~~",
       "duration": "10:20",
@@ -5852,7 +5867,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 326,
+      "num": 327,
       "ytId": "XpsoVNPMouY",
       "title": "QWER หลังจบงานโอซาก้า 05 02 25",
       "duration": "13:45",
@@ -5867,7 +5882,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 327,
+      "num": 328,
       "ytId": "wYcmP26YnvQ",
       "title": "การที่รอดมาได้ คือหลักฐานของความแข็งแกร่ง✊🏻 QWER ฮินะ & ซียอน กับภารกิจยึดครองอินชอน",
       "duration": "22:41",
@@ -5882,7 +5897,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 328,
+      "num": 329,
       "ytId": "ziJAddExuk4",
       "title": "QWER busking in OSAKA ช่วงพ่อแม่ชียอน และ ร้องสปอยล์เพลงใหม่ ไตเติ้ลอัลบั้มหน้า",
       "duration": "4:14",
@@ -5897,7 +5912,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 329,
+      "num": 330,
       "ytId": "EbRK2OAdbLg",
       "title": "QWER busking in OSAKA ช่วงพูดคุยกับเพื่อนชียอน อดีตสมาชิก NMB48",
       "duration": "10:20",
@@ -5912,7 +5927,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 330,
+      "num": 331,
       "ytId": "Dc9Bfyd54IM",
       "title": "กำลังซ้อมด้วยหัวใจเต้นตึกตัก💕P2 02.04.25",
       "duration": "36:20",
@@ -5927,7 +5942,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 331,
+      "num": 332,
       "ytId": "s-G5v9Zsw4Y",
       "title": "QWER Live หลังจบงานคอนเสิร์ต โตเกียว 06 04 25",
       "duration": "8:30",
@@ -5942,7 +5957,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 332,
+      "num": 333,
       "ytId": "BJu6ZSj7WYQ",
       "title": "เรียนรู้การเล่นเกมสงครามจากการถูกดุจากพี่ๆ UDT",
       "duration": "19:42",
@@ -5957,7 +5972,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 333,
+      "num": 334,
       "ytId": "J0O7g8SW7fs",
       "title": "นี่คือบทพูดจริงๆใช่ไหม นั่นคือตอน HOT 🔥 LESSERAFIM ซากุระ, คาซึฮะ Gundam Base ซับไทย",
       "duration": "20:33",
@@ -5972,7 +5987,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 334,
+      "num": 335,
       "ytId": "_8R2HX3sPvs",
       "title": "NINE HEART PICKS MBTI ‘T’ กลุ่มที่ถือครองจำนวนมาก, โปรไฟล์ของ Hearts2Hearts เปิดเผยเป็นครั้งแรก!",
       "duration": "11:41",
@@ -5987,7 +6002,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 335,
+      "num": 336,
       "ytId": "ZQLhndEOuvc",
       "title": "ทุกคนคอยจับตามอง~🙄 บรรณาธิการสุดโหดจากนรก 📚 QWER ฮินะXชิยอน Workman",
       "duration": "18:33",
@@ -6002,7 +6017,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 336,
+      "num": 337,
       "ytId": "x0KUhQt6mi8",
       "title": "หลังจบการแสดง   ❤️ ถูกจับภาพเดต ซับไทย",
       "duration": "10:35",
@@ -6017,7 +6032,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 337,
+      "num": 338,
       "ytId": "TwRSi9ZdI6A",
       "title": "กวาเมกีซิตี้ พอได้แล้ว! QWER มาเจนต้า&โชดัน ชาวโพฮังมา 25 ปี ｜ โปฮังฟูลคอร์ส ตอนที่ 1 🗺️",
       "duration": "18:34",
@@ -6032,7 +6047,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 338,
+      "num": 339,
       "ytId": "Tn5rsRFJyeI",
       "title": "อาฮีที่ยกเลิกตารางงานทั้งหมดแล้วกลายเป็นลุงมุลฮเว",
       "duration": "18:23",
@@ -6047,7 +6062,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 339,
+      "num": 340,
       "ytId": "2sALbOd_UqI",
       "title": "ชียอน HBD LIVE 16.05.25",
       "duration": "13:13",
@@ -6062,7 +6077,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 340,
+      "num": 341,
       "ytId": "JwQKUW9LDBc",
       "title": "ปาร์ตี้วันเกิด ชียอน 16.05.25",
       "duration": "9:55",
@@ -6077,7 +6092,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 341,
+      "num": 342,
       "ytId": "TuKrtliexzs",
       "title": "เพลงกล่อมเดิมตลอด 3 ปีติดกัน LE SSERAFIM KAZUHA & HONG EUNCHAE – Dream Buddies 🌛 ซับไทย",
       "duration": "24:14",
@@ -6092,7 +6107,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 342,
+      "num": 343,
       "ytId": "CY0gKmFG5b8",
       "title": "Fridge Interview ของซานะ ซากุระที่ถูกนักล่าจับตัวไป 🌸l  EP 7 ตอนของซากุระ LE SSERAFIM",
       "duration": "45:38",
@@ -6108,7 +6123,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 343,
+      "num": 344,
       "ytId": "8ov1U5kB7fU",
       "title": "KBS Cool FM 89 1MHz Hearts2Hearts I KBS Radio 07.03.25  ซับไทย",
       "duration": "37:08",
@@ -6123,7 +6138,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 344,
+      "num": 345,
       "ytId": "eLeLCttSubE",
       "title": "Weverse Live ชียอน 08.03.25",
       "duration": "11:13",
@@ -6138,7 +6153,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 345,
+      "num": 346,
       "ytId": "dkpbxoLsI6k",
       "title": "ขุนนางญี่ปุ่นประเมิน QWER มินามิ RESCENE",
       "duration": "23:04",
@@ -6154,7 +6169,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 346,
+      "num": 347,
       "ytId": "QOCCOFcKwIg",
       "title": "Weverse Live มาเจนต้า 07.03.25",
       "duration": "7:09",
@@ -6169,7 +6184,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 347,
+      "num": 348,
       "ytId": "9vc7W5ng5Do",
       "title": "QWER HINA LIVE IG 28.02.25 ซับไทย",
       "duration": "13:37",
@@ -6184,7 +6199,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 348,
+      "num": 349,
       "ytId": "EZ1arfWm8so",
       "title": "🤍🩷QWER ครบรอบเดบิวต์ 500 วัน🩵💚 28.02.25",
       "duration": "36:48",
@@ -6199,7 +6214,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 349,
+      "num": 350,
       "ytId": "s8BywBK-Jy8",
       "title": "ไม่ได้เจอกันนานเลย โชดันดัน💜 ขอบคุณที่รอฉันนะ 27.02.25",
       "duration": "14:12",
@@ -6214,9 +6229,9 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 350,
+      "num": 351,
       "ytId": "n9MOgn-LIXs",
-      "title": "🚨 เตรียมตัวให้ดี! ร้านที่เหล่าเทพธิดาปรากฏตัว✨  Workdol  ร้านเครื่องสำอาง  NMIXX แฮวอน, LE SSERAFIM",
+      "title": "🚨 Get ready! The shop where goddesses appeared✨ Workdol Cosmetics Store NMIXX Haewon, LE SSERAFIM",
       "duration": "19:41",
       "durationSec": 1181,
       "thumb": "https://img.youtube.com/vi/n9MOgn-LIXs/hqdefault.jpg",
@@ -6226,11 +6241,11 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย",
+      "subBadge": "SUBBED",
       "source": "youtube"
     },
     {
-      "num": 351,
+      "num": 352,
       "ytId": "Q8XfIR4mP3k",
       "title": "เปิดเผยใบหน้าของคิมอเกรันผ่านการออกเดตแบบอวตาร",
       "duration": "32:36",
@@ -6245,7 +6260,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 352,
+      "num": 353,
       "ytId": "EHMSszme50I",
       "title": "QWER IG LIVE โชดัน หลังจบงาน ON THE K：B 08.02.25",
       "duration": "13:15",
@@ -6260,7 +6275,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 353,
+      "num": 354,
       "ytId": "gyjBOK_InhA",
       "title": "Weverse Live QWER 17.02.25 ซับไทย",
       "duration": "11:54",
@@ -6275,7 +6290,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 354,
+      "num": 355,
       "ytId": "bYR_EtP3imY",
       "title": "Weverse live QWER ช่วยฉันหน่อย 14.02.25",
       "duration": "32:36",
@@ -6290,7 +6305,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 355,
+      "num": 356,
       "ytId": "IL6D6w7HZhU",
       "title": "Syncroom Live ชียอน ซับไทย",
       "duration": "14:03",
@@ -6305,7 +6320,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 356,
+      "num": 357,
       "ytId": "JlJT0vu1gTk",
       "title": "Weverse Live QWER ชียอน 02.02.25",
       "duration": "22:03",
@@ -6320,7 +6335,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 357,
+      "num": 358,
       "ytId": "UC4tyVzzeVU",
       "title": "Weverse Live QWER ฮินะ ทุกคนทำอะไรอยู่เหรอ？ 🤔 01.02.25",
       "duration": "33:23",
@@ -6335,7 +6350,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 358,
+      "num": 359,
       "ytId": "H--akO0O0z8",
       "title": "Weverse Live ชียอน QWER วันหยุดยาววู๊วว 30.01.25",
       "duration": "32:46",
@@ -6350,7 +6365,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 359,
+      "num": 360,
       "ytId": "Ntvxa3yFZPM",
       "title": "Weverse Live มาเจนต้า QWER ขอให้ได้รับโชคมาก ๆ นะคะ~ 29.01.25",
       "duration": "1:04:14",
@@ -6365,7 +6380,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 360,
+      "num": 361,
       "ytId": "SOKAWH3Wdig",
       "title": "งานแฟนคอนครั้งแรกประสบความสำเร็จ🩵 ขอบคุณนะ✨QWER Weverse 26.01.25",
       "duration": "2:17",
@@ -6380,7 +6395,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 361,
+      "num": 362,
       "ytId": "Fo5bk6pkplQ",
       "title": "심심🥺 HINA 17.01.25 Weverse ซับไทย",
       "duration": "13:09",
@@ -6395,7 +6410,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 362,
+      "num": 363,
       "ytId": "rragi0JBXVE",
       "title": "241023 Weeky Idol E686 TripleS VV [TH][EN]",
       "duration": "48:28",
@@ -6410,7 +6425,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 363,
+      "num": 364,
       "ytId": "-5gTPT0E-TQ",
       "title": "",
       "duration": "",
@@ -6427,7 +6442,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 364,
+      "num": 365,
       "ytId": "EZ68m3j37mM",
       "title": "บอสนายอง เช็กอินเข้างานเรียบร้อย💙  CEO นายอง EP 01",
       "duration": "14:53",
@@ -6444,7 +6459,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 365,
+      "num": 366,
       "ytId": "iINsnaALbI0",
       "title": "รีวิวตอนบุกไปจัดระเบียบออฟฟิศ แต่สรุปคือกลับตัวแทบไม่ทัน  CEO นายอง EP 02",
       "duration": "18:21",
@@ -6461,7 +6476,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 366,
+      "num": 367,
       "ytId": "zAuDh03fW6Y",
       "title": "งานนี้บอสจัดให้! ออกแบบเองนักเลงพอ🤩  CEO นายอง EP 03",
       "duration": "15:30",
@@ -6478,7 +6493,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 367,
+      "num": 368,
       "ytId": "RKlZrMWp_IM",
       "title": "บอสยังคมอยู่นะว่าไม่ได้! ฝีมือยังไม่แผ่วเลยจ้า ｜ CEO นายอง EP 04",
       "duration": "20:05",
@@ -6495,7 +6510,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 368,
+      "num": 369,
       "ytId": "H-gao0Gb708",
       "title": "ท่านประธานไปดู LCK ติดขอบสนาม เผยเทนชันของแท้ 🤣 KRX สู้ๆ นะ🔥🔥🔥 ｜ ประธานนายอง EP.07",
       "duration": "18:32",
@@ -6512,7 +6527,7 @@ const sceneDatabase = {
       "source": "youtube"
     },
     {
-      "num": 369,
+      "num": 370,
       "ytId": "patreon_1",
       "title": "“นิโนะ นาโนะนิ” แต่ได้ฮายาโตะ อิโซมุระมารับหน้าที่พิธีกร! ILLIT จะมาท้าพิสูจน์กระแสรีวิวจากปากต่อปาก!",
       "duration": "October 24",
@@ -6530,12 +6545,12 @@ const sceneDatabase = {
       "date": "October 24"
     },
     {
-      "num": 370,
+      "num": 371,
       "ytId": "patreon_2",
       "title": "【Hearts2Hearts มาแล้ว!】ศึกดวลวัดสมรรถภาพร่างกาย Kawaii Lab. vs Hearts2Hearts!",
       "duration": "September 29",
       "durationSec": 0,
-      "thumb": "https://img.youtube.com/vi/oWc_rbCGcPY/hqdefault.jpg",
+      "thumb": "https://img.youtube.com/vi/22G-LyqhNrs/hqdefault.jpg",
       "groups": [
         "hearts2hearts"
       ],
@@ -6548,7 +6563,7 @@ const sceneDatabase = {
       "date": "September 29"
     },
     {
-      "num": 371,
+      "num": 372,
       "ytId": "patreon_3",
       "title": "Idol Bingo x ILLIT [Part2 ] [ซับไทย]",
       "duration": "September 27",
@@ -6566,7 +6581,7 @@ const sceneDatabase = {
       "date": "September 27"
     },
     {
-      "num": 372,
+      "num": 373,
       "ytId": "patreon_4",
       "title": "Idol Bingo x ILLIT [Part 1] [ซับไทย]",
       "duration": "September 26",
@@ -6584,7 +6599,7 @@ const sceneDatabase = {
       "date": "September 26"
     },
     {
-      "num": 373,
+      "num": 374,
       "ytId": "patreon_5",
       "title": "【Hearts2Hearts มาแล้ว!】ศึกประชันการจัดการสีหน้า Kawaii Lab. vs Hearts2Hearts!",
       "duration": "September 23",
@@ -6602,7 +6617,7 @@ const sceneDatabase = {
       "date": "September 23"
     },
     {
-      "num": 374,
+      "num": 375,
       "ytId": "patreon_6",
       "title": "[260919] TV Asahi - MZINE Hearts2Hearts P.3 ซับไทย",
       "duration": "September 21",
@@ -6620,12 +6635,12 @@ const sceneDatabase = {
       "date": "September 21"
     },
     {
-      "num": 375,
+      "num": 376,
       "ytId": "patreon_7",
       "title": "[260912] TV Asahi - MZINE Hearts2Hearts P.2 ซับไทย",
       "duration": "September 14",
       "durationSec": 0,
-      "thumb": "https://img.youtube.com/vi/oWc_rbCGcPY/hqdefault.jpg",
+      "thumb": "https://img.youtube.com/vi/22G-LyqhNrs/hqdefault.jpg",
       "groups": [
         "hearts2hearts"
       ],
@@ -6638,7 +6653,7 @@ const sceneDatabase = {
       "date": "September 14"
     },
     {
-      "num": 376,
+      "num": 377,
       "ytId": "patreon_8",
       "title": "วอนฮี ILLIT & โคโตเนะ & แชวอน tripleS ซับไทย",
       "duration": "September 13",
@@ -6657,7 +6672,7 @@ const sceneDatabase = {
       "date": "September 13"
     },
     {
-      "num": 377,
+      "num": 378,
       "ytId": "patreon_9",
       "title": "TUIDE | รู้หรือไม่รู้ [ซับไทย]",
       "duration": "September 12",
@@ -6675,7 +6690,7 @@ const sceneDatabase = {
       "date": "September 12"
     },
     {
-      "num": 378,
+      "num": 379,
       "ytId": "patreon_10",
       "title": "[260905] TV Asahi - MZINE Hearts2Hearts ซับไทย",
       "duration": "September 6",
@@ -6693,7 +6708,7 @@ const sceneDatabase = {
       "date": "September 6"
     },
     {
-      "num": 379,
+      "num": 380,
       "ytId": "patreon_11",
       "title": "Hello Twenty Wonhee S01E08 ซับไทย",
       "duration": "July 27",
@@ -6711,7 +6726,7 @@ const sceneDatabase = {
       "date": "July 27"
     },
     {
-      "num": 380,
+      "num": 381,
       "ytId": "patreon_12",
       "title": "Hello Twenty Wonhee S01E06 ซับไทย",
       "duration": "July 17",
@@ -6729,7 +6744,7 @@ const sceneDatabase = {
       "date": "July 17"
     },
     {
-      "num": 381,
+      "num": 382,
       "ytId": "patreon_13",
       "title": "Hello Twenty Wonhee S01E04 ซับไทย",
       "duration": "July 4",
@@ -6747,7 +6762,7 @@ const sceneDatabase = {
       "date": "July 4"
     },
     {
-      "num": 382,
+      "num": 383,
       "ytId": "patreon_14",
       "title": "28.06.26 KBS2 Gag Concert Hearts2Hearts Cut ซับไทย",
       "duration": "July 1",
@@ -6765,7 +6780,7 @@ const sceneDatabase = {
       "date": "July 1"
     },
     {
-      "num": 383,
+      "num": 384,
       "ytId": "patreon_15",
       "title": "Hello Twenty Wonhee S01E02 ซับไทย",
       "duration": "June 15",
@@ -6783,7 +6798,7 @@ const sceneDatabase = {
       "date": "June 15"
     },
     {
-      "num": 384,
+      "num": 385,
       "ytId": "patreon_16",
       "title": "เมื่อเชฟระดับตำนานอียอนบก ลองชิมข้าวผัดปูฝีมือเด็ก 11 ขวบ [Man vs Child Korea] [โรร่า BABYMONSTER]",
       "duration": "June 5",
@@ -6801,7 +6816,7 @@ const sceneDatabase = {
       "date": "June 5"
     },
     {
-      "num": 385,
+      "num": 386,
       "ytId": "patreon_17",
       "title": "260410 KBS2 THE SEASON [KISS OF LIFE] ซับไทย",
       "duration": "April 11",
@@ -6819,7 +6834,7 @@ const sceneDatabase = {
       "date": "April 11"
     },
     {
-      "num": 386,
+      "num": 387,
       "ytId": "patreon_18",
       "title": "[Kangho Neighborhood Bookstore] EP 5 AKMU ซับไทย",
       "duration": "April 10",
@@ -6837,7 +6852,7 @@ const sceneDatabase = {
       "date": "April 10"
     },
     {
-      "num": 387,
+      "num": 388,
       "ytId": "patreon_19",
       "title": "SMTM12 / รอบไฟนอล มิลลิ CUT ซับไทย",
       "duration": "April 3",
@@ -6855,7 +6870,7 @@ const sceneDatabase = {
       "date": "April 3"
     },
     {
-      "num": 388,
+      "num": 389,
       "ytId": "patreon_20",
       "title": "[SMTM12⧸ รอบไฟนอล] ♬ MSG (Feat. Omega Sapien) - MILLI",
       "duration": "April 3",
@@ -6873,7 +6888,7 @@ const sceneDatabase = {
       "date": "April 3"
     },
     {
-      "num": 389,
+      "num": 390,
       "ytId": "patreon_21",
       "title": "[SMTM12  รอบไฟนอล] 'กินแบบเอาผักกาดหอมออกจริงๆ เหรอ🍔' ถามอะไรก็ได้กับ TOP 5",
       "duration": "April 3",
@@ -6891,7 +6906,7 @@ const sceneDatabase = {
       "date": "April 3"
     },
     {
-      "num": 390,
+      "num": 391,
       "ytId": "patreon_22",
       "title": "You Quiz on the Block (EP 337) AKMU ซับไทย",
       "duration": "April 2",
@@ -6909,7 +6924,7 @@ const sceneDatabase = {
       "date": "April 2"
     },
     {
-      "num": 391,
+      "num": 392,
       "ytId": "patreon_23",
       "title": "SMTM12 TEAM LOCO X GRAY SAKK ซับไทย",
       "duration": "March 30",
@@ -6927,7 +6942,7 @@ const sceneDatabase = {
       "date": "March 30"
     },
     {
-      "num": 392,
+      "num": 393,
       "ytId": "patreon_24",
       "title": "SMTM12 รายการพิเศษ Final TOP 5 Special ซับไทย",
       "duration": "March 29",
@@ -6945,7 +6960,7 @@ const sceneDatabase = {
       "date": "March 29"
     },
     {
-      "num": 393,
+      "num": 394,
       "ytId": "patreon_25",
       "title": "SMTM12 EP11 ประกาศ TOP 5 รอบ Final ซับไทย",
       "duration": "March 27",
@@ -6963,7 +6978,7 @@ const sceneDatabase = {
       "date": "March 27"
     },
     {
-      "num": 394,
+      "num": 395,
       "ytId": "patreon_26",
       "title": "SMTM12 EP11 SEMI FINAL MASON HOME ซับไทย",
       "duration": "March 27",
@@ -6981,7 +6996,7 @@ const sceneDatabase = {
       "date": "March 27"
     },
     {
-      "num": 395,
+      "num": 396,
       "ytId": "patreon_27",
       "title": "SMTM12 EP11 SEMI FINAL OSUN ซับไทย",
       "duration": "March 27",
@@ -6999,7 +7014,7 @@ const sceneDatabase = {
       "date": "March 27"
     },
     {
-      "num": 396,
+      "num": 397,
       "ytId": "patreon_28",
       "title": "SMTM12 EP11 SEMI FINAL มิลลิ ซับไทย",
       "duration": "March 27",
@@ -7017,7 +7032,7 @@ const sceneDatabase = {
       "date": "March 27"
     },
     {
-      "num": 397,
+      "num": 398,
       "ytId": "patreon_29",
       "title": "SMTM12 EP10 ควอนโอซอน & Mason Home Vs Now I'm Young & Royal 44 ซับไทย",
       "duration": "March 22",
@@ -7035,7 +7050,7 @@ const sceneDatabase = {
       "date": "March 22"
     },
     {
-      "num": 398,
+      "num": 399,
       "ytId": "patreon_30",
       "title": "SMTM12 EP10 MILLI Vs Fleeky Bang ซับไทย",
       "duration": "March 20",
@@ -7053,7 +7068,7 @@ const sceneDatabase = {
       "date": "March 20"
     },
     {
-      "num": 399,
+      "num": 400,
       "ytId": "patreon_31",
       "title": "SMTM12 EP9 TEAM Gray x Loco Vs TEAM Lil Moshpit x Jay Park Full ซับไทย",
       "duration": "March 13",
@@ -7071,7 +7086,7 @@ const sceneDatabase = {
       "date": "March 13"
     },
     {
-      "num": 400,
+      "num": 401,
       "ytId": "patreon_32",
       "title": "Veiled Cup EP4 ซับไทย",
       "duration": "February 2",
@@ -7089,7 +7104,7 @@ const sceneDatabase = {
       "date": "February 2"
     },
     {
-      "num": 401,
+      "num": 402,
       "ytId": "patreon_33",
       "title": "HyeMiLeeYeChaePa.S01E012 ซับไทย",
       "duration": "January 29",
@@ -7109,7 +7124,7 @@ const sceneDatabase = {
       "date": "January 29"
     },
     {
-      "num": 402,
+      "num": 403,
       "ytId": "patreon_34",
       "title": "HyeMiLeeYeChaePa.S01E011 ซับไทย",
       "duration": "January 29",
@@ -7129,7 +7144,7 @@ const sceneDatabase = {
       "date": "January 29"
     },
     {
-      "num": 403,
+      "num": 404,
       "ytId": "patreon_35",
       "title": "HyeMiLeeYeChaePa.S01E010 ซับไทย",
       "duration": "January 29",
@@ -7149,7 +7164,7 @@ const sceneDatabase = {
       "date": "January 29"
     },
     {
-      "num": 404,
+      "num": 405,
       "ytId": "patreon_36",
       "title": "HyeMiLeeYeChaePa.S01E09 ซับไทย",
       "duration": "January 29",
@@ -7169,7 +7184,7 @@ const sceneDatabase = {
       "date": "January 29"
     },
     {
-      "num": 405,
+      "num": 406,
       "ytId": "patreon_37",
       "title": "HyeMiLeeYeChaePa.S01E08 ซับไทย",
       "duration": "January 29",
@@ -7189,7 +7204,7 @@ const sceneDatabase = {
       "date": "January 29"
     },
     {
-      "num": 406,
+      "num": 407,
       "ytId": "patreon_38",
       "title": "HyeMiLeeYeChaePa.S01E07 ซับไทย",
       "duration": "January 29",
@@ -7209,7 +7224,7 @@ const sceneDatabase = {
       "date": "January 29"
     },
     {
-      "num": 407,
+      "num": 408,
       "ytId": "patreon_39",
       "title": "HyeMiLeeYeChaePa.S01E06 ซับไทย",
       "duration": "January 29",
@@ -7229,7 +7244,7 @@ const sceneDatabase = {
       "date": "January 29"
     },
     {
-      "num": 408,
+      "num": 409,
       "ytId": "patreon_40",
       "title": "HyeMiLeeYeChaePa.S01E05 ซับไทย",
       "duration": "January 29",
@@ -7249,7 +7264,7 @@ const sceneDatabase = {
       "date": "January 29"
     },
     {
-      "num": 409,
+      "num": 410,
       "ytId": "patreon_41",
       "title": "HyeMiLeeYeChaePa.S01E04 ซับไทย",
       "duration": "January 29",
@@ -7269,7 +7284,7 @@ const sceneDatabase = {
       "date": "January 29"
     },
     {
-      "num": 410,
+      "num": 411,
       "ytId": "patreon_42",
       "title": "HyeMiLeeYeChaePa.S01E03 ซับไทย",
       "duration": "January 29",
@@ -7289,7 +7304,7 @@ const sceneDatabase = {
       "date": "January 29"
     },
     {
-      "num": 411,
+      "num": 412,
       "ytId": "patreon_43",
       "title": "HyeMiLeeYeChaePa.S01E02 ซับไทย",
       "duration": "January 29",
@@ -7309,7 +7324,7 @@ const sceneDatabase = {
       "date": "January 29"
     },
     {
-      "num": 412,
+      "num": 413,
       "ytId": "patreon_44",
       "title": "HyeMiLeeYeChaePa.S01E01 ซับไทย",
       "duration": "January 29",
@@ -7329,7 +7344,7 @@ const sceneDatabase = {
       "date": "January 29"
     },
     {
-      "num": 413,
+      "num": 414,
       "ytId": "patreon_45",
       "title": "Veiled Cup EP3 FULL ซับไทย",
       "duration": "January 26",
@@ -7347,7 +7362,7 @@ const sceneDatabase = {
       "date": "January 26"
     },
     {
-      "num": 414,
+      "num": 415,
       "ytId": "patreon_46",
       "title": "Veiled Cup EP2 FULL ซับไทย",
       "duration": "January 19",
@@ -7365,7 +7380,7 @@ const sceneDatabase = {
       "date": "January 19"
     },
     {
-      "num": 415,
+      "num": 416,
       "ytId": "patreon_47",
       "title": "Veiled Cup EP1 FULL ซับไทย",
       "duration": "January 19",
