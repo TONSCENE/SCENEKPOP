@@ -2186,15 +2186,16 @@
     }
 
     let latestSlice = [];
-    function getLatestOrderedVideos() {
+    function orderYoutubeFirst(list, excludePatreon = false) {
+      const filtered = excludePatreon ? list.filter(v => v.source !== 'patreon') : list;
       return [
-        ...DB.videos.filter(v => v.source === 'youtube'),
-        ...DB.videos.filter(v => v.source !== 'youtube' && v.source !== 'patreon'),
+        ...filtered.filter(v => v.source === 'youtube'),
+        ...filtered.filter(v => v.source !== 'youtube'),
       ];
     }
 
     function renderLatestVideos() {
-      const ytOnly = getLatestOrderedVideos();
+      const ytOnly = orderYoutubeFirst(DB.videos, true);
       latestSlice = ytOnly.slice(0, latestLimit);
       document.getElementById('latestGrid').innerHTML = latestSlice
         .map((v, idx) => createVideoCardHTML(v, 'playFromLatest', idx))
@@ -2213,7 +2214,7 @@
     }
 
     function playLatestVideo() {
-      const latestVideos = getLatestOrderedVideos();
+      const latestVideos = orderYoutubeFirst(DB.videos, true);
       if (latestVideos.length > 0) {
         openQueueModal(latestVideos.slice(0, 30), 0, '🔥 คลิปล่าสุดจาก @SCENEKPOP');
       }
@@ -2293,7 +2294,7 @@
     }
 
     function getGroupVideos(groupId) {
-      return DB.videos.filter(v => v.groups.includes(groupId));
+      return orderYoutubeFirst(DB.videos.filter(v => v.groups.includes(groupId)));
     }
 
     function renderGroupTypeTabs(groupId) {
