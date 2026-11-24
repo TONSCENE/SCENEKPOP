@@ -11,7 +11,7 @@ const sceneDatabase = {
     "totalPatreon": 47,
     "totalGroups": 26,
     "totalPlaylists": 25,
-    "updatedAt": "2026-11-24 13:31"
+    "updatedAt": "2026-11-24 15:23"
   },
   "groups": [
     {
@@ -873,17 +873,17 @@ const sceneDatabase = {
     },
     {
       "num": 7,
-      "ytId": "T996iARQzxA",
-      "title": "QWER เบื้องหลังคอนเสิร์ตที่ไทย WANDERING QWER Cut ซับไทย",
+      "ytId": "-ARH7gh3JG8",
+      "title": "QWER Behind the Scenes of Thailand Concert WANDERING QWER Cut (ENG SUB)",
       "duration": "4:39",
       "durationSec": 279,
-      "thumb": "https://img.youtube.com/vi/T996iARQzxA/hqdefault.jpg",
+      "thumb": "https://img.youtube.com/vi/-ARH7gh3JG8/hqdefault.jpg",
       "groups": [
         "qwer"
       ],
       "playlists": [],
-      "contentType": "variety",
-      "subBadge": "ซับไทย",
+      "contentType": "stage",
+      "subBadge": "ENG SUB",
       "source": "youtube"
     },
     {
@@ -2379,7 +2379,7 @@ const sceneDatabase = {
     {
       "num": 101,
       "ytId": "UhhOg1rccO8",
-      "title": "Gayo Plaza Guest Special with TUIDE | Paul Kim | KBS 09/01/26 [TH][EN]",
+      "title": "ช่วงแขกรับเชิญ Gayo Plaza with TUIDE | Paul Kim | KBS 260901 [TH][EN]",
       "duration": "36:31",
       "durationSec": 2191,
       "thumb": "https://img.youtube.com/vi/UhhOg1rccO8/hqdefault.jpg",
@@ -2428,7 +2428,7 @@ const sceneDatabase = {
     {
       "num": 104,
       "ytId": "mZJC5UgqPc8",
-      "title": "KiiiKiii IDOL RADIO BEHIND [ENG SUB]",
+      "title": "KiiiKiii IDOL RADIO BEHIND [ซับไทย]",
       "duration": "10:05",
       "durationSec": 605,
       "thumb": "https://img.youtube.com/vi/mZJC5UgqPc8/hqdefault.jpg",
@@ -2439,7 +2439,7 @@ const sceneDatabase = {
         "PLHCirUutU7Oo"
       ],
       "contentType": "radio",
-      "subBadge": "ENG SUB",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
@@ -2887,7 +2887,7 @@ const sceneDatabase = {
     {
       "num": 132,
       "ytId": "Lr1GsOr0tAw",
-      "title": "[Idol Booth EP.1] โนวว พอทีเถอะ ขอล่ะ! 🔥บทสรุปจับของขวัญโดปามีนพุ่งปรี๊ดของ RESCENE คือ...? ซับไทย",
+      "title": "[Idol Booth EP.1] No way, stop it, please! 🔥 What is the final result of RESCENE’s dopamine-rushi...",
       "duration": "25:50",
       "durationSec": 1550,
       "thumb": "https://img.youtube.com/vi/Lr1GsOr0tAw/hqdefault.jpg",
@@ -2896,7 +2896,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย",
+      "subBadge": "SUBBED",
       "source": "youtube"
     },
     {
@@ -3273,7 +3273,7 @@ const sceneDatabase = {
     {
       "num": 156,
       "ytId": "7xg9gwH9zTE",
-      "title": "ได้ลองเรียนรู้เกี่ยวกับท่าทางของกยารู (Gyaru) แล้ว",
+      "title": "I Tried Learning Gyaru Mannerisms",
       "duration": "23:54",
       "durationSec": 1434,
       "thumb": "https://img.youtube.com/vi/7xg9gwH9zTE/hqdefault.jpg",
@@ -3284,7 +3284,7 @@ const sceneDatabase = {
         "PLK0euQjdYbEU"
       ],
       "contentType": "variety",
-      "subBadge": "ซับไทย",
+      "subBadge": "SUBBED",
       "source": "youtube"
     },
     {
@@ -3365,7 +3365,7 @@ const sceneDatabase = {
     {
       "num": 162,
       "ytId": "vcYjkBYSIkk",
-      "title": "👑 NeverCry ..☆ ศึกงัดข้อของ Hearts2Hearts (เอ๊ะ หรือเป็นปาร์ตี้เลิกงานกันแน่ 💨) | Spotify Idol Party",
+      "title": "👑 NeverCry ..☆ The Hearts2Hearts Arm Wrestling Match (Wait, or is this an after-work party? 💨) | ...",
       "duration": "16:44",
       "durationSec": 1004,
       "thumb": "https://img.youtube.com/vi/vcYjkBYSIkk/hqdefault.jpg",
@@ -3374,7 +3374,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "ซับไทย",
+      "subBadge": "SUBBED",
       "source": "youtube"
     },
     {
@@ -3793,7 +3793,7 @@ const sceneDatabase = {
     {
       "num": 190,
       "ytId": "SXTI0cwLF08",
-      "title": "Weverse Live Siyeon QWER Birthday (Thai Subtitles) 16.05.26",
+      "title": "Weverse Live ชียอน QWER วันเกิด ซับไทย 16.05.26",
       "duration": "30:34",
       "durationSec": 1834,
       "thumb": "https://img.youtube.com/vi/SXTI0cwLF08/hqdefault.jpg",
@@ -3838,7 +3838,7 @@ const sceneDatabase = {
     {
       "num": 193,
       "ytId": "J2pSZSH6xkI",
-      "title": "Guessing what kids these days are thinking with NMIXX | ODG",
+      "title": "ทายความคิดเด็กสมัยนี้กับ NMIXX｜ODG",
       "duration": "17:40",
       "durationSec": 1060,
       "thumb": "https://img.youtube.com/vi/J2pSZSH6xkI/hqdefault.jpg",
@@ -3847,7 +3847,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
@@ -4123,7 +4123,7 @@ const sceneDatabase = {
     {
       "num": 212,
       "ytId": "dUey2o_F84U",
-      "title": "IDOL RADIO Belle Nutty Baby Don't Cry CUT",
+      "title": "IDOL RADIO เบลล์ นัตตี้ Baby Dont Cry CUT",
       "duration": "10:14",
       "durationSec": 614,
       "thumb": "https://img.youtube.com/vi/dUey2o_F84U/hqdefault.jpg",
@@ -4132,7 +4132,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "SUBBED",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
@@ -4183,7 +4183,7 @@ const sceneDatabase = {
     {
       "num": 216,
       "ytId": "VNmQywyCmFg",
-      "title": "Behind the scenes of the Hearts2Hearts X LILY BROWN photoshoot.",
+      "title": "เบื้องหลังการถ่ายทำ Hearts2Hearts X LILY BROWN",
       "duration": "19:48",
       "durationSec": 1188,
       "thumb": "https://img.youtube.com/vi/VNmQywyCmFg/hqdefault.jpg",
@@ -4192,7 +4192,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "variety",
-      "subBadge": "SUBBED",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
@@ -4288,7 +4288,7 @@ const sceneDatabase = {
     {
       "num": 223,
       "ytId": "xL4j9YszBAQ",
-      "title": "💗 Stella & Yuha 💕 ｜ Hearts2Hearts ｜ Produce 1077 ｜ Bae Sung-jae's Ten ｜ 02/26/2026 ENG SUB #h2h",
+      "title": "💗 สเตลล่า & ยูฮา 💕 ｜ Hearts2Hearts ｜ Produce 1077 ｜ Bae Sung-jae's Ten ｜ 26/02/2026 ซับไทย [EN]#h2h",
       "duration": "1:13:28",
       "durationSec": 4408,
       "thumb": "https://img.youtube.com/vi/xL4j9YszBAQ/hqdefault.jpg",
@@ -4297,7 +4297,7 @@ const sceneDatabase = {
       ],
       "playlists": [],
       "contentType": "radio",
-      "subBadge": "ENG SUB",
+      "subBadge": "TH / EN SUB",
       "source": "youtube"
     },
     {
@@ -5267,7 +5267,7 @@ const sceneDatabase = {
     {
       "num": 288,
       "ytId": "gUYTontRB0s",
-      "title": "Tsuki Billlie showcases her stunning beauty in WaterBomb! ｜ Worldol Special",
+      "title": "สึกิ Billlie โชว์ความสวยสะท้าน WaterBomb! ｜ Worldol Special",
       "duration": "15:01",
       "durationSec": 901,
       "thumb": "https://img.youtube.com/vi/gUYTontRB0s/hqdefault.jpg",
@@ -5275,8 +5275,8 @@ const sceneDatabase = {
         "billlie"
       ],
       "playlists": [],
-      "contentType": "stage",
-      "subBadge": "SUBBED",
+      "contentType": "variety",
+      "subBadge": "ซับไทย",
       "source": "youtube"
     },
     {
