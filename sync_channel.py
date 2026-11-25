@@ -634,6 +634,17 @@ def main():
         json.dump(db, f, ensure_ascii=False, indent=2)
         f.write(";\n")
 
+    # Auto-bump db.js cache-buster query string in index.html so visitors get updates immediately
+    index_html_path = os.path.join(SCRIPT_DIR, "index.html")
+    if os.path.exists(index_html_path):
+        ver_tag = datetime.now().strftime("%Y%m%d_%H%M")
+        html_txt = open(index_html_path, "r", encoding="utf-8").read()
+        new_html = re.sub(r'db\.js(?:\?v=[0-9A-Za-z_]+)?', f'db.js?v={ver_tag}', html_txt)
+        if new_html != html_txt:
+            with open(index_html_path, "w", encoding="utf-8") as f:
+                f.write(new_html)
+            print(f"Updated cache-buster in index.html -> db.js?v={ver_tag}")
+
     print(f"\nGenerated {OUTPUT_DB_PATH}")
     print(f"Summary: {len(videos_out)} videos across {len(groups_out)} groups & {len(playlists_out)} playlists:")
     for g in groups_out:
