@@ -115,6 +115,8 @@ def fetch_video_detail(vid: str) -> dict:
         return {}
     data = json.loads(res.stdout)
     return {
+        "title": data.get("title") or "",
+        "duration": data.get("duration"),
         "description": data.get("description") or "",
         "tags": data.get("tags") or [],
     }
@@ -294,6 +296,31 @@ def main():
             if pe["id"] not in seen_entry_ids:
                 seen_entry_ids.add(pe["id"])
                 entries.append(pe)
+
+    # Merge explicit unlisted/extra YouTube video IDs from group_config.json (without duplicating)
+    extra_ids = cfg.get("extra_youtube_ids", [])
+    if extra_ids:
+        cache_dirty = False
+        for extra_vid in reversed(extra_ids):
+            if not extra_vid or extra_vid in seen_entry_ids:
+                continue
+            detail = desc_cache.get(extra_vid)
+            if not detail or not detail.get("title"):
+                detail = fetch_video_detail(extra_vid)
+                if detail:
+                    desc_cache[extra_vid] = detail
+                    cache_dirty = True
+            if detail and detail.get("title"):
+                entries.insert(0, {
+                    "id": extra_vid,
+                    "title": detail["title"],
+                    "duration": detail.get("duration"),
+                })
+                seen_entry_ids.add(extra_vid)
+                print(f"Added extra unlisted/explicit video: {extra_vid} ({detail['title'][:50]})")
+        if cache_dirty:
+            with open(DESC_CACHE_PATH, "w", encoding="utf-8") as f:
+                json.dump(desc_cache, f, ensure_ascii=False, indent=2)
 
     # Build reverse index: video_id -> list of playlist IDs
     vid_to_pl_ids = {}
