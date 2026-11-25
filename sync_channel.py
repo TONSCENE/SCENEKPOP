@@ -298,29 +298,38 @@ def main():
                 entries.append(pe)
 
     # Merge explicit unlisted/extra YouTube video IDs from group_config.json (without duplicating)
-    extra_ids = cfg.get("extra_youtube_ids", [])
-    if extra_ids:
-        cache_dirty = False
-        for extra_vid in reversed(extra_ids):
-            if not extra_vid or extra_vid in seen_entry_ids:
+    def resolve_explicit_entries(id_list):
+        missing = [vid for vid in id_list if vid and vid not in seen_entry_ids and (vid not in desc_cache or not desc_cache[vid].get("title"))]
+        if missing:
+            with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
+                for vid, detail in zip(missing, pool.map(fetch_video_detail, missing)):
+                    if detail:
+                        desc_cache[vid] = detail
+            with open(DESC_CACHE_PATH, "w", encoding="utf-8") as f:
+                json.dump(desc_cache, f, ensure_ascii=False, indent=2)
+        resolved = []
+        for vid in id_list:
+            if not vid or vid in seen_entry_ids:
                 continue
-            detail = desc_cache.get(extra_vid)
-            if not detail or not detail.get("title"):
-                detail = fetch_video_detail(extra_vid)
-                if detail:
-                    desc_cache[extra_vid] = detail
-                    cache_dirty = True
+            detail = desc_cache.get(vid)
             if detail and detail.get("title"):
-                entries.insert(0, {
-                    "id": extra_vid,
+                seen_entry_ids.add(vid)
+                resolved.append({
+                    "id": vid,
                     "title": detail["title"],
                     "duration": detail.get("duration"),
                 })
-                seen_entry_ids.add(extra_vid)
-                print(f"Added extra unlisted/explicit video: {extra_vid} ({detail['title'][:50]})")
-        if cache_dirty:
-            with open(DESC_CACHE_PATH, "w", encoding="utf-8") as f:
-                json.dump(desc_cache, f, ensure_ascii=False, indent=2)
+        return resolved
+
+    extra_entries = resolve_explicit_entries(cfg.get("extra_youtube_ids", []))
+    if extra_entries:
+        entries = extra_entries + entries
+        print(f"Prepended {len(extra_entries)} extra/latest unlisted video(s).")
+
+    old_unlisted_entries = resolve_explicit_entries(cfg.get("old_unlisted_youtube_ids", []))
+    if old_unlisted_entries:
+        entries.extend(old_unlisted_entries)
+        print(f"Appended {len(old_unlisted_entries)} old unlisted video(s).")
 
     # Build reverse index: video_id -> list of playlist IDs
     vid_to_pl_ids = {}
