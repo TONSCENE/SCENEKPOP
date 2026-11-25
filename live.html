@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>LIVE — The Wonderful World of Disney: Holiday Spectacular (ABC US) • SCENEKPOP+</title>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
+
+  <style>
+    :root {
+      --bg-color: #050508;
+      --surface-color: #0e0f15;
+      --card-bg: #13141c;
+      --accent-purple: #a855f7;
+      --accent-pink: #ec4899;
+      --accent-cyan: #38bdf8;
+      --text-white: #ffffff;
+      --text-gray: #9ca3af;
+      --border-color: rgba(255, 255, 255, 0.1);
+      --neon-gradient: linear-gradient(135deg, #a855f7 0%, #ec4899 52%, #38bdf8 100%);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      background: radial-gradient(circle at top center, rgba(168, 85, 247, 0.14), transparent 45%), var(--bg-color);
+      color: var(--text-white);
+      font-family: 'Prompt', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 28px;
+      border-bottom: 1px solid var(--border-color);
+      background: rgba(5, 5, 8, 0.85);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+    .brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 26px;
+      letter-spacing: 2px;
+      background: var(--neon-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
+    }
+    .back-btn {
+      color: var(--text-gray);
+      text-decoration: none;
+      font-size: 13px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border-color);
+      transition: 0.2s;
+    }
+    .back-btn:hover { color: #fff; border-color: rgba(255,255,255,0.28); }
+    .shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 26px 20px 44px;
+    }
+    .stage-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(239, 68, 68, 0.16);
+      border: 1px solid rgba(239, 68, 68, 0.45);
+      color: #fca5a5;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ef4444;
+      box-shadow: 0 0 8px #ef4444;
+      animation: pulse 1.4s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.75); }
+    }
+    .title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: var(--text-gray);
+      margin-top: 2px;
+    }
+    .player-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+    }
+    .player-box .dplayer { width: 100%; height: 100%; }
+    .unmute-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 25;
+      display: none;
+      align-items: center;
+      gap: 7px;
+      background: rgba(10, 10, 18, 0.9);
+      border: 1px solid rgba(236, 72, 153, 0.85);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+    }
+    .offline-msg {
+      position: absolute;
+      inset: 0;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      background: rgba(5, 5, 8, 0.92);
+      z-index: 20;
+    }
+    .offline-msg h2 { font-size: 18px; margin-bottom: 8px; }
+    .offline-msg p { color: var(--text-gray); font-size: 13px; }
+    .actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .reload-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border: 1px solid var(--border-color);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .reload-btn:hover { background: rgba(255, 255, 255, 0.16); }
+    @media (max-width: 768px) {
+      .topbar { padding: 12px 16px; }
+      .shell { padding: 16px 12px 32px; }
+      .title { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./">SCENEKPOP+</a>
+    <a class="back-btn" href="./"><i class="fas fa-arrow-left"></i> กลับหน้าหลัก</a>
+  </header>
+
+  <main class="shell">
+    <div class="stage-header">
+      <div>
+        <span class="live-badge"><span class="live-dot"></span> <span id="statusBadge">CONNECTING...</span></span>
+        <h1 class="title">The Wonderful World of Disney: Holiday Spectacular (ABC US)</h1>
+        <p class="subtitle">Private Stream • 720p 60fps • ออกอากาศวันอังคาร 1 ธ.ค. 2026 เวลา 08:00 – 10:00 น.</p>
+      </div>
+      <div class="actions">
+        <button class="reload-btn" onclick="mountPlayer()"><i class="fas fa-rotate-right"></i> รีเฟรชสัญญาณ</button>
+      </div>
+    </div>
+
+    <div class="player-box">
+      <div id="dplayer"></div>
+      <button id="unmuteBtn" class="unmute-btn" onclick="unmuteLive()"><i class="fas fa-volume-high"></i> เปิดเสียง (Unmute)</button>
+      <div id="offlineOverlay" class="offline-msg">
+        <h2>ยังไม่ได้เปิดสัญญาณถ่ายทอดสด</h2>
+        <p id="offlineDetail">กรุณารอสัญญาณเริ่ม หรือกด "รีเฟรชสัญญาณ" อีกครั้ง</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const DEFAULT_LIVE_URL = 'https://housing-tables-yes-prediction.trycloudflare.com/live.m3u8';
+    const params = new URLSearchParams(window.location.search);
+    const STREAM_URL = (params.get('s') || DEFAULT_LIVE_URL || '').trim();
+
+    let dp = null;
+    let activeHls = null;
+    let retryTimer = null;
+
+    function unmuteLive() {
+      const v = dp && dp.video;
+      if (v) {
+        v.muted = false;
+        v.volume = 0.9;
+        v.play().catch(() => {});
+      }
+      document.getElementById('unmuteBtn').style.display = 'none';
+    }
+
+    function tryAutoplay(video) {
+      video.play().then(() => {
+        if (video.muted) {
+          document.getElementById('unmuteBtn').style.display = 'inline-flex';
+        }
+      }).catch(() => {
+        video.muted = true;
+        document.getElementById('unmuteBtn').style.display = 'inline-flex';
+        video.play().catch(() => {});
+      });
+    }
+
+    function mountPlayer() {
+      if (retryTimer) { clearTimeout(retryTimer); retryTimer = null; }
+      if (activeHls) { try { activeHls.destroy(); } catch (_) {} activeHls = null; }
+      if (dp) { try { dp.destroy(); } catch (_) {} dp = null; }
+
+      const badge = document.getElementById('statusBadge');
+      const overlay = document.getElementById('offlineOverlay');
+      document.getElementById('unmuteBtn').style.display = 'none';
+
+      if (!STREAM_URL) {
+        badge.textContent = 'OFFLINE';
+        overlay.style.display = 'flex';
+        return;
+      }
+      overlay.style.display = 'none';
+      badge.textContent = 'LOADING...';
+
+      const isIOS = /iPad|iPhone|iPod/i.test(navigator.userAgent) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+      dp = new DPlayer({
+        container: document.getElementById('dplayer'),
+        live: true,
+        autoplay: true,
+        theme: '#ec4899',
+        hotkey: true,
+        airplay: true,
+        preload: 'auto',
+        volume: 0.9,
+        video: {
+          url: STREAM_URL,
+          type: 'customHls',
+          customType: {
+            customHls: function (video) {
+              video.setAttribute('playsinline', 'true');
+              video.setAttribute('webkit-playsinline', 'true');
+              video.playsInline = true;
+              const canNative = Boolean(video.canPlayType('application/vnd.apple.mpegurl'));
+
+              if (isIOS && canNative) {
+                video.src = STREAM_URL;
+                badge.textContent = 'LIVE HLS (iOS)';
+                tryAutoplay(video);
+                return;
+              }
+
+              if (typeof Hls !== 'undefined' && Hls.isSupported()) {
+                try { video.removeAttribute('src'); } catch (_) {}
+                const hls = new Hls({
+                  enableWorker: false,
+                  lowLatencyMode: false,
+                  liveSyncDurationCount: 3,
+                  liveMaxLatencyDurationCount: 8,
+                  maxBufferLength: 30,
+                  backBufferLength: 20
+                });
+                activeHls = hls;
+                hls.loadSource(STREAM_URL);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                  const lv = hls.levels && hls.levels[0];
+                  badge.textContent = lv && lv.height ? `LIVE ${lv.height}p` : 'LIVE ON AIR';
+                  tryAutoplay(video);
+                });
+                let mediaRecoveries = 0;
+                hls.on(Hls.Events.ERROR, function (_e, data) {
+                  if (!data || !data.fatal) return;
+                  if (data.type === Hls.ErrorTypes.MEDIA_ERROR && mediaRecoveries < 2) {
+                    mediaRecoveries++;
+                    hls.recoverMediaError();
+                    return;
+                  }
+                  badge.textContent = 'RECONNECTING...';
+                  retryTimer = setTimeout(mountPlayer, 4000);
+                });
+              } else if (canNative) {
+                video.src = STREAM_URL;
+                badge.textContent = 'LIVE HLS';
+                tryAutoplay(video);
+              }
+            }
+          }
+        }
+      });
+    }
+
+    mountPlayer();
+  </script>
+</body>
+</html>
