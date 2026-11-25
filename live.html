@@ -207,7 +207,7 @@
   </main>
 
   <script>
-    const DEFAULT_LIVE_URL = 'https://housing-tables-yes-prediction.trycloudflare.com/live.m3u8';
+    const DEFAULT_LIVE_URL = 'https://readings-matched-handbags-competitions.trycloudflare.com/live.m3u8';
     const params = new URLSearchParams(window.location.search);
     const STREAM_URL = (params.get('s') || DEFAULT_LIVE_URL || '').trim();
 
@@ -286,11 +286,11 @@
               if (typeof Hls !== 'undefined' && Hls.isSupported()) {
                 try { video.removeAttribute('src'); } catch (_) {}
                 const hls = new Hls({
-                  enableWorker: false,
+                  enableWorker: true,
                   lowLatencyMode: false,
-                  liveSyncDurationCount: 3,
-                  liveMaxLatencyDurationCount: 8,
-                  maxBufferLength: 30,
+                  liveSyncDurationCount: 4,
+                  liveMaxLatencyDurationCount: 10,
+                  maxBufferLength: 45,
                   backBufferLength: 20
                 });
                 activeHls = hls;
