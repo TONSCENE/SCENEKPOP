@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>LIVE — The Wonderful World of Disney: Holiday Spectacular (ABC US) • SCENEKPOP+</title>
+  <title>LIVE — MUSIC STATION 40周年SPECIAL • SCENEKPOP+</title>
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -103,14 +103,14 @@
       50% { opacity: 0.45; transform: scale(0.75); }
     }
     .title {
-      font-size: 20px;
+      font-size: 21px;
       font-weight: 700;
       margin-top: 8px;
     }
     .subtitle {
       font-size: 13px;
       color: var(--text-gray);
-      margin-top: 2px;
+      margin-top: 3px;
     }
     .player-box {
       position: relative;
@@ -150,8 +150,9 @@
       justify-content: center;
       text-align: center;
       padding: 24px;
-      background: rgba(5, 5, 8, 0.92);
+      background: rgba(5, 5, 8, 0.88);
       z-index: 20;
+      pointer-events: none;
     }
     .offline-msg h2 { font-size: 18px; margin-bottom: 8px; }
     .offline-msg p { color: var(--text-gray); font-size: 13px; }
@@ -171,10 +172,48 @@
       cursor: pointer;
     }
     .reload-btn:hover { background: rgba(255, 255, 255, 0.16); }
+    .lineup-card {
+      margin-top: 20px;
+      background: rgba(19, 20, 28, 0.82);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 18px 20px;
+    }
+    .lineup-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #f9a8d4;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .lineup-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 10px 16px;
+      font-size: 13px;
+    }
+    .lineup-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 9px 12px;
+    }
+    .lineup-artist {
+      font-weight: 700;
+      color: #7dd3fc;
+    }
+    .lineup-song {
+      color: #e5e7eb;
+      font-size: 12.5px;
+      margin-top: 2px;
+    }
     @media (max-width: 768px) {
       .topbar { padding: 12px 16px; }
       .shell { padding: 16px 12px 32px; }
       .title { font-size: 16px; }
+      .lineup-card { padding: 14px; }
     }
   </style>
 </head>
@@ -188,8 +227,8 @@
     <div class="stage-header">
       <div>
         <span class="live-badge"><span class="live-dot"></span> <span id="statusBadge">CONNECTING...</span></span>
-        <h1 class="title">The Wonderful World of Disney: Holiday Spectacular (ABC US)</h1>
-        <p class="subtitle">Private Stream • 720p 60fps • ออกอากาศวันอังคาร 1 ธ.ค. 2026 เวลา 08:00 – 10:00 น.</p>
+        <h1 class="title">MUSIC STATION 40周年SPECIAL (FRIDAY LIVE SINCE 1986)</h1>
+        <p class="subtitle">Private Stream • เลือกความละเอียด 1080p / 720p / 480p ได้ที่ไอคอน ⚙️ • ศุกร์ 27 พ.ย. 2026 เวลา 19:00 – 19:54 น. (เวลาไทย)</p>
       </div>
       <div class="actions">
         <button class="reload-btn" onclick="mountPlayer()"><i class="fas fa-rotate-right"></i> รีเฟรชสัญญาณ</button>
@@ -200,16 +239,58 @@
       <div id="dplayer"></div>
       <button id="unmuteBtn" class="unmute-btn" onclick="unmuteLive()"><i class="fas fa-volume-high"></i> เปิดเสียง (Unmute)</button>
       <div id="offlineOverlay" class="offline-msg">
-        <h2>ยังไม่ได้เปิดสัญญาณถ่ายทอดสด</h2>
-        <p id="offlineDetail">กรุณารอสัญญาณเริ่ม หรือกด "รีเฟรชสัญญาณ" อีกครั้ง</p>
+        <h2 id="offlineTitle">กำลังรอสัญญาณถ่ายทอดสดจาก OBS...</h2>
+        <p id="offlineDetail">หน้าเว็บจะเชื่อมต่ออัตโนมัติทันทีที่เริ่มไลฟ์ หรือกด "รีเฟรชสัญญาณ"</p>
       </div>
     </div>
+
+    <section class="lineup-card">
+      <div class="lineup-title"><i class="fas fa-music"></i> รายชื่อศิลปินและเพลงที่แสดง (27 พ.ย. 2026 • 21:00 JST / 19:00 น. ไทย)</div>
+      <div class="lineup-grid">
+        <div class="lineup-item">
+          <div class="lineup-artist">T.M.Revolution</div>
+          <div class="lineup-song">『WHITE BREATH』</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-artist">XG</div>
+          <div class="lineup-song">『DEPENDS』 (Mステ特別バージョン)</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-artist">マカロニえんぴつ</div>
+          <div class="lineup-song">『運命さがし』</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-artist">Hey! Say! JUMP</div>
+          <div class="lineup-song">髙木雄也出演ドラマ挿入歌</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-artist">Kis-My-Ft2</div>
+          <div class="lineup-song">最新曲『La la la』</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-artist">=LOVE &amp; 超ときめき♡宣伝部</div>
+          <div class="lineup-song">Special Stage</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-artist">FRUITS ZIPPER &amp; モーニング娘。'26</div>
+          <div class="lineup-song">アイドルフェス・GIFTから生中継！『ヘビロテ』コラボ</div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script>
-    const DEFAULT_LIVE_URL = '';
+    const LIVE_BASE_URL = 'https://standings-magazine-perfectly-greene.trycloudflare.com';
+    const DEFAULT_QUALITIES = [
+      { name: '1080p', url: `${LIVE_BASE_URL}/live/scenekpop/index.m3u8`, type: 'customHls' },
+      { name: '720p', url: `${LIVE_BASE_URL}/live/scenekpop_720/index.m3u8`, type: 'customHls' },
+      { name: '480p', url: `${LIVE_BASE_URL}/live/scenekpop_480/index.m3u8`, type: 'customHls' },
+    ];
     const params = new URLSearchParams(window.location.search);
-    const STREAM_URL = (params.get('s') || DEFAULT_LIVE_URL || '').trim();
+    const CUSTOM_URL = (params.get('s') || '').trim();
+    const LIVE_QUALITIES = CUSTOM_URL
+      ? [{ name: 'LIVE', url: CUSTOM_URL, type: 'customHls' }]
+      : DEFAULT_QUALITIES;
 
     let dp = null;
     let activeHls = null;
@@ -246,8 +327,9 @@
       const overlay = document.getElementById('offlineOverlay');
       document.getElementById('unmuteBtn').style.display = 'none';
 
-      if (!STREAM_URL) {
+      if (!LIVE_QUALITIES.length || !LIVE_QUALITIES[0].url) {
         badge.textContent = 'OFFLINE';
+        document.getElementById('offlineTitle').textContent = 'ยังไม่ได้เปิดสัญญาณถ่ายทอดสด';
         overlay.style.display = 'flex';
         return;
       }
@@ -267,18 +349,25 @@
         preload: 'auto',
         volume: 0.9,
         video: {
-          url: STREAM_URL,
+          quality: LIVE_QUALITIES,
+          defaultQuality: 0,
           type: 'customHls',
           customType: {
             customHls: function (video) {
+              const streamUrl = video.getAttribute('src') || video.src || LIVE_QUALITIES[0].url;
+              const matchedQ = LIVE_QUALITIES.find(q => q.url === streamUrl);
               video.setAttribute('playsinline', 'true');
               video.setAttribute('webkit-playsinline', 'true');
               video.playsInline = true;
               const canNative = Boolean(video.canPlayType('application/vnd.apple.mpegurl'));
 
+              if (retryTimer) { clearTimeout(retryTimer); retryTimer = null; }
+              if (activeHls) { try { activeHls.destroy(); } catch (_) {} activeHls = null; }
+
               if (isIOS && canNative) {
-                video.src = STREAM_URL;
-                badge.textContent = 'LIVE HLS (iOS)';
+                video.src = streamUrl;
+                overlay.style.display = 'none';
+                badge.textContent = matchedQ ? `LIVE ${matchedQ.name}` : 'LIVE HLS (iOS)';
                 tryAutoplay(video);
                 return;
               }
@@ -294,11 +383,12 @@
                   backBufferLength: 20
                 });
                 activeHls = hls;
-                hls.loadSource(STREAM_URL);
+                hls.loadSource(streamUrl);
                 hls.attachMedia(video);
                 hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                  overlay.style.display = 'none';
                   const lv = hls.levels && hls.levels[0];
-                  badge.textContent = lv && lv.height ? `LIVE ${lv.height}p` : 'LIVE ON AIR';
+                  badge.textContent = lv && lv.height ? `LIVE ${lv.height}p` : (matchedQ ? `LIVE ${matchedQ.name}` : 'LIVE ON AIR');
                   tryAutoplay(video);
                 });
                 let mediaRecoveries = 0;
@@ -309,12 +399,14 @@
                     hls.recoverMediaError();
                     return;
                   }
-                  badge.textContent = 'RECONNECTING...';
+                  badge.textContent = 'WAITING FOR OBS...';
+                  overlay.style.display = 'flex';
                   retryTimer = setTimeout(mountPlayer, 4000);
                 });
               } else if (canNative) {
-                video.src = STREAM_URL;
-                badge.textContent = 'LIVE HLS';
+                video.src = streamUrl;
+                overlay.style.display = 'none';
+                badge.textContent = matchedQ ? `LIVE ${matchedQ.name}` : 'LIVE HLS';
                 tryAutoplay(video);
               }
             }
