@@ -377,10 +377,12 @@
                 const hls = new Hls({
                   enableWorker: true,
                   lowLatencyMode: false,
-                  liveSyncDurationCount: 4,
-                  liveMaxLatencyDurationCount: 10,
-                  maxBufferLength: 45,
-                  backBufferLength: 20
+                  liveSyncDurationCount: 3,
+                  liveMaxLatencyDurationCount: 5,
+                  maxBufferLength: 16,
+                  backBufferLength: 12,
+                  maxBufferHole: 0.5,
+                  highBufferWatchdogPeriod: 2
                 });
                 activeHls = hls;
                 hls.loadSource(streamUrl);
