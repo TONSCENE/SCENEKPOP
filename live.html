@@ -228,7 +228,7 @@
       <div>
         <span class="live-badge"><span class="live-dot"></span> <span id="statusBadge">CONNECTING...</span></span>
         <h1 class="title">MUSIC STATION 40周年SPECIAL (FRIDAY LIVE SINCE 1986)</h1>
-        <p class="subtitle">Private Stream • เลือกความละเอียด 1080p / 720p / 480p ได้ที่ไอคอน ⚙️ • ศุกร์ 27 พ.ย. 2026 เวลา 19:00 – 19:54 น. (เวลาไทย)</p>
+        <p class="subtitle">Private Stream • เลือกความละเอียด 1080p60 / 720p60 / 480p60 ได้ที่เมนูความละเอียด • ศุกร์ 27 พ.ย. 2026 เวลา 19:00 – 19:54 น. (เวลาไทย)</p>
       </div>
       <div class="actions">
         <button class="reload-btn" onclick="mountPlayer()"><i class="fas fa-rotate-right"></i> รีเฟรชสัญญาณ</button>
@@ -282,9 +282,9 @@
   <script>
     const LIVE_BASE_URL = 'https://environmental-derived-grande-promptly.trycloudflare.com';
     const DEFAULT_QUALITIES = [
-      { name: '1080p', url: `${LIVE_BASE_URL}/live/scenekpop/index.m3u8`, type: 'customHls' },
-      { name: '720p', url: `${LIVE_BASE_URL}/live/scenekpop_720/index.m3u8`, type: 'customHls' },
-      { name: '480p', url: `${LIVE_BASE_URL}/live/scenekpop_480/index.m3u8`, type: 'customHls' },
+      { name: '1080p60', url: `${LIVE_BASE_URL}/live/scenekpop/index.m3u8`, type: 'customHls' },
+      { name: '720p60', url: `${LIVE_BASE_URL}/live/scenekpop_720/index.m3u8`, type: 'customHls' },
+      { name: '480p60', url: `${LIVE_BASE_URL}/live/scenekpop_480/index.m3u8`, type: 'customHls' },
     ];
     const params = new URLSearchParams(window.location.search);
     const CUSTOM_URL = (params.get('s') || '').trim();
@@ -388,7 +388,8 @@
                 hls.on(Hls.Events.MANIFEST_PARSED, function () {
                   overlay.style.display = 'none';
                   const lv = hls.levels && hls.levels[0];
-                  badge.textContent = lv && lv.height ? `LIVE ${lv.height}p` : (matchedQ ? `LIVE ${matchedQ.name}` : 'LIVE ON AIR');
+                  const fps = lv && lv.frameRate ? Math.round(lv.frameRate) : 0;
+                  badge.textContent = lv && lv.height ? `LIVE ${lv.height}p${fps >= 50 ? '60' : ''}` : (matchedQ ? `LIVE ${matchedQ.name}` : 'LIVE ON AIR');
                   tryAutoplay(video);
                 });
                 let mediaRecoveries = 0;
