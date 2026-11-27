@@ -280,12 +280,12 @@
   </main>
 
   <script>
-    const LIVE_BASE_URL = 'https://environmental-derived-grande-promptly.trycloudflare.com';
-    const DEFAULT_QUALITIES = [
+    const LIVE_BASE_URL = '';
+    const DEFAULT_QUALITIES = LIVE_BASE_URL ? [
       { name: '1080p', url: `${LIVE_BASE_URL}/live/scenekpop/index.m3u8`, type: 'customHls' },
       { name: '720p', url: `${LIVE_BASE_URL}/live/scenekpop_720/index.m3u8`, type: 'customHls' },
       { name: '480p', url: `${LIVE_BASE_URL}/live/scenekpop_480/index.m3u8`, type: 'customHls' },
-    ];
+    ] : [];
     const params = new URLSearchParams(window.location.search);
     const CUSTOM_URL = (params.get('s') || '').trim();
     const LIVE_QUALITIES = CUSTOM_URL
