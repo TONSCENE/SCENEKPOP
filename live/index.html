@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEST ARTIST 2026 LIVE — 日本テレビ</title>
+  <meta name="description" content="รับชมถ่ายทอดสด Best Artist 2026 (日本テレビ) พร้อมตารางเวลาไทยแบบเรียลไทม์ และรายชื่อศิลปินทั้ง 42 วง">
+  <meta name="referrer" content="no-referrer">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons & Players -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mpegts.js@1.7.3/dist/mpegts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/artplayer/dist/artplayer.js"></script>
+
+  <style>
+    :root {
+      --bg-color: #050508;
+      --surface-color: #0e0f15;
+      --card-bg: #13141c;
+      --card-hover: #1d1f2b;
+      --accent-purple: #a855f7;
+      --accent-pink: #ec4899;
+      --accent-cyan: #38bdf8;
+      --accent-red: #ef4444;
+      --accent-green: #22c55e;
+      --text-white: #ffffff;
+      --text-gray: #9ca3af;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --neon-gradient: linear-gradient(135deg, #f59e0b 0%, #ec4899 52%, #a855f7 100%);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-white);
+      font-family: 'Prompt', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    ::-webkit-scrollbar { width: 8px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #050508; }
+    ::-webkit-scrollbar-thumb { background: #27273a; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent-purple); }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 68px;
+      padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      z-index: 120;
+      background: rgba(5, 5, 8, 0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(168, 85, 247, 0.22);
+      box-shadow: 0 6px 26px rgba(0, 0, 0, 0.7);
+    }
+    .nav-left { display: flex; align-items: center; gap: 24px; }
+    .brand-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 30px; letter-spacing: 2px;
+      text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+      background: var(--neon-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      cursor: pointer;
+    }
+    .live-pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 4px 12px; border-radius: 999px;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+      background: rgba(239, 68, 68, 0.16);
+      border: 1px solid rgba(239, 68, 68, 0.55);
+      color: #fca5a5;
+    }
+    .live-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent-red);
+      box-shadow: 0 0 10px var(--accent-red);
+      animation: pulseDot 1.3s infinite;
+    }
+    .live-pill.standby {
+      background: rgba(56, 189, 248, 0.14);
+      border-color: rgba(56, 189, 248, 0.45);
+      color: #7dd3fc;
+    }
+    .live-pill.standby .live-dot {
+      background: var(--accent-cyan);
+      box-shadow: 0 0 8px var(--accent-cyan);
+      animation: none;
+    }
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.35); opacity: 0.5; }
+    }
+
+    .nav-links { display: flex; list-style: none; gap: 20px; }
+    .nav-links a {
+      color: #e2e8f0; text-decoration: none; font-size: 13.5px; font-weight: 500;
+      transition: color 0.2s; cursor: pointer;
+    }
+    .nav-links a:hover { color: var(--accent-pink); }
+
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    .btn-nav {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 14px; border-radius: 999px;
+      font-size: 12.5px; font-weight: 600; font-family: inherit;
+      cursor: pointer; text-decoration: none;
+      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.06);
+      color: #f8fafc; transition: all 0.2s;
+    }
+    .btn-nav:hover {
+      background: rgba(168, 85, 247, 0.2);
+      border-color: rgba(168, 85, 247, 0.55);
+      transform: translateY(-1px);
+    }
+    .btn-nav.primary {
+      background: var(--neon-gradient); border: none; color: #fff;
+      box-shadow: 0 4px 16px rgba(168, 85, 247, 0.35);
+    }
+
+    /* Main Layout */
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 88px 28px 64px;
+    }
+
+    /* Event Header Banner */
+    .event-banner {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 18px 22px; margin-bottom: 20px;
+      border-radius: 16px;
+      background: radial-gradient(circle at top right, rgba(236, 72, 153, 0.16), transparent 45%),
+                  radial-gradient(circle at bottom left, rgba(56, 189, 248, 0.14), transparent 50%),
+                  var(--surface-color);
+      border: 1px solid rgba(168, 85, 247, 0.28);
+    }
+    .event-title-wrap h1 {
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 800; line-height: 1.25;
+      background: linear-gradient(90deg, #ffffff 0%, #f5d0fe 60%, #7dd3fc 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .event-meta {
+      display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px;
+      font-size: 13px; color: var(--text-gray);
+    }
+    .event-meta span { display: inline-flex; align-items: center; gap: 6px; }
+    .clock-box {
+      display: flex; flex-direction: column; align-items: flex-end; gap: 2px;
+      padding: 10px 16px; border-radius: 12px;
+      background: rgba(0, 0, 0, 0.38); border: 1px solid var(--border-color);
+      min-width: 220px;
+    }
+    .clock-th { font-size: 18px; font-weight: 700; color: #fff; font-variant-numeric: tabular-nums; }
+    .clock-jp { font-size: 12px; color: var(--accent-cyan); font-variant-numeric: tabular-nums; }
+
+    /* Theater Grid (Player + Live Timetable Sidebar) */
+    .theater-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.65fr) minmax(320px, 0.95fr);
+      gap: 20px;
+      align-items: start;
+      margin-bottom: 36px;
+    }
+
+    .player-card {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.65);
+    }
+    .player-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+    }
+    #artplayerMount { width: 100%; height: 100%; }
+
+    .player-overlay-msg {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 24px;
+      background: radial-gradient(circle at center, rgba(24, 24, 38, 0.94), rgba(5, 5, 8, 0.98));
+      z-index: 20;
+    }
+    .player-overlay-msg.hidden { display: none; }
+    .player-overlay-msg i { font-size: 42px; color: var(--accent-pink); margin-bottom: 12px; }
+    .player-overlay-msg h3 { font-size: 18px; margin-bottom: 6px; }
+    .player-overlay-msg p { font-size: 13.5px; color: var(--text-gray); max-width: 480px; margin-bottom: 16px; }
+
+    .player-footer {
+      padding: 14px 18px;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+      background: #0b0c12;
+      border-top: 1px solid var(--border-color);
+    }
+    .stream-status-line {
+      display: flex; align-items: center; gap: 10px; font-size: 13px; color: #e2e8f0;
+    }
+    .badge-tech {
+      padding: 2px 9px; border-radius: 6px; font-size: 11px; font-weight: 700;
+      background: rgba(168, 85, 247, 0.18); border: 1px solid rgba(168, 85, 247, 0.45); color: #e9d5ff;
+    }
+    .player-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+    .btn-sm {
+      padding: 6px 12px; border-radius: 8px; font-size: 12.5px; font-weight: 600;
+      font-family: inherit; cursor: pointer; border: 1px solid var(--border-color);
+      background: rgba(255,255,255,0.06); color: #fff;
+      display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;
+    }
+    .btn-sm:hover { background: rgba(255,255,255,0.14); }
+    .btn-sm.accent { background: rgba(236, 72, 153, 0.2); border-color: rgba(236, 72, 153, 0.5); color: #fbcfe8; }
+
+    /* Quick Stream Bar */
+    .stream-bar {
+      padding: 14px 18px;
+      background: #10111a;
+      border-top: 1px solid var(--border-color);
+      display: none;
+      gap: 10px; flex-wrap: wrap; align-items: center;
+    }
+    .stream-bar.open { display: flex; }
+    .stream-input {
+      flex: 1; min-width: 240px;
+      padding: 9px 14px; border-radius: 10px;
+      background: #050508; border: 1px solid rgba(168, 85, 247, 0.4);
+      color: #fff; font-size: 13px; font-family: inherit; outline: none;
+    }
+    .stream-input:focus { border-color: var(--accent-pink); }
+
+    /* Timetable Sidebar */
+    .timetable-card {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      max-height: 620px;
+    }
+    .timetable-head {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,255,255,0.02);
+    }
+    .timetable-head h2 { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+    .timetable-scroll {
+      overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 10px;
+    }
+    .slot-card {
+      padding: 12px 14px; border-radius: 12px;
+      background: var(--card-bg); border: 1px solid var(--border-color);
+      transition: all 0.2s;
+    }
+    .slot-card.active {
+      border-color: rgba(236, 72, 153, 0.7);
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.14), rgba(236, 72, 153, 0.1));
+      box-shadow: 0 0 22px rgba(236, 72, 153, 0.15);
+    }
+    .slot-top {
+      display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px;
+    }
+    .slot-time { font-size: 13.5px; font-weight: 700; color: #fff; }
+    .slot-jp { font-size: 11.5px; color: var(--text-gray); }
+    .slot-badge {
+      font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 999px;
+      background: rgba(255,255,255,0.08); color: #cbd5e1;
+    }
+    .slot-card.active .slot-badge {
+      background: var(--accent-red); color: #fff;
+    }
+    .slot-artists {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;
+    }
+    .chip-artist {
+      font-size: 11.5px; padding: 3px 9px; border-radius: 8px;
+      background: rgba(255,255,255,0.06); color: #e2e8f0;
+      border: 1px solid transparent; cursor: pointer; transition: all 0.15s;
+    }
+    .chip-artist:hover { border-color: var(--accent-cyan); color: #fff; }
+    .chip-artist.scene {
+      background: rgba(236, 72, 153, 0.18);
+      border-color: rgba(236, 72, 153, 0.5);
+      color: #fbcfe8; font-weight: 600;
+    }
+    .chip-artist.kpop {
+      background: rgba(56, 189, 248, 0.16);
+      border-color: rgba(56, 189, 248, 0.45);
+      color: #bae6fd; font-weight: 600;
+    }
+    .slot-special {
+      margin-top: 8px; padding: 7px 10px; border-radius: 8px;
+      font-size: 11.5px; color: #fde68a;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px dashed rgba(245, 158, 11, 0.4);
+    }
+
+    /* Section Header + Filters */
+    .section-header {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+      margin-bottom: 18px;
+    }
+    .section-title {
+      font-size: 22px; font-weight: 700; display: flex; align-items: center; gap: 10px;
+    }
+    .filter-row {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+    }
+    .filter-tab {
+      padding: 7px 14px; border-radius: 999px;
+      font-size: 12.5px; font-weight: 600; font-family: inherit;
+      background: var(--card-bg); color: var(--text-gray);
+      border: 1px solid var(--border-color); cursor: pointer; transition: all 0.2s;
+    }
+    .filter-tab.active, .filter-tab:hover {
+      background: rgba(168, 85, 247, 0.22);
+      border-color: rgba(168, 85, 247, 0.65);
+      color: #fff;
+    }
+    .search-box {
+      position: relative;
+    }
+    .search-box i {
+      position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+      color: var(--text-gray); font-size: 13px;
+    }
+    .search-box input {
+      padding: 8px 14px 8px 34px; border-radius: 999px;
+      background: var(--card-bg); border: 1px solid var(--border-color);
+      color: #fff; font-size: 13px; font-family: inherit; width: 220px; outline: none;
+    }
+    .search-box input:focus { border-color: var(--accent-purple); }
+
+    /* Artists Grid */
+    .artists-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+      gap: 14px;
+    }
+    .artist-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .artist-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(168, 85, 247, 0.6);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
+    }
+    .artist-card.highlight-scene {
+      border-color: rgba(236, 72, 153, 0.45);
+    }
+    .artist-thumb {
+      position: relative; width: 100%; aspect-ratio: 16 / 10;
+      background: #1a1b26; overflow: hidden;
+    }
+    .artist-thumb img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .artist-tag {
+      position: absolute; top: 8px; left: 8px;
+      padding: 2px 8px; border-radius: 999px;
+      font-size: 10px; font-weight: 700;
+      backdrop-filter: blur(6px);
+    }
+    .tag-scene { background: rgba(236, 72, 153, 0.88); color: #fff; }
+    .tag-kpop { background: rgba(14, 165, 233, 0.88); color: #fff; }
+    .artist-time-badge {
+      position: absolute; bottom: 8px; right: 8px;
+      padding: 2px 8px; border-radius: 6px;
+      font-size: 10.5px; font-weight: 700;
+      background: rgba(5, 5, 8, 0.82); color: #e2e8f0;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .artist-body {
+      padding: 11px 12px;
+      display: flex; flex-direction: column; gap: 3px;
+    }
+    .artist-name { font-size: 14px; font-weight: 700; color: #fff; }
+    .artist-sub { font-size: 11.5px; color: var(--text-gray); }
+
+    .toast {
+      position: fixed; bottom: 24px; right: 24px; z-index: 200;
+      padding: 11px 18px; border-radius: 12px;
+      background: #181a28; border: 1px solid rgba(168, 85, 247, 0.65);
+      color: #fff; font-size: 13px; font-weight: 500;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+      opacity: 0; transform: translateY(10px); pointer-events: none;
+      transition: all 0.25s;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+
+    footer {
+      text-align: center; padding: 28px 16px 40px;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-gray); font-size: 12.5px;
+    }
+    footer a { color: var(--accent-cyan); text-decoration: none; }
+
+    @media (max-width: 1024px) {
+      .theater-grid { grid-template-columns: 1fr; }
+      .timetable-card { max-height: none; }
+    }
+    @media (max-width: 640px) {
+      .navbar { padding: 0 16px; }
+      .nav-links { display: none; }
+      .container { padding: 82px 14px 48px; }
+      .clock-box { width: 100%; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-left">
+      <a class="brand-logo" href="#top">
+        <i class="fa-solid fa-tower-broadcast" style="font-size: 18px;"></i> BEST ARTIST 2026 LIVE
+      </a>
+      <span id="livePill" class="live-pill standby">
+        <span class="live-dot"></span>
+        <span id="livePillText">STANDBY</span>
+      </span>
+      <ul class="nav-links">
+        <li><a href="#playerSection">จอถ่ายทอดสด</a></li>
+        <li><a href="#timetableSection">ตารางเวลาไทย</a></li>
+        <li><a href="#lineupSection">ศิลปินทั้งหมด (42)</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <button class="btn-nav primary" onclick="toggleStreamBar()" title="ใส่หรือเปลี่ยนลิงก์สตรีม NTV">
+        <i class="fa-solid fa-sliders"></i> <span>ตั้งค่าสตรีม</span>
+      </button>
+      <a class="btn-nav" href="https://www.ntv.co.jp/best-artist/artist/" target="_blank" rel="noopener noreferrer">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>NTV Official</span>
+      </a>
+    </div>
+  </nav>
+
+  <main id="top" class="container">
+    <section class="event-banner">
+      <div class="event-title-wrap">
+        <h1>日テレ系音楽の祭典「ベストアーティスト2026」LIVE</h1>
+        <div class="event-meta">
+          <span><i class="fa-regular fa-calendar"></i> เสาร์ที่ 28 พฤศจิกายน 2026</span>
+          <span><i class="fa-solid fa-tv"></i> ช่อง Nippon TV (日本テレビ)</span>
+          <span><i class="fa-regular fa-clock"></i> Part 1: 14:00–15:00 น. • Part 2: 17:00–20:54 น. (เวลาไทย)</span>
+        </div>
+      </div>
+      <div class="clock-box">
+        <div id="clockTH" class="clock-th">--:--:-- น. (TH)</div>
+        <div id="clockJP" class="clock-jp">--:--:-- JST (ญี่ปุ่น)</div>
+      </div>
+    </section>
+
+    <section id="playerSection" class="theater-grid">
+      <!-- Live Player -->
+      <div class="player-card">
+        <div class="player-stage">
+          <div id="artplayerMount"></div>
+          <div id="playerOverlay" class="player-overlay-msg">
+            <i class="fa-solid fa-satellite-dish"></i>
+            <h3 id="overlayTitle">กำลังรอสัญญาณถ่ายทอดสด...</h3>
+            <p id="overlayDesc">
+              เปิดผ่านเซิร์ฟเวอร์ <code>START_BEST_ARTIST_LIVE_WEB.command</code> หรือกดปุ่ม "ตั้งค่าสตรีม" เพื่อวางลิงก์ <code>.m3u8</code> / สตรีมช่อง Nippon TV (<code>video/MP2T</code>)
+            </p>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+              <button class="btn-nav primary" onclick="toggleStreamBar(true)">
+                <i class="fa-solid fa-link"></i> ใส่ลิงก์สตรีมสด
+              </button>
+              <button class="btn-nav" onclick="retryDefaultStream()">
+                <i class="fa-solid fa-rotate-right"></i> เชื่อมต่อใหม่
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="player-footer">
+          <div class="stream-status-line">
+            <span id="techBadge" class="badge-tech">AUTO</span>
+            <span id="streamLabel">ยังไม่ได้เชื่อมต่อสตรีม</span>
+          </div>
+          <div class="player-actions">
+            <button class="btn-sm" onclick="reloadStream()">
+              <i class="fa-solid fa-rotate"></i> รีเฟรชภาพ
+            </button>
+            <button class="btn-sm accent" onclick="copyShareUrl()">
+              <i class="fa-solid fa-share-nodes"></i> ก๊อปปี้ลิงก์แชร์
+            </button>
+            <a class="btn-sm" href="https://tver.jp/live" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-tv"></i> TVer Official
+            </a>
+          </div>
+        </div>
+
+        <div id="streamBar" class="stream-bar">
+          <input id="streamUrlInput" class="stream-input" type="text" placeholder="วางลิงก์ .m3u8 หรือ https://tsb-mega.i9.ee/stream/... แล้วกดเล่น">
+          <button class="btn-nav primary" onclick="applyCustomStream()">
+            <i class="fa-solid fa-play"></i> เล่นสตรีมนี้
+          </button>
+          <button class="btn-nav" onclick="useRelayStream()">
+            <i class="fa-solid fa-server"></i> ใช้ Relay (/hls/live.m3u8)
+          </button>
+        </div>
+      </div>
+
+      <!-- Timetable Sidebar -->
+      <aside id="timetableSection" class="timetable-card">
+        <div class="timetable-head">
+          <h2><i class="fa-regular fa-clock" style="color:var(--accent-pink);"></i> ตารางเวลา (เวลาไทย)</h2>
+          <span id="currentBlockLabel" class="badge-tech">TODAY</span>
+        </div>
+        <div id="timetableList" class="timetable-scroll"></div>
+      </aside>
+    </section>
+
+    <!-- Full Lineup -->
+    <section id="lineupSection">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fa-solid fa-music" style="color:var(--accent-purple);"></i>
+          ศิลปินที่ร่วมแสดง (<span id="artistCount">42</span>)
+        </h2>
+        <div class="filter-row">
+          <button class="filter-tab active" data-filter="all" onclick="setFilter('all', this)">ทั้งหมด (42)</button>
+          <button class="filter-tab" data-filter="kpop" onclick="setFilter('kpop', this)">K-Pop / Global</button>
+          <button class="filter-tab" data-filter="part1" onclick="setFilter('part1', this)">Part 1 (14:00)</button>
+          <button class="filter-tab" data-filter="part2" onclick="setFilter('part2', this)">Part 2 (17:00+)</button>
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="artistSearch" type="text" placeholder="ค้นหาชื่อวง..." oninput="renderArtists()">
+          </div>
+        </div>
+      </div>
+      <div id="artistsGrid" class="artists-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    ベストアーティスト2026 LIVE • ข้อมูลและรูปศิลปินจาก <a href="https://www.ntv.co.jp/best-artist/artist/" target="_blank" rel="noopener noreferrer">NTV Official</a>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+  <script>
+    const TIMETABLE = [
+      {
+        id: 'part1',
+        startTH: '14:00', endTH: '15:00',
+        labelTH: 'Part 1 • 14:00 – 15:00 น.',
+        labelJP: '第1部 16:00–17:00 JST',
+        artists: ['IMP.', 'Ave Mujica', 'XG', 'KO1KEYZ', 'Juice=Juice', '超特急', 'Travis Japan', 'TREASURE', 'NEXZ', '≠ME', 'MAZZEL'],
+        special: null
+      },
+      {
+        id: 'break',
+        startTH: '15:00', endTH: '17:00',
+        labelTH: 'พักเบรกก่อน Part 2 • 15:00 – 17:00 น.',
+        labelJP: '17:00–19:00 JST (เตรียมเข้าสู่ช่วงหลัก)',
+        artists: [],
+        special: 'ช่วงพักก่อนเริ่ม Part 2 เวลา 17:00 น. (เวลาไทย)'
+      },
+      {
+        id: 'h17',
+        startTH: '17:00', endTH: '18:00',
+        labelTH: 'Part 2 • 17:00 – 18:00 น.',
+        labelJP: '第2部 19時台 (19:00–20:00 JST)',
+        artists: ['ILLIT', '＝LOVE', 'AKB48', 'King & Prince', 'SixTONES', 'Da-iCE', 'T.M.Revolution', 'なにわ男子', 'BE:FIRST', 'BoA'],
+        special: '30周年特別企画: ゆず × Pokémon Special Collaboration'
+      },
+      {
+        id: 'h18',
+        startTH: '18:00', endTH: '19:00',
+        labelTH: 'Part 2 • 18:00 – 19:00 น.',
+        labelJP: '第2部 20時台 (20:00–21:00 JST)',
+        artists: ['アイナ・ジ・エンド', 'EXILE', 'KEY TO LIT', '三代目 J SOUL BROTHERS', 'SixTONES', 'Stray Kids', 'HANA', 'Mrs. GREEN APPLE', 'M!LK'],
+        special: 'Tokyo DisneySea 25th Anniversary: Travis Japan, 松下洸平, ＝LOVE, May J., Raoul (Snow Man) & MINJU (ILLIT)'
+      },
+      {
+        id: 'h19',
+        startTH: '19:00', endTH: '20:00',
+        labelTH: 'Part 2 • 19:00 – 20:00 น.',
+        labelJP: '第2部 21時台 (21:00–22:00 JST)',
+        artists: ['&TEAM', 'スピッツ', 'timelesz', 'Number_i', 'Hey! Say! JUMP', 'Mrs. GREEN APPLE', 'M!LK'],
+        special: 'STARTO Shuffle Medley: Hey! Say! JUMP, timelesz, King & Prince, SixTONES, Snow Man, なにわ男子, Travis Japan, Aぇ! group, KEY TO LIT'
+      },
+      {
+        id: 'h20',
+        startTH: '20:00', endTH: '20:54',
+        labelTH: 'Part 2 • 20:00 – 20:54 น.',
+        labelJP: '第2部 22時台 (22:00–22:54 JST)',
+        artists: ['Aぇ! group', '桑田佳祐', 'JO1', 'Snow Man', 'スピッツ', '松下洸平', 'ゆず', '緑黄色社会'],
+        special: null
+      }
+    ];
+
+    const KPOP_GLOBAL = new Set(['XG', 'TREASURE', 'ILLIT', 'NEXZ', 'Stray Kids', 'HANA', '&TEAM', 'BoA', 'JO1']);
+
+    const ARTISTS = [
+      { name: "IMP.", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/8rrvdzu8m67agf57xtfhftakeuy4v4.jpg" },
+      { name: "アイナ・ジ・エンド", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/75xcarxt68b884272jdc58go74t9fw.jpg" },
+      { name: "ILLIT", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/c8mz6h8n9656t574br7cgjeqz2htzp.jpg" },
+      { name: "Ave Mujica", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/z9wgm1zruxza7s0xq9xe5tzaza2ypa.jpg" },
+      { name: "＝LOVE", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/ivospqolpcac5zdiy79dnpm9xq3wao.jpg" },
+      { name: "Aぇ! group", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/eckwti9kf4igk5kh25nydfdf825afc.jpg" },
+      { name: "AKB48", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/oq93e5bum449doe9i06weu5iqhrybx.jpg" },
+      { name: "EXILE", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/7vunmz2976s0jfz5iriri0n83q588v.jpg" },
+      { name: "XG", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/d9j8fpje16r0fxk4xjoxgp1jd5k1b2.jpg" },
+      { name: "&TEAM", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/rgldk6he1kldqs3kipmu99jrcem2a6.jpg" },
+      { name: "KEY TO LIT", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/puuaq3jblcnsyl6ao7d1hsym18zws9.jpg" },
+      { name: "King & Prince", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/ad3pdfy6ceq4fwc383lks912t63r21.jpg" },
+      { name: "桑田佳祐", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/9vv0carge2naesksnwuf7flwauz1ve.jpg" },
+      { name: "KO1KEYZ", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/9yycncwkzf4a2dcsswhthljkz3mnre.jpg" },
+      { name: "三代目 J SOUL BROTHERS", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/9f628c161zdec191ni2kcfx3itq8ny.jpg" },
+      { name: "JO1", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/2lir6v7e02l3mdtc2t58tuygxz5ivp.jpg" },
+      { name: "Juice=Juice", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/yeo8fw2nfed62ke2a2gh9f5mba24y1.jpg" },
+      { name: "SixTONES", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/ftm2uelic69zbapb4vi9oes097skbj.jpg" },
+      { name: "Stray Kids", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/fcib1dd3kfnalkabe6eg8p6yz30i9n.jpg" },
+      { name: "Snow Man", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/pct04kl8zq48q1el16h66ojyoztwlb.jpg" },
+      { name: "スピッツ", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/oe6rdlpl081vgzwsyq63m4i490dca6.jpg" },
+      { name: "timelesz", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/7hf3d7q5ne5jspxpdo4mrwe1veggkv.jpg" },
+      { name: "Da-iCE", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/4clexol6rcrsqbi3oogxhjoq1zyl2h.jpg" },
+      { name: "超特急", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/ms4pvp3rjml7q9pfvfeteqt3jhazzr.jpg" },
+      { name: "T.M.Revolution", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/32encdaczg5b34yngsy702ptwcxhds.jpg" },
+      { name: "Travis Japan", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/c9r9s1ek8msyp5j7ic27l3rgbllzmo.jpg" },
+      { name: "TREASURE", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/m84z9k0xhaaoaddk2qxlenturbdc0j.jpg" },
+      { name: "なにわ男子", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/n91vfwe56ge350kuj750z9a5fdclp0.jpg" },
+      { name: "Number_i", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/7tnuh9wie8fy2ksb4l5kqtttq0j8ej.jpg" },
+      { name: "NEXZ", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/hlmifipy6ixrnxocle9g4cjmcmkaz7.jpg" },
+      { name: "≠ME", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/aaj9k94vkjrlv043p41tn8074y70e3.jpg" },
+      { name: "HANA", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/y7rexysh38015h0cg5lz10t31m4w8s.jpg" },
+      { name: "BE:FIRST", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/aw7rg06bfb9bs8230v2ra5t9fsdgr4.jpg" },
+      { name: "Hey! Say! JUMP", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/ue5o9ljvxs9qkpmr1txrz5v8azapil.jpg" },
+      { name: "BoA", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/raedp2ym5xfnvigr0wl85pgjjrwjv0.jpg" },
+      { name: "MAZZEL", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/wsmd3pj3am4qy8z5t8be2jd7ndea64.jpg" },
+      { name: "松下洸平", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/dd50lunmyri3w6h54pypwptn0mf28a.jpg" },
+      { name: "Mrs. GREEN APPLE", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/zvodjh3nspdosdtxyvfwd5fmlq5aiv.jpg" },
+      { name: "M!LK", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/nhc5oxwc1ezsm01uwervr4lcib7vsh.jpg" },
+      { name: "May J.", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/qojwvyq4nmgvli2oq1vvhteyzpvx41.jpg" },
+      { name: "ゆず", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/1bldncumknacjsid8ljol1a7uk5ju2.jpg" },
+      { name: "緑黄色社会", photo: "https://www.ntv.co.jp/best-artist/files_cms/artist-list/images/edb8ls742eyaitw0fk5lx1n6a86eqv.jpg" }
+    ];
+
+    function getArtistSlots(name) {
+      const slots = [];
+      for (const s of TIMETABLE) {
+        if (s.artists.includes(name) || (s.special && s.special.includes(name))) {
+          slots.push(s);
+        }
+      }
+      return slots;
+    }
+
+    let currentFilter = 'all';
+    function setFilter(filter, btn) {
+      currentFilter = filter;
+      document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderArtists();
+    }
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+
+    function makeFallbackSvg(name) {
+      const text = encodeURIComponent(name.slice(0, 12));
+      return `data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="%231d1f2b"/><stop offset="100%" stop-color="%232e1065"/></linearGradient></defs><rect width="400" height="250" fill="url(%23g)"/><text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" fill="%23e9d5ff" font-family="sans-serif" font-size="22" font-weight="bold">${text}</text></svg>`;
+    }
+
+    function renderArtists() {
+      const q = (document.getElementById('artistSearch').value || '').trim().toLowerCase();
+      const filtered = ARTISTS.filter(a => {
+        if (q && !a.name.toLowerCase().includes(q)) return false;
+        const slots = getArtistSlots(a.name);
+        if (currentFilter === 'kpop') return KPOP_GLOBAL.has(a.name);
+        if (currentFilter === 'part1') return slots.some(s => s.id === 'part1');
+        if (currentFilter === 'part2') return slots.some(s => s.id !== 'part1' && s.id !== 'break');
+        return true;
+      });
+
+      document.getElementById('artistCount').textContent = filtered.length;
+      const grid = document.getElementById('artistsGrid');
+      grid.innerHTML = filtered.map(a => {
+        const slots = getArtistSlots(a.name);
+        const timeText = slots.length
+          ? slots.map(s => s.startTH).join(' / ') + ' น.'
+          : '17:00+ น.';
+        const isKpop = KPOP_GLOBAL.has(a.name);
+        const badgeHtml = isKpop
+          ? `<span class="artist-tag tag-kpop">K-POP / GLOBAL</span>`
+          : '';
+        return `
+          <div class="artist-card">
+            <div class="artist-thumb">
+              <img src="${a.photo}" alt="${escapeHtml(a.name)}" loading="lazy" onerror="this.onerror=null;this.src='${makeFallbackSvg(a.name)}'">
+              ${badgeHtml}
+              <span class="artist-time-badge">${timeText}</span>
+            </div>
+            <div class="artist-body">
+              <div class="artist-name">${escapeHtml(a.name)}</div>
+              <div class="artist-sub">${slots.map(s => s.labelJP.split(' ')[0] + ' ' + s.startTH + ' น.').join(' • ') || 'Best Artist 2026'}</div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function getCurrentThailandSlotId() {
+      const now = new Date();
+      const thStr = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Asia/Bangkok', hour: '2-digit', minute: '2-digit', hour12: false
+      }).format(now);
+      const [hh, mm] = thStr.split(':').map(Number);
+      const mins = hh * 60 + mm;
+      for (const s of TIMETABLE) {
+        const [sh, sm] = s.startTH.split(':').map(Number);
+        const [eh, em] = s.endTH.split(':').map(Number);
+        if (mins >= sh * 60 + sm && mins < eh * 60 + em) return s.id;
+      }
+      return null;
+    }
+
+    function renderTimetable() {
+      const activeId = getCurrentThailandSlotId();
+      const activeSlot = TIMETABLE.find(s => s.id === activeId);
+      document.getElementById('currentBlockLabel').textContent = activeSlot ? `NOW: ${activeSlot.startTH}–${activeSlot.endTH} น.` : '28 NOV 2026';
+
+      const list = document.getElementById('timetableList');
+      list.innerHTML = TIMETABLE.map(s => {
+        const isActive = s.id === activeId;
+        const chips = s.artists.map(name => {
+          const cls = KPOP_GLOBAL.has(name) ? 'kpop' : '';
+          return `<span class="chip-artist ${cls}" onclick="filterByArtist('${escapeHtml(name)}')">${escapeHtml(name)}</span>`;
+        }).join('');
+        return `
+          <div class="slot-card ${isActive ? 'active' : ''}">
+            <div class="slot-top">
+              <div>
+                <div class="slot-time">${s.labelTH}</div>
+                <div class="slot-jp">${s.labelJP}</div>
+              </div>
+              <span class="slot-badge">${isActive ? 'ON AIR' : s.startTH + ' น.'}</span>
+            </div>
+            ${chips ? `<div class="slot-artists">${chips}</div>` : ''}
+            ${s.special ? `<div class="slot-special"><i class="fa-solid fa-star"></i> ${escapeHtml(s.special)}</div>` : ''}
+          </div>
+        `;
+      }).join('');
+    }
+
+    function filterByArtist(name) {
+      const input = document.getElementById('artistSearch');
+      input.value = name;
+      setFilter('all', document.querySelector('.filter-tab[data-filter="all"]'));
+      document.getElementById('lineupSection').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function updateClocks() {
+      const now = new Date();
+      const fmtTH = new Intl.DateTimeFormat('th-TH', {
+        timeZone: 'Asia/Bangkok', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+      }).format(now);
+      const fmtJP = new Intl.DateTimeFormat('ja-JP', {
+        timeZone: 'Asia/Tokyo', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+      }).format(now);
+      document.getElementById('clockTH').textContent = `${fmtTH} น. (เวลาไทย)`;
+      document.getElementById('clockJP').textContent = `${fmtJP} JST (ญี่ปุ่น)`;
+    }
+
+    /* ================= STREAM PLAYER ================= */
+    let art = null;
+    let hlsInstance = null;
+    let mpegtsPlayer = null;
+    let activeStreamUrl = '';
+
+    function showToast(msg) {
+      const el = document.getElementById('toast');
+      el.textContent = msg;
+      el.classList.add('show');
+      setTimeout(() => el.classList.remove('show'), 2600);
+    }
+
+    function setLiveStatus(isLive, label, tech) {
+      const pill = document.getElementById('livePill');
+      const pillText = document.getElementById('livePillText');
+      if (isLive) {
+        pill.classList.remove('standby');
+        pillText.textContent = 'LIVE NOW';
+      } else {
+        pill.classList.add('standby');
+        pillText.textContent = 'STANDBY';
+      }
+      if (label) document.getElementById('streamLabel').textContent = label;
+      if (tech) document.getElementById('techBadge').textContent = tech;
+    }
+
+    function destroyPlayers() {
+      if (hlsInstance) { try { hlsInstance.destroy(); } catch (_) {} hlsInstance = null; }
+      if (mpegtsPlayer) { try { mpegtsPlayer.destroy(); } catch (_) {} mpegtsPlayer = null; }
+      if (art) { try { art.destroy(false); } catch (_) {} art = null; }
+    }
+
+    function showOverlay(title, desc) {
+      document.getElementById('overlayTitle').textContent = title;
+      document.getElementById('overlayDesc').innerHTML = desc;
+      document.getElementById('playerOverlay').classList.remove('hidden');
+    }
+
+    function hideOverlay() {
+      document.getElementById('playerOverlay').classList.add('hidden');
+    }
+
+    function detectStreamType(url) {
+      const u = url.toLowerCase();
+      if (u.includes('.m3u8')) return 'hls';
+      if (u.includes('tsb-mega.i9.ee/stream/') || u.endsWith('.ts')) return 'mpegts';
+      return 'hls';
+    }
+
+    function playStream(url, labelText) {
+      if (!url) return;
+      activeStreamUrl = url.trim();
+      localStorage.setItem('ba2026_stream_url', activeStreamUrl);
+      document.getElementById('streamUrlInput').value = activeStreamUrl;
+
+      destroyPlayers();
+      hideOverlay();
+
+      const mode = detectStreamType(activeStreamUrl);
+      const isRelay = activeStreamUrl.startsWith('/') || activeStreamUrl.includes('/hls/live.m3u8');
+      setLiveStatus(true, labelText || activeStreamUrl, mode === 'mpegts' ? 'MPEG-TS LIVE' : (isRelay ? 'HLS RELAY' : 'HLS LIVE'));
+
+      art = new Artplayer({
+        container: '#artplayerMount',
+        url: activeStreamUrl,
+        type: mode === 'mpegts' ? 'mpegts' : 'm3u8',
+        isLive: true,
+        autoplay: true,
+        muted: false,
+        pip: true,
+        fullscreen: true,
+        fullscreenWeb: true,
+        playsInline: true,
+        theme: '#ec4899',
+        lang: 'th',
+        customType: {
+          m3u8: function (video, url, artObj) {
+            if (typeof Hls !== 'undefined' && Hls.isSupported()) {
+              hlsInstance = new Hls({
+                enableWorker: true,
+                lowLatencyMode: true,
+                liveSyncDurationCount: 3,
+                liveMaxLatencyDurationCount: 8,
+                manifestLoadingTimeOut: 10000,
+                manifestLoadingMaxRetry: 4,
+              });
+              hlsInstance.loadSource(url);
+              hlsInstance.attachMedia(video);
+              hlsInstance.on(Hls.Events.MANIFEST_PARSED, () => {
+                video.play().catch(() => {});
+              });
+              hlsInstance.on(Hls.Events.ERROR, (event, data) => {
+                if (data.fatal) {
+                  setLiveStatus(false, 'ยังไม่พบสัญญาณ HLS (/hls/live.m3u8)', 'WAITING');
+                  showOverlay(
+                    'ยังไม่พบสัญญาณสตรีมสด',
+                    'หากเปิดผ่านเซิร์ฟเวอร์ กรุณาตรวจสอบว่า <code>ffmpeg</code> กำลังรีเลย์อยู่ หรือกด "ตั้งค่าสตรีม" เพื่อใส่ลิงก์สตรีมโดยตรง'
+                  );
+                }
+              });
+              artObj.on('destroy', () => {
+                if (hlsInstance) { hlsInstance.destroy(); hlsInstance = null; }
+              });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+              video.src = url;
+            }
+          },
+          mpegts: function (video, url, artObj) {
+            if (typeof mpegts !== 'undefined' && mpegts.isSupported()) {
+              mpegtsPlayer = mpegts.createPlayer({
+                type: 'mpegts',
+                isLive: true,
+                url: url
+              }, {
+                enableWorker: true,
+                liveBufferLatencyChasing: true
+              });
+              mpegtsPlayer.attachMediaElement(video);
+              mpegtsPlayer.load();
+              mpegtsPlayer.play().catch(() => {});
+              mpegtsPlayer.on(mpegts.Events.ERROR, () => {
+                setLiveStatus(false, 'เชื่อมต่อสตรีม MPEG-TS ไม่สำเร็จ', 'ERROR');
+                showOverlay(
+                  'เบราว์เซอร์เล่นสตรีม MPEG-TS โดยตรงไม่สำเร็จ',
+                  'แนะนำให้เปิดผ่านเซิร์ฟเวอร์ <code>START_BEST_ARTIST_LIVE_WEB.command</code> เพื่อแปลงเป็น HLS อัตโนมัติ (รองรับทั้งคอมและมือถือ 100%)'
+                );
+              });
+              artObj.on('destroy', () => {
+                if (mpegtsPlayer) { mpegtsPlayer.destroy(); mpegtsPlayer = null; }
+              });
+            } else {
+              setLiveStatus(false, 'เบราว์เซอร์นี้ไม่รองรับ MPEG-TS โดยตรง', 'USE RELAY');
+              showOverlay(
+                'เบราว์เซอร์นี้ต้องใช้ตัวเล่นแบบ HLS Relay',
+                'iOS / Safari ไม่รองรับ raw MPEG-TS โดยตรง กรุณารันผ่าน <code>START_BEST_ARTIST_LIVE_WEB.command</code> เพื่อแปลงเป็น HLS'
+              );
+            }
+          }
+        }
+      });
+    }
+
+    function toggleStreamBar(forceOpen) {
+      const bar = document.getElementById('streamBar');
+      if (forceOpen === true) bar.classList.add('open');
+      else bar.classList.toggle('open');
+    }
+
+    async function applyCustomStream() {
+      const val = document.getElementById('streamUrlInput').value.trim();
+      if (!val) return showToast('กรุณาวางลิงก์สตรีมก่อนครับ');
+
+      const isLocal = ['127.0.0.1', 'localhost'].includes(window.location.hostname);
+      if (isLocal) {
+        try {
+          showToast('กำลังส่งสตรีมเข้าตัวแปลง HLS Relay...');
+          const res = await fetch('/api/set-stream', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ url: val })
+          });
+          if (res.ok) {
+            for (let i = 0; i < 16; i++) {
+              await new Promise(r => setTimeout(r, 500));
+              const stRes = await fetch('/api/status', { cache: 'no-store' });
+              if (stRes.ok) {
+                const st = await stRes.json();
+                if (st.hls_ready) {
+                  playStream('/hls/live.m3u8', 'Nippon TV (HLS Relay)');
+                  showToast('เชื่อมต่อ HLS Relay สำเร็จ!');
+                  return;
+                }
+              }
+            }
+          }
+        } catch (_) {}
+      }
+
+      playStream(val, 'Custom Live Stream');
+      showToast('กำลังเชื่อมต่อสตรีมใหม่...');
+    }
+
+    function useRelayStream() {
+      playStream('/hls/live.m3u8', 'Local / Tunnel HLS Relay');
+    }
+
+    function reloadStream() {
+      if (activeStreamUrl) playStream(activeStreamUrl);
+      else retryDefaultStream();
+    }
+
+    function copyShareUrl() {
+      const base = window.location.origin + window.location.pathname;
+      const share = activeStreamUrl && !activeStreamUrl.startsWith('/')
+        ? `${base}?src=${encodeURIComponent(activeStreamUrl)}`
+        : window.location.href;
+      navigator.clipboard.writeText(share).then(() => {
+        showToast('ก๊อปปี้ลิงก์สำหรับแชร์แล้ว!');
+      }).catch(() => {
+        showToast('คัดลอกลิงก์: ' + share);
+      });
+    }
+
+    async function retryDefaultStream() {
+      const params = new URLSearchParams(window.location.search);
+      const paramSrc = params.get('src');
+      if (paramSrc) {
+        playStream(paramSrc, 'Shared Live Stream');
+        return;
+      }
+
+      // Check if running behind local/tunnel relay server
+      if (window.location.protocol.startsWith('http')) {
+        try {
+          const res = await fetch('/api/status', { cache: 'no-store' });
+          if (res.ok) {
+            const st = await res.json();
+            if (st.hls_ready) {
+              playStream('/hls/live.m3u8', st.channel_label || 'Nippon TV (HLS Relay)');
+              return;
+            }
+          }
+        } catch (_) {}
+
+        // Static hosting (e.g. GitHub Pages): read ./stream_config.json
+        try {
+          const cfgRes = await fetch('./stream_config.json?t=' + Date.now(), { cache: 'no-store' });
+          if (cfgRes.ok) {
+            const cfg = await cfgRes.json();
+            if (cfg.hls_url) {
+              playStream(cfg.hls_url, cfg.channel_label || 'Best Artist 2026 LIVE');
+              return;
+            }
+          }
+        } catch (_) {}
+      }
+
+      const saved = localStorage.getItem('ba2026_stream_url');
+      if (saved && !saved.startsWith('/')) {
+        playStream(saved, 'Saved Live Stream');
+        return;
+      }
+
+      setLiveStatus(false, 'รอใส่ลิงก์สตรีม Nippon TV', 'STANDBY');
+      showOverlay(
+        'พร้อมถ่ายทอดสด Best Artist 2026',
+        'เปิดผ่าน <code>START_BEST_ARTIST_LIVE_WEB.command</code> เพื่อแปลงสตรีม NTV เป็น HLS อัตโนมัติ หรือกด <b>"ใส่ลิงก์สตรีมสด"</b> เพื่อวางลิงก์โดยตรง'
+      );
+    }
+
+    renderArtists();
+    renderTimetable();
+    updateClocks();
+    setInterval(updateClocks, 1000);
+    setInterval(renderTimetable, 30000);
+    retryDefaultStream();
+  </script>
+</body>
+</html>
